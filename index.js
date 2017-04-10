@@ -3,6 +3,7 @@
 *	Point d'entrée de l'application
 *	version 0.1.1
 *	Tiré du tuto http://www.supinfo.com/articles/single/3246-realisez-bot-facebook-messenger-nodejs
+*	https://developers.facebook.com/docs/messenger-platform/guides/quick-start/
 */
 
 
@@ -19,7 +20,8 @@ var app = express();
 app.set('port', process.env.PORT || 5555);
 app.use(bodyParser.json());
 
-const VALIDATION_TOKEN = "58eb669e-9a3c-4940-ba2a-45833ed28ff1";
+const VALIDATION_TOKEN = "heroku ps:scale web=1";
+const PAGE_ACCESS_TOKEN = "EAAbiTcER2bkBAGWzRgOLC313pUoaxeZBLtolbxRydMukqNyBArkL1kipMjbpezxuCMknzZA1ykPNSBfZC3C2oYmd2cVrxxLZB0RWgnM2M9N76ZA0LSIHqvvKs5XkVLXFmbidPtn7OZAKN3kTgGZCFeZCkAUHKEH004aOA0YSAeY54wZDZD";
 
 /*
 *	URL pour Facebook
@@ -40,17 +42,35 @@ app.get('/webhook', function(req, res) {
 /*
 *	URL que Facebook utilise pour nous envoyer un message
 */
-app.post('/webhook/', function (req, res) {
-    let message_events = req.body.entry[0].messaging
-    for (message_event of message_events) {
-        let sender = message_event.sender.id
-        if (message_event.message && message_event.message.text) {
-            let text = message_event.message.text
-            sendTextMessage(sender, "J'ai recu : " + text.substring(0, 200))
-        }
-    }
-    res.sendStatus(200)
-})
+app.post('/webhook', function (req, res) {
+	var data = req.body;
+
+  	// Make sure this is a page subscription
+  	if (data.object === 'page') {
+
+    // Iterate over each entry - there may be multiple if batched
+    data.entry.forEach(function(entry) {
+      	var pageID = entry.id;
+      	var timeOfEvent = entry.time;
+
+      // Iterate over each messaging event
+      	entry.messaging.forEach(function(event) {
+        	if (event.message) {
+	          receivedMessage(event);
+	        } else {
+	          console.log("Webhook received unknown event: ", event);
+	        }
+      	});
+    });
+
+    // Assume all went well.
+    //
+    // You must send back a 200, within 20 seconds, to let us know
+    // you've successfully received the callback. Otherwise, the request
+    // will time out and we will keep trying to resend.
+    res.sendStatus(200);
+  }
+});
 
 app.get('/initdb', function(req, res) {
 	/*const pg = require('pg');
@@ -65,28 +85,75 @@ app.get('/initdb', function(req, res) {
 });
 
 app.listen(app.get('port'), function() {
-  console.log('Bot is running on port ', app.get('port'));
+	console.log('Bot is running on port ', app.get('port'));
 });
 
 /*
 *	Fonction qui permet d'envoyer un message
 */
-function sendTextMessage(sender, text) {
-    let data = { text:text }
-    let access_token = "mon token de page";
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: access_token},
-        method: 'POST',
-        json: {
-            recipient: {id:sender},
-            message: data,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
+function receivedMessage(event) {
+	var senderID = event.sender.id;
+  	var recipientID = event.recipient.id;
+  	var timeOfMessage = event.timestamp;
+  	var message = event.message;
+
+  	console.log("Received message for user %d and page %d at %d with message:", 
+    	senderID, recipientID, timeOfMessage);
+  	console.log(JSON.stringify(message));
+
+  	var messageId = message.mid;
+
+  	var messageText = message.text;
+  	var messageAttachments = message.attachments;
+
+  	if (messageText) {
+
+	    // If we receive a text message, check to see if it matches a keyword
+	    // and send back the example. Otherwise, just echo the text we received.
+	    switch (messageText) {
+	      case 'generic':
+	        sendGenericMessage(senderID);
+	        break;
+
+	      default:
+	        sendTextMessage(senderID, messageText);
+	    }
+  	} else if (messageAttachments) {
+    	sendTextMessage(senderID, "Message with attachment received");
+  	}
+}
+
+function sendTextMessage(recipientId, messageText) {
+	var messageData = {
+	    recipient: {
+	      id: recipientId
+	    },
+	    message: {
+	      text: messageText
+	    }
+  	};
+
+  	callSendAPI(messageData);
+}
+
+function callSendAPI(messageData) {
+	request({
+	    uri: 'https://graph.facebook.com/v2.6/me/messages',
+	    qs: { access_token: PAGE_ACCESS_TOKEN },
+	    method: 'POST',
+	    json: messageData
+
+  	}, function (error, response, body) {
+	    if (!error && response.statusCode == 200) {
+	      var recipientId = body.recipient_id;
+	      var messageId = body.message_id;
+
+	      console.log("Successfully sent generic message with id %s to recipient %s", 
+	        messageId, recipientId);
+	    } else {
+	      console.error("Unable to send message.");
+	      console.error(response);
+	      console.error(error);
+	    }
+  	});  
 }
