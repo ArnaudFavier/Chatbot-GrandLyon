@@ -19,7 +19,7 @@ var app = express();
 app.set('port', process.env.PORT || 5555);
 app.use(bodyParser.json());
 
-const VALIDATION_TOKEN = "insérez ici un string quelconque";
+const VALIDATION_TOKEN = "58eb669e-9a3c-4940-ba2a-45833ed28ff1";
 
 /*
 *	URL pour Facebook
