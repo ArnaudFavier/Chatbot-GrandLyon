@@ -157,3 +157,6 @@ function callSendAPI(messageData) {
 	    }
   	});  
 }
+
+// Import Wit.Ai
+require('./botlogic/botlogic.js');

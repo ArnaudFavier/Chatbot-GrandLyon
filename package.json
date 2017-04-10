@@ -24,6 +24,8 @@
     "body-parser": "^1.17.1",
     "config": "^1.25.1",
     "express": "^4.15.2",
+    "isomorphic-fetch": "^2.2.1",
+    "node-wit": "^4.2.0",
     "pg": "^6.1.5",
     "request": "^2.81.0"
   }
