@@ -1,0 +1,30 @@
+{
+  "name": "chatbot-grandlyon",
+  "version": "0.1.1",
+  "description": "Bot Server for Grand Lyon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnaudFavier/Chatbot-GrandLyon.git"
+  },
+  "keywords": [
+    "ChatBot",
+    "Lyon"
+  ],
+  "author": "INSA-Lyon-H4411",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ArnaudFavier/Chatbot-GrandLyon/issues"
+  },
+  "homepage": "https://github.com/ArnaudFavier/Chatbot-GrandLyon#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "config": "^1.25.1",
+    "express": "^4.15.2",
+    "pg": "^6.1.5",
+    "request": "^2.81.0"
+  }
+}
