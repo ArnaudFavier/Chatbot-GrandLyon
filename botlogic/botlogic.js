@@ -1,7 +1,7 @@
 'use strict';
 
-let Wit = require('node-wit').Wit;
-let interactive = require('node-wit').interactive;
+var Wit = require('node-wit').Wit;
+var interactive = require('node-wit').interactive;
 
 const accessToken = 'EFMKINUPTBBVIQXI45UP5TJDCB7ZIATU';
 
@@ -42,8 +42,23 @@ const actions = {
 };
 
 const client = new Wit({ accessToken, actions });
-//interactive(client);
 
+function activeDebugMode() {
+	interactive(client);
+}
+
+function sendMessage(msg, context) {
+	client.message(msg, context)
+		.then((data) => {
+			console.log('Réponse de Wit-Ai (send): ' + JSON.stringify(data));
+			return data;
+		})
+		.catch(console.error);
+}
+
+//sendMessage('Quel temps fait-il à Paris ?', {});
+
+/*
 console.log("Test de Wit : \"Quel temps fait-il à Saint-Marcel ?\"")
 const session = 'my-user-session-42';
 const context = {};
@@ -53,3 +68,7 @@ client.runActions(session, 'Quel temps fait-il à Saint-Marcel ?', context, (e, 
 		return;
 	}
 });
+*/
+
+exports.activeDebugMode = activeDebugMode;
+exports.sendMessage = sendMessage;
