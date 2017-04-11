@@ -8,8 +8,8 @@ const PAGE_ACCESS_TOKEN = "EAAbiTcER2bkBAConk7qPEvqaIRT0MucHZBCDVxZBqZB14qUofVZC
 module.exports = {
     webhook: function(req, res) {
         return req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === VALIDATION_TOKEN;
-    }
-
+    },
+    
     postMessage: function(req, res) {
         var data = req.body;
         if (data.object === 'page') {
