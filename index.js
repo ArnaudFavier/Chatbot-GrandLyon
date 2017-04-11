@@ -45,9 +45,8 @@ app.get('/', function(req, res) {
  */
 app.post('/', (req, res) => {
 	const conversation = req.body.message.conversation;
-	console.log(util.inspect(req.body.message, false, null));
+	console.log("Message: %j", req.body.message);
 	const message = req.body.message.conversation.messages[0];
-	console.log(message);
 	if (message.attachment.type === 'text') {
     	const messages = [{
 		    type: 'text',
