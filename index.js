@@ -43,21 +43,22 @@ app.get('/', function(req, res) {
  *
  */
 app.post('/', (req, res) => {
-  const conversation = req.body.message.conversation
-  const messages = [{
-    type: 'text',
-    content: 'my first message',
-  }]
+	const conversation = req.body.message.conversation
+	console.log(req.body.message)
+	const messages = [{
+	    type: 'text',
+	    content: 'my first message',
+  	}]
 
-  request.post(`https://api.recast.ai/connect/v1/conversations/${conversation}/messages`)
-    .set({ 'Authorization': '52b54f5a6378a44390395f8717402983' })
-    .send({ messages })
-    .end((err, res) => {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log(res)
-      }
+	request.post('https://api.recast.ai/connect/v1/conversations/${conversation}/messages')
+	    .set({ 'Authorization': '52b54f5a6378a44390395f8717402983' })
+	    .send({ messages })
+	    .end((err, res) => {
+	      if (err) {
+	        console.log(err)
+	      } else {
+	        console.log(res)
+	      }
     })
 })
 
