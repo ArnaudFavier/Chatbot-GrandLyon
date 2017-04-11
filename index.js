@@ -20,7 +20,7 @@ var app = express();
 app.set('port', process.env.PORT || 5555);
 app.use(bodyParser.json());
 
-const VALIDATION_TOKEN = "heroku ps:scale web=1";
+const VALIDATION_TOKEN = "58eb669e-9a3c-4940-ba2a-45833ed28ff1";
 const PAGE_ACCESS_TOKEN = "EAAbiTcER2bkBAGWzRgOLC313pUoaxeZBLtolbxRydMukqNyBArkL1kipMjbpezxuCMknzZA1ykPNSBfZC3C2oYmd2cVrxxLZB0RWgnM2M9N76ZA0LSIHqvvKs5XkVLXFmbidPtn7OZAKN3kTgGZCFeZCkAUHKEH004aOA0YSAeY54wZDZD";
 
 /*
