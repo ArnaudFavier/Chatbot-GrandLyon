@@ -17,7 +17,7 @@ var fs = require('fs');
 
 // Import Wit.Ai
 require('./botlogic/botlogic.js');
-require('./location.js');
+const location = require('./location.js');
 
 var app = express();
 
@@ -59,7 +59,7 @@ app.post('/', (req, res) => {
 	  	}];
     } else if (message.attachment.type === 'location') {
     	messages = [];
-    	addQuickReplyLocation(messages);
+    	location.addQuickReplyLocation(messages);
     }
 
 	request.post(`https://api.recast.ai/connect/v1/conversations/${conversation}/messages`)
