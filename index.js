@@ -57,7 +57,7 @@ app.get('/', function(req, res) {
  * Facebook check si on est bien le serveur associé au Bot
  * On renvoie 200 et le challenge (code donné par Facebook)
  */
-app.get('/webhook', function(req, res) {
+app.get('/facebook/webhook', function(req, res) {
   if(facebook.webhook(req, res)) {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
@@ -71,39 +71,10 @@ app.get('/webhook', function(req, res) {
  * URL que Facebook utilise pour nous envoyer un message
  * 20 secondes pour répondre à la requete
  */
-app.post('/webhook', function (req, res) {
+app.post('/facebook/webhook', function (req, res) {
   facebook.postMessage(req, res);
   res.sendStatus(200);
 });
-
-/*app.post('/', (req, res) => {
-  const conversation = req.body.message.conversation;
-  console.log("Message: %j", req.body.message);
-  const message = req.body.message;
-  var messages = [{
-        type: 'text',
-        content: "Not text",
-      }];
-  if (message.attachment.type === 'text') {
-      messages = [{
-        type: 'text',
-        content: message.attachment.content,
-      }];
-    } else if (message.attachment.type === 'location') {
-      messages = [];
-      location.addQuickReplyLocation(messages);
-    }
-  request.post(`https://api.recast.ai/connect/v1/conversations/${conversation}/messages`)
-      .set({ 'Authorization': '52b54f5a6378a44390395f8717402983' })
-      .send({ messages })
-      .end((err, res) => {
-        if (err) {
-          console.log(err)
-        } else {
-          console.log(res)
-        }
-    });
-  })*/
 
 /*
  *
