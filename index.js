@@ -63,7 +63,6 @@ app.get('/', function(req, res) {
 app.post('/webhook', function (req, res) {
 	facebook.postMessage(req, res);
     res.sendStatus(200);
-  }
 });
 
 /*app.post('/', (req, res) => {
