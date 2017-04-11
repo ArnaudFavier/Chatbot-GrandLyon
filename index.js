@@ -47,15 +47,14 @@ app.post('/', (req, res) => {
 	const conversation = req.body.message.conversation;
 	console.log("Message: %j", req.body.message);
 	const message = req.body.message;
+	const messages = [{
+		    type: 'text',
+		    content: "Not text",
+	  	}];
 	if (message.attachment.type === 'text') {
     	const messages = [{
 		    type: 'text',
 		    content: message.attachment.content,
-	  	}];
-    } else {
-    	const messages = [{
-		    type: 'text',
-		    content: "Not text",
 	  	}];
     }
 
