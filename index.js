@@ -36,7 +36,6 @@ app.get('/', function(req, res) {
   } else {
     pathname += url.parse(req.url).pathname;
   }
-  console.log("Request for " + pathname + " received.");
 
   fs.readFile(pathname, function (err, data) {
     if (err) {
