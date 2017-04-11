@@ -17,7 +17,7 @@ var fs = require('fs');
 
 // Import Wit.Ai
 require('./botlogic/botlogic.js');
-const location = require('./location.js');
+const facebook = require('./channels/facebook.js');
 
 var app = express();
 
@@ -42,9 +42,31 @@ app.get('/', function(req, res) {
 });
 
 /*
- *
- */
-app.post('/', (req, res) => {
+*	URL pour Facebook
+*	Facebook check si on est bien le serveur associé au Bot
+*	On renvoie 200 et le challenge (code donné par Facebook)
+*/
+ app.get('/webhook', function(req, res) {
+ 	if(facebook.webhook(req, res)) {
+    	console.log("Validating webhook");
+    	res.status(200).send(req.query['hub.challenge']);
+  	} else {
+    	console.error("Failed validation. Make sure the validation tokens match.");
+    	res.sendStatus(403);
+  	}
+});
+
+/*
+*	URL que Facebook utilise pour nous envoyer un message
+*	20 secondes pour répondre à la requete
+*/
+app.post('/webhook', function (req, res) {
+	facebook.postMessage(req, res);
+    res.sendStatus(200);
+  }
+});
+
+/*app.post('/', (req, res) => {
 	const conversation = req.body.message.conversation;
 	console.log("Message: %j", req.body.message);
 	const message = req.body.message;
@@ -72,7 +94,7 @@ app.post('/', (req, res) => {
 	        console.log(res)
 	      }
     });
-})
+})*/
 
 
 /*
