@@ -33,14 +33,14 @@ app.get('/', function(req, res) {
   var pathname = 'public';
   if (url.parse(req.url).pathname == '/') {
     pathname += '/index.html';
- } else {
-  pathname += url.parse(req.url).pathname;
-}
-console.log("Request for " + pathname + " received.");
+  } else {
+    pathname += url.parse(req.url).pathname;
+  }
+  console.log("Request for " + pathname + " received.");
 
-fs.readFile(pathname, function (err, data) {
-  if (err) {
-    console.log(err);
+  fs.readFile(pathname, function (err, data) {
+    if (err) {
+      console.log(err);
         // HTTP Status: 404 : NOT FOUND
         res.writeHead(404, {'Content-Type': 'text/html'});
       } else {
@@ -53,10 +53,10 @@ fs.readFile(pathname, function (err, data) {
 });
 
 /*
-* URL pour Facebook
-* Facebook check si on est bien le serveur associé au Bot
-* On renvoie 200 et le challenge (code donné par Facebook)
-*/
+ * URL pour Facebook
+ * Facebook check si on est bien le serveur associé au Bot
+ * On renvoie 200 et le challenge (code donné par Facebook)
+ */
 app.get('/webhook', function(req, res) {
   if(facebook.webhook(req, res)) {
     console.log("Validating webhook");
@@ -68,9 +68,9 @@ app.get('/webhook', function(req, res) {
 });
 
 /*
-* URL que Facebook utilise pour nous envoyer un message
-* 20 secondes pour répondre à la requete
-*/
+ * URL que Facebook utilise pour nous envoyer un message
+ * 20 secondes pour répondre à la requete
+ */
 app.post('/webhook', function (req, res) {
   facebook.postMessage(req, res);
   res.sendStatus(200);
@@ -108,7 +108,7 @@ app.post('/webhook', function (req, res) {
 /*
  *
  */
- app.get('/initdb', function(req, res) {
+app.get('/initdb', function(req, res) {
     /*const pg = require('pg');
     const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
 
@@ -123,6 +123,6 @@ app.post('/webhook', function (req, res) {
 /*
  * Run du serveur
  */
- app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function() {
   console.log('Bot is running on port ', app.get('port'));
 });
