@@ -1,3 +1,6 @@
+const VALIDATION_TOKEN = "58eb669e-9a3c-4940-ba2a-45833ed28ff1";
+const PAGE_ACCESS_TOKEN = "EAAbiTcER2bkBAConk7qPEvqaIRT0MucHZBCDVxZBqZB14qUofVZCnryAbWxXn9atzofmG5jm98y1iZB5RIMxagxCL6ar0QGS8JzqHEoGTlX9vYTiHMfyyUwFDz7ORZCsSzjzQZCsOOyvCGdgTJva9RvHMNmAP0H7eQ4C2eTmOohGAZDZD";
+
 /*
 *	URL pour Facebook
 *	Facebook check si on est bien le serveur associé au Bot

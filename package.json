@@ -27,6 +27,7 @@
     "isomorphic-fetch": "^2.2.1",
     "node-wit": "^4.2.0",
     "pg": "^6.1.5",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "superagent": "^3.5.2"
   }
 }
