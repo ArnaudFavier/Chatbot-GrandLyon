@@ -43,12 +43,20 @@ app.get('/', function(req, res) {
  *
  */
 app.post('/', (req, res) => {
-	const conversation = req.body.message.conversation
-	console.log(req.body.message)
-	const messages = [{
-	    type: 'text',
-	    content: 'my first message',
-  	}]
+	const conversation = req.body.message.conversation;
+	const message = req.body.message.conversation.messages[0];
+	console.log(message)
+	if (message.attachment.type === 'text') {
+    	const messages = [{
+		    type: 'text',
+		    content: message.attachment.content,
+	  	}];
+    } else {
+    	const messages = [{
+		    type: 'text',
+		    content: req.body.message.conversation.messages[0],
+	  	}];
+    }
 
 	request.post('https://api.recast.ai/connect/v1/conversations/${conversation}/messages')
 	    .set({ 'Authorization': '52b54f5a6378a44390395f8717402983' })
@@ -59,41 +67,9 @@ app.post('/', (req, res) => {
 	      } else {
 	        console.log(res)
 	      }
-    })
+    });
 })
 
-/*
- *  URL que Facebook utilise pour nous envoyer un message
- */
-app.post('/webhook', function (req, res) {
-    var data = req.body;
-
-    // Make sure this is a page subscription
-    if (data.object === 'page') {
-
-    // Iterate over each entry - there may be multiple if batched
-    data.entry.forEach(function(entry) {
-        var pageID = entry.id;
-        var timeOfEvent = entry.time;
-
-      // Iterate over each messaging event
-        entry.messaging.forEach(function(event) {
-            if (event.message) {
-              receivedMessage(event);
-            } else {
-              console.log("Webhook received unknown event: ", event);
-            }
-        });
-    });
-
-    // Assume all went well.
-    //
-    // You must send back a 200, within 20 seconds, to let us know
-    // you've successfully received the callback. Otherwise, the request
-    // will time out and we will keep trying to resend.
-    res.sendStatus(200);
-  }
-});
 
 /*
  *
