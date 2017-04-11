@@ -17,6 +17,7 @@ var fs = require('fs');
 
 // Import Wit.Ai
 require('./botlogic/botlogic.js');
+require('./location.js');
 
 var app = express();
 
@@ -56,6 +57,9 @@ app.post('/', (req, res) => {
 		    type: 'text',
 		    content: message.attachment.content,
 	  	}];
+    } else if (message.attachment.type === 'location') {
+    	messages = [];
+    	addQuickReplyLocation(messages);
     }
 
 	request.post(`https://api.recast.ai/connect/v1/conversations/${conversation}/messages`)
@@ -87,7 +91,7 @@ app.get('/initdb', function(req, res) {
 });
 
 /*
- *
+ * Run du serveur
  */
 app.listen(app.get('port'), function() {
 	console.log('Bot is running on port ', app.get('port'));
