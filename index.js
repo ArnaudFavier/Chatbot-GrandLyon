@@ -12,6 +12,7 @@ const config = require('config');
 const express = require('express');
 const http = require('http');
 const request = require('superagent');
+const util = require('util');
 var fs = require('fs');
 
 // Import Wit.Ai
@@ -44,7 +45,7 @@ app.get('/', function(req, res) {
  */
 app.post('/', (req, res) => {
 	const conversation = req.body.message.conversation;
-	console.log(req.body.message);
+	console.log(util.inspect(req.body.message, false, null));
 	const message = req.body.message.conversation.messages[0];
 	console.log(message);
 	if (message.attachment.type === 'text') {
@@ -55,7 +56,7 @@ app.post('/', (req, res) => {
     } else {
     	const messages = [{
 		    type: 'text',
-		    content: req.body.message.conversation.messages[0],
+		    content: "Not text",
 	  	}];
     }
 
