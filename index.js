@@ -7,14 +7,15 @@
 */
 'use strict';
 
-// Import Wit.Ai
-require('./botlogic/botlogic.js');
 const bodyParser = require('body-parser');
 const config = require('config');
 const express = require('express');
 const http = require('http');
 const request = require('superagent');
 var fs = require('fs');
+
+// Import Wit.Ai
+require('./botlogic/botlogic.js');
 
 var app = express();
 
@@ -114,6 +115,3 @@ app.get('/initdb', function(req, res) {
 app.listen(app.get('port'), function() {
 	console.log('Bot is running on port ', app.get('port'));
 });
-
-// Import Wit.Ai
-require('./botlogic/botlogic.js');
