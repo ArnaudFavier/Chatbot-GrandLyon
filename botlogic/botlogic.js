@@ -22,7 +22,7 @@ const actions = {
 		const { sessionId, context, entities } = request;
 		const { text, quickreplies } = response;
 		return new Promise(function (resolve, reject) {
-			console.log('Réponse de Wit : ', JSON.stringify(response));
+			callback(request, response);
 			return resolve();
 		});
 	},
@@ -43,27 +43,22 @@ const actions = {
 
 const client = new Wit({ accessToken, actions });
 
+var callback = function(request, response){
+	console.log('Réponse de Wit : ', JSON.stringify(response));
+}
+
 function activeDebugMode() {
 	interactive(client);
 }
 
-function sendMessage(msg, userSession, context) {
+function defineCallback(newCallback) {
+	callback = newCallback;
+}
+
+function sendMessage(msg, userSession, context, callback) {
 	 return client.runActions(userSession, msg, context);
 }
 
-//sendMessage('Quel temps fait-il à Paris ?', {});
-
-/*
-console.log("Test de Wit : \"Quel temps fait-il à Saint-Marcel ?\"")
-const session = 'my-user-session-42';
-const context = {};
-client.runActions(session, 'Quel temps fait-il à Saint-Marcel ?', context, (e, context1) => {
-	if (e) {
-		console.log('Erreur : ' + e);
-		return;
-	}
-});
-*/
-
 exports.activeDebugMode = activeDebugMode;
+exports.defineCallback = defineCallback;
 exports.sendMessage = sendMessage;
