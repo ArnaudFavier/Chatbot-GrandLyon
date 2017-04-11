@@ -47,13 +47,8 @@ function activeDebugMode() {
 	interactive(client);
 }
 
-function sendMessage(msg, context) {
-	client.message(msg, context)
-		.then((data) => {
-			console.log('Réponse de Wit-Ai (send): ' + JSON.stringify(data));
-			return data;
-		})
-		.catch(console.error);
+function sendMessage(msg, userSession, context) {
+	 return client.runActions(userSession, msg, context);
 }
 
 //sendMessage('Quel temps fait-il à Paris ?', {});
