@@ -1,60 +1,40 @@
+'use strict';
+
+/**
+* CREDENTIALS
+**/
 const VALIDATION_TOKEN = "58eb669e-9a3c-4940-ba2a-45833ed28ff1";
 const PAGE_ACCESS_TOKEN = "EAAbiTcER2bkBAConk7qPEvqaIRT0MucHZBCDVxZBqZB14qUofVZCnryAbWxXn9atzofmG5jm98y1iZB5RIMxagxCL6ar0QGS8JzqHEoGTlX9vYTiHMfyyUwFDz7ORZCsSzjzQZCsOOyvCGdgTJva9RvHMNmAP0H7eQ4C2eTmOohGAZDZD";
 
-/*
-*	URL pour Facebook
-*	Facebook check si on est bien le serveur associé au Bot
-*	On renvoie 200 et le challenge (code donné par Facebook)
-app.get('/webhook', function(req, res) {
-  if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
-    console.log("Validating webhook");
-    res.status(200).send(req.query['hub.challenge']);
-  } else {
-    console.error("Failed validation. Make sure the validation tokens match.");
-    res.sendStatus(403);
-  }
-});
-*/
 
-/*
-*	URL que Facebook utilise pour nous envoyer un message
-app.post('/webhook', function (req, res) {
-	var data = req.body;
+module.exports = {
+    webhook: function(req, res) {
+        return req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === VALIDATION_TOKEN;
+    },
 
-  	// Make sure this is a page subscription
-  	if (data.object === 'page') {
-
-    // Iterate over each entry - there may be multiple if batched
-    data.entry.forEach(function(entry) {
-      	var pageID = entry.id;
-      	var timeOfEvent = entry.time;
-
-      // Iterate over each messaging event
-      	entry.messaging.forEach(function(event) {
-        	if (event.message) {
-	          receivedMessage(event);
-	        } else {
-	          console.log("Webhook received unknown event: ", event);
-	        }
-      	});
-    });
-
-    // Assume all went well.
-    //
-    // You must send back a 200, within 20 seconds, to let us know
-    // you've successfully received the callback. Otherwise, the request
-    // will time out and we will keep trying to resend.
-    res.sendStatus(200);
-  }
-});
-*/
+    receivedMessage: function(req, res) {
+        var data = req.body;
+        if (data.object === 'page') {
+            data.entry.forEach(function(entry) {
+                var pageID = entry.id;
+                var timeOfEvent = entry.time;
+                entry.messaging.forEach(function(event) {
+                    if (event.message) {
+                      receivedMessage(event);
+                    } else {
+                      console.log("Webhook received unknown event: ", event);
+                    }
+                });
+            });
+        }
+    }
+};
 
 /*
 * Fonction qui permet d'envoyer un message
 */
 function receivedMessage(event) {
-  var senderID = event.sender.id;
+    var senderID = event.sender.id;
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
     var message = event.message;
