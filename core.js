@@ -1,15 +1,17 @@
 'use strict';
+module.exports = {
+    receivedMessage: function(message) {
+        receivedMessage(message);
+    }
+};
+
 // Import Wit.Ai
 const botlogic = require('./botlogic/botlogic.js');
 var facebook = require('./channels/facebook.js');
 
 var messageReceived;
 
-module.exports = {
-    receivedMessage: function(message) {
-        receivedMessage(message);
-    }
-};
+
 
 /*
 *   Fonction appelée par les channels lorsque l'on reçoit un message
@@ -38,15 +40,19 @@ function callbackLogicLayer(request, response){
     messageReceived.text = response.text
     console.log('Custom callback Wit : ', JSON.stringify(response));
     console.log('Message to send : ', JSON.stringify(messageReceived));
-    facebook.sendMessage(messageReceived);
-    //sendMessage(messageReceived);
+    sendMessage(messageReceived);
 }
 
 /*
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessage(message) {
-    facebook.sendMessage(message);
+    var facebook = require('./channels/facebook.js');
+    try {
+        facebook.sendMessage(message);
+    } catch (err) {
+        console.log(facebook);
+    }
     /*if(message.channel == "Facebook") {
        
     }*/

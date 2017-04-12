@@ -34,6 +34,7 @@ module.exports = {
     },
 
     sendMessage: function(message) {
+        console.error("We will send a message.");
         sendTextMessage(message);
     }
 };
