@@ -75,8 +75,8 @@ function prepareMessageWithQuickReply(quickreply, messages) {
         choices:[]
     }
     if(Array.isArray(quickreply)) {
-        for(qr in quickreply) {
-            message.choices.push(qr);
+        for(var i=0;i<quickreply.length;i++) {
+            message.choices.push(quickreply[i]);
         }
     } else {
         message.choices.push(quickreply);
@@ -88,10 +88,10 @@ function prepareMessageWithQuickReply(quickreply, messages) {
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessages(messages) {
-    if(message.length > 0) {
-        switch(message[0].channel) {
+    if(messages.length > 0) {
+        switch(messages[0].channel) {
             case "Facebook":
-            facebook.sendMessages(messages);
+            facebook.sendMessages(messages)
             break;
             case "Telegram":
             break;

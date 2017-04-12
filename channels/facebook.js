@@ -83,8 +83,8 @@ function sendMessage(message) {
 * Fonction appelé par le core pour envoyer des messages sur la channel Facebook
 */
 function sendMessages(messages) {
-    for(message in messages) {
-        sendMessage(message);
+    for(var i=0;i<messages.length;i++) {
+        sendMessage(messages[i]);
     }
 }
 
@@ -116,12 +116,13 @@ function sendQuickReplyMessage(message) {
             },
             quick_replies: []
         };
-        for(choice in message.choices) {
+        for(var i=0;i<message.choices.length;i++) {
             var quickreply = {
                 content_type: "text",
-                title: choice,
-                payload: choice
+                title: message.choices[i],
+                payload: message.choices[i]
             }
+            messageData.quick_replies.push(quickreply);
         }
         callSendAPI(messageData);
     }
