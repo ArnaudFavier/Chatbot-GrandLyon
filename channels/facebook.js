@@ -16,6 +16,7 @@ module.exports = {
 
     receivedMessage: function(req, res) {
         var data = req.body;
+            console.log('Message to send : ', JSON.stringify(req.body));
         if (data.object === 'page') {
             data.entry.forEach(function(entry) {
                 var pageID = entry.id;
@@ -30,7 +31,7 @@ module.exports = {
                 });
             });
         } else {
-            receivedMessage(res);
+            receivedMessage(req.body);
         }
     },
 
@@ -43,7 +44,7 @@ module.exports = {
 * Fonction qui permet de traiter un message reçu
 */
 function receivedMessage(event) {
-    console.log('Message to send : ', JSON.stringify(event));
+
     var senderID = event.sender.id;
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
