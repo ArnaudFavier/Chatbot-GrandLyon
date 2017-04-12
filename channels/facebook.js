@@ -3,11 +3,10 @@ const request = require('request');
 const core = require('./../core.js');
 
 /**
-* CREDENTIALS
-**/
-const VALIDATION_TOKEN = "58eb669e-9a3c-4940-ba2a-45833ed28ff1";
-const PAGE_ACCESS_TOKEN = "EAAbiTcER2bkBAConk7qPEvqaIRT0MucHZBCDVxZBqZB14qUofVZCnryAbWxXn9atzofmG5jm98y1iZB5RIMxagxCL6ar0QGS8JzqHEoGTlX9vYTiHMfyyUwFDz7ORZCsSzjzQZCsOOyvCGdgTJva9RvHMNmAP0H7eQ4C2eTmOohGAZDZD";
-
+ * CREDENTIALS
+ **/
+const VALIDATION_TOKEN = process.env.VALIDATION_TOKEN;
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 module.exports = {
     webhook: function(req, res) {
@@ -16,7 +15,7 @@ module.exports = {
 
     receivedMessage: function(req, res) {
         var data = req.body;
-            console.log('Message to send : ', JSON.stringify(req.body));
+        console.log('Message to send : ', JSON.stringify(req.body));
         if (data.object === 'page') {
             data.entry.forEach(function(entry) {
                 var pageID = entry.id;
@@ -95,17 +94,17 @@ function callSendAPI(messageData) {
       method: 'POST',
       json: messageData
 
-    }, function (error, response, body) {
+  }, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         var recipientId = body.recipient_id;
         var messageId = body.message_id;
 
         console.log("Successfully sent generic message with id %s to recipient %s", 
           messageId, recipientId);
-      } else {
+    } else {
         console.error("Unable to send message.");
         console.error(response);
         console.error(error);
-      }
-    });  
+    }
+});
 }
