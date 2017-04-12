@@ -24,8 +24,6 @@ module.exports = {
                     if (event.message) {
                         console.log("Event received : ", JSON.stringify(event));
                         receivedMessage(event);
-                    } else {
-                        console.log("Webhook received unknown event: ", event);
                     }
                 });
             });

@@ -38,14 +38,16 @@ function callbackLogicLayer(request, response){
     messageReceived.text = response.text
     console.log('Custom callback Wit : ', JSON.stringify(response));
     console.log('Message to send : ', JSON.stringify(messageReceived));
-    sendMessage(messageReceived);
+    facebook.sendMessage(message);
+    //sendMessage(messageReceived);
 }
 
 /*
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessage(message) {
-    if(message.channel == "Facebook") {
-        facebook.sendMessage(message);
-    }
+    facebook.sendMessage(message);
+    /*if(message.channel == "Facebook") {
+       
+    }*/
 }
