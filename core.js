@@ -1,7 +1,7 @@
 'use strict';
 // Import Wit.Ai
 const botlogic = require('./botlogic/botlogic.js');
-const facebook = require('./channels/facebook.js');
+var facebook = require('./channels/facebook.js');
 
 var messageReceived;
 
