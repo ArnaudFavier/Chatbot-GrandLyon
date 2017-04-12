@@ -29,6 +29,8 @@ module.exports = {
                     }
                 });
             });
+        } else {
+            receivedMessage(res);
         }
     },
 
@@ -41,6 +43,7 @@ module.exports = {
 * Fonction qui permet de traiter un message reçu
 */
 function receivedMessage(event) {
+    console.log('Message to send : ', JSON.stringify(event));
     var senderID = event.sender.id;
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
