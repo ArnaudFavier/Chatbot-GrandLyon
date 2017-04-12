@@ -110,23 +110,27 @@ function sendTextMessage(message) {
 * Fonction qui envoie un message de type quickreply
 */
 function sendQuickReplyMessage(message) {
-    /*if(message.senderID != undefined && message.text != undefined) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
         var messageData = {
             recipient: {
                 id: message.senderID
             },
-            quick_replies: []
+            message: {
+                text: message.text,
+                quick_replies: []
+            }
         };
         for(var i=0;i<message.choices.length;i++) {
             var quickreply = {
                 content_type: "text",
                 title: message.choices[i],
                 payload: message.choices[i]
-            }
-            messageData.quick_replies.push(quickreply);
+            };
+            messageData.message.quick_replies.push(quickreply);
         }
         callSendAPI(messageData);
-    }*/
+    }
 }
 
 /*

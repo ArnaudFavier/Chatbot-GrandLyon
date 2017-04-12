@@ -42,11 +42,10 @@ function callbackLogicLayer(request, response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    if(response.text != undefined) {
-        prepareMessageWithText(response.text, messages);
-    }
     if(response.quickreplies != undefined) {
-        prepareMessageWithQuickReply(response.quickreplies, messages);
+        prepareMessageWithQuickReply(response.text, response.quickreplies, messages);
+    } else if(response.text != undefined ) {
+        prepareMessageWithText(response.text, messages);
     }
     sendMessages(messages);
 }
@@ -67,11 +66,12 @@ function prepareMessageWithText(text, messages) {
 /*
 *   Fonction qui prépare un message de type quickreply
 */
-function prepareMessageWithQuickReply(quickreply, messages) {
+function prepareMessageWithQuickReply(text, quickreply, messages) {
     var message = {
         type: "quickreply",
         senderID: messageReceived.senderID,
         channel: messageReceived.channel,
+        text: text,
         choices:[]
     }
     if(Array.isArray(quickreply)) {
