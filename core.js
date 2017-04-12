@@ -3,6 +3,8 @@
 const botlogic = require('./botlogic/botlogic.js');
 const facebook = require('./channels/facebook.js');
 
+var messageReceived;
+
 module.exports = {
     receivedMessage: function(message) {
         receivedMessage(message);
@@ -15,6 +17,7 @@ module.exports = {
 function receivedMessage(message) {
     /*  Traitement 
     */
+    messageReceived = message; // Variable globale
     runLogicLayer(message);
 }
 
@@ -32,14 +35,9 @@ function runLogicLayer(message) {
 *   Fonction de callback appelée par la couche logique
 */
 function callbackLogicLayer(request, response){
+    messageReceived.text = response.text
     console.log('Custom callback Wit : ', JSON.stringify(response));
-    /*var message = {
-        channel: "Facebook",
-        sender: senderID,
-        timestamp: timeOfMessage,
-        text: messageText
-    };
-    sendMessage(message);*/
+    sendMessage(messageReceived);
 }
 
 /*
