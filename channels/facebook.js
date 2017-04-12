@@ -58,7 +58,7 @@ function extractMessage(event) {
 
     var message = {
         channel: "Facebook",
-        sender: senderID,
+        senderID: senderID,
         timestamp: timeOfMessage,
         text: messageText
     };
@@ -92,10 +92,11 @@ function sendMessages(messages) {
 * Fonction qui envoie un message de type text
 */
 function sendTextMessage(message) {
-    if(message.sender != undefined && message.text != undefined) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
         var messageData = {
             recipient: {
-                id: message.sender
+                id: message.senderID
             },
             message: {
                 text: message.text
@@ -109,10 +110,10 @@ function sendTextMessage(message) {
 * Fonction qui envoie un message de type quickreply
 */
 function sendQuickReplyMessage(message) {
-    if(message.sender != undefined && message.text != undefined) {
+    /*if(message.senderID != undefined && message.text != undefined) {
         var messageData = {
             recipient: {
-                id: message.sender
+                id: message.senderID
             },
             quick_replies: []
         };
@@ -125,20 +126,20 @@ function sendQuickReplyMessage(message) {
             messageData.quick_replies.push(quickreply);
         }
         callSendAPI(messageData);
-    }
+    }*/
 }
 
 /*
 * Fonction qui appel l'API messages de Facebook
 */
 function callSendAPI(messageData) {
-  request({
-      uri: 'https://graph.facebook.com/v2.6/me/messages',
-      qs: { access_token: PAGE_ACCESS_TOKEN },
-      method: 'POST',
-      json: messageData
-
-  }, function (error, response, body) {
+    console.log("Messages sended via API : ", JSON.stringify(messageData));
+    request({
+        uri: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: { access_token: PAGE_ACCESS_TOKEN },
+        method: 'POST',
+        json: messageData
+    }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var recipientId = body.recipient_id;
             var messageId = body.message_id;

@@ -18,8 +18,8 @@ function receivedMessage(message) {
 */
 function runLogicLayer(message) {
     botlogic.defineCallback(callbackLogicLayer);
-    if(message.sender != undefined && message.text != undefined) {
-        botlogic.sendMessage(message.text, `session-${message.sender}`, {});
+    if(message.senderID != undefined && message.text != undefined) {
+        botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
     }
 }
 
