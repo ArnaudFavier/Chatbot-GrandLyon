@@ -17,7 +17,6 @@ const fs = require('fs');
 const url = require('url');
 const facebook = require('./channels/facebook.js');
 
-
 var app = express();
 
 app.set('port', process.env.PORT || 5555);

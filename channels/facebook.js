@@ -22,9 +22,10 @@ module.exports = {
                 var timeOfEvent = entry.time;
                 entry.messaging.forEach(function(event) {
                     if (event.message) {
-                      receivedMessage(event);
+                        console.log("Event received : ", event);
+                        receivedMessage(event);
                     } else {
-                      console.log("Webhook received unknown event: ", event);
+                        console.log("Webhook received unknown event: ", event);
                     }
                 });
             });
