@@ -63,7 +63,6 @@ function receivedMessage(event) {
         timestamp: timeOfMessage,
         text: messageText
     };
-    facebook.sendMessage(message);
     core.receivedMessage(message);
 }
 
