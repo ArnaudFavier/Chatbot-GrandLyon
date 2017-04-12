@@ -15,7 +15,6 @@ module.exports = {
 
     receivedMessage: function(req, res) {
         var data = req.body;
-        console.log('Message to send : ', JSON.stringify(req.body));
         if (data.object === 'page') {
             data.entry.forEach(function(entry) {
                 var pageID = entry.id;
@@ -64,6 +63,7 @@ function receivedMessage(event) {
         timestamp: timeOfMessage,
         text: messageText
     };
+    facebook.sendMessage(message);
     core.receivedMessage(message);
 }
 
