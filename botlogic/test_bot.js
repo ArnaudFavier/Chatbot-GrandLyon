@@ -7,4 +7,6 @@ function callback(request, response){
 }
 
 Botlogic.defineCallback(callback);
-Botlogic.sendMessage('Quel temps fait-il à Tokyo ?', `session-${Date.now()}`, {});
+//Botlogic.sendMessage('Quel temps fait-il à Tokyo ?', `session-${Date.now()}`, {});
+
+Botlogic.activeDebugMode();

@@ -39,11 +39,35 @@ const actions = {
 			return resolve(context);
 		});
 	},
+	getRestaurant({ context, entities }) {
+		return new Promise(function (resolve, reject) {
+			var location = firstEntityValue(entities, "location")
+			if (entities && entities.length > 0) {
+				context.foundInfos = '1. McDonald';
+				delete context.missingInfos;
+			} else {
+				delete context.foundInfos;
+			}
+			return resolve(context);
+		});
+	},
+	getHour({ context, entities }) {
+		return new Promise(function (resolve, reject) {
+			var d = new Date();
+			var hour = d.getHours();
+			var min = d.getMinutes();
+			if (hour < 10) hour = '0' + hour;
+			if (min < 10) min = '0' + min;
+
+			context.heure = hour+"h"+min
+			return resolve(context);
+		});
+	}
 };
 
 const client = new Wit({ accessToken, actions });
 
-var callback = function(request, response){
+var callback = function (request, response) {
 	console.log('Réponse de Wit : ', JSON.stringify(response));
 }
 
@@ -56,7 +80,7 @@ function defineCallback(newCallback) {
 }
 
 function sendMessage(msg, userSession, context, callback) {
-	 return client.runActions(userSession, msg, context);
+	return client.runActions(userSession, msg, context);
 }
 
 exports.activeDebugMode = activeDebugMode;
