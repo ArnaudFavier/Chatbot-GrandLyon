@@ -38,7 +38,7 @@ function callbackLogicLayer(request, response){
     messageReceived.text = response.text
     console.log('Custom callback Wit : ', JSON.stringify(response));
     console.log('Message to send : ', JSON.stringify(messageReceived));
-    facebook.sendMessage(message);
+    facebook.sendMessage(messageReceived);
     //sendMessage(messageReceived);
 }
 
