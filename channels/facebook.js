@@ -31,7 +31,7 @@ module.exports = {
         }
     },
 
-    sendTextMessage: function(message) {
+    sendMessage: function(message) {
         sendTextMessage(message);
     }
 };
@@ -64,7 +64,7 @@ function receivedMessage(event) {
 }
 
 /*
-* Fonction qui appel l'API messages de Facebook
+* Fonction qui envoie un message de type text
 */
 function sendTextMessage(message) {
     if(message.sender != undefined && message.text != undefined) {
