@@ -32,21 +32,22 @@ function callbackLogicLayer(request, response){
     messageReceived.text = response.text
     console.log('Custom callback Wit : ', JSON.stringify(response));
     console.log('Message to send : ', JSON.stringify(messageReceived));
-    //sendMessage(messageReceived);
+    sendMessage(messageReceived);
 }
 
 /*
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessage(message) {
-    try {
-        self.facebook.sendMessage(message);
-    } catch (err) {
-        console.log(facebook);
+    switch(message.channel) {
+        case "Facebook":
+        facebook.sendMessage(message);
+        break;
+        case "Telegram":
+        break;
+        default:
+        return;
     }
-    /*if(message.channel == "Facebook") {
-       
-    }*/
 }
 
 exports.receivedMessage = receivedMessage;

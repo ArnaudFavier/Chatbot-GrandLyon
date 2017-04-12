@@ -20,10 +20,7 @@ function webhook(req, res) {
 */
 function receivedMessage(req, res) {
     var data = req.body;
-    console.log(data);
-    console.log(data);
-    console.log(data);
-    if (data.object != undefined && data.object === 'page') {
+    if (data.object === 'page') {
         //Message reçu de Facebook
         data.entry.forEach(function(entry) {
             var pageID = entry.id;
@@ -31,13 +28,13 @@ function receivedMessage(req, res) {
             entry.messaging.forEach(function(event) {
                 if (event.message) {
                     console.log("Event received : ", JSON.stringify(event));
-                    receivedMessage(event);
+                    extractMessage(event);
                 }
             });
         });
     } else {
         //Pour tester via CURL
-        receivedMessage(req.body);
+        extractMessage(req.body);
     }
 }
 /*
