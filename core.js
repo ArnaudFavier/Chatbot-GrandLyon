@@ -9,9 +9,7 @@ var messageReceived;
 *   Fonction appelée par les channels lorsque l'on reçoit un message
 */
 function receivedMessage(message) {
-    /*  Traitement 
-    */
-    messageReceived = message; // Variable globale
+    messageReceived = message;
     runLogicLayer(message);
 }
 
@@ -28,25 +26,78 @@ function runLogicLayer(message) {
 /*
 *   Fonction de callback appelée par la couche logique
 */
-function callbackLogicLayer(request, response){
-    messageReceived.text = response.text
+function callbackLogicLayer(request, response) {
+    /*
+    *   Traitement
+    */
     console.log('Custom callback Wit : ', JSON.stringify(response));
-    console.log('Message to send : ', JSON.stringify(messageReceived));
-    sendMessage(messageReceived);
+    /*
+    *   Préparation du message
+    */
+    prepareMessage(response);
+}
+
+/*
+*   Fonction qui prépare le message
+*/
+function prepareMessage(response) {
+    var messages = [];
+    if(response.text != undefined) {
+        prepareMessageWithText(response.text, messages);
+    }
+    if(response.quickreplies != undefined) {
+        prepareMessageWithQuickReply(response.quickreplies, messages);
+    }
+    sendMessages(messages);
+}
+
+/*
+*   Fonction qui prépare un message de type text
+*/
+function prepareMessageWithText(text, messages) {
+    var message = {
+        type: "text",
+        senderID: messageReceived.senderID,
+        channel: messageReceived.channel,
+        text: text
+    };
+    messages.push(message);
+}
+
+/*
+*   Fonction qui prépare un message de type quickreply
+*/
+function prepareMessageWithQuickReply(quickreply, messages) {
+    var message = {
+        type: "quickreply",
+        senderID: messageReceived.senderID,
+        channel: messageReceived.channel,
+        choices:[]
+    }
+    if(Array.isArray(quickreply)) {
+        for(qr in quickreply) {
+            message.choices.push(qr);
+        }
+    } else {
+        message.choices.push(quickreply);
+    }
+    messages.push(message);
 }
 
 /*
 *   Fonction qui appelle la fonction d'envoie de message
 */
-function sendMessage(message) {
-    switch(message.channel) {
-        case "Facebook":
-        facebook.sendMessage(message);
-        break;
-        case "Telegram":
-        break;
-        default:
-        return;
+function sendMessages(messages) {
+    if(message.length > 0) {
+        switch(message[0].channel) {
+            case "Facebook":
+            facebook.sendMessages(messages);
+            break;
+            case "Telegram":
+            break;
+            default:
+            return;
+        }
     }
 }
 

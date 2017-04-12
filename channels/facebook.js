@@ -69,8 +69,23 @@ function extractMessage(event) {
 * Fonction appelé par le core pour envoyer un message sur la channel Facebook
 */
 function sendMessage(message) {
-        console.error("We will send a message.");
-        sendTextMessage(message);
+    switch(message.type) {
+        case "text":
+            sendTextMessage(message);
+        break;
+        case "quickreply":
+            sendQuickReplyMessage(message);
+        break;
+    }
+}
+
+/*
+* Fonction appelé par le core pour envoyer des messages sur la channel Facebook
+*/
+function sendMessages(messages) {
+    for(message in messages) {
+        sendMessage(message);
+    }
 }
 
 /*
@@ -86,6 +101,28 @@ function sendTextMessage(message) {
                 text: message.text
             }
         };
+        callSendAPI(messageData);
+    }
+}
+
+/*
+* Fonction qui envoie un message de type quickreply
+*/
+function sendQuickReplyMessage(message) {
+    if(message.sender != undefined && message.text != undefined) {
+        var messageData = {
+            recipient: {
+                id: message.sender
+            },
+            quick_replies: []
+        };
+        for(choice in message.choices) {
+            var quickreply = {
+                content_type: "text",
+                title: choice,
+                payload: choice
+            }
+        }
         callSendAPI(messageData);
     }
 }
@@ -118,3 +155,4 @@ function callSendAPI(messageData) {
 exports.webhook = webhook
 exports.receivedMessage = receivedMessage
 exports.sendMessage = sendMessage
+exports.sendMessages = sendMessages
