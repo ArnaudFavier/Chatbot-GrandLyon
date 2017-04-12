@@ -69,8 +69,9 @@ app.get('/facebook/webhook', function(req, res) {
  * 20 secondes pour répondre à la requete
  */
 app.post('/facebook/webhook', function (req, res) {
-  facebook.receivedMessage(req, res);
-  res.sendStatus(200);
+	console.log('Requete : ', JSON.stringify(req));
+	console.log('Res : ', JSON.stringify(res));
+  	res.sendStatus(200);
 });
 
 /*
