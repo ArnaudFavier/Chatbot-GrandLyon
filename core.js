@@ -48,7 +48,7 @@ function sendMessage(message) {
         case undefined:
             break;
         case "Facebook":
-            facebook.sendMessage(message);
+            facebook.sendTextMessage(message);
             break;
         case "Telegram":
             break;
