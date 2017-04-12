@@ -45,13 +45,7 @@ function callbackLogicLayer(request, response){
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessage(message) {
-    switch(message.channel) {
-        case undefined:
-            break;
-        case "Facebook":
-            facebook.sendMessage(message);
-            break;
-        case "Telegram":
-            break;
+    if(message.channel == "Facebook") {
+        facebook.sendMessage(message);
     }
 }

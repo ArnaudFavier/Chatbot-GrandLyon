@@ -16,6 +16,7 @@ module.exports = {
     receivedMessage: function(req, res) {
         var data = req.body;
         if (data.object === 'page') {
+            //Message reçu de Facebook
             data.entry.forEach(function(entry) {
                 var pageID = entry.id;
                 var timeOfEvent = entry.time;
@@ -29,6 +30,7 @@ module.exports = {
                 });
             });
         } else {
+            //Pour tester via CURL
             receivedMessage(req.body);
         }
     },

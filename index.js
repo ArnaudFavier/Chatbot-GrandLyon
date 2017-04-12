@@ -70,13 +70,6 @@ app.get('/facebook/webhook', function(req, res) {
  */
 app.post('/facebook/webhook', function (req, res) {
   	facebook.receivedMessage(req, res);
-	var message = {
-	    channel: "Facebook",
-	    sender: "1156380871157037",
-	    timestamp: 0,
-	    text: "test"
-	};
-  	facebook.sendMessage(message);
   	res.sendStatus(200);
 });
 
