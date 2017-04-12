@@ -2,6 +2,7 @@
 
 var Wit = require('node-wit').Wit;
 var interactive = require('node-wit').interactive;
+var facebook = require('./../channels/facebook');
 
 const accessToken = 'EFMKINUPTBBVIQXI45UP5TJDCB7ZIATU';
 

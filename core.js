@@ -1,17 +1,9 @@
 'use strict';
-module.exports = {
-    receivedMessage: function(message) {
-        receivedMessage(message);
-    }
-};
 
-// Import Wit.Ai
 const botlogic = require('./botlogic/botlogic.js');
-var facebook = require('./channels/facebook.js');
+const facebook = require('./channels/facebook.js');
 
 var messageReceived;
-
-
 
 /*
 *   Fonction appelée par les channels lorsque l'on reçoit un message
@@ -47,13 +39,15 @@ function callbackLogicLayer(request, response){
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessage(message) {
-    var facebook = require('./channels/facebook.js');
-    try {
+    switch(message.channel) {
+        case "Facebook":
         facebook.sendMessage(message);
-    } catch (err) {
-        console.log(facebook);
+        break;
+        case "Telegram":
+        break;
+        default:
+        return;
     }
-    /*if(message.channel == "Facebook") {
-       
-    }*/
 }
+
+exports.receivedMessage = receivedMessage;
