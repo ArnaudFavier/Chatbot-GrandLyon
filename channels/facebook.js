@@ -1,5 +1,6 @@
 'use strict';
 const request = require('request');
+const core = require('./../core.js');
 
 /**
 * CREDENTIALS
@@ -28,11 +29,15 @@ module.exports = {
                 });
             });
         }
+    },
+
+    sendTextMessage: function(message) {
+        sendTextMessage(message);
     }
 };
 
 /*
-* Fonction qui permet d'envoyer un message
+* Fonction qui permet de traiter un message reçu
 */
 function receivedMessage(event) {
     var senderID = event.sender.id;
@@ -40,8 +45,8 @@ function receivedMessage(event) {
     var timeOfMessage = event.timestamp;
     var message = event.message;
 
-    console.log("Received message for user %d and page %d at %d with message:", 
-      senderID, recipientID, timeOfMessage);
+    console.log("Received message from Facebook for user %d at %d with message:", 
+      senderID, timeOfMessage);
     console.log(JSON.stringify(message));
 
     var messageId = message.mid;
@@ -49,36 +54,35 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
 
-    if (messageText) {
+    var message = {
+        channel: "Facebook",
+        sender: senderID,
+        timestamp: timeOfMessage,
+        text: messageText
+    };
+    core.receivedMessage(message);
+}
 
-      // If we receive a text message, check to see if it matches a keyword
-      // and send back the example. Otherwise, just echo the text we received.
-      switch (messageText) {
-        case 'generic':
-          sendGenericMessage(senderID);
-          break;
-
-        default:
-          sendTextMessage(senderID, messageText);
-      }
-    } else if (messageAttachments) {
-      sendTextMessage(senderID, "Message with attachment received");
+/*
+* Fonction qui appel l'API messages de Facebook
+*/
+function sendTextMessage(message) {
+    if(message.sender != undefined && message.text != undefined) {
+        var messageData = {
+            recipient: {
+                id: message.sender
+            },
+            message: {
+                text: message.text
+            }
+        };
+        callSendAPI(messageData);
     }
 }
 
-function sendTextMessage(recipientId, messageText) {
-  var messageData = {
-      recipient: {
-        id: recipientId
-      },
-      message: {
-        text: messageText
-      }
-    };
-
-    callSendAPI(messageData);
-}
-
+/*
+* Fonction qui appel l'API messages de Facebook
+*/
 function callSendAPI(messageData) {
   request({
       uri: 'https://graph.facebook.com/v2.6/me/messages',

@@ -15,10 +15,8 @@ const request = require('request');
 const util = require('util');
 const fs = require('fs');
 const url = require('url');
-
-// Import Wit.Ai
-require('./botlogic/botlogic.js');
 const facebook = require('./channels/facebook.js');
+
 
 var app = express();
 
@@ -67,7 +65,8 @@ app.get('/facebook/webhook', function(req, res) {
 });
 
 /*
- * URL que Facebook utilise pour nous envoyer un message
+ * URL pour Facebook
+ * Facebook l'utilise pour nous envoyer un message
  * 20 secondes pour répondre à la requete
  */
 app.post('/facebook/webhook', function (req, res) {
@@ -88,7 +87,7 @@ app.get('/initdb', function(req, res) {
     'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
     query.on('end', () => { client.end(); });*/
     res.status(404)
-  });
+});
 
 /*
  * Run du serveur
