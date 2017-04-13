@@ -63,7 +63,7 @@ function extractMessage(event) {
     /*
     *   Coordonnées
     */
-    if(messageAttachments.payload != undefined && messageAttachments.payload.coordinates != undefined) {
+    if(messageAttachments != undefined && messageAttachments.payload != undefined && messageAttachments.payload.coordinates != undefined) {
         message["location"] = coordinates;
     }
 
