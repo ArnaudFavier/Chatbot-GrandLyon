@@ -73,9 +73,9 @@ function sendQuickReplyMessage(message) {
     if(message.senderID != undefined && message.text != undefined) {
         var replykeyboard = {keyboard:[]};
         for(var i=0;i<message.choices.length;i++) {
-            var button = {
+            var button = [{
                 text: message.choices[i]
-            };
+            }];
             replykeyboard.keyboard.push(button);
         }
         telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
