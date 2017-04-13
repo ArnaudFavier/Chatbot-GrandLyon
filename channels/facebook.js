@@ -41,7 +41,6 @@ function receivedMessage(req, res) {
 * Fonction qui permet de traiter un message reçu
 */
 function extractMessage(event) {
-
     var senderID = event.sender.id;
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
@@ -52,7 +51,6 @@ function extractMessage(event) {
     console.log(JSON.stringify(message));
 
     var messageId = message.mid;
-
     var messageText = message.text;
     var messageAttachments = message.attachments;
 
@@ -62,6 +60,13 @@ function extractMessage(event) {
         timestamp: timeOfMessage,
         text: messageText
     };
+    /*
+    *   Coordonnées
+    */
+    if(messageAttachments.payload != undefined && messageAttachments.payload.coordinates != undefined) {
+        message["location"] = coordinates;
+    }
+
     core.receivedMessage(message);
 }
 
