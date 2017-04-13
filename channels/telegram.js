@@ -21,13 +21,15 @@ telegram.on("text", (message) => {
 function receivedMessage(message) {
     console.log(JSON.stringify(message));
     var senderID = message.chat.id;
-    /*var message = {
+    var message = {
         channel: "Telegram",
         senderID: senderID,
-        timestamp: timeOfMessage,
-        text: messageText
+        timestamp: message.date,
+        text: message.text,
+        first_name: message.first_name,
+        last_name: message.last_name     
     };
-    core.receivedMessage(message);*/
+    core.receivedMessage(message);
 }
 
 /*
@@ -67,7 +69,7 @@ function sendTextMessage(message) {
                 text: message.text
             }
         };
-        callSendAPI(messageData);
+        telegram.sendMessage(message.senderID, message.text);
     }
 }
 
@@ -75,7 +77,7 @@ function sendTextMessage(message) {
 * Fonction qui envoie un message de type quickreply
 */
 function sendQuickReplyMessage(message) {
-    console.log("Messages sended : ", JSON.stringify(message));
+    /*console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
         var messageData = {
             recipient: {
@@ -95,14 +97,14 @@ function sendQuickReplyMessage(message) {
             messageData.message.quick_replies.push(quickreply);
         }
         callSendAPI(messageData);
-    }
+    }*/
 }
 
 /*
 * Fonction qui envoie un message audio/file/image/video
 */
 function sendFileMessage(message) {
-    console.log("Messages sended : ", JSON.stringify(message));
+    /*console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
         var messageData = {
             recipient: {
@@ -118,32 +120,7 @@ function sendFileMessage(message) {
             }
         };
         callSendAPI(messageData);
-    }
-}
-
-/*
-* Fonction qui appel l'API messages de Facebook
-*/
-function callSendAPI(messageData) {
-    console.log("Messages sended via API : ", JSON.stringify(messageData));
-    request({
-        uri: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: { access_token: PAGE_ACCESS_TOKEN },
-        method: 'POST',
-        json: messageData
-    }, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var recipientId = body.recipient_id;
-            var messageId = body.message_id;
-
-            console.log("Successfully sent generic message with id %s to recipient %s", 
-                messageId, recipientId);
-        } else {
-            console.error("Unable to send message.");
-            console.error(response);
-            console.error(error);
-        }
-    });
+    }*/
 }
 
 exports.sendMessage = sendMessage
