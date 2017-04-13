@@ -5,8 +5,8 @@ const core = require('./../core.js');
 /**
  * CREDENTIALS
  **/
-const VALIDATION_TOKEN = process.env.VALIDATION_TOKEN;
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+const VALIDATION_TOKEN = process.env.FACEBOOK_VALIDATION_TOKEN;
+const PAGE_ACCESS_TOKEN = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
 
 /*
 * Fonction appelé par Facbook pour checker le serveur
