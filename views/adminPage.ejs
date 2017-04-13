@@ -24,19 +24,35 @@
                 background: #2c3e50;
                 width: 60%;
                 border-radius: 25px;
+            } 
+            .bloc_page{
+                margin-left: auto;
+                margin-right: auto;
+                display:block;
+                padding: 1em;
+                margin-top: 0.5em;
+                background: #2c3e50;
+                width: 60%;
+                border-radius: 25px;
             }      
         </style>
     </head>
+    <script type="text/javascript">
+
+    </script>
     <body>
         <div id='header'>
             <h1>MongoDB Admin page</h1>
         </div>
 
-        <div id='bloc_page'>
+
+        <div class='bloc_page'>
             <form action="/query">
                 <p>
                     <label for="newtodo">Query on DB</label>
-                    <input type="text" name="query" autofocus />
+                    <br/>
+                    <input class="inputFile" type="file">
+                    <br/>
                     <input type="submit" />
                 </p>
             </form>
