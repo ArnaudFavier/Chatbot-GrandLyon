@@ -16,6 +16,7 @@ const util = require('util');
 const fs = require('fs');
 const url = require('url');
 const facebook = require('./channels/facebook.js');
+const telegram = require('./channels/telegram.js');
 
 var app = express();
 
