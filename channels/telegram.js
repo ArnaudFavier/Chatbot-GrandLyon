@@ -61,14 +61,6 @@ function sendMessages(messages) {
 function sendTextMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
-        var messageData = {
-            recipient: {
-                id: message.senderID
-            },
-            message: {
-                text: message.text
-            }
-        };
         telegram.sendMessage(message.senderID, message.text);
     }
 }
@@ -77,27 +69,17 @@ function sendTextMessage(message) {
 * Fonction qui envoie un message de type quickreply
 */
 function sendQuickReplyMessage(message) {
-    /*console.log("Messages sended : ", JSON.stringify(message));
+    console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
-        var messageData = {
-            recipient: {
-                id: message.senderID
-            },
-            message: {
-                text: message.text,
-                quick_replies: []
-            }
-        };
+        var replykeyboard = {keyboard:[]};
         for(var i=0;i<message.choices.length;i++) {
-            var quickreply = {
-                content_type: "text",
-                title: message.choices[i],
-                payload: message.choices[i]
+            var button = {
+                text: message.choices[i]
             };
-            messageData.message.quick_replies.push(quickreply);
+            replykeyboard.keyboard.push(button);
         }
-        callSendAPI(messageData);
-    }*/
+        telegram.sendMessage(message.senderID, message.text, [{reply_markup: replykeyboard}]);
+    }
 }
 
 /*
