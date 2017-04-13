@@ -10,12 +10,12 @@ import os
 # Test les arguments : il faut au moins donner un fichier.json
 isFilter = False
 if len(sys.argv) > 3 or len(sys.argv) < 2:
-    print("Error : mauvais nombre d'argument ! Exemple : ")
-    print("python clean.py ./data.json ./filter.json")
-    sys.exit()
+	print("Error : mauvais nombre d'argument ! Exemple : ")
+	print("python clean.py ./data.json ./filter.json")
+	sys.exit()
 else:
-    if len(sys.argv) == 3:
-    	isFilter = True
+	if len(sys.argv) == 3:
+		isFilter = True
 
 # Ouverture du fichier contenant les donnees
 try :
