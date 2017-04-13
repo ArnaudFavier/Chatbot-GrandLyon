@@ -2,6 +2,7 @@
 
 const botlogic = require('./botlogic/botlogic.js');
 const facebook = require('./channels/facebook.js');
+const telegram = require('./channels/telegram.js');
 
 var messageReceived;
 
@@ -91,9 +92,10 @@ function sendMessages(messages) {
     if(messages.length > 0) {
         switch(messages[0].channel) {
             case "Facebook":
-            facebook.sendMessages(messages)
+            facebook.sendMessages(messages);
             break;
             case "Telegram":
+            telegram.sendMessages(messages);
             break;
             default:
             return;
