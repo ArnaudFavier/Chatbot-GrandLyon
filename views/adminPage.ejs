@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>MongoDB Admin page</title>
+        <style>
+            html,body{background: #202020;
+                margin: 0;
+                padding: 0;
+                color:#ffffff;}
+            #header{
+                display:block;
+                padding: 1em;
+                background: #27ae60;
+                color:black;
+                width: 100%;
+            }
+            #bloc_page{
+                margin-left: auto;
+                margin-right: auto;
+                display:block;
+                padding: 1em;
+                margin-top: 0.5em;
+                background: #2c3e50;
+                width: 60%;
+                border-radius: 25px;
+            }      
+        </style>
+    </head>
+    <body>
+        <div id='header'>
+            <h1>MongoDB Admin page</h1>
+        </div>
+
+        <div id='bloc_page'>
+            <form action="/query">
+                <p>
+                    <label for="newtodo">Query on DB</label>
+                    <input type="text" name="query" autofocus />
+                    <input type="submit" />
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
