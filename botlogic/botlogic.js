@@ -2,7 +2,6 @@
 
 var Wit = require('node-wit').Wit;
 var interactive = require('node-wit').interactive;
-var facebook = require('./../channels/facebook');
 
 const accessToken = process.env.WIT_SERVER_ACCESS_TOKEN;
 
