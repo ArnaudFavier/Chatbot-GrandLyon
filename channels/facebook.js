@@ -139,6 +139,29 @@ function sendQuickReplyMessage(message) {
 }
 
 /*
+* Fonction qui envoie un message audio/file/image/video
+*/
+function sendFileMessage(message) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
+        var messageData = {
+            recipient: {
+                id: message.senderID
+            },
+            message: {
+                attachment:{
+                    type: message.type,
+                    payload: {
+                        url: message.text
+                    }
+                }
+            }
+        };
+        callSendAPI(messageData);
+    }
+}
+
+/*
 * Fonction qui appel l'API messages de Facebook
 */
 function callSendAPI(messageData) {
