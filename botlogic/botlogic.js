@@ -4,7 +4,7 @@ var Wit = require('node-wit').Wit;
 var interactive = require('node-wit').interactive;
 var facebook = require('./../channels/facebook');
 
-const accessToken = 'EFMKINUPTBBVIQXI45UP5TJDCB7ZIATU';
+const accessToken = process.env.WIT_SERVER_ACCESS_TOKEN;
 
 const firstEntityValue = (entities, entity) => {
 	const val = entities && entities[entity] &&

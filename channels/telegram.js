@@ -6,7 +6,7 @@ const TelegramBot = require('node-telegram-bot-api');
 /**
  * CREDENTIALS
  **/
-const TELEGRAM_ACCESS_TOKEN = "338652885:AAFkX3S6s2GcRbHOkZ5WHAllBhbrf40FPiI";//process.env.TELEGRAM_ACCESS_TOKEN;
+const TELEGRAM_ACCESS_TOKEN = process.env.TELEGRAM_ACCESS_TOKEN;
 
 var telegram = new TelegramBot(TELEGRAM_ACCESS_TOKEN, { polling: true });
 
