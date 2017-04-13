@@ -78,7 +78,7 @@ function sendQuickReplyMessage(message) {
             };
             replykeyboard.keyboard.push(button);
         }
-        telegram.sendMessage(message.senderID, message.text, [{reply_markup: replykeyboard}]);
+        telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
     }
 }
 
