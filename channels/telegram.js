@@ -71,7 +71,7 @@ function sendTextMessage(message) {
 function sendQuickReplyMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
-        var replykeyboard = {keyboard:[]};
+        var replykeyboard = {keyboard:[], one_time_keyboard:true};
         for(var i=0;i<message.choices.length;i++) {
             var button = [{
                 text: message.choices[i]
