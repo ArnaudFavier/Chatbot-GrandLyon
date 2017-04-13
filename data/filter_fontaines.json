@@ -1,0 +1,9 @@
+{
+	"deleteProperties": [
+		"nom",
+		"gestionnaire",
+		"anneepose"
+	],
+	"filters" : {
+	}
+}
