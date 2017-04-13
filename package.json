@@ -29,6 +29,7 @@
     "node-wit": "^4.2.0",
     "pg": "^6.1.5",
     "request": "^2.81.0",
-    "superagent": "^3.5.2"
+    "superagent": "^3.5.2",
+    "node-env-file": "^0.1.8"
   }
 }

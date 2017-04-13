@@ -1,3 +1,7 @@
+// Environment file
+var env = require('node-env-file');
+env('.env');
+
 // Import Wit.Ai
 var Botlogic = require('./botlogic.js');
 
