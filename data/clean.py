@@ -1,7 +1,6 @@
 #! /usr/bin/python
 
 import json
-from pprint import pprint
 import io
 import sys
 import os
