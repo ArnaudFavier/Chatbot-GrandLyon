@@ -1,7 +1,11 @@
 const mongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
 
-var url = 'mongodb://H4411Admin:bullshit4life@aslandb-shard-00-01-yened.mongodb.net:27017/grandlyon?ssl=true&authSource=admin';
+// Environment file 
+var env = require('node-env-file');
+env(__dirname + '/.env');
+
+var url = 'mongodb://' + process.env.MONGO_DB_TOKEN + '@aslandb-shard-00-01-yened.mongodb.net:27017/grandlyon?ssl=true&authSource=admin';
 const GrandLyonCollection = "grandlyonData";
 
 exports.getData = function(table, query, callback) {
