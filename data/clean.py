@@ -80,7 +80,8 @@ while i != len(data['features']) :
 			coordinates[1] = data['features'][i]['geometry']['coordinates'][0]
 			data['features'][i]['geometry']['coordinates'] = coordinates
 		i = i+1
-	
+
+data['doc_id'] = os.path.splitext(os.path.basename(json_file))[0] + '_filtered'
 
 # Ecriture du resultat
 with open(os.path.splitext(json_file)[0]+'_filtered.json', 'w') as f:
