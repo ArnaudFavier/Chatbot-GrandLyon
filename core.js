@@ -28,11 +28,11 @@ function runLogicLayer(message) {
 /*
 *   Fonction de callback appelée par la couche logique
 */
-function callbackLogicLayer(request, response) {
+function callbackLogicLayer(response) {
     /*
     *   Traitement
     */
-    console.log('Custom callback Wit : ', JSON.stringify(response));
+    console.log("Recast sended : ", JSON.stringify(response));
     /*
     *   Préparation du message
     */
@@ -44,10 +44,13 @@ function callbackLogicLayer(request, response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    if(response.quickreplies != undefined) {
-        prepareMessageWithQuickReply(response.text, response.quickreplies, messages);
-    } else if(response.text != undefined ) {
-        prepareMessageWithText(response.text, messages);
+    for(var i=0;i<response.replies.length;i++) 
+    {
+        if(response.quickreplies != undefined) {
+            prepareMessageWithQuickReply(response.replies[i], response.quickreplies, messages);
+        } else if(response.replies[i] != undefined ) {
+            prepareMessageWithText(response.replies[i], messages);
+        }
     }
     sendMessages(messages);
 }
