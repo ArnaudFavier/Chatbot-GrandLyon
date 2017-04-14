@@ -6,7 +6,7 @@ process.argv.forEach(function (val, index, array) {
   
   if(index > 1)
   {
-    aslanDB.loadJSonData(array[index]);
+      aslanDB.replaceDocument(array[index]);
   }
 
 });

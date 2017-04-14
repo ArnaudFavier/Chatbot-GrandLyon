@@ -1,0 +1,48 @@
+{
+    "features": [
+	
+		{
+			"entity":{
+			
+				"name": "Albert",
+				"type": "person",
+				"job": "CEO"
+			}
+		},
+		{	
+			"entity":{
+			
+				"name": "Francis",
+				"type": "person",
+				"job": "CTO"
+			}
+		},
+		{	
+			"entity":{
+			
+				"name": "Alfred",
+				"type": "droid",
+				"job": "Lead Architect"
+			}
+		},
+		{		
+			"entity":{
+			
+				"name": "Aslan",
+				"type": "lion",
+				"job": "mascot"
+			}
+		},
+		{		
+			"entity":{
+			
+				"name": "Boris",
+				"type": "person",
+				"job": "business accountant"
+			}
+		}
+	
+	
+	    ], 
+    "doc_id": "data test"
+}

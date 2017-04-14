@@ -34,7 +34,7 @@ exports.getData = function(table, query, callback) {
   });
 }
 
-exports.LoadJSonData = function(filePath) {
+exports.loadJSonData = function(filePath) {
   // Connexion au serveur avec la méthode connect
   mongoClient.connect(url, function (err, db) {
     try{
@@ -55,6 +55,30 @@ exports.LoadJSonData = function(filePath) {
       console.log(error);
     }
   });
+}
+
+
+exports.replaceDocument = function (filePath) {
+    // Connexion au serveur avec la méthode connect
+    mongoClient.connect(url, function (err, db) {
+        try {
+            if (err) {
+                return console.log('Connection failed', err);
+            }
+            fs.readFile(filePath, 'utf8', function (err, data) {
+                if (err) throw err;
+
+                var json = JSON.parse(data);
+
+                db.collection(GrandLyonCollection).findOneAndReplace({ "doc_id": json.doc_id}, json, function (err, doc) {
+                    console.log("Load done");
+                    if (err) throw err;
+                });
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    });
 }
 
 
