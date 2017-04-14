@@ -1,6 +1,6 @@
 'use strict';
 
-const botlogic = require('./botlogic/botlogic.js');
+const recast = require('./botlogic/recast.js');
 const facebook = require('./channels/facebook.js');
 const telegram = require('./channels/telegram.js');
 
@@ -18,10 +18,11 @@ function receivedMessage(message) {
 *   Fonction qu lance la couche logique avec NLP
 */
 function runLogicLayer(message) {
-    botlogic.defineCallback(callbackLogicLayer);
+    /*botlogic.defineCallback(callbackLogicLayer);
     if(message.senderID != undefined && message.text != undefined) {
         botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
-    }
+    }*/
+    recast.sendMessage(message.text, callbackLogicLayer);
 }
 
 /*

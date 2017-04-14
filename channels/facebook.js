@@ -58,7 +58,9 @@ function extractMessage(event) {
         channel: "Facebook",
         senderID: senderID,
         timestamp: timeOfMessage,
-        text: messageText
+        text: messageText,
+        first_name: message.first_name,
+        last_name: message.last_name
     };
     /*
     *   Coordonnées
