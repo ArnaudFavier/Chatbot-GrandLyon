@@ -41,18 +41,56 @@ function callbackLogicLayer(response) {
 
 /*
 *   Fonction qui prépare le message
+*   Recherche de champs à completer
+*   Voir la documentation pour le formalisme
+*    {{qr:Oui}} {{qr:Non}}
 */
 function prepareMessage(response) {
     var messages = [];
     for(var i=0;i<response.replies.length;i++) 
     {
-        if(response.quickreplies != undefined) {
-            prepareMessageWithQuickReply(response.replies[i], response.quickreplies, messages);
+        var fields = extractFields(response.replies[i]);
+        var quickreplies = extractQuickReplies(fields);
+        if(quickreplies.length > 0) {
+            prepareMessageWithQuickReply(response.replies[i], quickreplies, messages);
         } else if(response.replies[i] != undefined ) {
             prepareMessageWithText(response.replies[i], messages);
         }
     }
     sendMessages(messages);
+}
+
+/*
+*   Fonction qui extrait les champs {{  }}
+*   Fait un post traitement sur les champs pour les rendre conforme JSON
+*/
+function extractFields(response) {
+    var fields = response.match(/(\{\{.*\}\})/g);
+    if(fields == undefined) {
+        fields = [];
+    }
+    for(var i=0;i<fields.length;i++) {
+        fields[i] = fields[i].substr(1);
+        fields[i] = fields[i].slice(0, -1);
+    }
+    return fields;
+}
+
+/*
+*   Fonction qui extrait les quick replies
+*/
+function extractQuickReplies(fields) {
+    var quickreplies = [];
+    for(var i=0;i<fields.length;i++) 
+    {
+        var json = JSON.parse(fields[i]);
+        if(json != undefined && json.qr != undefined && json.qr.length > 0) {
+            for(var j=0;j<json.qr.length;j++) {
+                quickreplies.push(json.qr[j]);
+            }
+        }
+    }
+    return quickreplies;
 }
 
 /*
