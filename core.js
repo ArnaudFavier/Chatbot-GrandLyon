@@ -69,7 +69,7 @@ function removeFields(response) {
     var fields = extractFields(response);
     for(var i=0;i<fields.length;i++) 
     {
-        string.replace('{' + fields[i] + '}', "");
+        string = string.replace('{' + fields[i] + '}', "");
     }
     return string;
 }
