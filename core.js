@@ -51,6 +51,7 @@ function prepareMessage(response) {
     {
         var fields = extractFields(response.replies[i]);
         var quickreplies = extractQuickReplies(fields);
+        response.replies[i] = removeFields(response.replies[i]);
         if(quickreplies.length > 0) {
             prepareMessageWithQuickReply(response.replies[i], quickreplies, messages);
         } else if(response.replies[i] != undefined ) {
@@ -58,6 +59,19 @@ function prepareMessage(response) {
         }
     }
     sendMessages(messages);
+}
+
+/*
+*   Fonction qui supprime les champs {{ }}
+*/
+function removeFields(response) {
+    var string = response;
+    var fields = extractFields(response);
+    for(var i=0;i<fields.length;i++) 
+    {
+        string.replace('{' + fields[i] + '}', "");
+    }
+    return string;
 }
 
 /*
