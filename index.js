@@ -17,7 +17,7 @@ const fs = require('fs');
 const url = require('url');
 const facebook = require('./channels/facebook.js');
 const telegram = require('./channels/telegram.js');
-
+const aslan = require('./aslan-messenger/aslan.js');
 var app = express();
 
 app.set('port', process.env.PORT || 5555);
@@ -28,25 +28,57 @@ app.use(express.static('public')); // To make files in 'public' reachable
  * GET '/'
  */
 app.get('/', function(req, res) {
-  var pathname = 'public';
-  if (url.parse(req.url).pathname == '/') {
-    pathname += '/index.html';
-  } else {
-    pathname += url.parse(req.url).pathname;
-  }
+    var pathname = 'public';
+    if (url.parse(req.url).pathname == '/') {
+        pathname += '/index.html';
+    } else {
+        pathname += url.parse(req.url).pathname;
+    }
 
-  fs.readFile(pathname, function (err, data) {
-    if (err) {
-      console.log(err);
-        // HTTP Status: 404 : NOT FOUND
-        res.writeHead(404, {'Content-Type': 'text/html'});
-      } else {
-        // HTTP Status: 200 : OK
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(data.toString());
-      }
-      res.end();
+    fs.readFile(pathname, function (err, data) {
+        if (err) {
+            console.log(err);
+            // HTTP Status: 404 : NOT FOUND
+            res.writeHead(404, {'Content-Type': 'text/html'});
+        } else {
+            // HTTP Status: 200 : OK
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.write(data.toString());
+        }
+        res.end();
     });
+});
+
+/*
+ * URL pour Aslan Messenger
+ * URL utilisé pour connecter un utilisateur
+ */
+app.post('/aslan-messenger/signin', function(req, res) {
+    aslan.signIn(req, res);
+});
+
+/*
+ * URL pour Aslan Messenger
+ * URL utilisé pour enregistrer un utilisateur
+ */
+app.post('/aslan-messenger/register', function(req, res) {
+    aslan.register(req, res);
+});
+
+/*
+ * URL pour Aslan Messenger
+ * URL utilisé pour enregistrer un nouveau message
+ */
+app.post('/aslan-messenger/message', function(req, res) {
+    aslan.receive(req, res);
+});
+
+/*
+ * URL pour Aslan Messenger
+ * URL utilisé pour recuperer les messages d'un utilisateur
+ */
+app.get('/aslan-messenger/message', function(req, res) {
+    aslan.message(req, res);
 });
 
 /*
@@ -55,13 +87,13 @@ app.get('/', function(req, res) {
  * On renvoie 200 et le challenge (code donné par Facebook)
  */
 app.get('/facebook/webhook', function(req, res) {
-  if(facebook.webhook(req, res)) {
-    console.log("Validating webhook");
-    res.status(200).send(req.query['hub.challenge']);
-  } else {
-    console.error("Failed validation. Make sure the validation tokens match.");
-    res.sendStatus(403);
-  }
+    if(facebook.webhook(req, res)) {
+        console.log("Validating webhook");
+        res.status(200).send(req.query['hub.challenge']);
+    } else {
+        console.error("Failed validation. Make sure the validation tokens match.");
+        res.sendStatus(403);
+    }
 });
 
 /*
@@ -70,8 +102,8 @@ app.get('/facebook/webhook', function(req, res) {
  * 20 secondes pour répondre à la requete
  */
 app.post('/facebook/webhook', function (req, res) {
-  	facebook.receivedMessage(req, res);
-  	res.sendStatus(200);
+    facebook.receivedMessage(req, res);
+    res.sendStatus(200);
 });
 
 /*

@@ -25,6 +25,7 @@
     "config": "^1.25.1",
     "express": "^4.15.2",
     "isomorphic-fetch": "^2.2.1",
+    "mongodb": "^2.2.26",
     "node-env-file": "^0.1.8",
     "node-telegram-bot-api": "^0.27.0",
     "node-wit": "^4.2.0",

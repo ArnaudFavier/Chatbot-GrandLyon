@@ -3,6 +3,7 @@
 const recast = require('./botlogic/recast.js');
 const facebook = require('./channels/facebook.js');
 const telegram = require('./channels/telegram.js');
+const aslan = require('./channels/aslan-messenger.js');
 
 var messageReceived;
 
