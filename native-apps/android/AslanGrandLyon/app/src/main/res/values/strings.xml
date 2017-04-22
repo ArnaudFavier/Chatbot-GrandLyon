@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Aslan du Grand Lyon</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="first_name">prénom</string>
+    <string name="last_name">nom</string>
+    <string name="email_example">exemple@email.fr</string>
+    <string name="password">mot de passe</string>
+    <string name="confirm_password">confirmer le mot de passe</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="log_in">Se connecter</string>
+    <string name="send_a_message">Envoyer un message...</string>
+
+</resources>
