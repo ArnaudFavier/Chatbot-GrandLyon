@@ -19,8 +19,8 @@ function signIn(req, res) {
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), username: username, email: results[0].email, firstname: results[0].firstname,
-			    				results[0].name: name, token : results[0].token}));
+			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), username: username, email: results[0].email, firstname: results[0].firstname, 
+			    			results[0].name: name, token : results[0].token}));
 			    	}
 			    }); 
     		} else {
