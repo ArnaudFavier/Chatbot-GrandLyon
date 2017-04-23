@@ -53,6 +53,7 @@ function register(req, res) {
 			    res.write(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
     			db.createUser(email, firstname, name, username, password, function(data) {
+    				console.log(data)
 			    	if(data.length == 0) {
 			    		res.writeHead(500, {'Content-Type': 'application/json'});
 			    		res.write(JSON.stringify({error: error.toString()}));
