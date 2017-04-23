@@ -57,7 +57,7 @@ function createMessage(userId, message, callback) {
 function passwordHash(password, salt) {
 	var hash = crypto.createHmac('sha512', salt); /** Hashing algorithm sha512 */
     hash.update(password);
-    return value = hash.digest('hex');
+    return hash.digest('hex');
 }
 
 /**
