@@ -22,7 +22,8 @@ function signIn(req, res) {
 			    		res.write(JSON.stringify({error: error.toString()}));
 			    	} else {
 			    		res.writeHead(200, {'Content-Type': 'application/json'});
-			    		res.write(JSON.stringify({id: results[0]._id.toString(), username: username, email: results[0].email, token : results[0].token}));
+			    		res.write(JSON.stringify({id: results[0]._id.toString(), username: username, email: results[0].email, firstname: firstname,
+			    				name: name, token : results[0].token}));
 			    	}
 			    }); 
     		} else {
@@ -39,16 +40,19 @@ function signIn(req, res) {
 */
 function register(req, res) {
 	var data = req.body;
-	if(data.email != undefined && data.username != undefined && data.password != undefined) {
+	if(data.email != undefined && data.username != undefined && data.password != undefined
+		&& data.firstname != undefined && data.name != undefined) {
 		var email = data.email;
 		var username = data.username;
 	    var password = data.password;
+	    var firstname = data.firstname;
+	    var name = data.name;
 	    db.userExist(username, function(error, results) {
     		if(results.length > 0) {
     			res.writeHead(403, {'Content-Type': 'application/json'});
 			    res.write(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
-    			db.createUser(email, username, password, function(error, results) {
+    			db.createUser(email, firstname, name, username, password, function(error, results) {
 			    	if(error) {
 			    		res.writeHead(500, {'Content-Type': 'application/json'});
 			    		res.write(JSON.stringify({error: error.toString()}));
