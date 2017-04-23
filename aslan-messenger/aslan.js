@@ -52,14 +52,14 @@ function register(req, res) {
     			res.writeHead(403, {'Content-Type': 'application/json'});
 			    res.write(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
-    			console.log(results);
-    			db.createUser(email, firstname, name, username, password, function(error, results) {
+    			db.createUser(email, firstname, name, username, password, function(error, data) {
 			    	if(error) {
 			    		res.writeHead(500, {'Content-Type': 'application/json'});
 			    		res.write(JSON.stringify({error: error.toString()}));
 			    	} else {
+			    		console.log(data);
 			    		res.writeHead(200, {'Content-Type': 'application/json'});
-			    		res.write(JSON.stringify({id: results[0]._id.toString() , username: username, email: results[0].email, token : results[0].token}));
+			    		res.write(JSON.stringify({id: data[0]._id.toString() , username: username, email: data[0].email, token : data[0].token}));
 			    	}
 			    });
     		}
