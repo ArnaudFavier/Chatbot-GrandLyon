@@ -94,9 +94,11 @@ exports.insertData = function(table, object, callback) {
                 console.log('Connected on db:', db.databaseName);
                 console.log('Insert Data into ', table);
                 db.collection(table).insert(object, function (err, results) {
+                    console.log(err);
                     if (err) {
                         throw err;
                     } else {
+                        console.log("User creation successful!")
                         callback(results.ops);
                     }
                 }); 

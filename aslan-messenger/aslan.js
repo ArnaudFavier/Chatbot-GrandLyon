@@ -48,7 +48,6 @@ function register(req, res) {
 	    var firstname = data.firstname;
 	    var name = data.name;
 	    db.userExist(username, function(error, results) {
-	    	console.log(JSON.stringify(results));
     		if(results.length > 0) {
     			res.writeHead(403, {'Content-Type': 'application/json'});
 			    res.write(JSON.stringify({error: "Unauthorized account"}));
