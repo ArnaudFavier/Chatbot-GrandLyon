@@ -19,13 +19,14 @@ exports.getData = function(table, query, callback) {
       console.log('Connected on db:', db.databaseName);
 
       // Nous allons travailler ici ...
-      db.collection(table).find(query).toArray(function(err, collections) {
+      /*db.collection(table).find(query).toArray(function(err, collections) {
           if (err) {
             console.log(err);
           } else {
             return collections;
           }
-      });
+      });*/
+    db.collection(table).find(query).toArray(callback);
       
     } catch(error) {
       console.log("error");
