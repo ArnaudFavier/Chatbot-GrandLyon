@@ -81,4 +81,22 @@ exports.replaceDocument = function (filePath) {
     });
 }
 
-
+exports.insertData = function(table, object, callback) {
+    // Connexion au serveur avec la méthode connect
+    mongoClient.connect(url, function (err, db) {
+        try{
+            if (err) {
+                callback(err, null);
+                return console.log('Connection failed', err);
+            } else {
+                console.log('Connexion successful on', "aslandb-shard-00-01-yened.mongodb.net:27017");
+                console.log('Connected on db:', db.databaseName);
+                db.collection(table).insert(object, null, callback);  
+            }         
+        } catch(error) {
+            console.log("error");
+            console.log(error);
+            callback(error, null);
+        }
+    });
+}
