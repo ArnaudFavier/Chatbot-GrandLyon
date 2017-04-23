@@ -92,7 +92,7 @@ exports.insertData = function(table, object, callback) {
             } else {
                 console.log('Connexion successful on', "aslandb-shard-00-01-yened.mongodb.net:27017");
                 console.log('Connected on db:', db.databaseName);
-                db.collection(table).insert(object, null, callback);  
+                db.collection(table).insert(object, callback);  
             }         
         } catch(error) {
             console.log("error");
