@@ -71,6 +71,7 @@ function genRandomString(length) {
 
 exports.createUser = createUser;
 exports.getUser = getUser;
+exports.userExist = userExist;
 exports.getMessage = getMessage;
 exports.getAllMessage = getAllMessage;
 exports.createMessage = createMessage;
