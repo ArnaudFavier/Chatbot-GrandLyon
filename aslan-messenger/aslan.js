@@ -48,6 +48,7 @@ function register(req, res) {
 	    var firstname = data.firstname;
 	    var name = data.name;
 	    db.userExist(username, function(error, results) {
+	    	console.log(JSON.stringify(results));
     		if(results.length > 0) {
     			res.writeHead(403, {'Content-Type': 'application/json'});
 			    res.write(JSON.stringify({error: "Unauthorized account"}));
@@ -57,7 +58,7 @@ function register(req, res) {
 			    		res.writeHead(500, {'Content-Type': 'application/json'});
 			    		res.write(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		console.log(data);
+			    		data = data.ops;
 			    		res.writeHead(200, {'Content-Type': 'application/json'});
 			    		res.write(JSON.stringify({id: data[0]._id.toString() , username: username, email: data[0].email, token : data[0].token}));
 			    	}
