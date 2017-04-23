@@ -6,7 +6,6 @@ const randtoken = require('rand-token');
 /*
 *	Fonction qui crée un utilisateur en base de données
 */
-	return null;
 function createUser(email, username, password, callback) {
 	var salt = genRandomString(16);
 	password = passwordHash(password, salt);
