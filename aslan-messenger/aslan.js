@@ -49,17 +49,15 @@ function register(req, res) {
 	    var name = data.name;
 	    db.userExist(username, function(error, results) {
     		if(results.length > 0) {
-    			res.writeHead(403, {'Content-Type': 'application/json'});
-			    res.write(JSON.stringify({error: "Unauthorized account"}));
+			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
     			db.createUser(email, firstname, name, username, password, function(data) {
     				console.log(data)
 			    	if(data.length == 0) {
-			    		res.writeHead(500, {'Content-Type': 'application/json'});
-			    		res.write(JSON.stringify({error: error.toString()}));
+			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			   	   		res.writeHead(200, {'Content-Type': 'application/json'});
-			    		res.write(JSON.stringify({id: data[0]._id.toString() , name: name, firstname: firstname, username: username, email: data[0].email, token : data[0].token}));
+			    		res.status(200).send(JSON.stringify({id: data[0]._id.toString() , name: name, firstname: firstname, username: username, email: data[0].email, token : data[0].token}));
+			    		res.end();
 			    	}
 			    });
     		}
