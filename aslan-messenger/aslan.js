@@ -13,6 +13,7 @@ function signIn(req, res) {
     if(data.email != undefined && data.password != undefined) {
     	db.userExist(email, function(error, results) {
     		if(results.length == 0) {
+    			console.log("Error : user doesn't exist");
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 1) {
     			db.getUser(email, password, results[0].salt, function(error, results) {
@@ -31,8 +32,7 @@ function signIn(req, res) {
     		}
     	});
     } else {
-		res.writeHead(422, {'Content-Type': 'application/json'});
-		res.write(JSON.stringify({error: "JSON Invalid"}));
+		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
 	}
 }
 
@@ -49,8 +49,10 @@ function register(req, res) {
 	    var name = data.name;
 	    db.userExist(email, function(error, results) {
     		if(results.length > 0) {
+    			console.log("Error : user already exist");
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
+    			console.log("Error : user not created");
     			db.createUser(email, firstname, name, password, function(data) {
     				console.log(data)
 			    	if(data.length == 0) {
@@ -62,8 +64,7 @@ function register(req, res) {
     		}
     	});
 	} else {
-		res.writeHead(422, {'Content-Type': 'application/json'});
-		res.write(JSON.stringify({error: "JSON Invalid"}));
+		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
 	}
 }
 
