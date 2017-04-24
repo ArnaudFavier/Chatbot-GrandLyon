@@ -6,7 +6,7 @@ POST /aslan-messenger/signin
 
 ```json
 {
-	"username": string,
+	"email": string,
 	"password": string
 }
 ```
@@ -18,7 +18,6 @@ POST /aslan-messenger/signin
 ```json
 {
 	"email": string,
-	"username": string,
 	"firstname": string,
 	"name": string
 }
@@ -36,7 +35,6 @@ POST /aslan-messenger/register
 ```json
 {
 	"email": string,
-	"username": string,
 	"password": string,
 	"firstname": string,
 	"name": string
@@ -50,7 +48,6 @@ POST /aslan-messenger/register
 ```json
 {
 	"email": string,
-	"username": string,
 	"firstname": string,
 	"name": string
 }

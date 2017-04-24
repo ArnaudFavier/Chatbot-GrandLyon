@@ -8,18 +8,18 @@ const db = require('./aslan-db.js');
 */
 function signIn(req, res) {
 	var data = req.body;
-    var username = data.username;
+    var email = data.email;
     var password = data.password;
-    if(data.username != undefined && data.password != undefined) {
-    	db.userExist(username, function(error, results) {
+    if(data.email != undefined && data.password != undefined) {
+    	db.userExist(email, function(error, results) {
     		if(results.length == 0) {
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 1) {
-    			db.getUser(username, password, results[0].salt, function(error, results) {
+    			db.getUser(email, password, results[0].salt, function(error, results) {
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), username: username, email: results[0].email, firstname: results[0].firstname, 
+			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
 			    	}
 			    }); 
@@ -37,23 +37,22 @@ function signIn(req, res) {
 */
 function register(req, res) {
 	var data = req.body;
-	if(data.email != undefined && data.username != undefined && data.password != undefined
+	if(data.email != undefined && data.password != undefined
 		&& data.firstname != undefined && data.name != undefined) {
 		var email = data.email;
-		var username = data.username;
 	    var password = data.password;
 	    var firstname = data.firstname;
 	    var name = data.name;
-	    db.userExist(username, function(error, results) {
+	    db.userExist(email, function(error, results) {
     		if(results.length > 0) {
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
-    			db.createUser(email, firstname, name, username, password, function(data) {
+    			db.createUser(email, firstname, name, password, function(data) {
     				console.log(data)
 			    	if(data.length == 0) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		res.status(200).send(JSON.stringify({id: data[0]._id.toString() , name: name, firstname: firstname, username: username, email: data[0].email, token : data[0].token}));
+			    		res.status(200).send(JSON.stringify({id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token}));
 			    	}
 			    });
     		}
