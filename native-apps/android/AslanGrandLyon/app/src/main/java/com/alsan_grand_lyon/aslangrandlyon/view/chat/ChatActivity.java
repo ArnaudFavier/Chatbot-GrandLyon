@@ -16,7 +16,7 @@ import android.widget.ListView;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
-import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
+import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class ChatActivity extends AppCompatActivity
     private EditText messageEditText = null;
     private ImageView sendImageView = null;
     private MessageAdapter messageAdapter = null;
-    private List<TextMessage> textMessages = null;
+    private List<Message> messages = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class ChatActivity extends AppCompatActivity
         sendImageView = (ImageView) findViewById(R.id.sendImageView);
 
         initTextMessages();
-        messageAdapter = new MessageAdapter(getApplicationContext(),textMessages);
+        messageAdapter = new MessageAdapter(getApplicationContext(), messages);
         messagesListView.setAdapter(messageAdapter);
         messagesListView.setDivider(null);
 
@@ -122,13 +122,13 @@ public class ChatActivity extends AppCompatActivity
     }
 
     public void initTextMessages() {
-        textMessages = new ArrayList<>();
+        messages = new ArrayList<>();
 
         for(int i = 0; i < 50; i++) {
             if(i % 2 == 0) {
-                textMessages.add(new TextMessage(Profile.ASLAN,"Bonjour, je suis Aslan du Grand Lyon. Comment puis-je vous aider ? "));
+                messages.add(new Message(Profile.ASLAN,"Bonjour, je suis Aslan du Grand Lyon. Comment puis-je vous aider ? "));
             } else {
-                textMessages.add(new TextMessage(Profile.USER,"Bonjour, je cherche un restaurant à proximité. "));
+                messages.add(new Message(Profile.USER,"Bonjour, je cherche un restaurant à proximité. "));
             }
         }
     }

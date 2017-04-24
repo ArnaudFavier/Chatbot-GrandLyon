@@ -8,6 +8,7 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -75,13 +76,13 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void onSignInButtonClick() {
+        InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(signInButton.getWindowToken(), 0);
+
         if(checkInputs()) {
             showLoadingDialog();
             SignInTask signInTask = new SignInTask(SignInActivity.this);
             signInTask.execute(emailEditText.getText().toString(), passwordEditText.getText().toString());
-        } else {
-            Toast toast = Toast.makeText(SignInActivity.this,getString(R.string.please_enter_logins),Toast.LENGTH_LONG);
-            toast.show();
         }
     }
 
@@ -110,7 +111,6 @@ public class SignInActivity extends AppCompatActivity {
         View layout = adbInflater.inflate(R.layout.loading_dialog, null);
         adb.setView(layout);
 
-
         final TextView loadingMessageTextView = (TextView) layout.findViewById(R.id.loadingMessageTextView);
         loadingMessageTextView.setText(R.string.connection_in_progress);
 
@@ -127,7 +127,13 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private boolean checkInputs() {
-        return !emailEditText.getText().toString().isEmpty() && !passwordEditText.getText().toString().isEmpty();
+        boolean result = !emailEditText.getText().toString().isEmpty()
+                && !passwordEditText.getText().toString().isEmpty();
+        if(!result) {
+            Toast toast = Toast.makeText(SignInActivity.this, getString(R.string.please_enter_logins), Toast.LENGTH_LONG);
+            toast.show();
+        }
+        return result;
     }
 
 }

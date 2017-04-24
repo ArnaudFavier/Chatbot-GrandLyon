@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
-import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
+import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 
 /**
  * Created by Nico on 21/04/2017.
@@ -18,7 +18,7 @@ import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 public class UserTextMessageView extends FrameLayout {
 
     private LinearLayout linearLayout = null;
-    private TextMessage textMessage = null;
+    private Message message = null;
     private TextView textView = null;
     private TextView dateTextView = null;
     private ImageView imageView = null;
@@ -64,12 +64,12 @@ public class UserTextMessageView extends FrameLayout {
 
     }
 
-    public TextMessage getTextMessage() {
-        return textMessage;
+    public Message getMessage() {
+        return message;
     }
 
-    public void setTextMessage(TextMessage textMessage) {
-        this.textMessage = textMessage;
-        this.textView.setText(textMessage.getText());
+    public void setMessage(Message message) {
+        this.message = message;
+        this.textView.setText(message.getText());
     }
 }

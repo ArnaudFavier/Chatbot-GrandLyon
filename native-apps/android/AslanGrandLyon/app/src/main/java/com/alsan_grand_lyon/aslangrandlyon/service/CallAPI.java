@@ -73,7 +73,7 @@ public class CallAPI {
         } catch (Exception e) {
             try {
                 int code = httpURLConnection.getResponseCode();
-                result = new PostResult(code,getStringFromInputStream(in));
+                result = new PostResult(code,"");
             } catch (NullPointerException npe){
                 result = new PostResult(-1,npe.getMessage(),npe);
             } catch (IOException ioe) {

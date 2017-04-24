@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
-import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
+import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 
 import java.util.List;
 
@@ -15,18 +15,18 @@ import java.util.List;
  * Created by Nico on 01/03/2017.
  */
 
-public class MessageAdapter extends ArrayAdapter<TextMessage> {
+public class MessageAdapter extends ArrayAdapter<Message> {
 
-    public MessageAdapter(Context context, List<TextMessage> textMessages) {
-        super(context, 0, textMessages);
+    public MessageAdapter(Context context, List<Message> messages) {
+        super(context, 0, messages);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        TextMessage textMessage = this.getItem(position);
+        Message message = this.getItem(position);
 
-        if(textMessage.getProfile() == Profile.ASLAN) {
+        if(message.getProfile() == Profile.ASLAN) {
             convertView = new AslanTextMessageView(getContext());
         } else {
             convertView = new UserTextMessageView(getContext());
@@ -34,10 +34,10 @@ public class MessageAdapter extends ArrayAdapter<TextMessage> {
 
         if(convertView instanceof AslanTextMessageView) {
             AslanTextMessageView textMessageView = (AslanTextMessageView) convertView;
-            textMessageView.setTextMessage(textMessage);
+            textMessageView.setMessage(message);
         } else {
             UserTextMessageView textMessageView = (UserTextMessageView) convertView;
-            textMessageView.setTextMessage(textMessage);
+            textMessageView.setMessage(message);
         }
 
 

@@ -5,6 +5,23 @@ package com.alsan_grand_lyon.aslangrandlyon.model;
  */
 
 public enum Profile {
-    ASLAN,
-    USER
+    //do not change int value
+    ASLAN(0,"Aslan"),
+    USER(1,"User");
+
+    int value;
+    String profile;
+    private Profile(int value, String profile) {
+        this.value = value;
+        this.profile = profile;
+    }
+
+    @Override
+    public String toString() {
+        return profile;
+    }
+
+    public int getValue() {
+        return value;
+    }
 }

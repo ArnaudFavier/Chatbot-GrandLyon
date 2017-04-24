@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
-import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
+import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 import com.alsan_grand_lyon.aslangrandlyon.view.RoundImage;
 
 /**
@@ -21,7 +21,7 @@ import com.alsan_grand_lyon.aslangrandlyon.view.RoundImage;
 public class AslanTextMessageView extends FrameLayout {
 
     private LinearLayout linearLayout = null;
-    private TextMessage textMessage = null;
+    private Message message = null;
     private TextView textView = null;
     private TextView dateTextView = null;
     private ImageView imageView = null;
@@ -72,13 +72,13 @@ public class AslanTextMessageView extends FrameLayout {
         });
     }
 
-    public TextMessage getTextMessage() {
-        return textMessage;
+    public Message getMessage() {
+        return message;
     }
 
-    public void setTextMessage(TextMessage textMessage) {
-        this.textMessage = textMessage;
-        this.textView.setText(textMessage.getText());
+    public void setMessage(Message message) {
+        this.message = message;
+        this.textView.setText(message.getText());
     }
 
 }

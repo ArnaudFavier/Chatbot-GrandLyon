@@ -8,6 +8,7 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -27,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText emailEditText = null;
     private EditText passwordEditText = null;
     private EditText confirmPasswordEditText = null;
-    private Button signUpButton = null;
+    private Button registerButton = null;
     private AlertDialog loadingAlertDialog = null;
 
 
@@ -42,10 +43,10 @@ public class RegisterActivity extends AppCompatActivity {
         emailEditText = (EditText) findViewById(R.id.emailEditText);
         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
         confirmPasswordEditText = (EditText) findViewById(R.id.confirmPasswordEditText);
-        signUpButton = (Button) findViewById(R.id.signUpButton);
+        registerButton = (Button) findViewById(R.id.registerButton);
 
 
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onRegisterButtonClick();
@@ -56,6 +57,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onRegisterButtonClick() {
+        InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(registerButton.getWindowToken(), 0);
+
         if(checkInputs()) {
             showLoadingDialog();
             String firstName = firstNameEditText.getText().toString();
@@ -79,9 +83,10 @@ public class RegisterActivity extends AppCompatActivity {
             toast.show();
             passwordEditText.setText("");
         } else {
-            Toast toast = Toast.makeText(this,getString(R.string.error_impossible_to_register),Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this,postResult.getCode() + " " + getString(R.string.error_impossible_to_register),Toast.LENGTH_LONG);
             toast.show();
             passwordEditText.setText("");
+            postResult.getException().printStackTrace();
         }
     }
 
