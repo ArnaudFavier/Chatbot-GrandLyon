@@ -16,10 +16,11 @@ function signIn(req, res) {
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 1) {
     			db.getUser(email, password, results[0].salt, function(error, results) {
-    				console.log(results);
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
+			    		console.log(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
+			    			name: results[0].name, token : results[0].token}));
 			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
 			    	}
