@@ -16,6 +16,7 @@ function signIn(req, res) {
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 1) {
     			db.getUser(email, password, results[0].salt, function(error, results) {
+    				console.log(results);
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
@@ -24,12 +25,14 @@ function signIn(req, res) {
 			    	}
 			    }); 
     		} else {
-    			res.writeHead(500, {'Content-Type': 'application/json'});
-    			res.write(JSON.stringify({error: "Contactez un administrateur"}));
+    			res.status(500).send("Contactez un administrateur");
     			console.log("Error : multiple user");
     		}
     	});
-    }
+    } else {
+		res.writeHead(422, {'Content-Type': 'application/json'});
+		res.write(JSON.stringify({error: "JSON Invalid"}));
+	}
 }
 
 /*
