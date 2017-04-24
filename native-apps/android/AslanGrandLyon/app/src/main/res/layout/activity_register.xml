@@ -11,7 +11,7 @@
     android:layout_above="@+id/signUpLinearLayout"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context="com.alsan_grand_lyon.aslangrandlyon.view.connection.LogInActivity">
+    tools:context="com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context="com.alsan_grand_lyon.aslangrandlyon.view.connection.LogInActivity">
+            tools:context="com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity">
 
             <ImageView
                 android:id="@+id/aslanImageView"
@@ -88,7 +88,7 @@
                 android:padding="10dp" />
 
             <EditText
-                android:id="@+id/conformPasswordEditText"
+                android:id="@+id/confirmPasswordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -110,7 +110,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/button_background"
-                android:text="@string/sign_up"
+                android:text="@string/register"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="@color/white"
                 android:textSize="24sp" />

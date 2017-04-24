@@ -9,7 +9,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.alsan_grand_lyon.aslangrandlyon.view.connection.LogInActivity">
+    tools:context="com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -67,7 +67,7 @@
                     android:padding="10dp" />
 
                 <Button
-                    android:id="@+id/logInButton"
+                    android:id="@+id/signInButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -75,7 +75,7 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/button_background"
-                    android:text="@string/log_in"
+                    android:text="@string/sign_in"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textColor="@color/white"
                     android:textSize="24sp" />
@@ -92,14 +92,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/signUpTextView"
+                android:id="@+id/resgisterTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="top|center"
                 android:layout_margin="20dp"
-                android:text="@string/sign_up"
+                android:text="@string/register"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
