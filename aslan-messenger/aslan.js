@@ -42,7 +42,8 @@ function signIn(req, res) {
 function register(req, res) {
 	var data = req.body;
 	if(data.email != undefined && data.password != undefined
-		&& data.firstname != undefined && data.name != undefined) {
+		&& data.firstname != undefined && data.name != undefined && fieldIsValid(data.password) && 
+		fieldIsValid(data.firstname) && fieldIsValid(data.name) &&  emailIsValid(data.email)) {
 		var email = data.email;
 	    var password = data.password;
 	    var firstname = data.firstname;
@@ -88,6 +89,17 @@ function receive(req, res) {
     var message = data.message;
 
     messenger.receivedMessage(req, res);
+}
+
+
+function emailIsValid(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function fieldIsValid(content) {
+	return content.length() > 0 &&
+		content.replace(" ", "").length() > 0;
 }
 
 exports.signIn = signIn;
