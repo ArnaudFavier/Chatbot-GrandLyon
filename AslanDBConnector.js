@@ -1,9 +1,9 @@
 const mongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
 
-// Environment file 
+/*// Environment file 
 var env = require('node-env-file');
-env(__dirname + '/.env');
+env(__dirname + '/.env');*/
 
 var url = 'mongodb://' + process.env.MONGO_DB_TOKEN + '@aslandb-shard-00-01-yened.mongodb.net:27017/grandlyon?ssl=true&authSource=admin';
 const GrandLyonCollection = "grandlyonData";
@@ -19,13 +19,14 @@ exports.getData = function(table, query, callback) {
       console.log('Connected on db:', db.databaseName);
 
       // Nous allons travailler ici ...
-      db.collection(table).find(query).toArray(function(err, collections) {
+      /*db.collection(table).find(query).toArray(function(err, collections) {
           if (err) {
             console.log(err);
           } else {
             return collections;
           }
-      });
+      });*/
+    db.collection(table).find(query).toArray(callback);
       
     } catch(error) {
       console.log("error");
@@ -81,4 +82,31 @@ exports.replaceDocument = function (filePath) {
     });
 }
 
-
+exports.insertData = function(table, object, callback) {
+    // Connexion au serveur avec la méthode connect
+    mongoClient.connect(url, function (err, db) {
+        try{
+            if (err) {
+                callback(err, null);
+                return console.log('Connection failed', err);
+            } else {
+                console.log('Connexion successful on', "aslandb-shard-00-01-yened.mongodb.net:27017");
+                console.log('Connected on db:', db.databaseName);
+                console.log('Insert Data into ', table);
+                db.collection(table).insert(object, function (err, results) {
+                    console.log(err);
+                    if (err) {
+                        throw err;
+                    } else {
+                        console.log("User creation successful!")
+                        callback(results.ops);
+                    }
+                }); 
+            }         
+        } catch(error) {
+            console.log("error");
+            console.log(error);
+            callback(error, null);
+        }
+    });
+}
