@@ -6,26 +6,26 @@ const randtoken = require('rand-token');
 /*
 *	Fonction qui crée un utilisateur en base de données
 */
-function createUser(email, firstname, name, username, password, callback) {
+function createUser(email, firstname, name, password, callback) {
 	var salt = genRandomString(16);
 	password = passwordHash(password, salt);
 	var token = randtoken.generate(64);
-	db.insertData("users", { email: email, firstname: firstname, name: name, username: username, password: password, salt: salt, token: token }, callback);
+	db.insertData("users", { email: email, firstname: firstname, name: name, password: password, salt: salt, token: token }, callback);
 }
 
 /*
 *	Fonction qui renvoie true si l'utilisateur existe en base de données
 */
-function userExist(username, callback) {
-	db.getData("users", {username : username}, callback);
+function userExist(email, callback) {
+	db.getData("users", {email : email}, callback);
 }
 
 /*
 *	Fonction qui renvoie l'utilisateur en base de données s'il existe
 */
-function getUser(username, password, salt , callback) {
+function getUser(email, password, salt , callback) {
 	password = passwordHash(password, salt);
-	db.getData("users", {username : username, password: password, salt : salt}, callback);
+	db.getData("users", {email : email, password: password, salt : salt}, callback);
 }
 
 /*
