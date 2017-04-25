@@ -1,6 +1,7 @@
 'use strict';
 
-const recast = require('./botlogic/recast.js');
+//const recast = require('./botlogic/recast.js');
+const apiai = require('./botlogic/apiai.js');
 const facebook = require('./channels/facebook.js');
 const telegram = require('./channels/telegram.js');
 const aslan = require('./channels/aslan-messenger.js');
@@ -23,7 +24,8 @@ function runLogicLayer(message) {
     if(message.senderID != undefined && message.text != undefined) {
         botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
     }*/
-    recast.sendMessage(message.text, callbackLogicLayer);
+    /*recast.sendMessage(message.text, callbackLogicLayer);*/
+    apiai.sendMessage(message.senderID, message.text, callbackLogicLayer)
 }
 
 /*
@@ -33,11 +35,11 @@ function callbackLogicLayer(response) {
     /*
     *   Traitement
     */
-    console.log("Recast sended : ", JSON.stringify(response));
+    console.log("APIAI sended : ", JSON.stringify(response));
     /*
     *   Préparation du message
     */
-    prepareMessage(response);
+    //prepareMessage(response);
 }
 
 /*
