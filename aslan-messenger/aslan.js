@@ -86,11 +86,13 @@ function message(req, res) {
     			if(results[0].token == token) {
     				if(message_id != undefined || message_id == "-1") {
     					db.getAllMessage(user_id, function(data){
+    						console.log("Cas 1")
     						console.log(data);
     						res.status(200).send(JSON.stringify({messages:data}));
     					});
     				} else {
 	    				db.getMessage(user_id, message, function(data){
+		    				console.log("Cas 2")
 		    				console.log(data)
 					    	if(data.length == 0) {
 					    		res.status(500).send(JSON.stringify({error: error.toString()}));
@@ -108,7 +110,6 @@ function message(req, res) {
 			    res.status(404).send(JSON.stringify({error: "User not found"}));
     		} 
     	});
-    	//Traitement de la requete
     } else {
 		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
 	}
