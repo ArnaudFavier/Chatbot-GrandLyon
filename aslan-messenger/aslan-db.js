@@ -55,7 +55,7 @@ function getAllMessage(userId, callback) {
 *	Fonction qui enregistre un message
 */
 function createMessage(userId, message, callback) {
-	return null;
+	db.insertData("messages", { userId: userId, message: message, date: new Date() }, callback);
 }
 
 /*

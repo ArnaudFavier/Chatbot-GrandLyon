@@ -123,7 +123,7 @@ function emailIsValid(email) {
 
 function fieldIsValid(content) {
 	return content.length > 0 &&
-		content.replace(" ", "").length > 0;
+		content.replace(" ", "").length	 > 0;
 }
 
 exports.signIn = signIn;
