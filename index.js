@@ -77,7 +77,7 @@ app.post('/aslan-messenger/message', function(req, res) {
  * URL pour Aslan Messenger
  * URL utilisé pour recuperer les messages d'un utilisateur
  */
-app.get('/aslan-messenger/message/:token/:user_id', function(req, res) {
+app.get('/aslan-messenger/message/:token/:user_id/:message_id', function(req, res) {
     aslan.message(req, res);
 });
 
