@@ -1,22 +1,29 @@
 package com.alsan_grand_lyon.aslangrandlyon.view.chat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
+import com.alsan_grand_lyon.aslangrandlyon.service.SignOutTask;
+import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +36,9 @@ public class ChatActivity extends AppCompatActivity
     private EditText messageEditText = null;
     private ImageView sendImageView = null;
     private MessageAdapter messageAdapter = null;
+    private AlertDialog loadingAlertDialog = null;
     private List<Message> messages = null;
+    private boolean signingOutFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,18 +111,8 @@ public class ChatActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_sign_out) {
+            signOut();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -130,6 +129,41 @@ public class ChatActivity extends AppCompatActivity
             } else {
                 messages.add(new Message(Profile.USER,"Bonjour, je cherche un restaurant à proximité. "));
             }
+        }
+    }
+
+    private void showLoadingDialog() {
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        LayoutInflater adbInflater = LayoutInflater.from(this);
+
+        View layout = adbInflater.inflate(R.layout.loading_dialog, null);
+        adb.setView(layout);
+
+        final TextView loadingMessageTextView = (TextView) layout.findViewById(R.id.loadingMessageTextView);
+        loadingMessageTextView.setText(R.string.sign_out_in_progress);
+
+        adb.setCancelable(false);
+
+        loadingAlertDialog = adb.show();
+    }
+
+    public void signOut() {
+        signingOutFlag = true;
+        showLoadingDialog();
+        SignOutTask signInTask = new SignOutTask(this);
+        signInTask.execute();
+    }
+
+    public void signedOut(int result) {
+        loadingAlertDialog.dismiss();
+        if(result == 0) {
+            Intent intent = new Intent(this, SignInActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast toast = Toast.makeText(this,getString(R.string.error_when_sign_out),Toast.LENGTH_LONG);
+            toast.show();
+            signingOutFlag = false;
         }
     }
 }

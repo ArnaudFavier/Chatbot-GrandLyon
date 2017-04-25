@@ -19,6 +19,8 @@
     <string name="confirm_password">confirm password</string>
     <string name="register">Register</string>
     <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_out_in_progress">Sign Out...</string>
     <string name="send_a_message">Send a message...</string>
     <string name="connection_in_progress">Connection...</string>
     <string name="please_enter_logins">Please enter logins...</string>
@@ -29,5 +31,6 @@
     <string name="registration">Registration...</string>
     <string name="all_inputs_have_to_be_filled_in">All inputs have to be filled in...</string>
     <string name="password_are_not_similar">Password are not similar...</string>
+    <string name="error_when_sign_out">An error occured...</string>
 
 </resources>

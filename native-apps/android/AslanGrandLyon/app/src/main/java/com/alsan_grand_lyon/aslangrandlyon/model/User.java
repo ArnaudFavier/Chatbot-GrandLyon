@@ -6,16 +6,47 @@ package com.alsan_grand_lyon.aslangrandlyon.model;
 
 public class User {
 
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+    private long id = -1;
+    private String serverId = null;
+    private String firstName = null;
+    private String lastName = null;
+    private String email = null;
+    private String password = null;
+    private String token = null;
 
-    public User(String firstName, String lastName, String email, String password) {
+    public User(long id, String serverId, String firstName, String lastName, String email, String password, String token) {
+        this.id = id;
+        this.serverId = serverId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.token = token;
+    }
+
+    public User(String serverId, String firstName, String lastName, String email, String password, String token) {
+        this.serverId = serverId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.token = token;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
     }
 
     public String getFirstName() {
@@ -49,4 +80,14 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+
 }

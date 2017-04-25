@@ -81,14 +81,13 @@ public class SignInActivity extends AppCompatActivity {
 
         if(checkInputs()) {
             showLoadingDialog();
-            SignInTask signInTask = new SignInTask(SignInActivity.this);
-            signInTask.execute(emailEditText.getText().toString(), passwordEditText.getText().toString());
+            SignInTask signOutTask = new SignInTask(SignInActivity.this);
+            signOutTask.execute(emailEditText.getText().toString(), passwordEditText.getText().toString());
         }
     }
 
     public void signIn(PostResult postResult) {
         dismissLoadingDialog();
-
         if(postResult.getCode() == 200) {
             Intent intent = new Intent(SignInActivity.this, ChatActivity.class);
             startActivity(intent);
@@ -100,7 +99,6 @@ public class SignInActivity extends AppCompatActivity {
         } else {
             Toast toast = Toast.makeText(this,getString(R.string.impossible_to_connect),Toast.LENGTH_LONG);
             toast.show();
-            passwordEditText.setText("");
         }
     }
 

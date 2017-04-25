@@ -1,6 +1,8 @@
 package com.alsan_grand_lyon.aslangrandlyon.service;
 
 
+import com.alsan_grand_lyon.aslangrandlyon.model.User;
+
 /**
  * Created by Nico on 24/04/2017.
  */
@@ -26,11 +28,24 @@ public class PostResult {
         return code;
     }
 
+    public void setCode(int code) {
+        this.code = code;
+    }
+
     public String getOutput() {
         return output;
+    }
+
+    public void setOutput(String output) {
+        this.output = output;
     }
 
     public Exception getException() {
         return exception;
     }
+
+    public void setException(Exception exception) {
+        this.exception = exception;
+    }
+
 }

@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -73,7 +71,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void register(PostResult postResult) {
         dismissLoadingDialog();
-
         if(postResult.getCode() == 200) {
             Intent intent = new Intent(RegisterActivity.this, ChatActivity.class);
             startActivity(intent);
@@ -83,10 +80,9 @@ public class RegisterActivity extends AppCompatActivity {
             toast.show();
             passwordEditText.setText("");
         } else {
-            Toast toast = Toast.makeText(this,postResult.getCode() + " " + getString(R.string.error_impossible_to_register),Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, getString(R.string.error_impossible_to_register),Toast.LENGTH_LONG);
             toast.show();
             passwordEditText.setText("");
-            postResult.getException().printStackTrace();
         }
     }
 

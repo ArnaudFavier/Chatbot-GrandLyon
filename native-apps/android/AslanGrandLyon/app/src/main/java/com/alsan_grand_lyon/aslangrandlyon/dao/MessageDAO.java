@@ -8,7 +8,7 @@ import com.alsan_grand_lyon.aslangrandlyon.model.Message;
  * Created by Nico on 24/04/2017.
  */
 
-public class MessageDAO extends DAOBase {
+public class MessageDAO extends BaseDAO {
     public static final String MESSAGE_KEY = "id";
     public static final String MESSAGE_DATE = "date";
     public static final String MESSAGE_JSON_BODY = "json_body";
@@ -25,10 +25,14 @@ public class MessageDAO extends DAOBase {
         super(context);
     }
 
-    public void add(Message message) {
+    public void insert(Message message) {
     }
 
     public void delete(long id) {
+    }
+
+    public void deleteAll() {
+        sqLiteDatabase.delete(MessageDAO.MESSAGE_TABLE_NAME, null, null);
     }
 
     public void update(Message message) {
