@@ -86,6 +86,7 @@ function message(req, res) {
     			if(results[0].token == token) {
     				if(message_id != undefined || message_id == "-1") {
     					db.getAllMessage(user_id, function(data){
+    						console.log(data);
     						res.status(200).send(JSON.stringify({messages:data}));
     					});
     				} else {
