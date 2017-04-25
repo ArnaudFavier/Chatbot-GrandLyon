@@ -76,7 +76,41 @@ function register(req, res) {
 function message(req, res) {
 	var data = req.body;
     var user_id = data.user_id;
+    var token = data.token;
     var message_id = data.message_id;
+     if(user_id != undefined && token != undefined) {
+    	console.log(JSON.stringify(data));
+    	db.getUserById(user_id, function(error, results) {
+    		console.log(JSON.stringify(results));
+    		if(results.length == 1) {
+    			if(results[0].token == token) {
+    				if(message_id != undefined || message_id == "") {
+    					db.getAllMessage(user_id, function(data){
+    						res.status(200).send(JSON.stringify({messages:data}));
+    					});
+    				} else {
+	    				db.getMessage(user_id, message, function(data){
+		    				console.log(data)
+					    	if(data.length == 0) {
+					    		res.status(500).send(JSON.stringify({error: error.toString()}));
+					    	} else {
+					    		res.status(200).send(JSON.stringify(JSON.stringify({messages:data}));
+					    	}
+		    			});
+    				}
+	    		} else {
+	    			res.status(403).send(JSON.stringify({error: "Token invalid"}));
+	    			console.log("Error : token invalid");
+	    		}
+    		} else {
+    			console.log("Error : user not found");
+			    res.status(404).send(JSON.stringify({error: "User not found"}));
+    		} 
+    	});
+    	//Traitement de la requete
+    } else {
+		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
+	}
 }
 
 /*

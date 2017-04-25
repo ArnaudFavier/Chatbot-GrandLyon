@@ -41,21 +41,22 @@ function getUserById(id , callback) {
 *	Sinon on renvoie les messages après lastMessageId
 */
 function getMessage(userId, lastMessageId, callback) {
-	return null;
+	var oid = new MongoObjectID(lastMessageId);
+	db.getData("messages", {user_id: userId, _id: {$gt: oid}}, callback);
 }
 
 /*
 *	Fonction qui enregistre un message
 */
 function getAllMessage(userId, callback) {
-	return null;
+	db.getData("messages", {user_id: userId}, callback);
 }
 
 /*
 *	Fonction qui enregistre un message
 */
 function createMessage(userId, message, callback) {
-	db.insertData("messages", { userId: userId, message: message, date: new Date() }, callback);
+	db.insertData("messages", { user_id: userId, message: message, date: new Date() }, callback);
 }
 
 /*
