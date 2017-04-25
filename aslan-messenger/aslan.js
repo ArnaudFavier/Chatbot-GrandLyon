@@ -88,7 +88,9 @@ function receive(req, res) {
     var token = data.token;
     var message = data.message;
     if(user_id != undefined && token != undefined && message != undefined) {
+    	console.log(JSON.stringify(data));
     	db.getUserById(user_id, function(error, results) {
+    		console.log(JSON.stringify(results));
     		if(results.length == 1) {
     			if(results[0].token == token) {
 	    			db.createMessage(user_id, message, function(data){
@@ -108,7 +110,6 @@ function receive(req, res) {
 			    res.status(404).send(JSON.stringify({error: "User not found"}));
     		} 
     	});
-    	createMessage(user_id, message, callback)
     	//Traitement de la requete
     } else {
 		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
