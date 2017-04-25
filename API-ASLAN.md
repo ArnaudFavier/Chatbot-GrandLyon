@@ -1,6 +1,8 @@
 # API-ASLAN
 
-POST /aslan-messenger/signin  
+**Connexion d'un utilisateur**
+
+**POST** */aslan-messenger/signin* 
 
 **Input**
 
@@ -31,7 +33,9 @@ POST /aslan-messenger/signin
 
 -----------------
 
-POST /aslan-messenger/register 
+**Inscription d'un utilisateur**
+
+**POST** */aslan-messenger/register*
 
 **Input**
 
@@ -64,7 +68,9 @@ POST /aslan-messenger/register
 
 -----------------
 
-POST /aslan-messenger/message 
+**Envoie d'un message**
+
+**POST** */aslan-messenger/message*
 
 **Input**
 
