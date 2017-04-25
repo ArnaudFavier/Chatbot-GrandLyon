@@ -29,6 +29,13 @@ function getUser(email, password, salt , callback) {
 }
 
 /*
+*	Fonction qui renvoie l'utilisateur associé à l'id
+*/
+function getUserById(id , callback) {
+	db.getData("users", {_id : id}, callback);
+}
+
+/*
 *	Fonction qui renvoie les messages à un utilisateurs
 *	Si lastMessageId = -1, alors on renvoie tout
 *	Sinon on renvoie les messages après lastMessageId
@@ -72,6 +79,7 @@ function genRandomString(length) {
 exports.createUser = createUser;
 exports.getUser = getUser;
 exports.userExist = userExist;
+exports.getUserById = getUserById;
 exports.getMessage = getMessage;
 exports.getAllMessage = getAllMessage;
 exports.createMessage = createMessage;

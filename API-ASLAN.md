@@ -61,3 +61,34 @@ POST /aslan-messenger/register
 422 // JSON Input mal formé
 
 500 // Erreur interne
+
+-----------------
+
+POST /aslan-messenger/message 
+
+**Input**
+
+```json
+{
+	"user_id": string,
+	"token": string,
+	"message": json
+}
+```
+
+**Output**
+
+200 // OK  
+
+```json
+{
+	"success": "success"
+}
+```
+403 // Token invalide
+
+404 // Utilisateur inexistant 
+
+422 // JSON Input mal formé
+
+500 // Erreur interne
