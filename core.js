@@ -50,7 +50,7 @@ function callbackLogicLayer(response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    var replie = response.fulfillment.speech;
+    var replie = response.result.fulfillment.speech;
     var fields = extractFields(replie);
     var quickreplies = extractQuickReplies(fields);
     replie = removeFields(replie);
