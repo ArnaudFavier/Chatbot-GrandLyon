@@ -39,7 +39,7 @@ function callbackLogicLayer(response) {
     /*
     *   Préparation du message
     */
-    //prepareMessage(response);
+    prepareMessage(response);
 }
 
 /*
@@ -50,16 +50,14 @@ function callbackLogicLayer(response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    for(var i=0;i<response.replies.length;i++) 
-    {
-        var fields = extractFields(response.replies[i]);
-        var quickreplies = extractQuickReplies(fields);
-        response.replies[i] = removeFields(response.replies[i]);
-        if(quickreplies.length > 0) {
-            prepareMessageWithQuickReply(response.replies[i], quickreplies, messages);
-        } else if(response.replies[i] != undefined ) {
-            prepareMessageWithText(response.replies[i], messages);
-        }
+    var replie = response.fulfillment.speech;
+    var fields = extractFields(replie);
+    var quickreplies = extractQuickReplies(fields);
+    replie = removeFields(replie);
+    if(quickreplies.length > 0) {
+        prepareMessageWithQuickReply(replie, quickreplies, messages);
+    } else if(response.replies[i] != undefined ) {
+        prepareMessageWithText(replie, messages);
     }
     sendMessages(messages);
 }
