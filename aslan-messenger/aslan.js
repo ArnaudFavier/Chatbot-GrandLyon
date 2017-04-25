@@ -53,7 +53,6 @@ function register(req, res) {
     			console.log("Error : user already exist");
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
-    			console.log("Error : user not created");
     			db.createUser(email, firstname, name, password, function(data) {
     				console.log(data)
 			    	if(data.length == 0) {
@@ -86,9 +85,34 @@ function message(req, res) {
 function receive(req, res) {
 	var data = req.body;
     var user_id = data.user_id;
+    var token = data.token;
     var message = data.message;
-
-    messenger.receivedMessage(req, res);
+    if(user_id != undefined && token != undefined && message != undefined) {
+    	db.getUserById(user_id, function(error, results) {
+    		if(results.length == 1) {
+    			if(results[0].token == token) {
+	    			db.createMessage(user_id, message, function(data){
+	    				console.log(data)
+				    	if(data.length == 0) {
+				    		res.status(500).send(JSON.stringify({error: error.toString()}));
+				    	} else {
+				    		res.status(200).send(JSON.stringify({success:"success"}));
+				    	}
+	    			});
+	    		} else {
+	    			res.status(403).send(JSON.stringify({error: "Token invalid"}));
+	    			console.log("Error : token invalid");
+	    		}
+    		} else {
+    			console.log("Error : user not found");
+			    res.status(404).send(JSON.stringify({error: "User not found"}));
+    		} 
+    	});
+    	createMessage(user_id, message, callback)
+    	//Traitement de la requete
+    } else {
+		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
+	}
 }
 
 
@@ -98,8 +122,8 @@ function emailIsValid(email) {
 }
 
 function fieldIsValid(content) {
-	return content.length() > 0 &&
-		content.replace(" ", "").length() > 0;
+	return content.length > 0 &&
+		content.replace(" ", "").length > 0;
 }
 
 exports.signIn = signIn;
