@@ -85,20 +85,16 @@ function message(req, res) {
     		if(results.length == 1) {
     			if(results[0].token == token) {
     				if(message_id != undefined || message_id == "-1") {
-    					db.getAllMessage(user_id, function(data){
+    					db.getAllMessage(user_id, function(error, results){
     						console.log("Cas 1")
-    						console.log(data);
-    						res.status(200).send(JSON.stringify({messages:data}));
+    						console.log(results);
+    						res.status(200).send(JSON.stringify({messages:results}));
     					});
     				} else {
-	    				db.getMessage(user_id, message, function(data){
+	    				db.getMessage(user_id, message, function(error, results){
 		    				console.log("Cas 2")
-		    				console.log(data)
-					    	if(data.length == 0) {
-					    		res.status(500).send(JSON.stringify({error: error.toString()}));
-					    	} else {
-					    		res.status(200).send(JSON.stringify(JSON.stringify({messages:data})));
-					    	}
+		    				console.log(results)
+					    	res.status(200).send(JSON.stringify({messages:results}));
 		    			});
     				}
 	    		} else {
