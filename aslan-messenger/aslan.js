@@ -74,7 +74,7 @@ function register(req, res) {
 *	Sinon on renvoie les messages après lastMessageId
 */
 function message(req, res) {
-	var data = req.query;
+	var data = req.params;
     var user_id = data.user_id;
     var token = data.token;
     var message_id = data.message_id;
