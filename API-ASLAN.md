@@ -19,10 +19,13 @@ POST /aslan-messenger/signin
 {
 	"email": string,
 	"firstname": string,
-	"name": string
+	"name": string,
+	"token": string
 }
 ```
 403 // Compte inexistant  
+
+422 // JSON Input mal formé
 
 500 // Erreur interne
 
@@ -49,9 +52,12 @@ POST /aslan-messenger/register
 {
 	"email": string,
 	"firstname": string,
-	"name": string
+	"name": string,
+	"token": string
 }
 ```
 403 // Compte existant  
+
+422 // JSON Input mal formé
 
 500 // Erreur interne

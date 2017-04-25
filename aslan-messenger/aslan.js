@@ -13,23 +13,27 @@ function signIn(req, res) {
     if(data.email != undefined && data.password != undefined) {
     	db.userExist(email, function(error, results) {
     		if(results.length == 0) {
+    			console.log("Error : user doesn't exist");
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 1) {
     			db.getUser(email, password, results[0].salt, function(error, results) {
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
+			    		console.log(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
+			    			name: results[0].name, token : results[0].token}));
 			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
 			    	}
 			    }); 
     		} else {
-    			res.writeHead(500, {'Content-Type': 'application/json'});
-    			res.write(JSON.stringify({error: "Contactez un administrateur"}));
+    			res.status(500).send("Contactez un administrateur");
     			console.log("Error : multiple user");
     		}
     	});
-    }
+    } else {
+		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
+	}
 }
 
 /*
@@ -38,15 +42,18 @@ function signIn(req, res) {
 function register(req, res) {
 	var data = req.body;
 	if(data.email != undefined && data.password != undefined
-		&& data.firstname != undefined && data.name != undefined) {
+		&& data.firstname != undefined && data.name != undefined && fieldIsValid(data.password) && 
+		fieldIsValid(data.firstname) && fieldIsValid(data.name) &&  emailIsValid(data.email)) {
 		var email = data.email;
 	    var password = data.password;
 	    var firstname = data.firstname;
 	    var name = data.name;
 	    db.userExist(email, function(error, results) {
     		if(results.length > 0) {
+    			console.log("Error : user already exist");
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
+    			console.log("Error : user not created");
     			db.createUser(email, firstname, name, password, function(data) {
     				console.log(data)
 			    	if(data.length == 0) {
@@ -58,8 +65,7 @@ function register(req, res) {
     		}
     	});
 	} else {
-		res.writeHead(422, {'Content-Type': 'application/json'});
-		res.write(JSON.stringify({error: "JSON Invalid"}));
+		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
 	}
 }
 
@@ -83,6 +89,17 @@ function receive(req, res) {
     var message = data.message;
 
     messenger.receivedMessage(req, res);
+}
+
+
+function emailIsValid(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function fieldIsValid(content) {
+	return content.length() > 0 &&
+		content.replace(" ", "").length() > 0;
 }
 
 exports.signIn = signIn;
