@@ -32,7 +32,7 @@ function getUser(email, password, salt , callback) {
 *	Fonction qui renvoie l'utilisateur associé à l'id
 */
 function getUserById(id , callback) {
-	db.getData("users", {_id : id}, callback);
+	db.getData("users", {_id : new MongoObjectID(id)}, callback);
 }
 
 /*
