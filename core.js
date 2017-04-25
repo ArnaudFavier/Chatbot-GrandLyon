@@ -56,7 +56,7 @@ function prepareMessage(response) {
     replie = removeFields(replie);
     if(quickreplies.length > 0) {
         prepareMessageWithQuickReply(replie, quickreplies, messages);
-    } else if(response.replies[i] != undefined ) {
+    } else if(replie != undefined ) {
         prepareMessageWithText(replie, messages);
     }
     sendMessages(messages);
