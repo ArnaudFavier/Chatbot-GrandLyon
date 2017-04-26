@@ -70,7 +70,7 @@ function removeFields(response) {
     var fields = extractFields(response);
     for(var i=0;i<fields.length;i++) 
     {
-        string = string.replace('{' + fields[i] + '}', "");
+        string = string.replace(fields[i], "");
     }
     return string;
 }
@@ -80,13 +80,9 @@ function removeFields(response) {
 *   Fait un post traitement sur les champs pour les rendre conforme JSON
 */
 function extractFields(response) {
-    var fields = response.match(/(\{\{.*\}\})/g);
+    var fields = response.match(/(\{.*\})/g);
     if(fields == undefined) {
         fields = [];
-    }
-    for(var i=0;i<fields.length;i++) {
-        fields[i] = fields[i].substr(1);
-        fields[i] = fields[i].slice(0, -1);
     }
     return fields;
 }
