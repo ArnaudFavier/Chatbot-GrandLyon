@@ -94,7 +94,7 @@ function message(req, res) {
 	    				db.getMessage(user_id, message_id, function(error, results){
 		    				console.log("Cas 2")
 		    				console.log(results)
-					    	res.status(200).send(JSON.stringify({messages:results}));
+					    	res.status(200).send(JSON.stringify({messages:results[0]}}));
 		    			});
     				}
 	    		} else {
