@@ -84,7 +84,7 @@ function message(req, res) {
     		console.log(JSON.stringify(results));
     		if(results.length == 1) {
     			if(results[0].token == token) {
-    				if(message_id != undefined || message_id == "-1") {
+    				if(message_id == undefined || message_id == "-1") {
     					db.getAllMessage(user_id, function(error, results){
     						console.log("Cas 1")
     						console.log(results);
