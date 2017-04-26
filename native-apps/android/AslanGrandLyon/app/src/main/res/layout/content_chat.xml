@@ -27,7 +27,9 @@
             <ListView
                 android:id="@+id/messagesListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:listSelector="@android:color/transparent"/>
 
         </android.support.design.widget.CoordinatorLayout>
 
@@ -112,7 +114,8 @@
                     android:hint="Envoyer un message"
                     android:inputType="textMultiLine"
                     android:minHeight="50dp"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:text="Bonjour" />
 
                 <ImageView
                     android:id="@+id/sendImageView"

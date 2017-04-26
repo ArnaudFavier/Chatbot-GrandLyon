@@ -11,8 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
-import com.alsan_grand_lyon.aslangrandlyon.model.Message;
+import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 import com.alsan_grand_lyon.aslangrandlyon.view.RoundImage;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by Nico on 21/04/2017.
@@ -21,7 +24,7 @@ import com.alsan_grand_lyon.aslangrandlyon.view.RoundImage;
 public class AslanTextMessageView extends FrameLayout {
 
     private LinearLayout linearLayout = null;
-    private Message message = null;
+    private TextMessage message = null;
     private TextView textView = null;
     private TextView dateTextView = null;
     private ImageView imageView = null;
@@ -72,13 +75,15 @@ public class AslanTextMessageView extends FrameLayout {
         });
     }
 
-    public Message getMessage() {
+    public TextMessage getMessage() {
         return message;
     }
 
-    public void setMessage(Message message) {
+    public void setMessage(TextMessage message) {
         this.message = message;
         this.textView.setText(message.getText());
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        this.dateTextView.setText(dateFormat.format(this.message.getDate()));
     }
 
 }

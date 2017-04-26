@@ -9,6 +9,7 @@ import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
 import com.alsan_grand_lyon.aslangrandlyon.model.User;
 import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,7 +17,7 @@ import org.json.JSONObject;
  * Created by Nico on 24/04/2017.
  */
 
-public class SignInTask extends AsyncTask<String, String, PostResult> {
+public class SignInTask extends AsyncTask<String, String, HttpResult> {
     private SignInActivity signInActivity;
     private UserDAO userDAO;
     private MessageDAO messageDAO;
@@ -34,15 +35,15 @@ public class SignInTask extends AsyncTask<String, String, PostResult> {
 
 
     @Override
-    protected PostResult doInBackground(String... params) {
+    protected HttpResult doInBackground(String... params) {
         String email = params[0];
         String password = params[1];
         String url = signInActivity.getString(R.string.server_url) + signInActivity.getString(R.string.server_sign_in);
-        PostResult postResult = CallAPI.signIn(url,email,password);
-        if(postResult.getCode() == 200) {
+        HttpResult httpResult = CallAPI.signIn(url,email,password);
+        if(httpResult.getCode() == 200) {
             try {
-                JSONObject jsonObject = new JSONObject(postResult.getOutput());
-                User user = new User(jsonObject.getString("id"),
+                JSONObject jsonObject = new JSONObject(httpResult.getOutput());
+                User user = new User(jsonObject.getString("_id"),
                         jsonObject.getString("firstname"),
                         jsonObject.getString("name"),
                         jsonObject.getString("email"),
@@ -67,16 +68,16 @@ public class SignInTask extends AsyncTask<String, String, PostResult> {
 
                 userDAO.close();
             } catch (JSONException e) {
-                postResult.setCode(-1);
+                httpResult.setCode(-1);
             }
         }
-        return postResult;
+        return httpResult;
     }
 
 
     @Override
-    protected void onPostExecute(PostResult result) {
-        signInActivity.signIn(result);
+    protected void onPostExecute(HttpResult result) {
+        signInActivity.signedIn(result);
     }
 
 }

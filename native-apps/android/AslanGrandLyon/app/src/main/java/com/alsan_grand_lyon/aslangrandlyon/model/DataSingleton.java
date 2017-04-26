@@ -1,5 +1,8 @@
 package com.alsan_grand_lyon.aslangrandlyon.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -13,6 +16,7 @@ public class DataSingleton {
 
 
     private DataSingleton() {
+        messages = new ArrayList<>();
     }
 
     public static DataSingleton getInstance() {
@@ -34,7 +38,29 @@ public class DataSingleton {
         return messages;
     }
 
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
+    public void addMessage(Message message) {
+        messages.add(message);
+    }
+
+    public void removeMessage(Message message) {
+        messages.remove(message);
+    }
+
+    public void removeAllMessages() {
+        messages.clear();
+    }
+
+    public void sortMessages() {
+        Collections.sort(messages, new Comparator<Message>() {
+            @Override
+            public int compare(Message lhs, Message rhs) {
+                if(lhs.getDate().getTime() - rhs.getDate().getTime() > 0) {
+                    return 1;
+                } else if (lhs.getDate().getTime() - rhs.getDate().getTime() == 0) {
+                    return 0;
+                }
+                return -1;
+            }
+        });
     }
 }

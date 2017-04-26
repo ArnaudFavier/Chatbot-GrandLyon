@@ -41,7 +41,7 @@ public class SignOutTask extends AsyncTask<String, String, Integer> {
             messageDAO.close();
 
             DataSingleton.getInstance().setUser(null);
-            DataSingleton.getInstance().setMessages(null);
+            DataSingleton.getInstance().removeAllMessages();
         } catch (Exception e) {
             return -1;
         }

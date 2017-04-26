@@ -16,16 +16,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
-import com.alsan_grand_lyon.aslangrandlyon.service.PostResult;
+import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
+import com.alsan_grand_lyon.aslangrandlyon.service.GetMessagesTask;
+import com.alsan_grand_lyon.aslangrandlyon.service.HttpResult;
 import com.alsan_grand_lyon.aslangrandlyon.service.SignInTask;
 import com.alsan_grand_lyon.aslangrandlyon.view.chat.ChatActivity;
+import com.alsan_grand_lyon.aslangrandlyon.view.interfaces.LoadingMessageActivity;
 
 /**
  * Created by Nico on 24/04/2017.
  */
 
 
-public class SignInActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity implements LoadingMessageActivity {
 
     private ImageView aslanImageView = null;
     private EditText emailEditText = null;
@@ -50,7 +53,7 @@ public class SignInActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onSignInButtonClick();
+                signIn();
             }
         });
 
@@ -75,29 +78,42 @@ public class SignInActivity extends AppCompatActivity {
         return result;
     }
 
-    public void onSignInButtonClick() {
+    private void signIn() {
         InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(signInButton.getWindowToken(), 0);
 
         if(checkInputs()) {
             showLoadingDialog();
-            SignInTask signOutTask = new SignInTask(SignInActivity.this);
+            SignInTask signOutTask = new SignInTask(this);
             signOutTask.execute(emailEditText.getText().toString(), passwordEditText.getText().toString());
         }
     }
 
-    public void signIn(PostResult postResult) {
-        dismissLoadingDialog();
-        if(postResult.getCode() == 200) {
-            Intent intent = new Intent(SignInActivity.this, ChatActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (postResult.getCode() == 403) {
+    public void signedIn(HttpResult httpResult) {
+        if(httpResult.getCode() == 200) {
+            GetMessagesTask getMessagesTask = new GetMessagesTask(this,this);
+            getMessagesTask.execute(DataSingleton.getInstance().getUser());
+        } else if (httpResult.getCode() == 403) {
+            dismissLoadingDialog();
             Toast toast = Toast.makeText(this,getString(R.string.ckecks_logins),Toast.LENGTH_LONG);
             toast.show();
             passwordEditText.setText("");
         } else {
+            dismissLoadingDialog();
             Toast toast = Toast.makeText(this,getString(R.string.impossible_to_connect),Toast.LENGTH_LONG);
+            toast.show();
+        }
+    }
+
+    @Override
+    public void messagesLoaded(HttpResult httpResult) {
+        dismissLoadingDialog();
+        if(httpResult.getCode() == 200) {
+            Intent intent = new Intent(SignInActivity.this, ChatActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast toast = Toast.makeText(this,"Error loading messages",Toast.LENGTH_LONG);
             toast.show();
         }
     }

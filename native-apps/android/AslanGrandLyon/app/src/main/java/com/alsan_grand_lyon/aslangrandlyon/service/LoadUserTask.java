@@ -13,12 +13,12 @@ import com.alsan_grand_lyon.aslangrandlyon.view.launch.SplashActivity;
  * Created by Nico on 24/04/2017.
  */
 
-public class LaunchingTask extends AsyncTask<String, String, User> {
+public class LoadUserTask extends AsyncTask<String, String, User> {
     private SplashActivity splashActivity;
     private UserDAO userDAO;
     private MessageDAO messageDAO;
 
-    public LaunchingTask(SplashActivity splashActivity) {
+    public LoadUserTask(SplashActivity splashActivity) {
         this.splashActivity = splashActivity;
         this.userDAO = new UserDAO(splashActivity);
         this.messageDAO = new MessageDAO(splashActivity);
@@ -36,9 +36,6 @@ public class LaunchingTask extends AsyncTask<String, String, User> {
         User tmp = userDAO.select();
         userDAO.close();
 
-        if(tmp != null) {
-            //TODO load messages
-        }
         DataSingleton.getInstance().setUser(tmp);
 
         return tmp;
@@ -47,7 +44,7 @@ public class LaunchingTask extends AsyncTask<String, String, User> {
 
     @Override
     protected void onPostExecute(User result) {
-        splashActivity.loaded(result);
+        splashActivity.userLoaded(result);
     }
 
 }

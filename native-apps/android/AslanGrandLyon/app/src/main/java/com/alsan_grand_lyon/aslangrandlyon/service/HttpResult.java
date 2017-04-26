@@ -7,18 +7,18 @@ import com.alsan_grand_lyon.aslangrandlyon.model.User;
  * Created by Nico on 24/04/2017.
  */
 
-public class PostResult {
+public class HttpResult {
     private int code = 0;
     private String output = null;
     private Exception exception = null;
 
-    public PostResult(int code, String output) {
+    public HttpResult(int code, String output) {
         this.code = code;
         this.output = output;
         this.exception = null;
     }
 
-    public PostResult(int code, String output, Exception exception) {
+    public HttpResult(int code, String output, Exception exception) {
         this.code = code;
         this.output = output;
         this.exception = exception;
@@ -48,4 +48,12 @@ public class PostResult {
         this.exception = exception;
     }
 
+    @Override
+    public String toString() {
+        return "HttpResult{" +
+                "code=" + code +
+                ", output='" + output + '\'' +
+                ", exception=" + exception +
+                '}';
+    }
 }

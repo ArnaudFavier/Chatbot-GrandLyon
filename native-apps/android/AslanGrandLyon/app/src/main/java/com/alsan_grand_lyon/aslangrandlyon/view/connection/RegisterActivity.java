@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
-import com.alsan_grand_lyon.aslangrandlyon.service.PostResult;
+import com.alsan_grand_lyon.aslangrandlyon.service.HttpResult;
 import com.alsan_grand_lyon.aslangrandlyon.service.RegisterTask;
 import com.alsan_grand_lyon.aslangrandlyon.view.chat.ChatActivity;
 
@@ -47,14 +47,14 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onRegisterButtonClick();
+                register();
             }
         });
 
         findViewById(R.id.main_content).requestFocus();
     }
 
-    public void onRegisterButtonClick() {
+    private void register() {
         InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(registerButton.getWindowToken(), 0);
 
@@ -69,13 +69,13 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void register(PostResult postResult) {
+    public void registered(HttpResult httpResult) {
         dismissLoadingDialog();
-        if(postResult.getCode() == 200) {
+        if(httpResult.getCode() == 200) {
             Intent intent = new Intent(RegisterActivity.this, ChatActivity.class);
             startActivity(intent);
             finish();
-        } else if (postResult.getCode() == 403) {
+        } else if (httpResult.getCode() == 403) {
             Toast toast = Toast.makeText(this,getString(R.string.email_already_exists),Toast.LENGTH_LONG);
             toast.show();
             passwordEditText.setText("");

@@ -16,7 +16,7 @@ import org.json.JSONObject;
  * Created by Nico on 24/04/2017.
  */
 
-public class RegisterTask extends AsyncTask<String, String, PostResult> {
+public class RegisterTask extends AsyncTask<String, String, HttpResult> {
     private RegisterActivity registerActivity;
     private UserDAO userDAO;
     private MessageDAO messageDAO;
@@ -34,18 +34,18 @@ public class RegisterTask extends AsyncTask<String, String, PostResult> {
 
 
     @Override
-    protected PostResult doInBackground(String... params) {
+    protected HttpResult doInBackground(String... params) {
         String firstName = params[0];
         String lastName = params[1];
         String email = params[2];
         String password = params[3];
 
         String url = registerActivity.getString(R.string.server_url) + registerActivity.getString(R.string.server_register);
-        PostResult postResult = CallAPI.register(url,firstName,lastName,email,password);
-        if(postResult.getCode() == 200) {
+        HttpResult httpResult = CallAPI.register(url,firstName,lastName,email,password);
+        if(httpResult.getCode() == 200) {
             try {
-                JSONObject jsonObject = new JSONObject(postResult.getOutput());
-                User user = new User(jsonObject.getString("id"),
+                JSONObject jsonObject = new JSONObject(httpResult.getOutput());
+                User user = new User(jsonObject.getString("_id"),
                         jsonObject.getString("firstname"),
                         jsonObject.getString("name"),
                         jsonObject.getString("email"),
@@ -68,16 +68,16 @@ public class RegisterTask extends AsyncTask<String, String, PostResult> {
                 userDAO.close();
 
             } catch (JSONException e) {
-                postResult.setCode(-1);
+                httpResult.setCode(-1);
             }
         }
-        return postResult;
+        return httpResult;
     }
 
 
     @Override
-    protected void onPostExecute(PostResult result) {
-        registerActivity.register(result);
+    protected void onPostExecute(HttpResult result) {
+        registerActivity.registered(result);
     }
 
 }

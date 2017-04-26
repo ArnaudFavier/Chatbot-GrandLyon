@@ -10,7 +10,7 @@ import com.alsan_grand_lyon.aslangrandlyon.model.User;
  * Created by Nico on 24/04/2017.
  */
 
-public class UserDAO extends BaseDAO {
+public class UserDAO extends AbstractDAO {
     public static final String USER_KEY = "id";
     public static final String USER_SERVER_ID = "server_id";
     public static final String USER_FIRST_NAME = "first_name";
@@ -19,29 +19,29 @@ public class UserDAO extends BaseDAO {
     public static final String USER_PASSWORD = "password";
     public static final String USER_TOKEN = "token";
     public static final String USER_TABLE_NAME = "User";
-    public static final String USER_TABLE_CREATE = "CREATE TABLE " + USER_TABLE_NAME + " (" +
-            USER_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            USER_SERVER_ID + " TEXT, " +
-            USER_FIRST_NAME + " TEXT, " +
-            USER_LAST_NAME + " TEXT, " +
-            USER_EMAIL + " TEXT, " +
-            USER_PASSWORD + " TEXT, " +
-            USER_TOKEN + " TEXT);";
-    public static final String USER_TABLE_DROP = "DROP TABLE IF EXISTS " + USER_TABLE_NAME + ";";
+    public static final String USER_TABLE_CREATE = "CREATE TABLE " + UserDAO.USER_TABLE_NAME + " (" +
+            UserDAO.USER_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            UserDAO.USER_SERVER_ID + " TEXT, " +
+            UserDAO.USER_FIRST_NAME + " TEXT, " +
+            UserDAO.USER_LAST_NAME + " TEXT, " +
+            UserDAO.USER_EMAIL + " TEXT, " +
+            UserDAO.USER_PASSWORD + " TEXT, " +
+            UserDAO.USER_TOKEN + " TEXT);";
+    public static final String USER_TABLE_DROP = "DROP TABLE IF EXISTS " + UserDAO.USER_TABLE_NAME + ";";
 
     public UserDAO(Context context) {
         super(context);
     }
 
     public long insert(User user) {
-        ContentValues value = new ContentValues();
-        value.put(UserDAO.USER_SERVER_ID, user.getServerId());
-        value.put(UserDAO.USER_FIRST_NAME, user.getFirstName());
-        value.put(UserDAO.USER_LAST_NAME, user.getLastName());
-        value.put(UserDAO.USER_EMAIL, user.getEmail());
-        value.put(UserDAO.USER_PASSWORD, user.getPassword());
-        value.put(UserDAO.USER_TOKEN, user.getToken());
-        return sqLiteDatabase.insert(UserDAO.USER_TABLE_NAME, null, value);
+        ContentValues values = new ContentValues();
+        values.put(UserDAO.USER_SERVER_ID, user.getServerId());
+        values.put(UserDAO.USER_FIRST_NAME, user.getFirstName());
+        values.put(UserDAO.USER_LAST_NAME, user.getLastName());
+        values.put(UserDAO.USER_EMAIL, user.getEmail());
+        values.put(UserDAO.USER_PASSWORD, user.getPassword());
+        values.put(UserDAO.USER_TOKEN, user.getToken());
+        return sqLiteDatabase.insert(UserDAO.USER_TABLE_NAME, null, values);
     }
 
     public void deleteAll() {

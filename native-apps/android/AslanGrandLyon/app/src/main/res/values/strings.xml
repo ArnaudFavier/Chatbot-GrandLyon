@@ -4,7 +4,7 @@
     <string name="server_url">https://aslan-grandlyon.herokuapp.com</string>
     <string name="server_sign_in">/aslan-messenger/signin</string>
     <string name="server_register">/aslan-messenger/register</string>
-
+    <string name="server_message">/aslan-messenger/message</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

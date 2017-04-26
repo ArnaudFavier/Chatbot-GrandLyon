@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 
 import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
+import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 
 import java.util.List;
 
@@ -23,23 +24,22 @@ public class MessageAdapter extends ArrayAdapter<Message> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
+        // TODO
         Message message = this.getItem(position);
 
-        if(message.getProfile() == Profile.ASLAN) {
-            convertView = new AslanTextMessageView(getContext());
+        if(message.isAslan()) {
+            if(message instanceof TextMessage) {
+                AslanTextMessageView aslanTextMessageView = new AslanTextMessageView(getContext());
+                aslanTextMessageView.setMessage((TextMessage)message);
+                convertView = aslanTextMessageView;
+            }
         } else {
-            convertView = new UserTextMessageView(getContext());
+            if(message instanceof TextMessage) {
+                UserTextMessageView userTextMessageView = new UserTextMessageView(getContext());
+                userTextMessageView.setMessage((TextMessage)message);
+                convertView = userTextMessageView;
+            }
         }
-
-        if(convertView instanceof AslanTextMessageView) {
-            AslanTextMessageView textMessageView = (AslanTextMessageView) convertView;
-            textMessageView.setMessage(message);
-        } else {
-            UserTextMessageView textMessageView = (UserTextMessageView) convertView;
-            textMessageView.setMessage(message);
-        }
-
 
         return convertView;
     }

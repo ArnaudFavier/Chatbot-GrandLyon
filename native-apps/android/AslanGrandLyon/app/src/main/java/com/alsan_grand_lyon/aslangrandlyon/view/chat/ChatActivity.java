@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,12 +21,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
+import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
 import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
+import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
+import com.alsan_grand_lyon.aslangrandlyon.model.User;
+import com.alsan_grand_lyon.aslangrandlyon.service.HttpResult;
+import com.alsan_grand_lyon.aslangrandlyon.service.MessageHttpResult;
+import com.alsan_grand_lyon.aslangrandlyon.service.SendMessageTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.SignOutTask;
 import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ChatActivity extends AppCompatActivity
@@ -37,7 +45,6 @@ public class ChatActivity extends AppCompatActivity
     private ImageView sendImageView = null;
     private MessageAdapter messageAdapter = null;
     private AlertDialog loadingAlertDialog = null;
-    private List<Message> messages = null;
     private boolean signingOutFlag = false;
 
     @Override
@@ -62,15 +69,23 @@ public class ChatActivity extends AppCompatActivity
         messageEditText = (EditText) findViewById(R.id.messageEditText);
         sendImageView = (ImageView) findViewById(R.id.sendImageView);
 
-        initTextMessages();
-        messageAdapter = new MessageAdapter(getApplicationContext(), messages);
+        //TODO
+        messageAdapter = new MessageAdapter(getApplicationContext(), DataSingleton.getInstance().getMessages());
         messagesListView.setAdapter(messageAdapter);
         messagesListView.setDivider(null);
+
 
         buttonsLinearLayout.removeAllViews();
         buttonsLinearLayout.setVisibility(View.GONE);
 
         messagesListView.setSelection(messagesListView.getCount()-1);
+
+        sendImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMessage();
+            }
+        });
     }
 
     @Override
@@ -120,18 +135,6 @@ public class ChatActivity extends AppCompatActivity
         return true;
     }
 
-    public void initTextMessages() {
-        messages = new ArrayList<>();
-
-        for(int i = 0; i < 50; i++) {
-            if(i % 2 == 0) {
-                messages.add(new Message(Profile.ASLAN,"Bonjour, je suis Aslan du Grand Lyon. Comment puis-je vous aider ? "));
-            } else {
-                messages.add(new Message(Profile.USER,"Bonjour, je cherche un restaurant à proximité. "));
-            }
-        }
-    }
-
     private void showLoadingDialog() {
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         LayoutInflater adbInflater = LayoutInflater.from(this);
@@ -147,11 +150,13 @@ public class ChatActivity extends AppCompatActivity
         loadingAlertDialog = adb.show();
     }
 
-    public void signOut() {
-        signingOutFlag = true;
-        showLoadingDialog();
-        SignOutTask signInTask = new SignOutTask(this);
-        signInTask.execute();
+    private void signOut() {
+        if(!signingOutFlag) {
+            signingOutFlag = true;
+            showLoadingDialog();
+            SignOutTask signInTask = new SignOutTask(this);
+            signInTask.execute();
+        }
     }
 
     public void signedOut(int result) {
@@ -166,4 +171,38 @@ public class ChatActivity extends AppCompatActivity
             signingOutFlag = false;
         }
     }
+
+    private void sendMessage() {
+        //TODO tester quel type de message, pour l'instant seulement TextMessage
+        if(messageEditText.getText().toString() != null) {
+            User user = DataSingleton.getInstance().getUser();
+            Message newMessage = new TextMessage(new Date(),user.getServerId(),messageEditText.getText().toString());
+            newMessage.setUserId(user.getServerId());
+            DataSingleton.getInstance().addMessage(newMessage);
+            DataSingleton.getInstance().sortMessages();
+            refreshMessagesListView();
+            SendMessageTask sendMessageTask = new SendMessageTask(this);
+            sendMessageTask.execute(newMessage);
+        }
+    }
+
+    public void messageSent(MessageHttpResult httpResult) {
+        if(httpResult.getCode() == 200) {
+            Toast toast = Toast.makeText(this,"Message sent",Toast.LENGTH_LONG);
+            toast.show();
+        } else if (httpResult.getCode() == 403) {
+            Toast toast = Toast.makeText(this,"403 ERROR",Toast.LENGTH_LONG);
+            toast.show();
+        } else {
+            System.out.println(httpResult.getCode() + " " + httpResult.getOutput());
+            Toast toast = Toast.makeText(this,httpResult.getOutput(),Toast.LENGTH_LONG);
+            toast.show();
+        }
+        messageAdapter.notifyDataSetChanged();
+    }
+
+    public void refreshMessagesListView() {
+        messageAdapter.notifyDataSetChanged();
+    }
+
 }

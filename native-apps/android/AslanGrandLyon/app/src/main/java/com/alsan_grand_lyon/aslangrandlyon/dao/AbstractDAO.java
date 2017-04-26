@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
  * Created by Nico on 24/04/2017.
  */
 
-public abstract class BaseDAO {
+public abstract class AbstractDAO {
 
     //TODO Si je décide de la mettre à jour, il faudra changer cet attribut
     protected final static int VERSION = 1;
@@ -18,7 +18,7 @@ public abstract class BaseDAO {
     protected SQLiteDatabase sqLiteDatabase = null;
     protected DatabaseHandler databaseHandler = null;
 
-    public BaseDAO(Context context) {
+    public AbstractDAO(Context context) {
         this.databaseHandler = new DatabaseHandler(context, NOM, null, VERSION);
     }
 
