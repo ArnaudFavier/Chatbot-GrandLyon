@@ -94,7 +94,7 @@ function message(req, res) {
 	    				db.getMessage(user_id, message_id, function(error, results){
 		    				console.log("Cas 2")
 		    				console.log(results)
-					    	res.status(200).send(JSON.stringify({messages:results[0]}));
+					    	res.status(200).send(JSON.stringify({messages:results}));
 		    			});
     				}
 	    		} else {
@@ -130,7 +130,7 @@ function receive(req, res) {
 				    	if(data.length == 0) {
 				    		res.status(500).send(JSON.stringify({error: error.toString()}));
 				    	} else {
-				    		res.status(200).send(JSON.stringify(data));
+				    		res.status(200).send(JSON.stringify(data[0]));
 				    	}
 	    			});
 	    		} else {
