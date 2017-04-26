@@ -19,6 +19,7 @@
 
 ```json
 {
+	"_id" : string,
 	"email": string,
 	"firstname": string,
 	"name": string,
@@ -54,6 +55,7 @@
 
 ```json
 {
+	"_id" : string,
 	"email": string,
 	"firstname": string,
 	"name": string,
@@ -106,6 +108,7 @@
 **GET** */aslan-messenger/message/:token/:user_id/:message_id*
 
 **Input**
+
 Mettre les paramètres dans l'URL, si on veut tous les messages mettre message_id à -1
 
 **Output**

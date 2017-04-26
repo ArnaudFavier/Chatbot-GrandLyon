@@ -20,9 +20,9 @@ function signIn(req, res) {
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		console.log(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
+			    		console.log(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
-			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
+			    		res.status(200).send(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
 			    	}
 			    }); 
@@ -58,7 +58,7 @@ function register(req, res) {
 			    	if(data.length == 0) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		res.status(200).send(JSON.stringify({id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token}));
+			    		res.status(200).send(JSON.stringify({_id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token}));
 			    	}
 			    });
     		}
