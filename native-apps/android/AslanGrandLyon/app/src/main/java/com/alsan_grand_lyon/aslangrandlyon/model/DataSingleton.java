@@ -42,6 +42,10 @@ public class DataSingleton {
         messages.add(message);
     }
 
+    public void addAllMessages(List<Message> messages) {
+        this.messages.addAll(messages);
+    }
+
     public void removeMessage(Message message) {
         messages.remove(message);
     }

@@ -41,7 +41,7 @@ public class TextMessage extends Message {
         this.text = text;
     }
 
-    public TextMessage(int id, String serverId, Date date, String jsonBody, boolean isAslan, String userId, String text) {
+    public TextMessage(long id, String serverId, Date date, String jsonBody, boolean isAslan, String userId, String text) {
         super(id, serverId, date, jsonBody, isAslan, userId);
         this.text = text;
     }

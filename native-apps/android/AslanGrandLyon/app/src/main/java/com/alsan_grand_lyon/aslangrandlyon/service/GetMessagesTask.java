@@ -47,7 +47,6 @@ public class GetMessagesTask extends AsyncTask<User, String, HttpResult> {
         String url = context.getString(R.string.server_url) + context.getString(R.string.server_message);
 
         messageDAO.open();
-        messageDAO.deleteAll();
         Message lastMessage = messageDAO.selectMostRecentFromServer();
         HttpResult httpResult = null;
         if(lastMessage == null) {
@@ -56,20 +55,23 @@ public class GetMessagesTask extends AsyncTask<User, String, HttpResult> {
             httpResult = CallAPI.getMessages(url,user.getToken(),user.getServerId(),lastMessage.getServerId());
         }
 
+
         if(httpResult.getCode() == 200) {
             try {
                 JSONObject jsonObject = new JSONObject(httpResult.getOutput());
                 JSONArray jsonArray = jsonObject.getJSONArray("messages");
                 for(int i = 0; i < jsonArray.length(); i++) {
                     Message message = MessageFactory.createMessageFromJson(jsonArray.getJSONObject(i));
-                    long id = messageDAO.insert(message);
-                    message.setId(id);
-                    DataSingleton.getInstance().addMessage(message);
+                    messageDAO.insert(message);
                 }
             } catch (JSONException e) {
                 httpResult.setCode(-1);
             }
         }
+
+        DataSingleton.getInstance().addAllMessages(messageDAO.selectMessagesOrderByDateDesc(10,0));
+        DataSingleton.getInstance().sortMessages();
+
         messageDAO.close();
         return httpResult;
     }

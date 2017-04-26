@@ -51,7 +51,7 @@ public class MessageFactory {
 
             if(type.equals("text")) {
                 String text = body.getString("text");
-                message = new TextMessage(serverId,date,jsonBody,isAslan,userId,text);
+                message = new TextMessage(id,serverId,date,jsonBody,isAslan,userId,text);
             }
 
         } catch (JSONException e) {

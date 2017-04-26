@@ -50,7 +50,7 @@ public class Message {
         this.userId = userId;
     }
 
-    public Message(int id, String serverId, Date date, String jsonBody, boolean isAslan, String userId) {
+    public Message(long id, String serverId, Date date, String jsonBody, boolean isAslan, String userId) {
         this.id = id;
         this.serverId = serverId;
         this.date = date;

@@ -7,6 +7,9 @@ import android.database.Cursor;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 import com.alsan_grand_lyon.aslangrandlyon.model.MessageFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Nico on 24/04/2017.
  */
@@ -81,7 +84,7 @@ public class MessageDAO extends AbstractDAO {
         String[] columns = {MessageDAO.MESSAGE_KEY, MessageDAO.MESSAGE_SERVER_ID, MessageDAO.MESSAGE_USER_ID,
                 MessageDAO.MESSAGE_JSON_BODY, MessageDAO.MESSAGE_DATE_LONG, MessageDAO.MESSAGE_IS_ASLAN};
         String selection = MessageDAO.MESSAGE_SERVER_ID + " IS NOT NULL";
-        String orderBy = MessageDAO.MESSAGE_DATE_LONG + " desc";
+        String orderBy = MessageDAO.MESSAGE_DATE_LONG + " DESC";
         String limit = "1";
         Cursor cursor = sqLiteDatabase.query(MessageDAO.MESSAGE_TABLE_NAME, columns, selection, null, null, null, orderBy,limit);
 
@@ -103,5 +106,32 @@ public class MessageDAO extends AbstractDAO {
 
         cursor.close();
         return message;
+    }
+
+    public List<Message> selectMessagesOrderByDateDesc(int limit, int offset) {
+        String[] columns = {MessageDAO.MESSAGE_KEY, MessageDAO.MESSAGE_SERVER_ID, MessageDAO.MESSAGE_USER_ID,
+                MessageDAO.MESSAGE_JSON_BODY, MessageDAO.MESSAGE_DATE_LONG, MessageDAO.MESSAGE_IS_ASLAN};
+        String selection = MessageDAO.MESSAGE_SERVER_ID + " IS NOT NULL";
+        String orderBy = MessageDAO.MESSAGE_DATE_LONG + " DESC";
+        String limitOffset = offset + "," + limit;
+        Cursor cursor = sqLiteDatabase.query(MessageDAO.MESSAGE_TABLE_NAME, columns, selection, null, null, null, orderBy,limitOffset);
+
+        List<Message> messages = new ArrayList<>();
+
+        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            long id = cursor.getLong(0);
+            String serverId = cursor.getString(1);
+            String userId = cursor.getString(2);
+            String jsonBody = cursor.getString(3);
+            long date = cursor.getLong(4);
+            boolean isAslan = true;
+            if(cursor.getInt(5) == 0) {
+                isAslan = false;
+            }
+            Message message = MessageFactory.createMessage(id,serverId,userId,jsonBody,date,isAslan);
+            messages.add(message);
+        }
+        cursor.close();
+        return messages;
     }
 }
