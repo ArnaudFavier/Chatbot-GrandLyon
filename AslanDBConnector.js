@@ -98,7 +98,6 @@ exports.insertData = function(table, object, callback) {
                     if (err) {
                         throw err;
                     } else {
-                        console.log("User creation successful!")
                         callback(results.ops);
                     }
                 }); 

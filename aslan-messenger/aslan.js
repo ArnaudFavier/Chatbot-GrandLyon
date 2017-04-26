@@ -20,9 +20,9 @@ function signIn(req, res) {
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		console.log(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
+			    		console.log(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
-			    		res.status(200).send(JSON.stringify({id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
+			    		res.status(200).send(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
 			    	}
 			    }); 
@@ -58,7 +58,7 @@ function register(req, res) {
 			    	if(data.length == 0) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		res.status(200).send(JSON.stringify({id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token}));
+			    		res.status(200).send(JSON.stringify({_id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token}));
 			    	}
 			    });
     		}
@@ -74,9 +74,41 @@ function register(req, res) {
 *	Sinon on renvoie les messages après lastMessageId
 */
 function message(req, res) {
-	var data = req.body;
+	var data = req.params;
     var user_id = data.user_id;
+    var token = data.token;
     var message_id = data.message_id;
+     if(user_id != undefined && token != undefined) {
+    	console.log(JSON.stringify(data));
+    	db.getUserById(user_id, function(error, results) {
+    		console.log(JSON.stringify(results));
+    		if(results.length == 1) {
+    			if(results[0].token == token) {
+    				if(message_id == undefined || message_id == "-1") {
+    					db.getAllMessage(user_id, function(error, results){
+    						console.log("Cas 1")
+    						console.log(results);
+    						res.status(200).send(JSON.stringify({messages:results}));
+    					});
+    				} else {
+	    				db.getMessage(user_id, message_id, function(error, results){
+		    				console.log("Cas 2")
+		    				console.log(results)
+					    	res.status(200).send(JSON.stringify({messages:results}));
+		    			});
+    				}
+	    		} else {
+	    			res.status(403).send(JSON.stringify({error: "Token invalid"}));
+	    			console.log("Error : token invalid");
+	    		}
+    		} else {
+    			console.log("Error : user not found");
+			    res.status(404).send(JSON.stringify({error: "User not found"}));
+    		} 
+    	});
+    } else {
+		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
+	}
 }
 
 /*
@@ -88,7 +120,9 @@ function receive(req, res) {
     var token = data.token;
     var message = data.message;
     if(user_id != undefined && token != undefined && message != undefined) {
+    	console.log(JSON.stringify(data));
     	db.getUserById(user_id, function(error, results) {
+    		console.log(JSON.stringify(results));
     		if(results.length == 1) {
     			if(results[0].token == token) {
 	    			db.createMessage(user_id, message, function(data){
@@ -108,7 +142,6 @@ function receive(req, res) {
 			    res.status(404).send(JSON.stringify({error: "User not found"}));
     		} 
     	});
-    	createMessage(user_id, message, callback)
     	//Traitement de la requete
     } else {
 		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
@@ -123,7 +156,7 @@ function emailIsValid(email) {
 
 function fieldIsValid(content) {
 	return content.length > 0 &&
-		content.replace(" ", "").length > 0;
+		content.replace(" ", "").length	 > 0;
 }
 
 exports.signIn = signIn;

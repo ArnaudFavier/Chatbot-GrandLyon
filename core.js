@@ -1,6 +1,7 @@
 'use strict';
 
-const recast = require('./botlogic/recast.js');
+//const recast = require('./botlogic/recast.js');
+const apiai = require('./botlogic/apiai.js');
 const facebook = require('./channels/facebook.js');
 const telegram = require('./channels/telegram.js');
 const aslan = require('./channels/aslan-messenger.js');
@@ -23,7 +24,8 @@ function runLogicLayer(message) {
     if(message.senderID != undefined && message.text != undefined) {
         botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
     }*/
-    recast.sendMessage(message.text, callbackLogicLayer);
+    /*recast.sendMessage(message.text, callbackLogicLayer);*/
+    apiai.sendMessage(message.senderID, message.text, callbackLogicLayer)
 }
 
 /*
@@ -33,7 +35,7 @@ function callbackLogicLayer(response) {
     /*
     *   Traitement
     */
-    console.log("Recast sended : ", JSON.stringify(response));
+    console.log("APIAI sended : ", JSON.stringify(response));
     /*
     *   Préparation du message
     */
@@ -48,16 +50,14 @@ function callbackLogicLayer(response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    for(var i=0;i<response.replies.length;i++) 
-    {
-        var fields = extractFields(response.replies[i]);
-        var quickreplies = extractQuickReplies(fields);
-        response.replies[i] = removeFields(response.replies[i]);
-        if(quickreplies.length > 0) {
-            prepareMessageWithQuickReply(response.replies[i], quickreplies, messages);
-        } else if(response.replies[i] != undefined ) {
-            prepareMessageWithText(response.replies[i], messages);
-        }
+    var replie = response.result.fulfillment.speech;
+    var fields = extractFields(replie);
+    var quickreplies = extractQuickReplies(fields);
+    replie = removeFields(replie);
+    if(quickreplies.length > 0) {
+        prepareMessageWithQuickReply(replie, quickreplies, messages);
+    } else if(replie != undefined ) {
+        prepareMessageWithText(replie, messages);
     }
     sendMessages(messages);
 }

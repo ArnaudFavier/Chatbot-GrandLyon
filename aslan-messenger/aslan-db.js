@@ -2,7 +2,7 @@
 const db = require('../AslanDBConnector.js');
 const crypto = require('crypto');
 const randtoken = require('rand-token');
-
+const MongoObjectID = require("mongodb").ObjectID;
 /*
 *	Fonction qui crée un utilisateur en base de données
 */
@@ -32,7 +32,7 @@ function getUser(email, password, salt , callback) {
 *	Fonction qui renvoie l'utilisateur associé à l'id
 */
 function getUserById(id , callback) {
-	db.getData("users", {_id : id}, callback);
+	db.getData("users", {_id : new MongoObjectID(id)}, callback);
 }
 
 /*
@@ -41,21 +41,23 @@ function getUserById(id , callback) {
 *	Sinon on renvoie les messages après lastMessageId
 */
 function getMessage(userId, lastMessageId, callback) {
-	return null;
+	var oid = new MongoObjectID(lastMessageId);
+	db.getData("messages", {user_id: userId, _id: {$gt: oid}}, callback);
 }
 
 /*
 *	Fonction qui enregistre un message
 */
 function getAllMessage(userId, callback) {
-	return null;
+	console.log("USERID : " + userId);
+	db.getData("messages", {user_id: userId}, callback);
 }
 
 /*
 *	Fonction qui enregistre un message
 */
 function createMessage(userId, message, callback) {
-	return null;
+	db.insertData("messages", { user_id: userId, message: message, date: new Date() }, callback);
 }
 
 /*

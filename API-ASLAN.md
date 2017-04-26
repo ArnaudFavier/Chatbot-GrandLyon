@@ -1,6 +1,8 @@
 # API-ASLAN
 
-POST /aslan-messenger/signin  
+**Connexion d'un utilisateur**
+
+**POST** */aslan-messenger/signin* 
 
 **Input**
 
@@ -17,6 +19,7 @@ POST /aslan-messenger/signin
 
 ```json
 {
+	"_id" : string,
 	"email": string,
 	"firstname": string,
 	"name": string,
@@ -31,7 +34,9 @@ POST /aslan-messenger/signin
 
 -----------------
 
-POST /aslan-messenger/register 
+**Inscription d'un utilisateur**
+
+**POST** */aslan-messenger/register*
 
 **Input**
 
@@ -50,6 +55,7 @@ POST /aslan-messenger/register
 
 ```json
 {
+	"_id" : string,
 	"email": string,
 	"firstname": string,
 	"name": string,
@@ -64,7 +70,9 @@ POST /aslan-messenger/register
 
 -----------------
 
-POST /aslan-messenger/message 
+**Envoie d'un message**
+
+**POST** */aslan-messenger/message*
 
 **Input**
 
@@ -83,6 +91,47 @@ POST /aslan-messenger/message
 ```json
 {
 	"success": "success"
+}
+```
+403 // Token invalide
+
+404 // Utilisateur inexistant 
+
+422 // JSON Input mal formé
+
+500 // Erreur interne
+
+-----------------
+
+**Récupération de messages**
+
+**GET** */aslan-messenger/message/:token/:user_id/:message_id*
+
+**Input**
+
+Mettre les paramètres dans l'URL, si on veut tous les messages mettre message_id à -1
+
+**Output**
+
+200 // OK  
+
+```json
+{
+	"messages": [
+		{
+			"_id" : string,
+			"message" : JSON,
+			"user_id" : string,
+			"date" : string 
+		}, 
+		{
+			"_id" : string,
+			"message" : JSON,
+			"user_id" : string,
+			"date" : string,
+			"isAslan": true #est optionnel
+		},...
+	]
 }
 ```
 403 // Token invalide
