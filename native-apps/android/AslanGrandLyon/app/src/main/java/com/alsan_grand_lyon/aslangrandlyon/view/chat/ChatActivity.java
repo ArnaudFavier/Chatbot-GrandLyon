@@ -1,6 +1,7 @@
 package com.alsan_grand_lyon.aslangrandlyon.view.chat;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,10 +10,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AbsListView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,11 +26,10 @@ import android.widget.Toast;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
-import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.User;
-import com.alsan_grand_lyon.aslangrandlyon.service.HttpResult;
+import com.alsan_grand_lyon.aslangrandlyon.service.LoadMoreMessagesTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.MessageHttpResult;
 import com.alsan_grand_lyon.aslangrandlyon.service.SendMessageTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.SignOutTask;
@@ -34,6 +37,7 @@ import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ChatActivity extends AppCompatActivity
@@ -46,6 +50,8 @@ public class ChatActivity extends AppCompatActivity
     private MessageAdapter messageAdapter = null;
     private AlertDialog loadingAlertDialog = null;
     private boolean signingOutFlag = false;
+    private int limit = 2;
+    private boolean loadingMoreMessagesFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +79,24 @@ public class ChatActivity extends AppCompatActivity
         messageAdapter = new MessageAdapter(getApplicationContext(), DataSingleton.getInstance().getMessages());
         messagesListView.setAdapter(messageAdapter);
         messagesListView.setDivider(null);
+        messagesListView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
 
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if(firstVisibleItem == 0) {
+                    loadMoreMessage();
+                }
+            }
+        });
 
         buttonsLinearLayout.removeAllViews();
         buttonsLinearLayout.setVisibility(View.GONE);
-
-        messagesListView.setSelection(messagesListView.getCount()-1);
+        
+        messagesListView.setSelection(messagesListView.getCount());
 
         sendImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +104,16 @@ public class ChatActivity extends AppCompatActivity
                 sendMessage();
             }
         });
+
+    }
+
+
+    private void loadMoreMessage() {
+        if(!loadingMoreMessagesFlag) {
+            loadingMoreMessagesFlag = true;
+            LoadMoreMessagesTask loadMoreMessagesTask = new LoadMoreMessagesTask(ChatActivity.this);
+            loadMoreMessagesTask.execute(limit,DataSingleton.getInstance().getMessages().size());
+        }
     }
 
     @Override
@@ -98,21 +126,10 @@ public class ChatActivity extends AppCompatActivity
         }
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -180,9 +197,13 @@ public class ChatActivity extends AppCompatActivity
             newMessage.setUserId(user.getServerId());
             DataSingleton.getInstance().addMessage(newMessage);
             DataSingleton.getInstance().sortMessages();
-            refreshMessagesListView();
             SendMessageTask sendMessageTask = new SendMessageTask(this);
             sendMessageTask.execute(newMessage);
+            messageEditText.setText("");
+            messageEditText.setEnabled(false);
+            messageEditText.setEnabled(true);
+            refreshMessagesListView();
+            messagesListView.setSelection(messagesListView.getCount());
         }
     }
 
@@ -203,6 +224,24 @@ public class ChatActivity extends AppCompatActivity
 
     public void refreshMessagesListView() {
         messageAdapter.notifyDataSetChanged();
+    }
+
+    public void moreMessagesLoaded(int numberOfNewMessages) {
+        if(numberOfNewMessages < limit) {
+            messagesListView.setOnScrollListener(null);
+            messageAdapter.setCanLoadMoreMessages(false);
+        } else {
+            this.loadingMoreMessagesFlag = false;
+        }
+
+
+        refreshMessagesListView();
+        if(messagesListView.getFirstVisiblePosition() == 0) {
+            messagesListView.setSelection(numberOfNewMessages + 1);
+        } else {
+            messagesListView.setSelection(messagesListView.getFirstVisiblePosition() + numberOfNewMessages);
+        }
+
     }
 
 }

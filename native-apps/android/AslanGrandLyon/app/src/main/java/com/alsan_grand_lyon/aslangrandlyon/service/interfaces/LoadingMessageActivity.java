@@ -1,4 +1,4 @@
-package com.alsan_grand_lyon.aslangrandlyon.view.interfaces;
+package com.alsan_grand_lyon.aslangrandlyon.service.interfaces;
 
 import com.alsan_grand_lyon.aslangrandlyon.service.HttpResult;
 

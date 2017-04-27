@@ -5,20 +5,15 @@ import android.os.AsyncTask;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.dao.MessageDAO;
-import com.alsan_grand_lyon.aslangrandlyon.dao.UserDAO;
 import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 import com.alsan_grand_lyon.aslangrandlyon.model.MessageFactory;
 import com.alsan_grand_lyon.aslangrandlyon.model.User;
-import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
-import com.alsan_grand_lyon.aslangrandlyon.view.interfaces.LoadingMessageActivity;
+import com.alsan_grand_lyon.aslangrandlyon.service.interfaces.LoadingMessageActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Nico on 24/04/2017.

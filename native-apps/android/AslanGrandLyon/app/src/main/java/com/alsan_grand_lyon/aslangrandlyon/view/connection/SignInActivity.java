@@ -21,7 +21,7 @@ import com.alsan_grand_lyon.aslangrandlyon.service.GetMessagesTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.HttpResult;
 import com.alsan_grand_lyon.aslangrandlyon.service.SignInTask;
 import com.alsan_grand_lyon.aslangrandlyon.view.chat.ChatActivity;
-import com.alsan_grand_lyon.aslangrandlyon.view.interfaces.LoadingMessageActivity;
+import com.alsan_grand_lyon.aslangrandlyon.service.interfaces.LoadingMessageActivity;
 
 /**
  * Created by Nico on 24/04/2017.
