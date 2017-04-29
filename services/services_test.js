@@ -21,5 +21,9 @@ function callback(result) {
 // Services.getTimeAt("Paris", callback);
 
 // Appel de test pour obtenir les 10 restaurants les plus proches d'une position,
+// en passant les coordonnées de Place Bellecour (à décommenter pour tester)
+// Services.nearestRestaurants({lat: 45.756715, lon: 4.831561}, 10, callback);
+
+// Appel de test pour obtenir les 3 fontaines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour
-Services.nearestRestaurants({lat: 45.756715, lon: 4.831561}, 10, callback);
+Services.nearestFontaines({lat: 45.756715, lon: 4.831561}, 3, callback);

@@ -1,6 +1,7 @@
 'use strict';
 
 var dateFormat = require('dateformat');
+var fs = require("fs");
 
 var googleMapsClient = require('@google/maps').createClient({
     key: process.env.GOOGLE_API_KEY
@@ -101,11 +102,43 @@ function nearestRestaurants(coordinates, count, callback) {
             callback(restaurants);
         } else {
             console.log("Got an error: ", error, ", status code: ", response.statusCode)
-        
+
             callback(null);
         }
     });
 }
 
+function nearestFontaines(coordinates, count, callback) {
+    'use strict';
+
+    var fontaines = new Array(3000);
+
+    var contents = fs.readFileSync("./data/donnees_filtrees/fontaines_filtered.json");
+
+    var avant = Date.now();
+
+    const data = JSON.parse(contents);
+    var elem;
+    var fontId = 0;
+    for (let i = 0; i < data.features.length; ++i) {
+        elem = data.features[i];
+
+        var fontCoord = elem.geometry.coordinates;
+        elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, fontCoord[0], fontCoord[1]);
+
+        fontaines[fontId] = elem;
+        ++fontId;
+    }
+
+    fontaines.sort(compareRestaurantDist);
+
+    fontaines = fontaines.slice(0, count);
+
+    var apres = Date.now();
+    console.log('temps ecoule : ' + (apres - avant) + 'ms');
+
+    callback(fontaines);
+}
 exports.getTimeAt = getTimeAt;
 exports.nearestRestaurants = nearestRestaurants;
+exports.nearestFontaines = nearestFontaines;
