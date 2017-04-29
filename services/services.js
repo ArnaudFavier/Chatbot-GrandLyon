@@ -139,6 +139,40 @@ function nearestFontaines(coordinates, count, callback) {
 
     callback(fontaines);
 }
+
+function nearestPiscines(coordinates, count, callback) {
+    'use strict';
+
+    var piscines = new Array(3000);
+
+    var contents = fs.readFileSync("./data/donnees_filtrees/piscines_filtered.json");
+
+    var avant = Date.now();
+
+    const data = JSON.parse(contents);
+    var elem;
+    var piscId = 0;
+    for (let i = 0; i < data.features.length; ++i) {
+        elem = data.features[i];
+
+        var piscCoord = elem.geometry.coordinates;
+        elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, piscCoord[0], piscCoord[1]);
+
+        piscines[piscId] = elem;
+        ++piscId;
+    }
+
+    piscines.sort(compareRestaurantDist);
+
+    piscines = piscines.slice(0, count);
+
+    var apres = Date.now();
+    console.log('temps ecoule : ' + (apres - avant) + 'ms');
+
+    callback(piscines);
+}
+
 exports.getTimeAt = getTimeAt;
 exports.nearestRestaurants = nearestRestaurants;
 exports.nearestFontaines = nearestFontaines;
+exports.nearestPiscines = nearestPiscines;

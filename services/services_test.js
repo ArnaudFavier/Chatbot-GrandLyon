@@ -25,5 +25,9 @@ function callback(result) {
 // Services.nearestRestaurants({lat: 45.756715, lon: 4.831561}, 10, callback);
 
 // Appel de test pour obtenir les 3 fontaines les plus proches d'une position,
+// en passant les coordonnées de Place Bellecour (à décommenter pour tester)
+// Services.nearestFontaines({lat: 45.756715, lon: 4.831561}, 3, callback);
+
+// Appel de test pour obtenir les 3 piscines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour
-Services.nearestFontaines({lat: 45.756715, lon: 4.831561}, 3, callback);
+Services.nearestPiscines({lat: 45.756715, lon: 4.831561}, 3, callback);
