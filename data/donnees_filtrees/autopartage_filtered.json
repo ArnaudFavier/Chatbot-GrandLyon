@@ -1,0 +1,2646 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78140935939096, 
+                    4.833139860859754
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Croix-Rousse", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "1", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75631370702863, 
+                    4.834544952768444
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Antonin Poncet", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "2", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74626526728959, 
+                    4.836693962634192
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Berthelot", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "4", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76264561021987, 
+                    4.850990287422665
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Les Halles", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "6", 
+                "nbemplacements": "2", 
+                "observation": "LPA Les Halles 1er niveau", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75983841784585, 
+                    4.831884459464769
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA C\u00c3\u00a9lestins", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "7", 
+                "nbemplacements": "1", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.756349029866186, 
+                    4.840848895373973
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Fosse aux Ours", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "8", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77453539285281, 
+                    4.833787393841296
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Gros caillou", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "9", 
+                "nbemplacements": "6", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7683732133076, 
+                    4.836907174706687
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA H\u00c3\u00b4tel de Ville", 
+                "commune": "Lyon 1 er", 
+                "estouverte": "Oui", 
+                "gid": "10", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76803714210697, 
+                    4.842180410184518
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Morand", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "11", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75920967915803, 
+                    4.854337225760208
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "1, Rue du Lac", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "12", 
+                "nbemplacements": "3", 
+                "observation": "En remplacement de la station du CC Part-Dieu", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7603777926785, 
+                    4.835696368316427
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA R\u00c3\u00a9publique", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "13", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.764132078524945, 
+                    4.831507721043185
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Saint Antoine", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "14", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75838092339118, 
+                    4.82637178592282
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Saint Georges", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "15", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76733052318621, 
+                    4.833445127269195
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Terreaux", 
+                "commune": "Lyon 1 er", 
+                "estouverte": "Oui", 
+                "gid": "16", 
+                "nbemplacements": "6", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76013944709692, 
+                    4.862313114469334
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA parc minute Villette", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "17", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75456839276482, 
+                    4.884930052826578
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "3b, Boulevard Honor\u00c3\u00a9 de Balzac", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "18", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78699713690906, 
+                    4.810395120794041
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "12 rue Joann\u00c3\u00a8s Carret", 
+                "commune": "Lyon 9 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "19", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76703336414074, 
+                    4.80490380546474
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Rue de la P\u00c3\u00a9pini\u00c3\u00a8re Royale", 
+                "commune": "Lyon 9 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "20", 
+                "nbemplacements": "1", 
+                "observation": "g\u00c3\u00a9r\u00c3\u00a9 par Sytral", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7465658002374, 
+                    4.843519970803346
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "2, rue Domer", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "21", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76639613628201, 
+                    4.851119599256754
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "97, rue Garibaldi", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "22", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76892992784973, 
+                    4.842902765335284
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "10 place du Mar\u00c3\u00a9chal Lyautey", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "23", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7586881714329, 
+                    4.862402543097303
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Parking Villette", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "24", 
+                "nbemplacements": "", 
+                "observation": "", 
+                "typeautopartage": "Wattmobile"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.717164655014585, 
+                    4.814661809581002
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Avenue du Rh\u00c3\u00b4ne", 
+                "commune": "OULLINS", 
+                "estouverte": "Oui", 
+                "gid": "25", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7351987867133, 
+                    4.817789542453493
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "503 rue Vuillerme", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "26", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76292111247993, 
+                    4.841961925421546
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "7, Cours de la Libert\u00c3\u00a9", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "27", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77158843452192, 
+                    4.848580127548463
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 50 rue Boileau", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "28", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76821577711334, 
+                    4.853166498154325
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 9, Rue Viricel", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "29", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76610022680301, 
+                    4.844530379732827
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 28, Avenue de Saxe", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "30", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74554886295015, 
+                    4.85127170114039
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Rue de l'Epagne, angle rue Camille Roy", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "31", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75024338010109, 
+                    4.845348924966451
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "26, rue de la Thibaudi\u00c3\u00a8re", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "32", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.752824115223866, 
+                    4.838030708255562
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "2, Place Ollier", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "33", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.730399657197786, 
+                    4.836474757229828
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Rue Simon Fryd, angle rue george Gouy", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "34", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.779157683256535, 
+                    4.859705156009634
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "75, boulevard de la Bataille de Stalingrad", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "35", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75830569607142, 
+                    4.89090809846876
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "21, avenue G\u00c3\u00a9n\u00c3\u00a9ral Leclerc", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "36", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7694598562553, 
+                    4.837599467520716
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face au 18 place Tolozan", 
+                "commune": "Lyon 1 er", 
+                "estouverte": "Oui", 
+                "gid": "37", 
+                "nbemplacements": "7", 
+                "observation": "Pas de borne ouverte au public", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75574655163486, 
+                    4.827656792622945
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "4 place Antoine Vollon", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "38", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77604366357112, 
+                    4.778757028278001
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Place de la Lib\u00c3\u00a9ration", 
+                "commune": "ECULLY", 
+                "estouverte": "Oui", 
+                "gid": "39", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75485983345167, 
+                    4.834451104061265
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Rue Charles Biennier", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "40", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.761325410650834, 
+                    4.86323297417916
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "12, Rue d'Aubigny", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "41", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76036423940771, 
+                    4.836938844816772
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "22 rue Grol\u00c3\u00a9e", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "42", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75777420596072, 
+                    4.856285730559214
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Cuirassiers angle Desaix", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "43", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.762465190423306, 
+                    4.868584050381016
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "41, Rue Baraban", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "44", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75028678118727, 
+                    4.857709013309979
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "148, Cours Gambetta", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "45", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76336121474429, 
+                    4.848397374947636
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "175, Rue Duguesclin", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "46", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.748300067441996, 
+                    4.896493792814544
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "44 boulevard Pinel", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "47", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77542603908832, 
+                    4.819800670283556
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 30, Rue de Bony", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "48", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77741978757613, 
+                    4.828562183438263
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 26 bd des Canuts", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "49", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77919019572891, 
+                    4.873975600885916
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "124-128, Boulevard du 11 novembre 1918", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "50", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.782509301663296, 
+                    4.879203448358286
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 4 bis rue Jean-Baptiste Cl\u00c3\u00a9ment", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "51", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77407434576742, 
+                    4.867269518306991
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "14, Avenue Piaton", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "52", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7686937670057, 
+                    4.888839571205028
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 17, Rue Roger Lenoir", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "53", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76903973931965, 
+                    4.880296090858093
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "5, rue Paul Verlaine", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "54", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.771681225355394, 
+                    4.87374513943653
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "3, Cours de la R\u00c3\u00a9publique", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "55", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76316401977999, 
+                    4.874061397954444
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "3, avenue Marc Sangnier", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "56", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7343465977601, 
+                    4.909034534140686
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 9, Rue de Verdun", 
+                "commune": "BRON", 
+                "estouverte": "Oui", 
+                "gid": "57", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.79881952786441, 
+                    4.788488351973712
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "90, Avenue de Lanessan", 
+                "commune": "CHAMPAGNE-AU-MONT-D'OR", 
+                "estouverte": "Oui", 
+                "gid": "58", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.79368157851381, 
+                    4.793958417696722
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "27, Avenue de Lanessan", 
+                "commune": "CHAMPAGNE-AU-MONT-D'OR", 
+                "estouverte": "Oui", 
+                "gid": "59", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.760801852825175, 
+                    4.922186204286983
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "8, Avenue des Canuts", 
+                "commune": "VAULX-EN-VELIN", 
+                "estouverte": "Oui", 
+                "gid": "60", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.777519351252444, 
+                    4.919891532651936
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Rue Maurice Audi, angle rue Emile Zola", 
+                "commune": "VAULX-EN-VELIN", 
+                "estouverte": "Oui", 
+                "gid": "61", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74192047097418, 
+                    4.797608572385951
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "28, avenue Maurice Jarrosson", 
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "estouverte": "Oui", 
+                "gid": "62", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7869409779216, 
+                    4.834116161972659
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "66, Rue Coste", 
+                "commune": "CALUIRE-ET-CUIRE", 
+                "estouverte": "Oui", 
+                "gid": "63", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.788587597369464, 
+                    4.854636635586636
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 111, Chemin de Wette Fa\u00c3\u00bfs", 
+                "commune": "CALUIRE-ET-CUIRE", 
+                "estouverte": "Oui", 
+                "gid": "64", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.774283194096704, 
+                    4.826988360779815
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "119, boulevard de la Croix-Rousse", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "65", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.772649265084695, 
+                    4.843939180634596
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "19, Rue Duquesne", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "66", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.767684390506126, 
+                    4.829272837568922
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "2, rue Thimonnier", 
+                "commune": "Lyon 1 er", 
+                "estouverte": "Oui", 
+                "gid": "67", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.765806687513, 
+                    4.833073870156618
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "29 rue Paul Chenavard", 
+                "commune": "Lyon 1 er", 
+                "estouverte": "Oui", 
+                "gid": "68", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.726920951238604, 
+                    4.826863811314957
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "3, rue du Vercors", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "69", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.718852909461056, 
+                    4.887092480456444
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "2, Avenue Jules Guesde", 
+                "commune": "VENISSIEUX", 
+                "estouverte": "Oui", 
+                "gid": "70", 
+                "nbemplacements": "5", 
+                "observation": "Complexe Sportif Jean Guimier", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73867309563777, 
+                    4.925443246629066
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "25, Avenue Fran\u00c3\u00a7ois Mitterrand", 
+                "commune": "BRON", 
+                "estouverte": "Oui", 
+                "gid": "71", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.753637586666194, 
+                    4.848215246298162
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "4 place Victor Basch", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "72", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74844375036373, 
+                    4.863050593087677
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 26, Cours Albert Thomas", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "73", 
+                "nbemplacements": "1", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76313121915808, 
+                    4.779385744800973
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 5 rue Georges Perret", 
+                "commune": "TASSIN-LA-DEMI-LUNE", 
+                "estouverte": "Oui", 
+                "gid": "74", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.763777969807634, 
+                    4.778012701624275
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "59, Avenue de la R\u00c3\u00a9publique", 
+                "commune": "TASSIN-LA-DEMI-LUNE", 
+                "estouverte": "Oui", 
+                "gid": "75", 
+                "nbemplacements": "1", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73292497369837, 
+                    4.908380431841682
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 5, Rue Roger Salengro", 
+                "commune": "BRON", 
+                "estouverte": "Oui", 
+                "gid": "76", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.781492679852654, 
+                    4.873030369822188
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "9, Avenue Jean Capelle Ouest", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "77", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.727133062007205, 
+                    4.845217551598514
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "24, Espace Henry Vall\u00c3\u00a9e", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "78", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75781664865579, 
+                    4.813275951285608
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Angle Mont\u00c3\u00a9e de Choulans/Rue des Foss\u00c3\u00a9s de Trion", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "81", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.757006318298245, 
+                    4.851691494966374
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face au 86 rue Paul Bert", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "82", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7563071232032, 
+                    4.863521494801227
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "10, Avenue Lacassagne", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "83", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.773218807858896, 
+                    4.812720040164985
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "16 quai Joseph Gillet", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "84", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76770117110592, 
+                    4.858265607704607
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "48, rue Juliette Recamier", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "85", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.72687142933164, 
+                    4.830578817133071
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Rue Marcel M\u00c3\u00a9rieux", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "86", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74243105565881, 
+                    4.877118424993644
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face au 3 promenade L\u00c3\u00a9a et Napol\u00c3\u00a9on Bullukian", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "87", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.769773786027805, 
+                    4.862938932729816
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "4, Rue Bellecombe", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "88", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75899514662203, 
+                    4.845828208256793
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "102, avenue Mar\u00c3\u00a9chal de Saxe", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "89", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.735968799470285, 
+                    4.870521870104811
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "face au 5-7, Avenue Jean Mermoz", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "90", 
+                "nbemplacements": "3", 
+                "observation": "Transf\u00c3\u00a9r\u00c3\u00a9 en 2016", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.769045756841116, 
+                    4.830632198715952
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "5, Place Sathonay", 
+                "commune": "Lyon 1 er", 
+                "estouverte": "Oui", 
+                "gid": "91", 
+                "nbemplacements": "2", 
+                "observation": "Totem Panneau haut", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.779552219039125, 
+                    4.836268507358673
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "22-24 rue Dumont d'Urville", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "92", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.762690656569774, 
+                    4.834125949920711
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "60, rue du Pr\u00c3\u00a9sident Edouard Herriot", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "93", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75251267984492, 
+                    4.868092930426648
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "72-76, rue du Dauphin\u00c3\u00a9", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "94", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.775151271172085, 
+                    4.834170271539662
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "1b, Rue Aim\u00c3\u00a9 Boussange", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "95", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77221846394225, 
+                    4.853003804233107
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "100b rue Montgolfier", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "96", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74116198917479, 
+                    4.852929185098171
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "49 rue du Repos", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "97", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74207306073986, 
+                    4.860315873723017
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Rue Marius Berliet face rue Saint Romain", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "98", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.756469676769576, 
+                    4.878427921888601
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "3, Rue Jean Jaur\u00c3\u00a8s", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "99", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76394825422227, 
+                    4.837206389576997
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Cordeliers", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "101", 
+                "nbemplacements": "6", 
+                "observation": "incluant un PMR", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76608322140534, 
+                    4.879496697228649
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA H\u00c3\u00b4tel de Ville Villeurbanne", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "102", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76199639383366, 
+                    4.829314747510572
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "LPA Saint Jean", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "103", 
+                "nbemplacements": "3", 
+                "observation": "LPA Saint Jean", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74899658454557, 
+                    4.861032606084425
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "6 cours Albert Thomas", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "104", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75160071797197, 
+                    4.827238392348542
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face 25, Place Carnot", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "105", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77983652025001, 
+                    4.804516773008713
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "16, rue du 24 Mars 1862", 
+                "commune": "Lyon 9 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "106", 
+                "nbemplacements": "2", 
+                "observation": "Totem Panneau bas", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77495199811527, 
+                    4.805330342343597
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "2, Rue Michel Berthet", 
+                "commune": "Lyon 9 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "107", 
+                "nbemplacements": "2", 
+                "observation": "Totem Panneau bas", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74524263223844, 
+                    4.871048955616724
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "18, Place Ambroise Courtois", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "108", 
+                "nbemplacements": "2", 
+                "observation": "Totem Panneau bas", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.736377698439746, 
+                    4.836530970658704
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "198, avenue Jean Jaur\u00c3\u00a8s", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "109", 
+                "nbemplacements": "2", 
+                "observation": "Totem Panneau bas", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74417442667328, 
+                    4.841475794730454
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Parking Jean Mac\u00c3\u00a9", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "110", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76684942989938, 
+                    4.859363305148655
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Place Jules Ferry", 
+                "commune": "Lyon 6 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "111", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75705931312819, 
+                    4.815869607335169
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "38-40 rue de Trion", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "112", 
+                "nbemplacements": "2", 
+                "observation": "Totem Panneau haut", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77066031532229, 
+                    4.864240042197289
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "25, Cours Emile Zola", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "113", 
+                "nbemplacements": "3", 
+                "observation": "Totem Panneau bas", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74290332494667, 
+                    4.821137481288445
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "79, Cours Charlemagne", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "114", 
+                "nbemplacements": "2", 
+                "observation": "Totem Panneau bas", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75645137487417, 
+                    4.796702177332655
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Place des compagnons de la chanson", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "115", 
+                "nbemplacements": "1", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76776302940022, 
+                    4.803936436143411
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "23-25 rue de la Fraternelle", 
+                "commune": "Lyon 9 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "116", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77464364615787, 
+                    4.859324138192083
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Angle rue Charlie Chaplin / Boulevard Stalingrad", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "117", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75153105921405, 
+                    4.828483738072737
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Place Carnot", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "118", 
+                "nbemplacements": "3", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.760366173755536, 
+                    4.845735197035487
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "91 avenue Mar\u00c3\u00a9chal de Saxe", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "119", 
+                "nbemplacements": "2", 
+                "observation": "", 
+                "typeautopartage": "Citiz LPA"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.771705020805285, 
+                    4.825720367008536
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "20, rue Ornano", 
+                "commune": "Lyon 1 er", 
+                "estouverte": "Oui", 
+                "gid": "120", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75863064388479, 
+                    4.833875708988502
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "102, rue du Pr\u00c3\u00a9sident Edouard Herriot", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "121", 
+                "nbemplacements": "4", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.758607136042386, 
+                    4.861624731475002
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "66, Rue de la Villette", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "122", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74515592926572, 
+                    4.872586186940629
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "109,  Cours Albert Thomas", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "123", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76303269227007, 
+                    4.854350532944491
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "19-21, Boulevard Eug\u00c3\u00a8ne Deruelle", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "124", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76184381507578, 
+                    4.849277224693077
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "62, Rue de Bonnel", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "125", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75333854232555, 
+                    4.849443219597426
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "5, place Aristide Briand", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "126", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74946229354085, 
+                    4.886463354964767
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "39, Avenue du Ch\u00c3\u00a2teau", 
+                "commune": "Lyon 3 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "127", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77961091875077, 
+                    4.824392685220486
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "68, rue H\u00c3\u00a9non", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "128", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.781436553603534, 
+                    4.834249338361993
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "9-11 rue Artaud", 
+                "commune": "Lyon 4 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "129", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75461589383719, 
+                    4.787986191743711
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face au 81, Rue Joliot Curie", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "130", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75609341166641, 
+                    4.801466688425033
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "57, Avenue du Point du Jour", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "131", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76080301312248, 
+                    4.825708054971201
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "11 rue Tramassac", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "132", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76560664840385, 
+                    4.82820316943325
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "4, Rue de l'Angile", 
+                "commune": "Lyon 5 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "133", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73166844733213, 
+                    4.826636332429503
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "3 avenue Debourg", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "134", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74983876255587, 
+                    4.8368532133064
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "5 rue Chevreul", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "135", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73674402639548, 
+                    4.837186880570156
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Angle rue Chateaubriand/avenue Jean Jaur\u00c3\u00a8s", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "136", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.754856539853336, 
+                    4.843467005880361
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face au 4 place Gabriel P\u00c3\u00a9ri", 
+                "commune": "Lyon 7 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "137", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.735055755892795, 
+                    4.870669996081689
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "7, Avenue Paul Santy", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "138", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.72879663409476, 
+                    4.868264223547793
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "111-113 boulevard des Etats-Unis", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "139", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73428708940776, 
+                    4.862833965374764
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "42 rue Paul Cazeneuve", 
+                "commune": "Lyon 8 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "140", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77716799808115, 
+                    4.80430703220639
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "14b rue de la Corderie", 
+                "commune": "Lyon 9 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "141", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.782960130715885, 
+                    4.807712615611716
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "50, rue de Saint Cyr", 
+                "commune": "Lyon 9 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "142", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.754954255875774, 
+                    4.875830038819072
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "Face au 2, Route de Genas", 
+                "commune": "VILLEURBANNE", 
+                "estouverte": "Oui", 
+                "gid": "143", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74234365953, 
+                    4.820383850572565
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adresse": "100, Cours Charlemagne", 
+                "commune": "Lyon 2 \u00c3\u00a8me", 
+                "estouverte": "Oui", 
+                "gid": "144", 
+                "nbemplacements": "5", 
+                "observation": "", 
+                "typeautopartage": "Bluely"
+            }, 
+            "type": "Feature"
+        }
+    ], 
+    "type": "FeatureCollection"
+}

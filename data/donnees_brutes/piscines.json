@@ -1,0 +1,669 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Nautique Etienne Gagnaire",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3736",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-07-06",
+			"gid": "815"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.909670998634792,
+			45.766855797638243]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine AndrÃ© Boulloche",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3737",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-07-06",
+			"gid": "816"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.876270050962017,
+			45.771681126233325]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine d'hiver des Gratte-Ciel",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3738",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-07-06",
+			"gid": "817"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.879666704277946,
+			45.76554846412175]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine de Gerland 1",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3780",
+			"idexterne": "691230202",
+			"siret": "",
+			"datecreation": "2001-07-10",
+			"gid": "824"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.830699863774084,
+			45.724945197054836]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Benjamin Delessert",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3782",
+			"idexterne": "691230141",
+			"siret": "",
+			"datecreation": "2001-07-10",
+			"gid": "825"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.840100811941847,
+			45.740587287011714]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine d'hiver de Vaise",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3942",
+			"idexterne": "691230198",
+			"siret": "",
+			"datecreation": "2001-08-21",
+			"gid": "829"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.796301694902315,
+			45.770586543010978]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine municipale",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3858",
+			"idexterne": "691490009",
+			"siret": "",
+			"datecreation": "2001-07-27",
+			"gid": "853"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.809325781029743,
+			45.718272650619674]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Auguste Delaune",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3907",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-08-09",
+			"gid": "911"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.873467547018088,
+			45.694443709056102]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Nautique Intercommunal",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3908",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-08-09",
+			"gid": "912"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.858185400795588,
+			45.71861555247888]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Pierre Audry",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3920",
+			"idexterne": "691230099",
+			"siret": "",
+			"datecreation": "2001-08-16",
+			"gid": "992"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.808770645858084,
+			45.760247863489781]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine municipale",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3838",
+			"idexterne": "690810018",
+			"siret": "21690081100185",
+			"datecreation": "2001-07-19",
+			"gid": "1021"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.785853635981037,
+			45.783209285823041]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine de Saint-ExupÃ©ry",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3767",
+			"idexterne": "691230009",
+			"siret": "",
+			"datecreation": "2001-07-09",
+			"gid": "1031"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.821826019430299,
+			45.781414798868127]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine d'Ã©tÃ© de la DuchÃ¨re",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3930",
+			"idexterne": "691230197",
+			"siret": "",
+			"datecreation": "2001-08-17",
+			"gid": "1050"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.798912919885479,
+			45.788312005906597]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Espace Nautique",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S5029",
+			"idexterne": "690910019",
+			"siret": "",
+			"datecreation": "2008-03-25",
+			"gid": "1228"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.772116100424298,
+			45.590490976700309]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Aquatique Les Vagues",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S5233",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2010-08-12",
+			"gid": "1325"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [5.013622951208474,
+			45.769334692584231]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Nautique MendÃ¨s-France",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3692",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-07-05",
+			"gid": "1368"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.958620147673199,
+			45.692985185282737]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Ulysse Coeur Caneton",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3693",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-07-05",
+			"gid": "1369"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.944729171387719,
+			45.695812327278063]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine municipale",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3365",
+			"idexterne": "691420004",
+			"siret": "",
+			"datecreation": "2001-06-22",
+			"gid": "1418"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.807075915747358,
+			45.726138519940903]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Le Kubdo",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3368",
+			"idexterne": "692020023",
+			"siret": "",
+			"datecreation": "2001-06-22",
+			"gid": "1420"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.795415181888629,
+			45.73703182900892]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Tronchet",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3625",
+			"idexterne": "691230199",
+			"siret": "",
+			"datecreation": "2001-07-02",
+			"gid": "1444"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.858341392080333,
+			45.771413679487907]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Bassin de natation",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S6914",
+			"idexterne": "690890001_13295",
+			"siret": "",
+			"datecreation": "2016-12-12",
+			"gid": "1452"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.770785631800365,
+			45.750100016537232]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Jean Gelet",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3369",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-06-22",
+			"gid": "1491"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.914554984700091,
+			45.780458190331636]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Intercommunale",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3371",
+			"idexterne": "690720014",
+			"siret": "",
+			"datecreation": "2001-06-22",
+			"gid": "1493"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.734154250209038,
+			45.7897830533784]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine de Feyzin",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3378",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-06-25",
+			"gid": "1508"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845132155879334,
+			45.665667872347726]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Garibaldi",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3379",
+			"idexterne": "691230001",
+			"siret": "",
+			"datecreation": "2001-06-25",
+			"gid": "1509"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.853335973966444,
+			45.755649237313051]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Aquatique du Loup-Pendu",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3637",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-07-03",
+			"gid": "1535"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.88641986885168,
+			45.816817962485302]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine municipale",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3514",
+			"idexterne": "691000005",
+			"siret": "",
+			"datecreation": "2001-06-26",
+			"gid": "1603"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.811802078516587,
+			45.670329167463073]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Nautique de Chassieu",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3391",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2001-06-25",
+			"gid": "1660"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.967937745799366,
+			45.74255085386249]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Nautique AndrÃ© Sousi",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3359",
+			"idexterne": "690290001",
+			"siret": "",
+			"datecreation": "2001-06-22",
+			"gid": "1688"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.908399236644034,
+			45.74121317084137]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine du RhÃ´ne",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3781",
+			"idexterne": "691230006",
+			"siret": "",
+			"datecreation": "2001-07-10",
+			"gid": "1813"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.838095201711587,
+			45.753980618430361]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Nautique Camille Muffat",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S4747",
+			"idexterne": "",
+			"siret": "",
+			"datecreation": "2006-03-20",
+			"gid": "1879"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.953191383267704,
+			45.763322367560455]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine d'Ã©tÃ© Jean Mermoz",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S3812",
+			"idexterne": "691230200",
+			"siret": "",
+			"datecreation": "2001-07-18",
+			"gid": "2026"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.886302087174834,
+			45.730399676991922]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Lyon Plage",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S7001",
+			"idexterne": "691230124",
+			"siret": "",
+			"datecreation": "2016-12-16",
+			"gid": "2135"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.820332741753573,
+			45.788122590068355]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Bassin De Natation",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S7220",
+			"idexterne": "691230369_268283",
+			"siret": "",
+			"datecreation": "2017-01-19",
+			"gid": "2259"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.870991943067249,
+			45.757416573825296]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piscine Isabelle Jouffroy",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S5601",
+			"idexterne": "690340002",
+			"siret": "",
+			"datecreation": "2012-08-24",
+			"gid": "2366"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.850905838517491,
+			45.792457132723513]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Bassin de natation",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S6728",
+			"idexterne": "690290003_30247",
+			"siret": "",
+			"datecreation": "2016-11-23",
+			"gid": "2387"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.92664198199736,
+			45.729816398539313]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Bassin H.Cochet",
+			"theme": "SPORT",
+			"soustheme": "Piscine",
+			"identifiant": "S6805",
+			"idexterne": "690340006_205218",
+			"siret": "",
+			"datecreation": "2016-11-30",
+			"gid": "2430"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836588331605213,
+			45.793253260493969]
+		}
+	}]
+}

@@ -1,0 +1,523 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76685579763824, 
+                    4.909670998634792
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "815", 
+                "nom": "Centre Nautique Etienne Gagnaire"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.771681126233325, 
+                    4.876270050962017
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "816", 
+                "nom": "Piscine Andr\u00c3\u00a9 Boulloche"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76554846412175, 
+                    4.879666704277946
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "817", 
+                "nom": "Piscine d'hiver des Gratte-Ciel"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.724945197054836, 
+                    4.830699863774084
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "824", 
+                "nom": "Piscine de Gerland 1"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.740587287011714, 
+                    4.840100811941847
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "825", 
+                "nom": "Piscine Benjamin Delessert"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77058654301098, 
+                    4.796301694902315
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "829", 
+                "nom": "Piscine d'hiver de Vaise"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.718272650619674, 
+                    4.809325781029743
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "853", 
+                "nom": "Piscine municipale"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.6944437090561, 
+                    4.873467547018088
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "911", 
+                "nom": "Piscine Auguste Delaune"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71861555247888, 
+                    4.858185400795588
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "912", 
+                "nom": "Centre Nautique Intercommunal"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76024786348978, 
+                    4.808770645858084
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "992", 
+                "nom": "Piscine Pierre Audry"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78320928582304, 
+                    4.785853635981037
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1021", 
+                "nom": "Piscine municipale"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78141479886813, 
+                    4.821826019430299
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1031", 
+                "nom": "Piscine de Saint-Exup\u00c3\u00a9ry"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7883120059066, 
+                    4.798912919885479
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1050", 
+                "nom": "Piscine d'\u00c3\u00a9t\u00c3\u00a9 de la Duch\u00c3\u00a8re"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.59049097670031, 
+                    4.772116100424298
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1228", 
+                "nom": "Espace Nautique"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76933469258423, 
+                    5.013622951208474
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1325", 
+                "nom": "Centre Aquatique Les Vagues"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69298518528274, 
+                    4.958620147673199
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1368", 
+                "nom": "Centre Nautique Mend\u00c3\u00a8s-France"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69581232727806, 
+                    4.944729171387719
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1369", 
+                "nom": "Piscine Ulysse Coeur Caneton"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7261385199409, 
+                    4.807075915747358
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1418", 
+                "nom": "Piscine municipale"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73703182900892, 
+                    4.795415181888629
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1420", 
+                "nom": "Piscine Le Kubdo"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77141367948791, 
+                    4.858341392080333
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1444", 
+                "nom": "Piscine Tronchet"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75010001653723, 
+                    4.770785631800365
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1452", 
+                "nom": "Bassin de natation"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.780458190331636, 
+                    4.914554984700091
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1491", 
+                "nom": "Piscine Jean Gelet"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7897830533784, 
+                    4.734154250209038
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1493", 
+                "nom": "Piscine Intercommunale"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.665667872347726, 
+                    4.845132155879334
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1508", 
+                "nom": "Piscine de Feyzin"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75564923731305, 
+                    4.853335973966444
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1509", 
+                "nom": "Piscine Garibaldi"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.8168179624853, 
+                    4.88641986885168
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1535", 
+                "nom": "Centre Aquatique du Loup-Pendu"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.67032916746307, 
+                    4.811802078516587
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1603", 
+                "nom": "Piscine municipale"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74255085386249, 
+                    4.967937745799366
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1660", 
+                "nom": "Centre Nautique de Chassieu"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74121317084137, 
+                    4.908399236644034
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1688", 
+                "nom": "Centre Nautique Andr\u00c3\u00a9 Sousi"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75398061843036, 
+                    4.838095201711587
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1813", 
+                "nom": "Piscine du Rh\u00c3\u00b4ne"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.763322367560455, 
+                    4.953191383267704
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1879", 
+                "nom": "Centre Nautique Camille Muffat"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73039967699192, 
+                    4.886302087174834
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "2026", 
+                "nom": "Piscine d'\u00c3\u00a9t\u00c3\u00a9 Jean Mermoz"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.788122590068355, 
+                    4.820332741753573
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "2135", 
+                "nom": "Lyon Plage"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.757416573825296, 
+                    4.870991943067249
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "2259", 
+                "nom": "Bassin De Natation"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.79245713272351, 
+                    4.850905838517491
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "2366", 
+                "nom": "Piscine Isabelle Jouffroy"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.72981639853931, 
+                    4.92664198199736
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "2387", 
+                "nom": "Bassin de natation"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.79325326049397, 
+                    4.836588331605213
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "2430", 
+                "nom": "Bassin H.Cochet"
+            }, 
+            "type": "Feature"
+        }
+    ], 
+    "type": "FeatureCollection"
+}

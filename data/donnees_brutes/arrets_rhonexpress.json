@@ -1,0 +1,117 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"id": "41194",
+			"nom": "Gare Part-Dieu Villette",
+			"desserte": "RX:A,RX:R",
+			"pmr": "t",
+			"ascenseur": "f",
+			"escalator": "f",
+			"gid": "1",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 01:05:11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.861941959611308,
+			45.760265029322454]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"id": "41195",
+			"nom": "Vaulx-en-Velin La Soie",
+			"desserte": "RX:A,RX:R",
+			"pmr": "t",
+			"ascenseur": "f",
+			"escalator": "f",
+			"gid": "2",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 01:05:11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.922203024147039,
+			45.761068030348262]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"id": "41196",
+			"nom": "Vaulx-en-Velin La Soie",
+			"desserte": "RX:A,RX:R",
+			"pmr": "t",
+			"ascenseur": "f",
+			"escalator": "f",
+			"gid": "3",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 01:05:11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.922078882455405,
+			45.761031642561157]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"id": "41197",
+			"nom": "Meyzieu Z.i.",
+			"desserte": "RX:A,RX:R",
+			"pmr": "t",
+			"ascenseur": "f",
+			"escalator": "f",
+			"gid": "4",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 01:05:11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [5.031422687591467,
+			45.767766843200469]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"id": "41198",
+			"nom": "Meyzieu Z.i.",
+			"desserte": "RX:A,RX:R",
+			"pmr": "t",
+			"ascenseur": "f",
+			"escalator": "f",
+			"gid": "5",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 01:05:11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [5.031600168963877,
+			45.767745390758641]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"id": "41199",
+			"nom": "Aeroport St Exupery",
+			"desserte": "RX:A,RX:R",
+			"pmr": "t",
+			"ascenseur": "f",
+			"escalator": "f",
+			"gid": "6",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 01:05:11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [5.076474307455741,
+			45.722645072665429]
+		}
+	}]
+}

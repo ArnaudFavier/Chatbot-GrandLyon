@@ -1,0 +1,59 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78091144447552, 
+                    4.804764382625737
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "DU 24 MARS 1852", 
+                "codepostal": "69009", 
+                "gid": "13", 
+                "nom": "Relais Info Service TCL Gare de vaise", 
+                "numero": "0", 
+                "voie": "RUE"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76048040133075, 
+                    4.861811157092671
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "DE LA VILLETTE", 
+                "codepostal": "69003", 
+                "gid": "15", 
+                "nom": "Relais Info Service TCL Part Dieu Villette", 
+                "numero": "30", 
+                "voie": "RUE"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76158744565777, 
+                    4.857654732175986
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "MARIUS VIVIER MERLE", 
+                "codepostal": "69003", 
+                "gid": "16", 
+                "nom": "Relais Info Service TCL Part Dieu vivier merle", 
+                "numero": "11", 
+                "voie": "BOULEVARD"
+            }, 
+            "type": "Feature"
+        }
+    ], 
+    "type": "FeatureCollection"
+}

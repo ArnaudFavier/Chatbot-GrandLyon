@@ -1,0 +1,1977 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57442",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2001",
+			"gid": "1"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845646630511059,
+			45.756831794517133]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V14725",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.84998714173013,
+			45.761288504665146]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V18095",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "3"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.839970548014758,
+			45.777212636364681]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19778",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "4"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.819430835917816,
+			45.785051047190578]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19463",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.829861124702907,
+			45.777621337200429]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19695",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1997",
+			"gid": "6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.823627403134903,
+			45.777220357614944]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V10225",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1998",
+			"gid": "7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.827089073229518,
+			45.753964273209128]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19777",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "8"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.819933986942321,
+			45.784906561194568]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V16044",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1996",
+			"gid": "9"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836872210124469,
+			45.766624546769471]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V61143",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2014",
+			"gid": "10"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.818944187078365,
+			45.733436698080794]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V59588",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2009",
+			"gid": "11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.825504205892782,
+			45.74736036073039]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V6429",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "12"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.826346131594122,
+			45.773870279998576]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V2261",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "13"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.831306935647504,
+			45.757401757354117]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V5945",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "14"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.828006003244063,
+			45.768545047325823]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V18365",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1992",
+			"gid": "15"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.832674531128148,
+			45.776065746510689]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V5620",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1992",
+			"gid": "16"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834009991060811,
+			45.770684531884655]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19307",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "17"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.828150454435019,
+			45.775293125721234]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V58295",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2002",
+			"gid": "18"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.833261193190963,
+			45.770964623459307]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19779",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "19"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.819585965016366,
+			45.785988181643582]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V54901",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1994",
+			"gid": "20"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.831741052943541,
+			45.768030203090007]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V6258",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1988",
+			"gid": "21"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834448465523832,
+			45.772541943188337]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V16119",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1995",
+			"gid": "22"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.82714484575809,
+			45.76890871525768]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19983",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "23"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.822469957481986,
+			45.77342211325395]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V4279",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1999",
+			"gid": "24"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834123731724887,
+			45.764883155209304]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V18782",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "25"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.835991273607982,
+			45.779521278679361]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V9150",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "26"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.831746449185959,
+			45.754980918940063]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V6094",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "27"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.827868231490189,
+			45.773876532427593]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V6570",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "28"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.832386521507372,
+			45.766591390761661]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57399",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2001",
+			"gid": "29"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834457802028546,
+			45.776740379401367]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V6079",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "30"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.82568783120832,
+			45.772015738918618]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19399",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.82908506282381,
+			45.776067243035364]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V599",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "32"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.822681570636763,
+			45.742917145471694]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V18438",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "33"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.830384706627896,
+			45.774777232734102]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V10143",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1995",
+			"gid": "34"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.831528010434739,
+			45.761050476683145]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V59902",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2011",
+			"gid": "35"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.815176460615454,
+			45.742893078788335]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19776",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "36"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.819769910851418,
+			45.784069741648224]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V18204",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "37"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.837126039971659,
+			45.777629487618412]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19301",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "38"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.829510994189077,
+			45.775517056163565]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V18200",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "39"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836152305765903,
+			45.777659062262387]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V61214",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2014",
+			"gid": "40"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.818339070715951,
+			45.731066547320765]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V10272",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "41"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834142396833951,
+			45.761171443471902]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V54785",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "42"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.829810748550508,
+			45.768441428295766]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V59916",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2006",
+			"gid": "43"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.879086483048332,
+			45.766281734885176]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V58674",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2005",
+			"gid": "44"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845182278909788,
+			45.763188447600101]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57446",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1995",
+			"gid": "45"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.852288299130969,
+			45.785011051270168]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V14989",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "46"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.857467394245,
+			45.755261195250689]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V199526",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "47"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.851530951315615,
+			45.762550515968982]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57655",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1995",
+			"gid": "48"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.854017757689961,
+			45.785432634884835]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V11726",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "49"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.841161323289395,
+			45.760216373826189]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V63079",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "50"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845350990591124,
+			45.755898316315772]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V11753",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "51"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.84098110425259,
+			45.75830260388382]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L660",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "52"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.8225553811607,
+			45.869874875175533]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L666",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "53"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.822962326441134,
+			45.837107476904293]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L657",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "54"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.818726100521381,
+			45.868707975826496]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L661",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "55"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.820155392958534,
+			45.869397517744332]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V58369",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2004",
+			"gid": "56"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834406473111988,
+			45.840327994371137]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L375",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2002",
+			"gid": "57"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.895274142234259,
+			45.6649019645116]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L379",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1989",
+			"gid": "58"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.901124241320812,
+			45.673578907907448]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V2846",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1900",
+			"gid": "59"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.803827558923598,
+			45.733538974803039]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15089",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "60"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.786921088685689,
+			45.755366063889383]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L372",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2009",
+			"gid": "61"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.855368488059377,
+			45.666359473243602]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L723",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "62"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.876123314394617,
+			45.673434219183619]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15093",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "63"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.79724825416498,
+			45.75633910400861]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57070",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2000",
+			"gid": "64"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.780429586879545,
+			45.73271052330383]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60049",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "65"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.784842292703465,
+			45.678629662240319]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V21510",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1998",
+			"gid": "66"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.792630286341944,
+			45.694754923446709]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V8047",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "67"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.794543043144603,
+			45.694484429633029]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V4131",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "68"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.817551359162513,
+			45.718079809020999]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L376",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2005",
+			"gid": "69"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.860491095697952,
+			45.673211518086028]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V21776",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2000",
+			"gid": "70"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.804285018851479,
+			45.735364059572476]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60135",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "71"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.797406751875671,
+			45.735598983343046]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60193",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2013",
+			"gid": "72"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.723936644705401,
+			45.744371281010089]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60194",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2013",
+			"gid": "73"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.724018588917954,
+			45.744302629462204]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V14563",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1987",
+			"gid": "74"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.817104826920364,
+			45.814208978444455]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60140",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "75"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.805338177197729,
+			45.736385152175679]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60061",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "76"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.771561500487072,
+			45.738193082193824]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60126",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "77"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.757873065706427,
+			45.760018300847513]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60408",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2013",
+			"gid": "78"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.828738266790366,
+			45.765468540441674]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15619",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1991",
+			"gid": "79"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.825865507158671,
+			45.758757793465513]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V17795",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "80"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.794543757386692,
+			45.779328968674157]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V17136",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "81"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.828382221639862,
+			45.764293527022893]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15513",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2014",
+			"gid": "82"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.823912177187168,
+			45.755474182140652]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V17080",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1999",
+			"gid": "83"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.821435429554021,
+			45.762318799616594]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V56592",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "84"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.794627204597984,
+			45.77937589149137]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V17128",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "85"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.828345039062343,
+			45.762399586482147]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V18019",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1988",
+			"gid": "86"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.80737651015966,
+			45.777191055906592]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V17008",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "87"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.812561952833755,
+			45.761427831887666]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15693",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "88"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.826481379805898,
+			45.761021261991353]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19780",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "89"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.81621339016683,
+			45.766707859434767]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V19013",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "90"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.811260510866383,
+			45.77190104306213]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15146",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1986",
+			"gid": "91"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.735732886723589,
+			45.784267013112881]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57652",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "92"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.901172415297017,
+			45.731452185410497]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V9739",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "93"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.909659659256556,
+			45.735361145265259]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V199389",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2014",
+			"gid": "94"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.92091197263399,
+			45.74688643275281]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V13660",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "95"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.966896587329552,
+			45.775404713016073]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V13954",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1996",
+			"gid": "96"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.957624777979982,
+			45.769077913867307]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V13697",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "97"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.965171304004227,
+			45.762885961848738]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V10499",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "98"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.926239245529545,
+			45.7862135768911]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V6004",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "99"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.883777620528487,
+			45.699736106207766]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57766",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "100"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.87228429635319,
+			45.689939423882926]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60186",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2012",
+			"gid": "101"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.870692123959966,
+			45.694445482728561]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V60198",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2012",
+			"gid": "102"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.871651992142963,
+			45.695164195818165]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V4014",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "103"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.8565295383387,
+			45.706404247887498]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V14244",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "104"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.846640825219269,
+			45.758661248751054]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V11627",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "105"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.849297934467198,
+			45.756855211144071]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57210",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "106"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.848381134643923,
+			45.760180577919293]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57441",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2001",
+			"gid": "107"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845074921374511,
+			45.756818297621912]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V9847",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "108"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.854944251096986,
+			45.752485913875276]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15211",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "109"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.865541424777215,
+			45.751578103036238]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15335",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2001",
+			"gid": "110"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.865370604662465,
+			45.757189072562618]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V15349",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "111"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.864620952096401,
+			45.756964744619985]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V16388",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "112"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.883603846795785,
+			45.748571072052158]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V16177",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "113"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.880660989627843,
+			45.748044195670708]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V21521",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "1997",
+			"gid": "114"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.885814069204525,
+			45.749993945790742]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V16410",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "115"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.887164851081162,
+			45.749397231256502]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V21546",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "116"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.893360707549031,
+			45.752297419462899]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V59225",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "117"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.885918456320774,
+			45.753999437779164]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V21184",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "118"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.842035241873798,
+			45.768821193930904]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57859",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2002",
+			"gid": "119"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.83408160740377,
+			45.770527674344642]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "A99900001",
+			"gestionnaire": "Grand Lyon",
+			"anneepose": "",
+			"gid": "120"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.783710262035902,
+			45.914085888997676]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "A16300000",
+			"gestionnaire": "Grand Lyon",
+			"anneepose": "",
+			"gid": "121"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.783261100405248,
+			45.914647440696093]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "A11700000",
+			"gestionnaire": "Grand Lyon",
+			"anneepose": "",
+			"gid": "122"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.742666367001839,
+			45.865084841318101]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V4015",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "123"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.856474812800588,
+			45.707160897176273]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V4092",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "124"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.857336358757602,
+			45.708166646462466]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V13118",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "125"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [5.047627667163542,
+			45.796539217159022]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V11324",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "126"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.879248136359632,
+			45.743558651436224]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V6670",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "127"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.870625931045516,
+			45.744069441069549]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L374",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "128"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.977305385670896,
+			45.706502569028871]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L378",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "129"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.937497741366053,
+			45.690634537050251]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L721",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2013",
+			"gid": "130"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.901335814304491,
+			45.70542070921595]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L373",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "131"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.942967866007497,
+			45.699123601784216]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "L731",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "132"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.937585658667031,
+			45.691328419968151]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V59751",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "133"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.84050151111647,
+			45.756410237669996]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V57251",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "134"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.837669781716269,
+			45.746804002083074]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V897",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "135"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.838485333357159,
+			45.752589754347156]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V809",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "136"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.841757527889679,
+			45.752486693333509]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V8470",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "137"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.842360125940867,
+			45.746464869963816]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V7919",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "138"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.878093836147765,
+			45.727310417158478]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V8527",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "139"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836965348754527,
+			45.743394937427709]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V2778",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "",
+			"gid": "140"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.84029083159043,
+			45.739497450619602]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "V59185",
+			"gestionnaire": "Veolia Eau",
+			"anneepose": "2008",
+			"gid": "141"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.82806332300459,
+			45.742059815253576]
+		}
+	}]
+}

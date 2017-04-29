@@ -1,0 +1,10 @@
+{
+	"deleteProperties": [
+		"theme",
+		"soustheme",
+		"identifiant",
+		"idexterne",
+		"siret",
+		"datecreation"
+	]
+}

@@ -1,0 +1,7 @@
+{
+	"deleteProperties": [
+		"nom",
+		"gestionnaire",
+		"anneepose"
+	]
+}

@@ -1,0 +1,3027 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Croix-Rousse",
+			"identifiantstation": "",
+			"adresse": "LPA Croix-Rousse",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "1"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.833139860859754,
+			45.781409359390963]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Antonin Poncet",
+			"identifiantstation": "",
+			"adresse": "LPA Antonin Poncet",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834544952768444,
+			45.756313707028632]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "30, quai Perrache",
+			"identifiantstation": "46",
+			"adresse": "30, quai Perrache",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Non",
+			"observation": "en attente de dÃ©cision",
+			"gid": "3"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.825515147086898,
+			45.743020324183973]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Berthelot",
+			"identifiantstation": "",
+			"adresse": "LPA Berthelot",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "4"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836693962634192,
+			45.746265267289587]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre d'Ã©change de Perrache",
+			"identifiantstation": "",
+			"adresse": "Centre d'Ã©change de Perrache",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Wattmobile",
+			"nbemplacements": "",
+			"localisation": "En ouvrage",
+			"anneerealisation": "",
+			"estouverte": "Non",
+			"observation": "Non trouvÃ© en Octobre 2015",
+			"gid": "5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.826808905953202,
+			45.749578356186312]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Les Halles",
+			"identifiantstation": "",
+			"adresse": "LPA Les Halles",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "LPA Les Halles 1er niveau",
+			"gid": "6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.850990287422665,
+			45.76264561021987]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA CÃ©lestins",
+			"identifiantstation": "",
+			"adresse": "LPA CÃ©lestins",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "1",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.831884459464769,
+			45.759838417845849]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Fosse aux Ours",
+			"identifiantstation": "",
+			"adresse": "LPA Fosse aux Ours",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "8"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.840848895373973,
+			45.756349029866186]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Gros caillou",
+			"identifiantstation": "",
+			"adresse": "LPA Gros caillou",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "6",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "9"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.833787393841296,
+			45.774535392852812]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA HÃ´tel de Ville",
+			"identifiantstation": "",
+			"adresse": "LPA HÃ´tel de Ville",
+			"commune": "Lyon 1 er",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "5",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "10"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836907174706687,
+			45.768373213307598]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Morand",
+			"identifiantstation": "",
+			"adresse": "LPA Morand",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "11"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.842180410184518,
+			45.768037142106969]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "1, Rue du Lac",
+			"identifiantstation": "",
+			"adresse": "1, Rue du Lac",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En surface",
+			"anneerealisation": "2016",
+			"estouverte": "Oui",
+			"observation": "En remplacement de la station du CC Part-Dieu",
+			"gid": "12"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.854337225760208,
+			45.759209679158033]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA RÃ©publique",
+			"identifiantstation": "",
+			"adresse": "LPA RÃ©publique",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "13"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.835696368316427,
+			45.760377792678497]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Saint Antoine",
+			"identifiantstation": "",
+			"adresse": "LPA Saint Antoine",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "14"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.831507721043185,
+			45.764132078524945]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Saint Georges",
+			"identifiantstation": "",
+			"adresse": "LPA Saint Georges",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "15"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.82637178592282,
+			45.758380923391179]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Terreaux",
+			"identifiantstation": "",
+			"adresse": "LPA Terreaux",
+			"commune": "Lyon 1 er",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "6",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "16"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.833445127269195,
+			45.76733052318621]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA parc minute Villette",
+			"identifiantstation": "",
+			"adresse": "LPA parc minute Villette",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "17"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.862313114469334,
+			45.760139447096918]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "3b, Boulevard HonorÃ© de Balzac",
+			"identifiantstation": "villeurbanne-honoredebalzac-3",
+			"adresse": "3b, Boulevard HonorÃ© de Balzac",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "18"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.884930052826578,
+			45.754568392764817]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "12 rue JoannÃ¨s Carret",
+			"identifiantstation": "lyon-joannescarret-12",
+			"adresse": "12 rue JoannÃ¨s Carret",
+			"commune": "Lyon 9 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "19"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.810395120794041,
+			45.786997136909058]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Gorge de Loup",
+			"identifiantstation": "",
+			"adresse": "Rue de la PÃ©piniÃ¨re Royale",
+			"commune": "Lyon 9 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "1",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "gÃ©rÃ© par Sytral",
+			"gid": "20"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.80490380546474,
+			45.767033364140737]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "2, rue Domer",
+			"identifiantstation": "lyon-domer-2",
+			"adresse": "2, rue Domer",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "21"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.843519970803346,
+			45.746565800237398]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "97, rue Garibaldi",
+			"identifiantstation": "lyon-garibaldi-97",
+			"adresse": "97, rue Garibaldi",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "22"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.851119599256754,
+			45.766396136282012]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "10 place du MarÃ©chal Lyautey",
+			"identifiantstation": "lyon-marechallyautey-10",
+			"adresse": "10 place du MarÃ©chal Lyautey",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "23"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.842902765335284,
+			45.768929927849733]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Parking Villette",
+			"identifiantstation": "",
+			"adresse": "Parking Villette",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Wattmobile",
+			"nbemplacements": "",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "24"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.862402543097303,
+			45.758688171432901]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Oullins pÃ´le multimodal",
+			"identifiantstation": "oullins-rhone-1",
+			"adresse": "Avenue du RhÃ´ne",
+			"commune": "OULLINS",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "25"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.814661809581002,
+			45.717164655014585]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "503 rue Vuillerme",
+			"identifiantstation": "lyon-vuillerme-503",
+			"adresse": "503 rue Vuillerme",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "26"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.817789542453493,
+			45.735198786713298]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "7, Cours de la LibertÃ©",
+			"identifiantstation": "lyon-liberte-7",
+			"adresse": "7, Cours de la LibertÃ©",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "27"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.841961925421546,
+			45.76292111247993]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face 50 rue Boileau",
+			"identifiantstation": "lyon-boileau-47",
+			"adresse": "Face 50 rue Boileau",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "28"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.848580127548463,
+			45.771588434521917]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face 9, Rue Viricel",
+			"identifiantstation": "lyon-viricel-9",
+			"adresse": "Face 9, Rue Viricel",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "29"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.853166498154325,
+			45.76821577711334]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face 28, Avenue de Saxe",
+			"identifiantstation": "lyon-marechaldesaxe-28",
+			"adresse": "Face 28, Avenue de Saxe",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "30"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.844530379732827,
+			45.766100226803012]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Parc Sergent Blandan",
+			"identifiantstation": "lyon-epargne-1",
+			"adresse": "Rue de l'Epagne, angle rue Camille Roy",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.85127170114039,
+			45.745548862950152]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "ThibaudiÃ¨re \/ JaurÃ¨s",
+			"identifiantstation": "lyon-thibaudiere-26",
+			"adresse": "26, rue de la ThibaudiÃ¨re",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "32"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845348924966451,
+			45.750243380101089]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Quai du RhÃ´ne \/ Piscine",
+			"identifiantstation": "lyon-ollier-2",
+			"adresse": "2, Place Ollier",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "33"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.838030708255562,
+			45.752824115223866]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Debourg ENS",
+			"identifiantstation": "lyon-simonfryd-7",
+			"adresse": "Rue Simon Fryd, angle rue george Gouy",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "34"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836474757229828,
+			45.730399657197786]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Stalingrad N (Parc TÃªte d'Or)",
+			"identifiantstation": "villeurbanne-batailledestalingrad-75",
+			"adresse": "75, boulevard de la Bataille de Stalingrad",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "35"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.859705156009634,
+			45.779157683256535]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Place GranclÃ©ment Ouest",
+			"identifiantstation": "villeurbanne-leclerc-21",
+			"adresse": "21, avenue GÃ©nÃ©ral Leclerc",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "36"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.89090809846876,
+			45.758305696071417]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face au 18 place Tolozan",
+			"identifiantstation": "lyon-tolozan-20",
+			"adresse": "Face au 18 place Tolozan",
+			"commune": "Lyon 1 er",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "7",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "Pas de borne ouverte au public",
+			"gid": "37"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.837599467520716,
+			45.769459856255303]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "4 place Antoine Vollon",
+			"identifiantstation": "lyon-antoinevollon-4",
+			"adresse": "4 place Antoine Vollon",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "38"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.827656792622945,
+			45.755746551634857]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre ville",
+			"identifiantstation": "ecully-liberation-1",
+			"adresse": "Place de la LibÃ©ration",
+			"commune": "ECULLY",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "39"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.778757028278001,
+			45.776043663571123]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Rue Charles Biennier",
+			"identifiantstation": "lyon-charlesbiennier-6",
+			"adresse": "Rue Charles Biennier",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "40"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834451104061265,
+			45.754859833451668]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "12, Rue d'Aubigny",
+			"identifiantstation": "lyon-aubigny-12",
+			"adresse": "12, Rue d'Aubigny",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "41"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.86323297417916,
+			45.761325410650834]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "22 rue GrolÃ©e",
+			"identifiantstation": "lyon-grolee-22",
+			"adresse": "22 rue GrolÃ©e",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "42"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836938844816772,
+			45.760364239407707]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Cuirassiers angle Desaix",
+			"identifiantstation": "lyon-cuirassiers-3",
+			"adresse": "Cuirassiers angle Desaix",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "43"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.856285730559214,
+			45.757774205960722]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "41, Rue Baraban",
+			"identifiantstation": "lyon-baraban-41",
+			"adresse": "41, Rue Baraban",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "44"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.868584050381016,
+			45.762465190423306]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "148, Cours Gambetta",
+			"identifiantstation": "lyon-gambetta-148",
+			"adresse": "148, Cours Gambetta",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "45"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.857709013309979,
+			45.75028678118727]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "175, Rue Duguesclin",
+			"identifiantstation": "lyon-duguesclin-175",
+			"adresse": "175, Rue Duguesclin",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "46"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.848397374947636,
+			45.763361214744293]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "44 boulevard Pinel",
+			"identifiantstation": "lyon-pinel-44",
+			"adresse": "44 boulevard Pinel",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "47"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.896493792814544,
+			45.748300067441996]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "30 rue de Bony",
+			"identifiantstation": "lyon-bony-30",
+			"adresse": "Face 30, Rue de Bony",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "48"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.819800670283556,
+			45.775426039088323]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face 26 bd des Canuts",
+			"identifiantstation": "lyon-canuts-26",
+			"adresse": "Face 26 bd des Canuts",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "49"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.828562183438263,
+			45.777419787576129]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "11 nov. \/ Gaston Berger",
+			"identifiantstation": "villeurbanne-11novembre1918-128",
+			"adresse": "124-128, Boulevard du 11 novembre 1918",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "50"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.873975600885916,
+			45.779190195728908]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Einstein \/ Antonin \/ JB ClÃ©ment (la Doua)",
+			"identifiantstation": "villeurbanne-jeanbaptisteclement-4",
+			"adresse": "Face 4 bis rue Jean-Baptiste ClÃ©ment",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "51"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.879203448358286,
+			45.782509301663296]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Piaton (Tonkin)",
+			"identifiantstation": "villeurbanne-piaton-14",
+			"adresse": "14, Avenue Piaton",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "52"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.867269518306991,
+			45.774074345767417]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Lenoir (MLIS)",
+			"identifiantstation": "villeurbanne-rogerlenoir-17",
+			"adresse": "Face 17, Rue Roger Lenoir",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "53"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.888839571205028,
+			45.768693767005701]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Servet \/ A France ou Branly (Gratte Ciel )",
+			"identifiantstation": "villeurbanne-paulverlaine-5",
+			"adresse": "5, rue Paul Verlaine",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "54"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.880296090858093,
+			45.769039739319652]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Cours de la RÃ©publique Nord",
+			"identifiantstation": "villeurbanne-republique-3",
+			"adresse": "3, Cours de la RÃ©publique",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "55"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.87374513943653,
+			45.771681225355394]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Sangnier Nord \/ Totem",
+			"identifiantstation": "villeurbanne-marcsangnier-3",
+			"adresse": "3, avenue Marc Sangnier",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "56"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.874061397954444,
+			45.763164019779992]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Mairie",
+			"identifiantstation": "bron-verdun-9",
+			"adresse": "Face 9, Rue de Verdun",
+			"commune": "BRON",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "57"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.909034534140686,
+			45.734346597760101]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "CrÃ©dit Agricole \/ Berlioz \/ St Didier \/ Lanessan",
+			"identifiantstation": "champagneaumontdor-lanessan-90",
+			"adresse": "90, Avenue de Lanessan",
+			"commune": "CHAMPAGNE-AU-MONT-D'OR",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "58"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.788488351973712,
+			45.79881952786441]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Ville",
+			"identifiantstation": "champagneaumontdor-lanessan-27",
+			"adresse": "27, Avenue de Lanessan",
+			"commune": "CHAMPAGNE-AU-MONT-D'OR",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2014",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "59"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.793958417696722,
+			45.793681578513812]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "PÃ´le d'Ã©changes CarrÃ© de Soie",
+			"identifiantstation": "vaulxenvelin-canuts-8",
+			"adresse": "8, Avenue des Canuts",
+			"commune": "VAULX-EN-VELIN",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "60"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.922186204286983,
+			45.760801852825175]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre",
+			"identifiantstation": "vaulxenvelin-mauriceaudin-62",
+			"adresse": "Rue Maurice Audi, angle rue Emile Zola",
+			"commune": "VAULX-EN-VELIN",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "61"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.919891532651936,
+			45.777519351252444]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Provinces \/ Clinique Charcot",
+			"identifiantstation": "saintefoyleslyon-mauricejarrosson-28",
+			"adresse": "28, avenue Maurice Jarrosson",
+			"commune": "SAINTE-FOY-LES-LYON",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "62"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.797608572385951,
+			45.741920470974179]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Terminus mÃ©tro C",
+			"identifiantstation": "caluireetcuire-coste-66",
+			"adresse": "66, Rue Coste",
+			"commune": "CALUIRE-ET-CUIRE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "63"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834116161972659,
+			45.786940977921603]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Saint Clair\/ Passerelle",
+			"identifiantstation": "caluireetcuire-wettefays-111",
+			"adresse": "Face 111, Chemin de Wette FaÃ¿s",
+			"commune": "CALUIRE-ET-CUIRE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "64"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.854636635586636,
+			45.788587597369464]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "119, boulevard de la Croix-Rousse",
+			"identifiantstation": "lyon-croixrousse-119",
+			"adresse": "119, boulevard de la Croix-Rousse",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "65"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.826988360779815,
+			45.774283194096704]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "19 rue Duquesne",
+			"identifiantstation": "lyon-duquesne-23",
+			"adresse": "19, Rue Duquesne",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "66"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.843939180634596,
+			45.772649265084695]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "2, rue Thimonnier",
+			"identifiantstation": "lyon-thimonnier-2",
+			"adresse": "2, rue Thimonnier",
+			"commune": "Lyon 1 er",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "67"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.829272837568922,
+			45.767684390506126]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "29 rue Paul Chenavard",
+			"identifiantstation": "lyon-paulchenavard-29",
+			"adresse": "29 rue Paul Chenavard",
+			"commune": "Lyon 1 er",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "68"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.833073870156618,
+			45.765806687512999]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Parc Gerland \/ CitÃ© Scolaire Internationale",
+			"identifiantstation": "lyon-vercors-3",
+			"adresse": "3, rue du Vercors",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "69"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.826863811314957,
+			45.726920951238604]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Parilly",
+			"identifiantstation": "venissieux-julesguesde-11",
+			"adresse": "2, Avenue Jules Guesde",
+			"commune": "VENISSIEUX",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "Complexe Sportif Jean Guimier",
+			"gid": "70"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.887092480456444,
+			45.718852909461056]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "ZAC du ChÃªne",
+			"identifiantstation": "bron-francoismitterrand-25",
+			"adresse": "25, Avenue FranÃ§ois Mitterrand",
+			"commune": "BRON",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "71"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.925443246629066,
+			45.738673095637772]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Saxe Gambetta",
+			"identifiantstation": "",
+			"adresse": "4 place Victor Basch",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "72"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.848215246298162,
+			45.753637586666194]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Albert Thomas",
+			"identifiantstation": "",
+			"adresse": "Face 26, Cours Albert Thomas",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "1",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "73"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.863050593087677,
+			45.748443750363727]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Centre Ville\/ Mairie",
+			"identifiantstation": "tassinlademilune-georgesperret-5",
+			"adresse": "Face 5 rue Georges Perret",
+			"commune": "TASSIN-LA-DEMI-LUNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "74"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.779385744800973,
+			45.763131219158083]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Tassin centre",
+			"identifiantstation": "",
+			"adresse": "59, Avenue de la RÃ©publique",
+			"commune": "TASSIN-LA-DEMI-LUNE",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "1",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "75"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.778012701624275,
+			45.763777969807634]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Bron centre",
+			"identifiantstation": "",
+			"adresse": "Face 5, Rue Roger Salengro",
+			"commune": "BRON",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "76"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.908380431841682,
+			45.732924973698367]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "La Doua",
+			"identifiantstation": "",
+			"adresse": "9, Avenue Jean Capelle Ouest",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2015",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "77"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.873030369822188,
+			45.781492679852654]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Sanofi",
+			"identifiantstation": "lyon-espacehenryvallee-24",
+			"adresse": "24, Espace Henry VallÃ©e",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2016",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "78"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845217551598514,
+			45.727133062007205]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Oullins",
+			"identifiantstation": "",
+			"adresse": "face au 5 rue de la RÃ©publique",
+			"commune": "OULLINS",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "1",
+			"localisation": "En surface",
+			"anneerealisation": "2017",
+			"estouverte": "Non",
+			"observation": "",
+			"gid": "79"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.812201354196195,
+			45.717005775133408]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Ecully Campus",
+			"identifiantstation": "",
+			"adresse": "40 avenue Guy de Collongue",
+			"commune": "ECULLY",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "7",
+			"localisation": "En surface",
+			"anneerealisation": "",
+			"estouverte": "Non",
+			"observation": "pas de borne tiers",
+			"gid": "80"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.765712740657969,
+			45.784287385530966]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Angle MontÃ©e de Choulans\/Rue des FossÃ©s de Trion",
+			"identifiantstation": "lyon-fossesdetrion-2",
+			"adresse": "Angle MontÃ©e de Choulans\/Rue des FossÃ©s de Trion",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "81"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.813275951285608,
+			45.75781664865579]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face au 86 rue Paul Bert",
+			"identifiantstation": "lyon-paulbert-90",
+			"adresse": "Face au 86 rue Paul Bert",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "82"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.851691494966374,
+			45.757006318298245]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "10, Avenue Lacassagne",
+			"identifiantstation": "lyon-lacassagne-10",
+			"adresse": "10, Avenue Lacassagne",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "83"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.863521494801227,
+			45.7563071232032]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "16 quai Joseph Gillet",
+			"identifiantstation": "lyon-josephgillet-16",
+			"adresse": "16 quai Joseph Gillet",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "84"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.812720040164985,
+			45.773218807858896]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "48, rue Juliette Recamier",
+			"identifiantstation": "lyon-julietterecamier-48",
+			"adresse": "48, rue Juliette Recamier",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "85"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.858265607704607,
+			45.767701171105919]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Rue Marcel MÃ©rieux",
+			"identifiantstation": "lyon-marcelmerieux-255",
+			"adresse": "Rue Marcel MÃ©rieux",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "86"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.830578817133071,
+			45.726871429331638]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face au 3 promenade LÃ©a et NapolÃ©on Bullukian",
+			"identifiantstation": "lyon-leaetnapoleonbullukian-3",
+			"adresse": "Face au 3 promenade LÃ©a et NapolÃ©on Bullukian",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "87"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.877118424993644,
+			45.742431055658813]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "4, Rue Bellecombe",
+			"identifiantstation": "villeurbanne-bellecombe-4",
+			"adresse": "4, Rue Bellecombe",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "88"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.862938932729816,
+			45.769773786027805]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "102, avenue MarÃ©chal de Saxe",
+			"identifiantstation": "lyon-marechaldesaxe-102",
+			"adresse": "102, avenue MarÃ©chal de Saxe",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "89"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845828208256793,
+			45.758995146622027]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Bachut",
+			"identifiantstation": "",
+			"adresse": "face au 5-7, Avenue Jean Mermoz",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "TransfÃ©rÃ© en 2016",
+			"gid": "90"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.870521870104811,
+			45.735968799470285]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "5, Place Sathonay",
+			"identifiantstation": "",
+			"adresse": "5, Place Sathonay",
+			"commune": "Lyon 1 er",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau haut",
+			"gid": "91"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.830632198715952,
+			45.769045756841116]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "22-24 rue Dumont d'Urville",
+			"identifiantstation": "lyon-dumontdurville-22",
+			"adresse": "22-24 rue Dumont d'Urville",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "92"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836268507358673,
+			45.779552219039125]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "60, rue du PrÃ©sident Edouard Herriot",
+			"identifiantstation": "lyon-edouardherriot-58",
+			"adresse": "60, rue du PrÃ©sident Edouard Herriot",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "93"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834125949920711,
+			45.762690656569774]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "72-76, rue du DauphinÃ©",
+			"identifiantstation": "lyon-dauphine-72",
+			"adresse": "72-76, rue du DauphinÃ©",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "94"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.868092930426648,
+			45.752512679844919]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "1b, Rue AimÃ© Boussange",
+			"identifiantstation": "lyon-aimeboussange-1",
+			"adresse": "1b, Rue AimÃ© Boussange",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "95"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834170271539662,
+			45.775151271172085]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "100b rue Montgolfier",
+			"identifiantstation": "lyon-montgolfier-100",
+			"adresse": "100b rue Montgolfier",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "96"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.853003804233107,
+			45.772218463942252]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "49 rue du Repos",
+			"identifiantstation": "lyon-repos-49",
+			"adresse": "49 rue du Repos",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "97"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.852929185098171,
+			45.741161989174792]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Rue Marius Berliet face rue Saint Romain",
+			"identifiantstation": "lyon-mariusberliet-65",
+			"adresse": "Rue Marius Berliet face rue Saint Romain",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "98"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.860315873723017,
+			45.742073060739862]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Maisons neuves",
+			"identifiantstation": "Villeurbanne-Jean Jaures- 3",
+			"adresse": "3, Rue Jean JaurÃ¨s",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "99"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.878427921888601,
+			45.756469676769576]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "36, Cours Suchet",
+			"identifiantstation": "lyon-suchet-36",
+			"adresse": "36, Cours Suchet",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "6",
+			"localisation": "En surface",
+			"anneerealisation": "2016",
+			"estouverte": "Non",
+			"observation": "",
+			"gid": "100"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.824559526072632,
+			45.746524794426179]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Cordeliers",
+			"identifiantstation": "",
+			"adresse": "LPA Cordeliers",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "6",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "incluant un PMR",
+			"gid": "101"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.837206389576997,
+			45.763948254222271]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA HÃ´tel de Ville Villeurbanne",
+			"identifiantstation": "",
+			"adresse": "LPA HÃ´tel de Ville Villeurbanne",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "102"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.879496697228649,
+			45.766083221405339]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "LPA Saint Jean",
+			"identifiantstation": "",
+			"adresse": "LPA Saint Jean",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En ouvrage",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "LPA Saint Jean",
+			"gid": "103"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.829314747510572,
+			45.761996393833662]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "6 cours Albert Thomas",
+			"identifiantstation": "lyon-albertthomas-6",
+			"adresse": "6 cours Albert Thomas",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "104"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.861032606084425,
+			45.748996584545573]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face 25, Place Carnot",
+			"identifiantstation": "lyon-carnot-24",
+			"adresse": "Face 25, Place Carnot",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "105"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.827238392348542,
+			45.751600717971968]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Gare de Vaise",
+			"identifiantstation": "",
+			"adresse": "16, rue du 24 Mars 1862",
+			"commune": "Lyon 9 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau bas",
+			"gid": "106"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.804516773008713,
+			45.779836520250008]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Valmy",
+			"identifiantstation": "",
+			"adresse": "2, Rue Michel Berthet",
+			"commune": "Lyon 9 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau bas",
+			"gid": "107"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.805330342343597,
+			45.77495199811527]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Ambroise Courtois",
+			"identifiantstation": "",
+			"adresse": "18, Place Ambroise Courtois",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau bas",
+			"gid": "108"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.871048955616724,
+			45.745242632238437]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Jean JaurÃ¨s",
+			"identifiantstation": "",
+			"adresse": "198, avenue Jean JaurÃ¨s",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau bas",
+			"gid": "109"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.836530970658704,
+			45.736377698439746]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Jean MacÃ©",
+			"identifiantstation": "",
+			"adresse": "Parking Jean MacÃ©",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "110"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.841475794730454,
+			45.744174426673283]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Brotteaux",
+			"identifiantstation": "",
+			"adresse": "Place Jules Ferry",
+			"commune": "Lyon 6 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "111"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.859363305148655,
+			45.766849429899381]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Saint Just",
+			"identifiantstation": "",
+			"adresse": "38-40 rue de Trion",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau haut",
+			"gid": "112"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.815869607335169,
+			45.757059313128188]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Charpennes",
+			"identifiantstation": "",
+			"adresse": "25, Cours Emile Zola",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau bas",
+			"gid": "113"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.864240042197289,
+			45.770660315322289]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Charlemagne",
+			"identifiantstation": "",
+			"adresse": "79, Cours Charlemagne",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "Totem Panneau bas",
+			"gid": "114"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.821137481288445,
+			45.742903324946667]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Point du Jour",
+			"identifiantstation": "",
+			"adresse": "Place des compagnons de la chanson",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "1",
+			"localisation": "En surface",
+			"anneerealisation": "2011",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "115"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.796702177332655,
+			45.756451374874167]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "23-25 rue de la Fraternelle",
+			"identifiantstation": "lyon-fraternelle-25",
+			"adresse": "23-25 rue de la Fraternelle",
+			"commune": "Lyon 9 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "116"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.803936436143411,
+			45.767763029400221]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Angle rue Charlie Chaplin \/ Boulevard Stalingrad",
+			"identifiantstation": "villeurbanne-charliechaplin-119",
+			"adresse": "Angle rue Charlie Chaplin \/ Boulevard Stalingrad",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "117"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.859324138192083,
+			45.77464364615787]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Carnot",
+			"identifiantstation": "",
+			"adresse": "Place Carnot",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "3",
+			"localisation": "En surface",
+			"anneerealisation": "2012",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "118"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.828483738072737,
+			45.751531059214052]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Saxe Servient",
+			"identifiantstation": "",
+			"adresse": "91 avenue MarÃ©chal de Saxe",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Citiz LPA",
+			"nbemplacements": "2",
+			"localisation": "En surface",
+			"anneerealisation": "2012",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "119"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.845735197035487,
+			45.760366173755536]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "20, rue Ornano",
+			"identifiantstation": "lyon-ornano-20",
+			"adresse": "20, rue Ornano",
+			"commune": "Lyon 1 er",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "120"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.825720367008536,
+			45.771705020805285]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "102, rue du PrÃ©sident Edouard Herriot",
+			"identifiantstation": "lyon-edouardherriot-102",
+			"adresse": "102, rue du PrÃ©sident Edouard Herriot",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "4",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "121"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.833875708988502,
+			45.758630643884793]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "66, Rue de la Villette",
+			"identifiantstation": "lyon-villette-66",
+			"adresse": "66, Rue de la Villette",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "122"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.861624731475002,
+			45.758607136042386]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "109, Cours Albert Thomas",
+			"identifiantstation": "lyon-albertthomas-109",
+			"adresse": "109,  Cours Albert Thomas",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "123"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.872586186940629,
+			45.745155929265721]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "19-21, Boulevard EugÃ¨ne Deruelle",
+			"identifiantstation": "lyon-deruelle-19",
+			"adresse": "19-21, Boulevard EugÃ¨ne Deruelle",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "124"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.854350532944491,
+			45.763032692270073]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "62, Rue de Bonnel",
+			"identifiantstation": "lyon-bonnel-62",
+			"adresse": "62, Rue de Bonnel",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "125"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.849277224693077,
+			45.761843815075778]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "5, place Aristide Briand",
+			"identifiantstation": "lyon-aristidebriand-5",
+			"adresse": "5, place Aristide Briand",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "126"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.849443219597426,
+			45.753338542325551]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "39, Avenue du ChÃ¢teau",
+			"identifiantstation": "lyon-chateau-39",
+			"adresse": "39, Avenue du ChÃ¢teau",
+			"commune": "Lyon 3 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "127"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.886463354964767,
+			45.749462293540851]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "68, rue HÃ©non",
+			"identifiantstation": "lyon-henon-68",
+			"adresse": "68, rue HÃ©non",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "128"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.824392685220486,
+			45.77961091875077]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "9-11 rue Artaud",
+			"identifiantstation": "lyon-artaud-9",
+			"adresse": "9-11 rue Artaud",
+			"commune": "Lyon 4 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "129"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.834249338361993,
+			45.781436553603534]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face au 81, Rue Joliot Curie",
+			"identifiantstation": "lyon-joliotcurie-64",
+			"adresse": "Face au 81, Rue Joliot Curie",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "130"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.787986191743711,
+			45.75461589383719]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "57, Avenue du Point du Jour",
+			"identifiantstation": "lyon-pointdujour-55",
+			"adresse": "57, Avenue du Point du Jour",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "131"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.801466688425033,
+			45.756093411666413]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "11 rue Tramassac",
+			"identifiantstation": "lyon-tramassac-11",
+			"adresse": "11 rue Tramassac",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "132"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.825708054971201,
+			45.760803013122477]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "4, Rue de l'Angile",
+			"identifiantstation": "lyon-angile-3",
+			"adresse": "4, Rue de l'Angile",
+			"commune": "Lyon 5 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "133"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.82820316943325,
+			45.765606648403853]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "3 avenue Debourg",
+			"identifiantstation": "lyon-debourg-1",
+			"adresse": "3 avenue Debourg",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "134"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.826636332429503,
+			45.731668447332133]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "5 rue Chevreul",
+			"identifiantstation": "lyon-chevreul-5",
+			"adresse": "5 rue Chevreul",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "135"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.8368532133064,
+			45.749838762555868]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Angle rue Chateaubriand\/avenue Jean JaurÃ¨s",
+			"identifiantstation": "lyon-jeanjaures-188",
+			"adresse": "Angle rue Chateaubriand\/avenue Jean JaurÃ¨s",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "136"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.837186880570156,
+			45.736744026395478]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face au 4 place Gabriel PÃ©ri",
+			"identifiantstation": "lyon-gabrielperi-4",
+			"adresse": "Face au 4 place Gabriel PÃ©ri",
+			"commune": "Lyon 7 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "137"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.843467005880361,
+			45.754856539853336]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "7, Avenue Paul Santy",
+			"identifiantstation": "lyon-paulsanty-7",
+			"adresse": "7, Avenue Paul Santy",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "138"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.870669996081689,
+			45.735055755892795]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "111-113 boulevard des Etats-Unis",
+			"identifiantstation": "lyon-etatsunis-111",
+			"adresse": "111-113 boulevard des Etats-Unis",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "139"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.868264223547793,
+			45.728796634094763]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "42 rue Paul Cazeneuve",
+			"identifiantstation": "lyon-paulcazeneuve-42",
+			"adresse": "42 rue Paul Cazeneuve",
+			"commune": "Lyon 8 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "140"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.862833965374764,
+			45.734287089407758]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "14b rue de la Corderie",
+			"identifiantstation": "lyon-corderie-12",
+			"adresse": "14b rue de la Corderie",
+			"commune": "Lyon 9 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "141"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.80430703220639,
+			45.777167998081147]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "50, rue de Saint Cyr",
+			"identifiantstation": "lyon-saintcyr-51",
+			"adresse": "50, rue de Saint Cyr",
+			"commune": "Lyon 9 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "142"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.807712615611716,
+			45.782960130715885]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Face au 2, Route de Genas",
+			"identifiantstation": "villeurbanne-genas-2",
+			"adresse": "Face au 2, Route de Genas",
+			"commune": "VILLEURBANNE",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2013",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "143"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.875830038819072,
+			45.754954255875774]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "100, Cours Charlemagne",
+			"identifiantstation": "lyon-charlemagne-100",
+			"adresse": "100, Cours Charlemagne",
+			"commune": "Lyon 2 Ã¨me",
+			"typeautopartage": "Bluely",
+			"nbemplacements": "5",
+			"localisation": "En surface",
+			"anneerealisation": "2016",
+			"estouverte": "Oui",
+			"observation": "",
+			"gid": "144"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.820383850572565,
+			45.74234365953]
+		}
+	}]
+}
