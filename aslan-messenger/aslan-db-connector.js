@@ -6,7 +6,7 @@ const fs = require('fs');
 var env = require('node-env-file');
 env(__dirname + '/.env');*/
 
-var url = 'mongodb://' + process.env.MONGO_DB_TOKEN + '@aslanmessenger-shard-00-00-rh6fw.mongodb.net:27017/AslanMessenger?ssl=true&authSource=admin';
+var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslanmessenger-shard-00-00-rh6fw.mongodb.net:27017/AslanMessenger?ssl=true&authSource=admin';
 const GrandLyonCollection = "AslanMessenger";
 
 exports.getData = function(table, query, callback) {
