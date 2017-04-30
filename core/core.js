@@ -35,7 +35,7 @@ function runLogicLayer(message) {
 */
 function callbackLogicLayer(response) {
     console.log("APIAI sended : ", JSON.stringify(response));
-    var intent = response.result.metadata;
+    var intent = response.result.metadata.intentName;
     processing(intent, response);
 }
 
