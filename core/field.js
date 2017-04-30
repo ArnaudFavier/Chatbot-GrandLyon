@@ -27,7 +27,7 @@ function replaceField(response, field, value) {
 *   Fait un post traitement sur les champs pour les rendre conforme JSON
 */
 function extractFields(response) {
-    var fields = response.match(/(\{.*\})/g);
+    var fields = response.match(/(\{[^\{]*\})/g);
     if(fields == undefined) {
         fields = [];
     }
