@@ -1,3 +1,4 @@
+'use strict';
 const mongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
 
