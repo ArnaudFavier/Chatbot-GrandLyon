@@ -1,10 +1,12 @@
 'use strict';
 
 //const recast = require('./botlogic/recast.js');
-const apiai = require('./botlogic/apiai.js');
-const facebook = require('./channels/facebook.js');
-const telegram = require('./channels/telegram.js');
-const aslan = require('./channels/aslan-messenger.js');
+const apiai = require('./../botlogic/apiai.js');
+const facebook = require('./../channels/facebook.js');
+const telegram = require('./../channels/telegram.js');
+const aslan = require('./../channels/aslan-messenger.js');
+const pr = require('./processing.js');
+const fd = require('./field.js');
 
 var messageReceived;
 
@@ -32,14 +34,26 @@ function runLogicLayer(message) {
 *   Fonction de callback appelée par la couche logique
 */
 function callbackLogicLayer(response) {
-    /*
-    *   Traitement
-    */
     console.log("APIAI sended : ", JSON.stringify(response));
-    /*
-    *   Préparation du message
-    */
-    prepareMessage(response);
+    var intent = response.result.metadata;
+    processing(intent, response);
+}
+
+/*
+*   Fonction qui traite le message en fonction du contexte du message
+*   La fonction renvoie la réponse à la channel 
+*/
+function processing(intent, response) {
+    switch(intent) {
+        case "bonjour" :
+            pr.processingGrettings(response);
+            break;
+        case "heure" :
+            pr.processingHour(response);
+            break;
+        default :
+            prepareMessage(response.result.fulfillment.speech);
+    }
 }
 
 /*
@@ -50,10 +64,10 @@ function callbackLogicLayer(response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    var replie = response.result.fulfillment.speech;
-    var fields = extractFields(replie);
+    var replie = response;
+    var fields = fd.extractFields(replie);
     var quickreplies = extractQuickReplies(fields);
-    replie = removeFields(replie);
+    replie = fd.removeFields(replie);
     if(quickreplies.length > 0) {
         prepareMessageWithQuickReply(replie, quickreplies, messages);
     } else if(replie != undefined ) {
@@ -62,30 +76,6 @@ function prepareMessage(response) {
     sendMessages(messages);
 }
 
-/*
-*   Fonction qui supprime les champs {{ }}
-*/
-function removeFields(response) {
-    var string = response;
-    var fields = extractFields(response);
-    for(var i=0;i<fields.length;i++) 
-    {
-        string = string.replace(fields[i], "");
-    }
-    return string;
-}
-
-/*
-*   Fonction qui extrait les champs {{  }}
-*   Fait un post traitement sur les champs pour les rendre conforme JSON
-*/
-function extractFields(response) {
-    var fields = response.match(/(\{.*\})/g);
-    if(fields == undefined) {
-        fields = [];
-    }
-    return fields;
-}
 
 /*
 *   Fonction qui extrait les quick replies
@@ -94,7 +84,11 @@ function extractQuickReplies(fields) {
     var quickreplies = [];
     for(var i=0;i<fields.length;i++) 
     {
-        var json = JSON.parse(fields[i]);
+        var json = undefined;
+        try {
+            json = JSON.parse(fields[i]);
+        } catch (err){
+        }
         if(json != undefined && json.qr != undefined && json.qr.length > 0) {
             for(var j=0;j<json.qr.length;j++) {
                 quickreplies.push(json.qr[j]);
@@ -150,6 +144,9 @@ function sendMessages(messages) {
             case "Telegram":
             telegram.sendMessages(messages);
             break;
+            case "Aslan":
+            aslan.sendMessages(messages);
+            break;
             default:
             return;
         }
@@ -157,3 +154,4 @@ function sendMessages(messages) {
 }
 
 exports.receivedMessage = receivedMessage;
+exports.prepareMessage = prepareMessage;
