@@ -40,7 +40,7 @@ public class UserTextMessageView extends FrameLayout {
         isExpended = false;
         dateTextView.setHeight(0);
 
-        textView.setOnClickListener(new OnClickListener() {
+        linearLayout.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(linearLayoutHeight == -1) {

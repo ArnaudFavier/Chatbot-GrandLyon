@@ -32,5 +32,8 @@
     <string name="all_inputs_have_to_be_filled_in">All inputs have to be filled in...</string>
     <string name="password_are_not_similar">Password are not similar...</string>
     <string name="error_when_sign_out">An error occured...</string>
+    <string name="sorry_no_voice_input_supported">"Désolé, votre appareil ne supporte pas d'entrée vocale..."</string>
+    <string name="you_can_speake">"Vous pouvez parler ..."</string>
+
 
 </resources>

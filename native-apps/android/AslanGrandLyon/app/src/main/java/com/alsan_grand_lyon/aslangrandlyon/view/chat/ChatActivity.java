@@ -1,8 +1,10 @@
 package com.alsan_grand_lyon.aslangrandlyon.view.chat;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,12 +12,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,20 +32,26 @@ import com.alsan_grand_lyon.aslangrandlyon.service.LoadMoreMessagesTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.MessageHttpResult;
 import com.alsan_grand_lyon.aslangrandlyon.service.SendMessageTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.SignOutTask;
+import com.alsan_grand_lyon.aslangrandlyon.service.Speaker;
 import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Locale;
 
 public class ChatActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private final static int REQ_CODE_SPEECH_INPUT = 100;
+    private final static int CHECK_CODE = 0x1;
+    private final int SHORT_DURATION = 1000;
+    private Speaker speaker = null;
 
     private ListView messagesListView = null;
     private LinearLayout buttonsLinearLayout = null;
     private EditText messageEditText = null;
     private ImageView sendImageView = null;
+    private ImageView microphoneImageView = null;
     private MessageAdapter messageAdapter = null;
     private AlertDialog loadingAlertDialog = null;
     private boolean signingOutFlag = false;
@@ -74,6 +79,7 @@ public class ChatActivity extends AppCompatActivity
         buttonsLinearLayout = (LinearLayout) findViewById(R.id.buttonsLinearLayout);
         messageEditText = (EditText) findViewById(R.id.messageEditText);
         sendImageView = (ImageView) findViewById(R.id.sendImageView);
+        microphoneImageView = (ImageView) findViewById(R.id.microphoneImageView);
 
         //TODO
         messageAdapter = new MessageAdapter(getApplicationContext(), DataSingleton.getInstance().getMessages());
@@ -105,6 +111,14 @@ public class ChatActivity extends AppCompatActivity
             }
         });
 
+        microphoneImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                promptSpeechInput();
+            }
+        });
+
+        checkTTS();
     }
 
 
@@ -114,6 +128,20 @@ public class ChatActivity extends AppCompatActivity
             LoadMoreMessagesTask loadMoreMessagesTask = new LoadMoreMessagesTask(ChatActivity.this);
             loadMoreMessagesTask.execute(limit,DataSingleton.getInstance().getMessages().size());
         }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        checkTTS();
+    }
+
+    @Override
+    protected void onStop() {
+        if(speaker != null) {
+            speaker.destroy();
+        }
+        super.onStop();
     }
 
     @Override
@@ -191,7 +219,7 @@ public class ChatActivity extends AppCompatActivity
 
     private void sendMessage() {
         //TODO tester quel type de message, pour l'instant seulement TextMessage
-        if(messageEditText.getText().toString() != null) {
+        if(messageEditText.getText().toString() != null && !messageEditText.getText().toString().isEmpty()) {
             User user = DataSingleton.getInstance().getUser();
             Message newMessage = new TextMessage(new Date(),user.getServerId(),messageEditText.getText().toString());
             newMessage.setUserId(user.getServerId());
@@ -208,6 +236,7 @@ public class ChatActivity extends AppCompatActivity
     }
 
     public void messageSent(MessageHttpResult httpResult) {
+        //TODO faire differement (progress bar sur le message ...)
         if(httpResult.getCode() == 200) {
             Toast toast = Toast.makeText(this,"Message sent",Toast.LENGTH_LONG);
             toast.show();
@@ -244,4 +273,56 @@ public class ChatActivity extends AppCompatActivity
 
     }
 
+    private void promptSpeechInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+//        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().getDisplayLanguage());
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.FRENCH);
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.you_can_speake));
+        try {
+            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+        } catch (ActivityNotFoundException a) {
+            Toast.makeText(getApplicationContext(), getString(R.string.sorry_no_voice_input_supported), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQ_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && null != data) {
+                    ArrayList<String> buffer = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String result = buffer.get(0);
+                    //TODO si texte vide
+                    messageEditText.setText(result);
+                }
+                break;
+            }
+            case CHECK_CODE: {
+                if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
+                    speaker = new Speaker(this);
+                } else {
+                    Intent install = new Intent();
+                    install.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+                    startActivity(install);
+                }
+            }
+            default:
+                break;
+        }
+    }
+
+    private void speakOut(String text) {
+        if(!speaker.isSpeaking()) {
+            speaker.speak(text);
+            speaker.pause(SHORT_DURATION);
+        }
+    }
+
+    private void checkTTS(){
+        Intent check = new Intent();
+        check.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+        startActivityForResult(check, CHECK_CODE);
+    }
 }

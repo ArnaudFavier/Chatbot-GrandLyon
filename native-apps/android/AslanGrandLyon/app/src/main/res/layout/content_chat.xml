@@ -100,35 +100,40 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="top|center"
                 android:background="@drawable/top_border"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/microphoneImageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="10dp"
+                    app:srcCompat="@drawable/microphone"
+                    android:layout_weight = "0"/>
                 <EditText
                     android:id="@+id/messageEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
                     android:background="@drawable/input_background"
                     android:ems="10"
                     android:hint="Envoyer un message"
                     android:inputType="textMultiLine"
-                    android:minHeight="50dp"
                     android:padding="10dp"
-                    android:text="Bonjour" />
+                    android:layout_gravity="center"
+                    android:layout_weight = "1"/>
 
                 <ImageView
                     android:id="@+id/sendImageView"
-                    android:layout_width="100dp"
+                    android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="bottom"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:minHeight="97dp"
-                    android:minWidth="100dp"
-                    app:srcCompat="@drawable/send_button" />
+                    app:srcCompat="@drawable/send_button"
+                    android:layout_weight = "0"/>
 
             </LinearLayout>
+
         </LinearLayout>
 
     </RelativeLayout>
