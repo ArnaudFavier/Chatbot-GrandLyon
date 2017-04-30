@@ -54,6 +54,7 @@ function sendMessage(message) {
 			    res.status(404).send(JSON.stringify({error: "User not found"}));
     		} 
     	});
+    }
 }
 
 /*
@@ -84,6 +85,6 @@ function sendFileMessage(message) {
 
 }
 
-exports.receivedMessage = receivedMessage
-exports.sendMessage = sendMessage
-exports.sendMessages = sendMessages
+exports.receivedMessage = receivedMessage;
+exports.sendMessage = sendMessage;
+exports.sendMessages = sendMessages;
