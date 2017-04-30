@@ -17,8 +17,12 @@ function processingHour(response) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.includes("{heure}")) {
+			console.log("je passe là");
 			service.getTimeAt(response.result.parameters.ville, function(hour) {
+				console.log(hour);
 				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
+				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, 
+					"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
 				core.prepareMessage(response.result.fulfillment.speech);
 			});	
 		}
