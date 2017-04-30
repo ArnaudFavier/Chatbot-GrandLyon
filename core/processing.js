@@ -2,6 +2,7 @@
 
 const core = require('./core.js');
 const fd = require('./field.js');
+const service = require('./../services/service.js');
 
 /*
 *   Fonction qui traite les réponses de type bonjour
@@ -11,7 +12,18 @@ function processingGrettings(response) {
 }
 
 function processingHour(response) {
-	core.prepareMessage(response);
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined 
+		&& response.result.ville != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.contain("{heure}")) {
+			service.getTimeAt(response.result.parameters.ville, function(hour) {
+				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
+				core.prepareMessage(response.result.fulfillment.speech);
+			});	
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}
 }
 
 
