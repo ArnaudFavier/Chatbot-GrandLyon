@@ -13,7 +13,7 @@ function processingGrettings(response) {
 
 function processingHour(response) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined 
-		&& response.result.ville != undefined) {
+		&& response.result.parameters.ville != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		if(fields.contain("{heure}")) {
 			service.getTimeAt(response.result.parameters.ville, function(hour) {
