@@ -12,10 +12,13 @@ function processingGrettings(response) {
 }
 
 function processingHour(response) {
+	console.log(response.result);
+	console.log(response.result.parameters);
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined 
 		&& response.result.parameters.ville != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
-		if(fields.contain("{heure}")) {
+		console.log(fields);
+		if(fields.includes("{heure}")) {
 			service.getTimeAt(response.result.parameters.ville, function(hour) {
 				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
 				core.prepareMessage(response.result.fulfillment.speech);
