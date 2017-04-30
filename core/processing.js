@@ -2,7 +2,7 @@
 
 const core = require('./core.js');
 const fd = require('./field.js');
-const service = require('./../services/service.js');
+const service = require('./../services/services.js');
 
 /*
 *   Fonction qui traite les réponses de type bonjour
