@@ -1,8 +1,9 @@
 'use strict';
-const db = require('../AslanDBConnector.js');
+const db = require('aslan-db-connector.js');
 const crypto = require('crypto');
 const randtoken = require('rand-token');
 const MongoObjectID = require("mongodb").ObjectID;
+
 /*
 *	Fonction qui crée un utilisateur en base de données
 */
