@@ -49,8 +49,7 @@ function extractMessage(event) {
     request({
         uri: 'https://graph.facebook.com/' + senderID + '?fields=name',
         qs: { access_token: PAGE_ACCESS_TOKEN },
-        method: 'POST',
-        json: messageData
+        method: 'GET'
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(JSON.stringify(body));
