@@ -41,6 +41,7 @@ function receivedMessage(req, res) {
 * Fonction qui permet de traiter un message reçu
 */
 function extractMessage(event) {
+    console.log(JSON.stringify(event));
     var senderID = event.sender.id;
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
