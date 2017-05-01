@@ -26,8 +26,8 @@ function receivedMessage(message) {
         senderID: senderID,
         timestamp: message.date,
         text: message.text,
-        first_name: message.first_name,
-        last_name: message.last_name     
+        first_name: message.from.first_name,
+        last_name: message.from.last_name     
     };
     core.receivedMessage(message);
 }
