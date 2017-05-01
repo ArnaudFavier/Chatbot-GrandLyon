@@ -16,7 +16,7 @@ function receivedMessage(message, user) {
         first_name: user.firstname,
         last_name: user.name
     };
-
+    console.log(JSON.stringify(m));
     core.receivedMessage(m);
 }
 
