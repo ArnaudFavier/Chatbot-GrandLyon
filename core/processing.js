@@ -16,7 +16,7 @@ function processingHour(response) {
 		&& response.result.parameters.ville != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
-		if(fields.includes("{heure}")) {
+		if(fields.indexOf("{heure}") != -1) {
 			console.log("je passe là");
 			service.getTimeAt(response.result.parameters.ville, function(hour) {
 				console.log(hour);
