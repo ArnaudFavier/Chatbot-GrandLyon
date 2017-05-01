@@ -47,7 +47,7 @@ function sendMessages(messages) {
 * Fonction qui sauvegarde un message en DB
 */
 function save(m) {
-    console.log("Save message");
+    console.log(JSON.stringify(m));
     var user_id = m.user_id;
     var message = m.message;
     if(user_id != undefined && message != undefined) {
