@@ -18,8 +18,7 @@ function removeFields(response) {
 */
 function replaceField(response, field, value) {
     var string = response;
-    string.replace(field, value);
-    return string;
+    return string.replace(field, value);
 }
 
 /*
@@ -34,6 +33,7 @@ function extractFields(response) {
     return fields;
 }
 
+console.log(replaceField("Il est {heure} à {\"ville\":[\"Lyon\"]}.", "{heure}", "test"));
 
 exports.removeFields = removeFields;
 exports.replaceField = replaceField;

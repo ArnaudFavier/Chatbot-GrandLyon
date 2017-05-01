@@ -19,19 +19,17 @@ function processingHour(response) {
 		if(fields.indexOf("{heure}") != -1) {
 			console.log(response.result.parameters.ville);
 			serv.getTimeAt(response.result.parameters.ville, function(hour) {
-				console.log("Hour : " + hour);
-				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
-				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, 
+				var answer = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
+				answer = fd.replaceField(answer, 
 					"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
-				console.log(response.result.fulfillment.speech);
-				core.prepareMessage(response.result.fulfillment.speech);
+				console.log(answer);
+				core.prepareMessage(answer);
 			});	
 		}
 	} else {
 		core.prepareMessage(response.result.fulfillment.speech);
 	}
 }
-
 
 exports.processingGrettings = processingGrettings;
 exports.processingHour = processingHour;
