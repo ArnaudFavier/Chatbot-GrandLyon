@@ -20,7 +20,6 @@ function processingGrettings(information, response) {
 	} else {
 		core.prepareMessage(response.result.fulfillment.speech);
 	}
-	core.prepareMessage(response);
 }
 
 function processingHour(response) {
