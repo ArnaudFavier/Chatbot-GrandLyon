@@ -50,16 +50,19 @@ function extractMessage(event) {
         method: 'GET'
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log("Received message from Facebook for user %d at %d with message:", 
-            senderID, timeOfMessage);
             var recipientID = event.recipient.id;
             var timeOfMessage = event.timestamp;
             var message = event.message;
+            
             console.log(JSON.stringify(message));
 
             var messageText = message.text;
             var messageAttachments = message.attachments;
 
+            try {
+                body = JSON.parse(body);
+            } catch (err){
+            }
             var message = {
                 channel: "Facebook",
                 senderID: senderID,
