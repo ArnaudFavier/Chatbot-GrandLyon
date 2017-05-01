@@ -46,7 +46,7 @@ function callbackLogicLayer(response) {
 function processing(intent, response) {
     switch(intent) {
         case "bonjour" :
-            pr.processingGrettings(response);
+            pr.processingGrettings(messageReceived, response);
             break;
         case "heure" :
             pr.processingHour(response);

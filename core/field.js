@@ -33,8 +33,6 @@ function extractFields(response) {
     return fields;
 }
 
-console.log(replaceField("Il est {heure} à {\"ville\":[\"Lyon\"]}.", "{heure}", "test"));
-
 exports.removeFields = removeFields;
 exports.replaceField = replaceField;
 exports.extractFields = extractFields;
