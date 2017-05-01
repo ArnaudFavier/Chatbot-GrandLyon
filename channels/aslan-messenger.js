@@ -12,7 +12,7 @@ function receivedMessage(message, user) {
         channel: "Aslan",
         senderID: user._id,
         timestamp: new Date(),
-        text: message,
+        text: message.text,
         first_name: user.firstname,
         last_name: user.name
     };
