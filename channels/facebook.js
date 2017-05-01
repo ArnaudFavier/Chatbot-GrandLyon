@@ -47,7 +47,7 @@ function extractMessage(event) {
     var timeOfMessage = event.timestamp;
     var message = event.message;
     request({
-        uri: 'https://graph.facebook.com/' + senderID + '?fields=name',
+        uri: 'https://graph.facebook.com/' + senderID,
         qs: { access_token: PAGE_ACCESS_TOKEN },
         method: 'GET'
     }, function (error, response, body) {
