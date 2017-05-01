@@ -46,31 +46,44 @@ function extractMessage(event) {
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
     var message = event.message;
+    request({
+        uri: 'https://graph.facebook.com/' + senderID + '?fields=name',
+        qs: { access_token: PAGE_ACCESS_TOKEN },
+        method: 'POST',
+        json: messageData
+    }, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(JSON.stringify(body));
+            console.log("Received message from Facebook for user %d at %d with message:", 
+            senderID, timeOfMessage);
+            console.log(JSON.stringify(message));
 
-    console.log("Received message from Facebook for user %d at %d with message:", 
-      senderID, timeOfMessage);
-    console.log(JSON.stringify(message));
+            var messageId = message.mid;
+            var messageText = message.text;
+            var messageAttachments = message.attachments;
 
-    var messageId = message.mid;
-    var messageText = message.text;
-    var messageAttachments = message.attachments;
+            var message = {
+                channel: "Facebook",
+                senderID: senderID,
+                timestamp: timeOfMessage,
+                text: messageText,
+                first_name: message.first_name,
+                last_name: message.last_name
+            };
+            /*
+            *   Coordonnées
+            */
+            if(messageAttachments != undefined && messageAttachments.payload != undefined && messageAttachments.payload.coordinates != undefined) {
+                message["location"] = coordinates;
+            }
 
-    var message = {
-        channel: "Facebook",
-        senderID: senderID,
-        timestamp: timeOfMessage,
-        text: messageText,
-        first_name: message.first_name,
-        last_name: message.last_name
-    };
-    /*
-    *   Coordonnées
-    */
-    if(messageAttachments != undefined && messageAttachments.payload != undefined && messageAttachments.payload.coordinates != undefined) {
-        message["location"] = coordinates;
-    }
-
-    core.receivedMessage(message);
+            core.receivedMessage(message);
+        } else {
+            console.error("Unable to get name of user.");
+            console.error(response);
+            console.error(error);
+        }
+    });
 }
 
 /*
