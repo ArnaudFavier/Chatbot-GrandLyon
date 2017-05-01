@@ -8,15 +8,12 @@ const serv = require('./../services/services.js');
 *   Fonction qui traite les réponses de type bonjour
 */
 function processingGrettings(information, response) {
-	console.log(information);
 	if(information != undefined && response != undefined && information.first_name != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{prenom}") != -1) {
-			serv.getTimeAt(response.result.parameters.ville, function(hour) {
-				var answer = fd.replaceField(response.result.fulfillment.speech, "{prenom}", information.first_name);
-				core.prepareMessage(answer);
-			});	
+			var answer = fd.replaceField(response.result.fulfillment.speech, "{prenom}", information.first_name);
+			core.prepareMessage(answer);
 		}
 	} else {
 		core.prepareMessage(response.result.fulfillment.speech);
