@@ -47,9 +47,11 @@ function sendMessages(messages) {
 * Fonction qui sauvegarde un message en DB
 */
 function save(m) {
+    console.log("Save message");
     var user_id = m.user_id;
     var message = m.message;
     if(user_id != undefined && message != undefined) {
+            console.log("Save message 2");
         db.createMessage(user_id, message, true, function(data){
             console.log(data)
             if(data.length == 0) {
@@ -65,6 +67,7 @@ function save(m) {
 * Fonction qui envoie un message de type text
 */
 function sendTextMessage(message) {
+    console.log("Send text message");
     if(message.senderID != undefined && message.text != undefined) {
         message.message = {text : message.text, type: "text"};
         save(message);
