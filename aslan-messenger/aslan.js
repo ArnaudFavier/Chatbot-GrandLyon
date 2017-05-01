@@ -142,7 +142,7 @@ function receive(req, res) {
 			    res.status(404).send(JSON.stringify({error: "User not found"}));
     		} 
     	});
-    	//Traitement de la requete
+    	messenger.receivedMessage(message, user_id);
     } else {
 		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
 	}

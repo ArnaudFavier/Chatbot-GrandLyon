@@ -8,6 +8,7 @@ const serv = require('./../services/services.js');
 *   Fonction qui traite les réponses de type bonjour
 */
 function processingGrettings(information, response) {
+	console.log(information);
 	if(information != undefined && response != undefined && information.first_name != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
