@@ -1,0 +1,113 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75855440253857, 
+                    4.832124429229987
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "BELLECOUR", 
+                "codepostal": "69002", 
+                "gid": "10", 
+                "nom": "Agence TCL Bellecour", 
+                "numero": "6", 
+                "typevoie": "PLACE"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.58273622347945, 
+                    4.772879581417215
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "ROGER SALENGRO", 
+                "codepostal": "69700", 
+                "gid": "8", 
+                "nom": "Agence TCL Givors", 
+                "numero": "2", 
+                "typevoie": "RUE"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76624693193471, 
+                    4.805200028821266
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "SERGENT MICHEL BERTHET", 
+                "codepostal": "69009", 
+                "gid": "3", 
+                "nom": "Agence TCL Gorge de Loup", 
+                "numero": "1", 
+                "typevoie": "RUE"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74299286571597, 
+                    4.878681195464257
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "D ARSONVAL", 
+                "codepostal": "69003", 
+                "gid": "1", 
+                "nom": "Agence TCL Grange Blanche", 
+                "numero": "1", 
+                "typevoie": "PLACE"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76060194260188, 
+                    4.92212054512477
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "DU RAIL", 
+                "codepostal": "69120", 
+                "gid": "9", 
+                "nom": "Agence TCL La Soie", 
+                "numero": "7", 
+                "typevoie": "RUE"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76204248654154, 
+                    4.858178554178378
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "adr": "MARIUS VIVIER MERLE", 
+                "codepostal": "69003", 
+                "gid": "6", 
+                "nom": "Agence TCL Part Dieu", 
+                "numero": "11", 
+                "typevoie": "BOULEVARD"
+            }, 
+            "type": "Feature"
+        }
+    ], 
+    "type": "FeatureCollection"
+}

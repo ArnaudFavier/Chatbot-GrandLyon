@@ -1,0 +1,66 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"nom": "Relais Info Service TCL Gare de vaise",
+			"numero": "0",
+			"indice": "",
+			"voie": "RUE",
+			"adr": "DU 24 MARS 1852",
+			"codepostal": "69009",
+			"facea": "",
+			"horaires": "",
+			"gid": "13",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.804764382625737,
+			45.780911444475521]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Relais Info Service TCL Part Dieu Villette",
+			"numero": "30",
+			"indice": "",
+			"voie": "RUE",
+			"adr": "DE LA VILLETTE",
+			"codepostal": "69003",
+			"facea": "",
+			"horaires": "",
+			"gid": "15",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.861811157092671,
+			45.760480401330753]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Relais Info Service TCL Part Dieu vivier merle",
+			"numero": "11",
+			"indice": "",
+			"voie": "BOULEVARD",
+			"adr": "MARIUS VIVIER MERLE",
+			"codepostal": "69003",
+			"facea": "",
+			"horaires": "",
+			"gid": "16",
+			"last_update": "",
+			"last_update_fme": "2017-04-14 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.857654732175986,
+			45.761587445657767]
+		}
+	}]
+}

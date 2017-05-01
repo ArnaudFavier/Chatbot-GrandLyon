@@ -1,0 +1,89 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    45.760265029322454, 
+                    4.861941959611308
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "1", 
+                "nom": "Gare Part-Dieu Villette"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76106803034826, 
+                    4.922203024147039
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "2", 
+                "nom": "Vaulx-en-Velin La Soie"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76103164256116, 
+                    4.922078882455405
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "3", 
+                "nom": "Vaulx-en-Velin La Soie"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76776684320047, 
+                    5.031422687591467
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "4", 
+                "nom": "Meyzieu Z.i."
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76774539075864, 
+                    5.031600168963877
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "5", 
+                "nom": "Meyzieu Z.i."
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.72264507266543, 
+                    5.076474307455741
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "gid": "6", 
+                "nom": "Aeroport St Exupery"
+            }, 
+            "type": "Feature"
+        }
+    ], 
+    "type": "FeatureCollection"
+}

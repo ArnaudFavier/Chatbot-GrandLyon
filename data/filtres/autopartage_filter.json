@@ -1,0 +1,11 @@
+{
+	"deleteProperties": [
+		"nom",
+		"identifiantstation",
+		"localisation",
+		"anneerealisation"
+	],
+	"filters" : {
+		"estouverte" : ["Oui"]
+	}
+}

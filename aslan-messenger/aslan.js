@@ -125,7 +125,7 @@ function receive(req, res) {
     		console.log(JSON.stringify(results));
     		if(results.length == 1) {
     			if(results[0].token == token) {
-	    			db.createMessage(user_id, message, function(data){
+	    			db.createMessage(user_id, message, false, function(data){
 	    				console.log(data)
 				    	if(data.length == 0) {
 				    		res.status(500).send(JSON.stringify({error: error.toString()}));

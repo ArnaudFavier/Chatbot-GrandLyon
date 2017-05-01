@@ -1,0 +1,11 @@
+{
+	"deleteProperties": [
+		"id",
+		"desserte",
+		"pmr",
+		"ascenseur",
+		"escalator",
+		"last_update",
+		"last_update_fme"
+	]
+}

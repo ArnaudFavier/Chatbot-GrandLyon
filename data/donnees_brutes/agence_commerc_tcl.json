@@ -1,0 +1,129 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"nom": "Agence TCL Bellecour",
+			"numero": "6",
+			"indice": "",
+			"typevoie": "PLACE",
+			"adr": "BELLECOUR",
+			"codepostal": "69002",
+			"facea": "t",
+			"horaires": "",
+			"gid": "10",
+			"last_update": "",
+			"last_update_fme": "2017-04-13 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.832124429229987,
+			45.758554402538572]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Agence TCL Givors",
+			"numero": "2",
+			"indice": "",
+			"typevoie": "RUE",
+			"adr": "ROGER SALENGRO",
+			"codepostal": "69700",
+			"facea": "",
+			"horaires": "",
+			"gid": "8",
+			"last_update": "",
+			"last_update_fme": "2017-04-13 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.772879581417215,
+			45.582736223479451]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Agence TCL Gorge de Loup",
+			"numero": "1",
+			"indice": "",
+			"typevoie": "RUE",
+			"adr": "SERGENT MICHEL BERTHET",
+			"codepostal": "69009",
+			"facea": "f",
+			"horaires": "",
+			"gid": "3",
+			"last_update": "",
+			"last_update_fme": "2017-04-13 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.805200028821266,
+			45.76624693193471]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Agence TCL Grange Blanche",
+			"numero": "1",
+			"indice": "",
+			"typevoie": "PLACE",
+			"adr": "D ARSONVAL",
+			"codepostal": "69003",
+			"facea": "f",
+			"horaires": "",
+			"gid": "1",
+			"last_update": "",
+			"last_update_fme": "2017-04-13 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.878681195464257,
+			45.742992865715969]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Agence TCL La Soie",
+			"numero": "7",
+			"indice": "",
+			"typevoie": "RUE",
+			"adr": "DU RAIL",
+			"codepostal": "69120",
+			"facea": "",
+			"horaires": "",
+			"gid": "9",
+			"last_update": "",
+			"last_update_fme": "2017-04-13 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.92212054512477,
+			45.76060194260188]
+		}
+	},
+	{
+		"type": "Feature",
+		"properties": {
+			"nom": "Agence TCL Part Dieu",
+			"numero": "11",
+			"indice": "B",
+			"typevoie": "BOULEVARD",
+			"adr": "MARIUS VIVIER MERLE",
+			"codepostal": "69003",
+			"facea": "f",
+			"horaires": "",
+			"gid": "6",
+			"last_update": "",
+			"last_update_fme": "2017-04-13 06:00:31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [4.858178554178378,
+			45.762042486541539]
+		}
+	}]
+}

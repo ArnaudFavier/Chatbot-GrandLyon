@@ -1,8 +1,9 @@
 'use strict';
-const db = require('../AslanDBConnector.js');
 const crypto = require('crypto');
 const randtoken = require('rand-token');
 const MongoObjectID = require("mongodb").ObjectID;
+const db = require('./aslan-db-connector.js');
+
 /*
 *	Fonction qui crée un utilisateur en base de données
 */
@@ -56,8 +57,8 @@ function getAllMessage(userId, callback) {
 /*
 *	Fonction qui enregistre un message
 */
-function createMessage(userId, message, callback) {
-	db.insertData("messages", { user_id: userId, message: message, date: new Date() }, callback);
+function createMessage(userId, message, isAslan, callback) {
+	db.insertData("messages", { user_id: userId, message: message, date: new Date(), isAslan: isAslan }, callback);
 }
 
 /*

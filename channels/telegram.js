@@ -1,6 +1,6 @@
 'use strict';
 const request = require('request');
-const core = require('./../core.js');
+const core = require('./../core/core.js');
 const TelegramBot = require('node-telegram-bot-api');
 
 /**

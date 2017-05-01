@@ -1,0 +1,9 @@
+{
+	"deleteProperties": [
+		"indice",
+		"facea",
+		"horaires",
+		"last_update",
+		"last_update_fme"
+	]
+}
