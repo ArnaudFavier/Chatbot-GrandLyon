@@ -2,7 +2,7 @@
 
 const core = require('./core.js');
 const fd = require('./field.js');
-const service = require('./../services/services.js');
+const serv = require('./../services/services.js');
 
 /*
 *   Fonction qui traite les réponses de type bonjour
@@ -17,12 +17,13 @@ function processingHour(response) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{heure}") != -1) {
-			console.log("je passe là");
-			service.getTimeAt(response.result.parameters.ville, function(hour) {
-				console.log(hour);
+			console.log(response.result.parameters.ville);
+			serv.getTimeAt(response.result.parameters.ville, function(hour) {
+				console.log("Hour : " + hour);
 				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
 				response.result.fulfillment.speech = fd.replaceField(response.result.fulfillment.speech, 
 					"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
+				console.log(response.result.fulfillment.speech);
 				core.prepareMessage(response.result.fulfillment.speech);
 			});	
 		}
