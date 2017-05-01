@@ -56,7 +56,6 @@ function extractMessage(event) {
             senderID, timeOfMessage);
             console.log(JSON.stringify(message));
 
-            var messageId = message.mid;
             var messageText = message.text;
             var messageAttachments = message.attachments;
 
