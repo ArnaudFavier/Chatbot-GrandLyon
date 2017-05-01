@@ -43,9 +43,6 @@ function receivedMessage(req, res) {
 function extractMessage(event) {
     console.log(JSON.stringify(event));
     var senderID = event.sender.id;
-    var recipientID = event.recipient.id;
-    var timeOfMessage = event.timestamp;
-    var message = event.message;
     request({
         uri: 'https://graph.facebook.com/' + senderID,
         qs: { access_token: PAGE_ACCESS_TOKEN },
@@ -54,8 +51,11 @@ function extractMessage(event) {
         if (!error && response.statusCode == 200) {
             console.log("Received message from Facebook for user %d at %d with message:", 
             senderID, timeOfMessage);
+            var recipientID = event.recipient.id;
+            var timeOfMessage = event.timestamp;
+            var message = event.message;
             console.log(JSON.stringify(message));
-
+            
             var messageText = message.text;
             var messageAttachments = message.attachments;
 
