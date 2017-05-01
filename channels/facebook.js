@@ -52,7 +52,6 @@ function extractMessage(event) {
         method: 'GET'
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(JSON.stringify(body));
             console.log("Received message from Facebook for user %d at %d with message:", 
             senderID, timeOfMessage);
             console.log(JSON.stringify(message));
@@ -66,8 +65,8 @@ function extractMessage(event) {
                 senderID: senderID,
                 timestamp: timeOfMessage,
                 text: messageText,
-                first_name: message.first_name,
-                last_name: message.last_name
+                first_name: body.first_name,
+                last_name: body.last_name
             };
             /*
             *   Coordonnées
