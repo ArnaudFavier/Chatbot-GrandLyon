@@ -6,14 +6,14 @@ const db = require('./../aslan-messenger/aslan-db.js');
 /*
 * Fonction appelé par les routes lors de la reception d'un message
 */
-function receivedMessage(message, user_id) {
+function receivedMessage(message, user) {
     console.log("Aslan received a message");
     var m = {
         channel: "Aslan",
-        senderID: user_id,
+        senderID: user._id,
         timestamp: new Date(),
         text: message,
-        first_name: user.first_name,
+        first_name: user.firstname,
         last_name: user.name
     };
 

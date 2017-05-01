@@ -130,7 +130,7 @@ function receive(req, res) {
 				    	if(data.length == 0) {
 				    		res.status(500).send(JSON.stringify({error: error.toString()}));
 				    	} else {
-				    		messenger.receivedMessage(message, user_id);
+				    		messenger.receivedMessage(message, results[0]);
 				    		res.status(200).send(JSON.stringify(data[0]));
 				    	}
 	    			});
