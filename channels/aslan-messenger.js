@@ -67,7 +67,7 @@ function save(m) {
 function sendTextMessage(message) {
     if(message.senderID != undefined && message.text != undefined) {
         message.message = {text : message.text, type: "text"};
-        save(messageData);
+        save(message);
     }
 }
 
@@ -77,7 +77,7 @@ function sendTextMessage(message) {
 function sendQuickReplyMessage(message) {
     if(message.senderID != undefined && message.text != undefined) {
         message.message = {text : message.text, type: "text"};
-        save(messageData);
+        save(message);
     }
 }
 
