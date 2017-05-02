@@ -41,6 +41,16 @@ function getTimeAt(city, callback) {
     });
 }
 
+const weekday = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+const month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
+
+function getDate(callback) {
+    var timestamp = Date.now() + 1000 * 3600 * 2;
+    var date = convertDateToUTC(new Date(timestamp));
+    var dateString = weekday[date.getDay()] + " " + date.getDate() + " " + month[date.getMonth()] + " " + date.getFullYear();
+    callback(dateString);
+}
+
 function compareRestaurantDist(rest1, rest2) {
     return rest1.dist - rest2.dist;
 }
@@ -98,6 +108,58 @@ function nearestRestaurants(coordinates, count, callback) {
             console.log('temps ecoule : ' + (apres - avant) + 'ms');
 
             callback(restaurants);
+        } else {
+            console.log("Got an error: ", error, ", status code: ", response.statusCode)
+
+            callback(null);
+        }
+    });
+}
+
+function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
+    'use strict';
+
+    var restaurants = new Array(3000);
+
+    let keywordsFormat = '';
+    if (keywords.length !== 0) {
+        keywordsFormat += '(' + keywords[0] + ')';
+    }
+    for (let i = 1; i < keywords.length; ++i) {
+        keywordsFormat += ' AND (' + keywords[i] + ')';
+    }
+
+    var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.lon + '&radius=2000&rankBy=distance&type=restaurant&keyword='+keywordsFormat+'&key='+ process.env.GOOGLE_PLACE_API_KEY;
+
+    var avant = Date.now();
+
+    const request = require('request');
+
+    request(url, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
+            const data = JSON.parse(body);
+            var elem;
+            var restId = 0;
+           /* for (let i = 0; i < data.features.length; ++i) {
+                elem = data.features[i];
+                // Si le lieu est un restaurant
+                if (elem.properties.type == RESTAURANT_TYPE) {
+                    var restCoord = elem.geometry.coordinates;
+                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+
+                    restaurants[restId] = elem;
+                    ++restId;
+                }
+            }
+
+            restaurants.sort(compareRestaurantDist);
+
+            restaurants = restaurants.slice(0, count);
+
+            var apres = Date.now();
+            console.log('temps ecoule : ' + (apres - avant) + 'ms');
+*/
+            callback(data);
         } else {
             console.log("Got an error: ", error, ", status code: ", response.statusCode)
 
@@ -167,6 +229,8 @@ function nearestPiscines(coordinates, count, callback) {
 }
 
 exports.getTimeAt = getTimeAt;
+exports.getDate = getDate;
 exports.nearestRestaurants = nearestRestaurants;
+exports.nearestRestaurantsWithKeywords = nearestRestaurantsWithKeywords;
 exports.nearestFontaines = nearestFontaines;
 exports.nearestPiscines = nearestPiscines;
