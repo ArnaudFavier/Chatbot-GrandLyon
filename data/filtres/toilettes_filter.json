@@ -1,0 +1,6 @@
+{
+	"deleteProperties": [
+		"gestionnaire",
+		"identifiant"
+	]
+}
