@@ -119,7 +119,7 @@ function processingRestaurant(response, location) {
 		console.log(fields);
 		if(fields.indexOf("{\"location\":[]}") != -1) {
 			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-			db.insertData("conversation", {metadata: response.result.metadata, fulfillment: response.result.fulfillment}, function(err, data) {
+			db.insertData("conversation", {sessionId: response.sessionId, metadata: response.result.metadata, fulfillment: response.result.fulfillment}, function(err, data) {
 				console.log(err);
 			});
 			core.askLocation();
