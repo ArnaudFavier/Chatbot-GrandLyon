@@ -108,7 +108,7 @@ function processingRestaurant(response, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
-		if(fields.indexOf("{location}") != -1) {
+		if(fields.indexOf("{location:[]") != -1) {
 			db.insertData("conversation", object, function(err, data) {
 				console.log(err);
 			});
