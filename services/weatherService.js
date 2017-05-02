@@ -3,7 +3,7 @@
 var request = require("request");
 
 var _PremiumApiBaseURL = 'https://api.worldweatheronline.com/premium/v1/';
-var _PremiumApiKey = process.env.WEATHER_API_KEY;
+var _PremiumApiKey = "0534869c3fd947dd85f70926170205";//process.env.WEATHER_API_KEY;
 
 // -------------------------------------------
 const format = "json";
@@ -32,6 +32,9 @@ function callAPI(url,callback) {
 	});
 }
 
+/*JSONP_LocalWeather("Lyon", "2017-05-02", function(response) {
+	console.log(response.data);
+});*/
 exports.JSONP_LocalWeather = JSONP_LocalWeather;
 /*
  info à récupérer :

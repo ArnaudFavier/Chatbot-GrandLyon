@@ -87,8 +87,10 @@ function processingWeather(response, location) {
 			} else if(response.result.parameters["geo-city"] != undefined){
 				coord = response.result.parameters["geo-city"];
 			}
+			console.log(coord);
+			console.log(formattedDate());
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
-				console.log(JSON.stringify(response));
+				console.log(response.data);
 				if(response.data != null && response.data.current_condition != null) {
 					var weather = "";
 					if(current_condition.lang_fr != null && current_condition.lang_fr.size() > 0)
@@ -106,6 +108,7 @@ function processingWeather(response, location) {
 		core.prepareMessage(response.result.fulfillment.speech);
 	}
 }
+
 
 function processingRestaurant(response, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
