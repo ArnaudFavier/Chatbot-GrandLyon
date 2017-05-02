@@ -235,7 +235,7 @@ function sendTemplateMessage(message) {
 */
 function callSendAPI(messageData) {
     console.log("Messages sended via API : ", JSON.stringify(messageData));
-    finishWriting(messageData.recipient.id.senderID);
+    finishWriting(messageData.recipient.id);
     request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
         qs: { access_token: PAGE_ACCESS_TOKEN },
