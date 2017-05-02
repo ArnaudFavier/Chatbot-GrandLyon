@@ -87,8 +87,9 @@ function processingWeather(response, location) {
 			} else if(response.result.parameters.ville != undefined){
 				coord = response.result.parameters.ville;
 			}
-			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(data) {
-				var weather = data.current_condition['0'].lang_fr + ", " + data.current_condition['0'].temp_C + "°";
+			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
+				console.log(response);
+				var weather = response.data.current_condition['0'].lang_fr + ", " + response.data.current_condition['0'].temp_C + "°";
 				var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
 				if(response.result.parameters.ville != undefined){
 					answer = fd.replaceField(answer, 
