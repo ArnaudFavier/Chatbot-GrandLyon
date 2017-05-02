@@ -7,7 +7,7 @@ const telegram = require('./../channels/telegram.js');
 const aslan = require('./../channels/aslan-messenger.js');
 const pr = require('./processing.js');
 const fd = require('./field.js');
-
+const db = require('./../AslanDBConnector.js');
 var messageReceived;
 
 /*
