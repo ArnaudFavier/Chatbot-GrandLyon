@@ -76,16 +76,16 @@ function processingDate(response) {
 
 }
 
-function processingWeather(response, location) {
-	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
-		var fields = fd.extractFields(response.result.fulfillment.speech);
+function processingWeather(message, location) {
+	if(message != undefined && message.result != undefined && message.result.parameters != undefined) {
+		var fields = fd.extractFields(message.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{meteo}") != -1) {
 			var coord = "";
 			if(location) {
 
-			} else if(response.result.parameters["geo-city"] != undefined){
-				coord = response.result.parameters["geo-city"];
+			} else if(message.result.parameters["geo-city"] != undefined){
+				coord = message.result.parameters["geo-city"];
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
 				console.log(response.data);
@@ -95,15 +95,15 @@ function processingWeather(response, location) {
 						weather = response.data.current_condition['0'].lang_fr['0'].value + ", ";
 					else
 						weather +=  response.data.current_condition['0'].temp_C + "°";
-					var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
+					var answer = fd.replaceField(message.result.fulfillment.speech, "{meteo}", weather);
 					core.prepareMessage(answer);
 				}
 			});	
 		} else {
-			core.prepareMessage(response.result.fulfillment.speech);
+			core.prepareMessage(message.result.fulfillment.speech);
 		}
 	} else {
-		core.prepareMessage(response.result.fulfillment.speech);
+		core.prepareMessage(message.result.fulfillment.speech);
 	}
 }
 
