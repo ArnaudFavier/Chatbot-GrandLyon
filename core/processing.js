@@ -81,8 +81,6 @@ function processingWeather(response, location) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{meteo}") != -1) {
-			console.log(response.result.parameters);
-			console.log(response.result.parameters["geo-city"]);
 			var coord = "";
 			if(location) {
 
@@ -90,9 +88,7 @@ function processingWeather(response, location) {
 				coord = response.result.parameters["geo-city"];
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
-				console.log(response);
-				console.log(response.data != null);
-				console.log(response.data.current_condition != null);
+				console.log(JSON.stringify(response));
 				if(response.data != null && response.data.current_condition != null) {
 					var weather = "";
 					if(current_condition.lang_fr != null && current_condition.lang_fr.size() > 0)
