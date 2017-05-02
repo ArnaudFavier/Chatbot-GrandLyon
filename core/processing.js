@@ -80,7 +80,13 @@ function processingWeather(message, location) {
 	if(message != undefined && message.result != undefined && message.result.parameters != undefined) {
 		var fields = fd.extractFields(message.result.fulfillment.speech);
 		console.log(fields);
-		if(fields.indexOf("{meteo}") != -1) {
+		if(fields.indexOf("{\"location\":[]}") != -1) {
+			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+			db.insertData("conversation", response.result, function(err, data) {
+				console.log(err);
+			});
+			core.askLocation();
+		} else if(fields.indexOf("{meteo}") != -1) {
 			var coord = "";
 			if(location) {
 
@@ -113,7 +119,7 @@ function processingRestaurant(response, location) {
 		console.log(fields);
 		if(fields.indexOf("{\"location\":[]}") != -1) {
 			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-			db.insertData("conversation", response.result, function(err, data) {
+			db.insertData("conversation", {metadata: response.result.metadata, fulfillment: response.result.fulfillment}, function(err, data) {
 				console.log(err);
 			});
 			core.askLocation();
