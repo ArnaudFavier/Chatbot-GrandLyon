@@ -91,8 +91,8 @@ function processingWeather(message, location) {
 				console.log(response.data);
 				if(response.data != null && response.data.current_condition != null) {
 					var weather = "";
-					if(response.data.current_condition['0'].lang_fr != null && response.data.current_condition['0'].lang_fr.size() > 0)
-						weather = response.data.current_condition['0'].lang_fr['0'].value + ", ";
+					if(response.data.current_condition['0'].lang_fr != null)
+						weather = response.data.current_condition['0'].lang_fr.value + ", ";
 					else
 						weather +=  response.data.current_condition['0'].temp_C + "°";
 					var answer = fd.replaceField(message.result.fulfillment.speech, "{meteo}", weather);
