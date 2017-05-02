@@ -75,7 +75,7 @@ function extractMessage(event) {
             *   Coordonnées
             */
             if(messageAttachments != undefined && messageAttachments[0].payload != undefined && messageAttachments[0].payload.coordinates != undefined) {
-                message["location"] = coordinates;
+                message["location"] = messageAttachments[0].payload.coordinates;
             }
             beginWriting(message.senderID);
             core.receivedMessage(message);
