@@ -91,7 +91,7 @@ function processingWeather(response, location) {
 				console.log(response.data);
 				if(response.data != null && response.data.current_condition != null) {
 					var weather = "";
-					if(current_condition.lang_fr != null && current_condition.lang_fr.size() > 0)
+					if(response.data.current_condition.lang_fr != null && response.data.current_condition.lang_fr.size() > 0)
 						weather = response.data.current_condition['0'].lang_fr['0'].value + ", ";
 					else
 						weather +=  response.data.current_condition['0'].temp_C + "°";
