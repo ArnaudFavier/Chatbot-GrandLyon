@@ -23,7 +23,12 @@ function callAPI(url,callback) {
 	  method: "GET",
 	  headers: { 'Content-Type': 'application/json' }
 	}, function(error, response, body) {
-	  	callback(body);
+	  	try {
+            body = JSON.parse(body);
+            callback(body);
+        } catch (err){
+        	callback(null);
+        }
 	});
 }
 
