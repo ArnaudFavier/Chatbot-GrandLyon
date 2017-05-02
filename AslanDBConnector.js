@@ -11,7 +11,7 @@ const GrandLyonCollection = "grandlyonData";
 exports.getData = function(table, query, callback) {
   // Connexion au serveur avec la méthode connect
   mongoClient.connect(url, function (err, db) {
-    try{
+    try {
       if (err) {
           return console.log('Connection failed', err);
       }
@@ -38,7 +38,7 @@ exports.getData = function(table, query, callback) {
 exports.loadJSonData = function(filePath) {
   // Connexion au serveur avec la méthode connect
   mongoClient.connect(url, function (err, db) {
-    try{
+    try {
       if (err) {
           return console.log('Connection failed', err);
       }
@@ -85,7 +85,7 @@ exports.replaceDocument = function (filePath) {
 exports.insertData = function(table, object, callback) {
     // Connexion au serveur avec la méthode connect
     mongoClient.connect(url, function (err, db) {
-        try{
+        try {
             if (err) {
                 callback(err, null);
                 return console.log('Connection failed', err);

@@ -1,4 +1,5 @@
 'use strict';
+
 const crypto = require('crypto');
 const randtoken = require('rand-token');
 const MongoObjectID = require("mongodb").ObjectID;
@@ -67,6 +68,7 @@ function createMessage(userId, message, isAslan, callback) {
 function passwordHash(password, salt) {
 	var hash = crypto.createHmac('sha512', salt); /** Hashing algorithm sha512 */
     hash.update(password);
+    
     return hash.digest('hex');
 }
 

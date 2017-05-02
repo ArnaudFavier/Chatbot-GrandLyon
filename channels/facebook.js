@@ -1,4 +1,5 @@
 'use strict';
+
 const request = require('request');
 const core = require('./../core/core.js');
 

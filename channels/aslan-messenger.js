@@ -1,4 +1,5 @@
 'use strict';
+
 const request = require('request');
 const core = require('./../core/core.js');
 const db = require('./../aslan-messenger/aslan-db.js');

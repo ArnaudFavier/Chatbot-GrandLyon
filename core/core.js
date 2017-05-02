@@ -25,8 +25,8 @@ function runLogicLayer(message) {
     /*botlogic.defineCallback(callbackLogicLayer);
     if(message.senderID != undefined && message.text != undefined) {
         botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
-    }*/
-    /*recast.sendMessage(message.text, callbackLogicLayer);*/
+    }
+    recast.sendMessage(message.text, callbackLogicLayer);*/
     apiai.sendMessage(message.senderID, message.text, callbackLogicLayer)
 }
 
@@ -82,8 +82,7 @@ function prepareMessage(response) {
 */
 function extractQuickReplies(fields) {
     var quickreplies = [];
-    for(var i=0;i<fields.length;i++) 
-    {
+    for(var i=0;i<fields.length;i++) {
         var json = undefined;
         try {
             json = JSON.parse(fields[i]);

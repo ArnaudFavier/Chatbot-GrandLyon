@@ -1,4 +1,5 @@
 'use strict';
+
 const recastai = require('recastai')
 const TOKEN = process.env.RECAST_TOKEN;
 const request = new recastai.request(TOKEN);

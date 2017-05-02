@@ -64,8 +64,6 @@ function deg2rad(deg) {
 }
 
 function nearestRestaurants(coordinates, count, callback) {
-    'use strict';
-
     var restaurants = new Array(3000);
 
     const RESTAURANT_TYPE = 'RESTAURATION';
@@ -109,8 +107,6 @@ function nearestRestaurants(coordinates, count, callback) {
 }
 
 function nearestFontaines(coordinates, count, callback) {
-    'use strict';
-
     var fontaines = new Array(3000);
 
     var contents = fs.readFileSync("./data/donnees_filtrees/fontaines_filtered.json");
@@ -141,8 +137,6 @@ function nearestFontaines(coordinates, count, callback) {
 }
 
 function nearestPiscines(coordinates, count, callback) {
-    'use strict';
-
     var piscines = new Array(3000);
 
     var contents = fs.readFileSync("./data/donnees_filtrees/piscines_filtered.json");

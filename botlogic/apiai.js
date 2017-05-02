@@ -1,7 +1,9 @@
 'use strict';
+
 // Environment file 
 /*var env = require('node-env-file');
 env(__dirname + '/../.env');*/
+
 const apiai = require('apiai');
 const TOKEN = process.env.APIAI_TOKEN;
 const app = new apiai(TOKEN);
