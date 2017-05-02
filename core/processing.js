@@ -91,7 +91,7 @@ function processingWeather(response, location) {
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
 				console.log(response);
-				console.log(esponse.data != null);
+				console.log(response.data != null);
 				console.log(response.data.current_condition != null);
 				if(response.data != null && response.data.current_condition != null) {
 					var weather = "";
