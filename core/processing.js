@@ -82,12 +82,12 @@ function processingWeather(response, location) {
 		console.log(fields);
 		if(fields.indexOf("{meteo}") != -1) {
 			console.log(response.result.parameters);
-			console.log(response.result.parameters.geo-city);
+			console.log(response.result.parameters.["geo-city"]);
 			var coord = "";
 			if(location) {
 
-			} else if(response.result.parameters.geo-city != undefined){
-				coord = response.result.parameters.geo-city;
+			} else if(response.result.parameters.["geo-city"] != undefined){
+				coord = response.result.parameters.["geo-city"];
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
 				console.log(response);
