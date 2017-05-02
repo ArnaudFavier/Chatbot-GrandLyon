@@ -82,7 +82,7 @@ function processingWeather(response, location) {
 		console.log(fields);
 		if(fields.indexOf("{meteo}") != -1) {
 			console.log(response.result.parameters);
-			console.log(response.result.parameters.geo-city;)
+			console.log(response.result.parameters.geo-city);
 			var coord = "";
 			if(location) {
 
