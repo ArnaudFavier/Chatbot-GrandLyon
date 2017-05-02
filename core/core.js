@@ -199,5 +199,6 @@ function getLastIntent(message) {
     });
 }
 
+exports.askLocation = askLocation;
 exports.receivedMessage = receivedMessage;
 exports.prepareMessage = prepareMessage;
