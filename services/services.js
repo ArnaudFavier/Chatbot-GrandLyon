@@ -137,9 +137,17 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
 
     request(url, (error, response, body) => {
         if (!error && response.statusCode === 200) {
-            const data = JSON.parse(body);
+            const data = JSON.parse(body).results;
             var elem;
             var restId = 0;
+
+            for (let restaurant of data) {
+                restaurant.details_url = 'https://maps.googleapis.com/maps/api/place/details/json?key=' + process.env.GOOGLE_PLACE_API_KEY + '&placeid=' + restaurant.place_id;
+                if(typeof restaurant.photos === 'object' && restaurant.length !== 0){
+                    restaurant.photo_url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+restaurant.photos[0].photo_reference+'&key='+process.env.GOOGLE_PLACE_API_KEY;
+                }
+            }
+
             callback(data);
         } else {
             console.log("Got an error: ", error, ", status code: ", response.statusCode)
