@@ -26,11 +26,10 @@ function callAPI(url,callback) {
 	  	try {
             body = JSON.parse(body);
             console.log(body);
-            callback(body);
         } catch (err){
-        	console.log("ERROR");
-        	callback(body);
+        	body = null;
         }
+        callback(body);
 	});
 }
 
