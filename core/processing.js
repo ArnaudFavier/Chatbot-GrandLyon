@@ -131,3 +131,8 @@ function processingRestaurant(response, location) {
 
 exports.processingGrettings = processingGrettings;
 exports.processingHour = processingHour;
+exports.processingFountain = processingFountain;
+exports.processingCitizen = processingCitizen;
+exports.processingDate = processingDate;
+exports.processingWeather = processingWeather;
+exports.processingRestaurant = processingRestaurant;
