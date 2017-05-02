@@ -91,10 +91,10 @@ function processingWeather(message, location) {
 				console.log(response.data);
 				if(response.data != null && response.data.current_condition != null) {
 					var weather = "";
+					console.log(response.data.current_condition['0'].lang_fr);
 					if(response.data.current_condition['0'].lang_fr != null)
 						weather = response.data.current_condition['0'].lang_fr.value + ", ";
-					else
-						weather +=  response.data.current_condition['0'].temp_C + "°";
+					weather +=  response.data.current_condition['0'].temp_C + "°";
 					var answer = fd.replaceField(message.result.fulfillment.speech, "{meteo}", weather);
 					core.prepareMessage(answer);
 				}
