@@ -20,7 +20,8 @@ function JSONP_LocalWeather(city, date, callback) {
 function callAPI(url,callback) {
 	request({
 	  uri: url,
-	  method: "GET"
+	  method: "GET",
+	  headers: { 'Content-Type': 'application/json' }
 	}, function(error, response, body) {
 	  	callback(body);
 	});
