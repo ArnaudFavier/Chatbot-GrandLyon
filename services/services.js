@@ -41,6 +41,16 @@ function getTimeAt(city, callback) {
     });
 }
 
+const weekday = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+const month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
+
+function getDate(callback) {
+    var timestamp = Date.now() + 1000 * 3600 * 2;
+    var date = convertDateToUTC(new Date(timestamp));
+    var dateString = weekday[date.getDay()] + " " + date.getDate() + " " + month[date.getMonth()] + " " + date.getFullYear();
+    callback(dateString);
+}
+
 function compareRestaurantDist(rest1, rest2) {
     return rest1.dist - rest2.dist;
 }
@@ -63,10 +73,10 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180)
 }
 
-function nearestRestaurants(coordinates, count, callback) {
+function nearestPointCulturel(coordinates, count, callback) {
     var restaurants = new Array(3000);
 
-    const RESTAURANT_TYPE = 'RESTAURATION';
+    const PATRIMOINE_CULTUREL = 'PATRIMOINE_CULTUREL';
     var url = 'https://download.data.grandlyon.com/wfs/rdata?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=sit_sitra.sittourisme&SRSNAME=urn:ogc:def:crs:EPSG::4171';
 
     var avant = Date.now();
@@ -81,7 +91,7 @@ function nearestRestaurants(coordinates, count, callback) {
             for (let i = 0; i < data.features.length; ++i) {
                 elem = data.features[i];
                 // Si le lieu est un restaurant
-                if (elem.properties.type == RESTAURANT_TYPE) {
+                if (elem.properties.type == PATRIMOINE_CULTUREL) {
                     var restCoord = elem.geometry.coordinates;
                     elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
 
@@ -98,6 +108,39 @@ function nearestRestaurants(coordinates, count, callback) {
             console.log('temps ecoule : ' + (apres - avant) + 'ms');
 
             callback(restaurants);
+        } else {
+            console.log("Got an error: ", error, ", status code: ", response.statusCode)
+
+            callback(null);
+        }
+    });
+}
+
+function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
+    'use strict';
+
+    var restaurants = new Array(3000);
+
+    let keywordsFormat = '';
+    if (keywords.length !== 0) {
+        keywordsFormat += '(' + keywords[0] + ')';
+    }
+    for (let i = 1; i < keywords.length; ++i) {
+        keywordsFormat += ' AND (' + keywords[i] + ')';
+    }
+
+    var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.lon + '&radius=2000&rankBy=distance&type=restaurant&keyword=' + keywordsFormat + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
+
+    var avant = Date.now();
+
+    const request = require('request');
+
+    request(url, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
+            const data = JSON.parse(body);
+            var elem;
+            var restId = 0;
+            callback(data);
         } else {
             console.log("Got an error: ", error, ", status code: ", response.statusCode)
 
@@ -166,7 +209,52 @@ function nearestPiscines(coordinates, count, callback) {
     callback(piscines);
 }
 
+function nearestVelov(coordinates, count, callback) {
+    'use strict';
+
+    var restaurants = new Array(3000);
+
+    var url = 'https://download.data.grandlyon.com/wfs/rdata?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=jcd_jcdecaux.jcdvelov&SRSNAME=urn:ogc:def:crs:EPSG::4171'
+
+    var avant = Date.now();
+
+    const request = require('request');
+
+    request(url, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
+            const data = JSON.parse(body);
+            var elem;
+            var restId = 0;
+            for (let i = 0; i < data.features.length; ++i) {
+                elem = data.features[i];
+
+                var restCoord = elem.geometry.coordinates;
+                elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+
+                restaurants[restId] = elem;
+                ++restId;
+            }
+
+            restaurants.sort(compareRestaurantDist);
+
+            restaurants = restaurants.slice(0, count);
+
+            var apres = Date.now();
+            console.log('temps ecoule : ' + (apres - avant) + 'ms');
+
+            callback(restaurants);
+        } else {
+            console.log("Got an error: ", error, ", status code: ", response.statusCode)
+
+            callback(null);
+        }
+    });
+}
+
 exports.getTimeAt = getTimeAt;
-exports.nearestRestaurants = nearestRestaurants;
+exports.getDate = getDate;
+exports.nearestPointCulturel = nearestPointCulturel;
+exports.nearestRestaurantsWithKeywords = nearestRestaurantsWithKeywords;
 exports.nearestFontaines = nearestFontaines;
 exports.nearestPiscines = nearestPiscines;
+exports.nearestVelov = nearestVelov;

@@ -49,7 +49,7 @@ function sendMessages(messages) {
 */
 function save(m) {
     console.log(JSON.stringify(m));
-    var user_id = m.senderID;
+    var user_id = m.senderID.toString();
     var message = m.message;
     if(user_id != undefined && message != undefined) {
         db.createMessage(user_id, message, true, function(data){

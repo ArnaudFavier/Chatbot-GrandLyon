@@ -122,14 +122,15 @@ Mettre les paramètres dans l'URL, si on veut tous les messages mettre message_i
 			"_id" : string,
 			"message" : JSON,
 			"user_id" : string,
-			"date" : string 
+			"date" : string,
+			"isAslan": false
 		}, 
 		{
 			"_id" : string,
 			"message" : JSON,
 			"user_id" : string,
 			"date" : string,
-			"isAslan": true #est optionnel
+			"isAslan": true
 		},...
 	]
 }

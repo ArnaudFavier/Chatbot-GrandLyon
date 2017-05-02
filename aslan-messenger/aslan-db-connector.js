@@ -1,5 +1,4 @@
 'use strict';
-
 const mongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
 
@@ -7,7 +6,9 @@ const fs = require('fs');
 /*var env = require('node-env-file');
 env(__dirname + '/../.env');*/
 
-var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslanmessenger-shard-00-00-rh6fw.mongodb.net:27017,aslanmessenger-shard-00-01-rh6fw.mongodb.net:27017,aslanmessenger-shard-00-02-rh6fw.mongodb.net:27017/AslanMessenger?ssl=true&replicaSet=AslanMessenger-shard-0&authSource=admin'
+//var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslanmessenger-shard-00-00-rh6fw.mongodb.net:27017,aslanmessenger-shard-00-01-rh6fw.mongodb.net:27017,aslanmessenger-shard-00-02-rh6fw.mongodb.net:27017/AslanMessenger?ssl=true&replicaSet=AslanMessenger-shard-0&authSource=admin'
+var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslandb-shard-00-00-fdkfh.mongodb.net:27017,aslandb-shard-00-01-fdkfh.mongodb.net:27017,aslandb-shard-00-02-fdkfh.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=AslanDB-shard-0&authSource=admin';
+
 const GrandLyonCollection = "AslanMessenger";
 
 exports.getData = function(table, query, callback) {

@@ -42,7 +42,6 @@ function receivedMessage(req, res) {
 * Fonction qui permet de traiter un message reçu
 */
 function extractMessage(event) {
-    console.log(JSON.stringify(event));
     var senderID = event.sender.id;
     request({
         uri: 'https://graph.facebook.com/' + senderID,
@@ -78,7 +77,7 @@ function extractMessage(event) {
             if(messageAttachments != undefined && messageAttachments.payload != undefined && messageAttachments.payload.coordinates != undefined) {
                 message["location"] = coordinates;
             }
-
+            beginWriting(message.senderID);
             core.receivedMessage(message);
         } else {
             console.error("Unable to get name of user.");
@@ -98,6 +97,8 @@ function sendMessage(message) {
         break;
         case "quickreply":
             sendQuickReplyMessage(message);
+        case "template":
+            sendTemplateMessage(message);
         break;
     }
 }
@@ -180,10 +181,59 @@ function sendFileMessage(message) {
 }
 
 /*
+* Fonction qui envoie un message audio/file/image/video
+*/
+function sendTemplateMessage(message) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
+        var elements = [];
+        /*{
+        "title": "Classic White T-Shirt",
+        "image_url": "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
+        "subtitle": "100% Cotton, 200% Comfortable",
+        "default_action": {
+            "type": "web_url",
+            "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
+            "messenger_extensions": true,
+            "webview_height_ratio": "tall",
+            "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+        },
+        "buttons": [
+            {
+                "title": "Buy",
+                "type": "web_url",
+                "url": "https://peterssendreceiveapp.ngrok.io/shop?item=100",
+                "messenger_extensions": true,
+                "webview_height_ratio": "tall",
+                "fallback_url": "https://peterssendreceiveapp.ngrok.io/"                        
+            }
+        ]
+        }*/                
+        var messageData = {
+            recipient: {
+                id: message.senderID
+            },
+            message: {
+                attachment:{
+                    type: message.type,
+                    payload: {
+                        template_type: "list",
+                        top_element_style: "compact",
+                        elements: elements                
+                    },
+                }
+            }
+        };
+        callSendAPI(messageData);
+    }
+}
+
+/*
 * Fonction qui appel l'API messages de Facebook
 */
 function callSendAPI(messageData) {
     console.log("Messages sended via API : ", JSON.stringify(messageData));
+    finishWriting(messageData.recipient.id.senderID);
     request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
         qs: { access_token: PAGE_ACCESS_TOKEN },
@@ -196,6 +246,40 @@ function callSendAPI(messageData) {
 
             console.log("Successfully sent generic message with id %s to recipient %s", 
                 messageId, recipientId);
+        } else {
+            console.error("Unable to send message.");
+            console.error(response);
+            console.error(error);
+        }
+    });
+}
+
+function beginWriting(id) {
+    request({
+        uri: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: { access_token: PAGE_ACCESS_TOKEN },
+        method: 'POST',
+        json: {recipient:{id: id}, sender_action:"typing_on"}
+    }, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+
+        } else {
+            console.error("Unable to send message.");
+            console.error(response);
+            console.error(error);
+        }
+    });
+}
+
+function finishWriting(id) {
+    request({
+        uri: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: { access_token: PAGE_ACCESS_TOKEN },
+        method: 'POST',
+        json: {recipient:{id: id}, sender_action:"typing_off"}
+    }, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+
         } else {
             console.error("Unable to send message.");
             console.error(response);
