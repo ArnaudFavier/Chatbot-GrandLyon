@@ -18,7 +18,7 @@ function receivedMessage(message) {
     console.log(message);
     if(message.location != undefined) {
         getLastIntent(message);
-    } else {
+    } else if(message.text != undefined ) {
         runLogicLayer(message);
     }
 }
@@ -184,14 +184,13 @@ function sendMessages(messages) {
 }
 
 function getLastIntent(message) {
-    db.getData("conversation", {sessionId: message.senderId}, function(data) {
+    db.getData("conversation", {sessionId: message.senderId}, function(error, data) {
         if(data.length == 0) {
             console.log("Aucun intent trouvé");
         } else {
             switch(data[0].result.metadata.intentName) {
             case "restaurant":
                 apiai.sendMessage(message.senderID, "[localisation:success]", callbackLogicLayer)
-                pr.processingRestaurant(message.location);
                 break;
             default:
                break;
