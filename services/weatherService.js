@@ -25,6 +25,7 @@ function callAPI(url,callback) {
 	}, function(error, response, body) {
 	  	try {
             body = JSON.parse(body);
+            console.log(body);
             callback(body);
         } catch (err){
         	callback(null);

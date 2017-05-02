@@ -87,8 +87,6 @@ function processingWeather(response, location) {
 			} else if(response.result.parameters["geo-city"] != undefined){
 				coord = response.result.parameters["geo-city"];
 			}
-			console.log(coord);
-			console.log(formattedDate());
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
 				console.log(response.data);
 				if(response.data != null && response.data.current_condition != null) {
