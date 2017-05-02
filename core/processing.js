@@ -117,6 +117,8 @@ function processingRestaurant(response, location) {
 			});
 			core.prepareMessage(response.result.fulfillment.speech);
 		} else if (fields.indexOf("{restaurants}") != -1 && location != null){
+			console.log("on appelle le service")
+			core.prepareMessage(response);
 			/*serv.getTimeAt(response.result.parameters.ville, function(hour) {
 				var answer = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
 				answer = fd.replaceField(answer, 
