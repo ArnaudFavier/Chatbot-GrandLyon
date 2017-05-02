@@ -3,6 +3,7 @@
 const core = require('./core.js');
 const fd = require('./field.js');
 const serv = require('./../services/services.js');
+const servWeather = require('./../services/weatherService.js');
 const db = require('./../AslanDBConnector.js');
 /*
 *   Fonction qui traite les réponses de type bonjour
@@ -75,16 +76,25 @@ function processingDate(response) {
 
 }
 
-function processingWeather(response) {
+function processingWeather(response, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined 
-		&& response.result.parameters.ville != undefined) {
+		&& ) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{meteo}") != -1) {
-			serv.getWeatherAt(response.result.parameters.ville, function(weather) {
-				var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}",weather);
-				answer = fd.replaceField(answer, 
-					"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
+			var coord = "";
+			if(location) {
+
+			} else if(response.result.parameters.ville != undefined){
+				coord = response.result.parameters.ville;
+			}
+			serv.JSONP_LocalWeather(coord, date, function(data) {
+				var weather = data.current_condition['0'].lang_fr + ", " + data.current_condition['0'].temp_C + "°";
+				var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
+				if(response.result.parameters.ville != undefined){
+					answer = fd.replaceField(answer, 
+						"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
+				}
 				core.prepareMessage(answer);
 			});	
 		} else {
