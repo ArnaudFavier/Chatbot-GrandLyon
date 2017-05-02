@@ -33,7 +33,7 @@ function callback(result) {
 
 // Appel de test pour obtenir les restaurants les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
-Services.nearestRestaurantsWithKeywords({lat: 45.756715, lon: 4.831561}, ['sushi','asiatique'], callback);
+// Services.nearestRestaurantsWithKeywords({lat: 45.756715, lon: 4.831561}, ['sushi','asiatique'], callback);
 
 // Appel de test pour obtenir les 3 fontaines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
@@ -50,3 +50,7 @@ Services.nearestRestaurantsWithKeywords({lat: 45.756715, lon: 4.831561}, ['sushi
 // Appel de test pour obtenir les 5 lieux de culte d'un type donné, les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
 // Services.nearestLieuCulteType({lat: 45.756715, lon: 4.831561}, 5, callback, 'Synagogue');
+
+// Appel de test pour obtenir les 5 hotels les plus proches d'une position,
+// en passant les coordonnées de Place Bellecour (à décommenter pour tester)
+Services.nearestHotels({lat: 45.756715, lon: 4.831561}, 5, callback);

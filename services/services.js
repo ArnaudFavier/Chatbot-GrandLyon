@@ -116,6 +116,49 @@ function nearestPointCulturel(coordinates, count, callback) {
     });
 }
 
+function nearestHotels(coordinates, count, callback) {
+    var restaurants = new Array(3000);
+
+    const HOTELLERIE = 'HOTELLERIE';
+    var url = 'https://download.data.grandlyon.com/wfs/rdata?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=sit_sitra.sittourisme&SRSNAME=urn:ogc:def:crs:EPSG::4171';
+
+    var avant = Date.now();
+
+    const request = require('request');
+
+    request(url, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
+            const data = JSON.parse(body);
+            var elem;
+            var restId = 0;
+            for (let i = 0; i < data.features.length; ++i) {
+                elem = data.features[i];
+                // Si le lieu est un restaurant
+                if (elem.properties.type == HOTELLERIE) {
+                    var restCoord = elem.geometry.coordinates;
+                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+
+                    restaurants[restId] = elem;
+                    ++restId;
+                }
+            }
+
+            restaurants.sort(compareRestaurantDist);
+
+            restaurants = restaurants.slice(0, count);
+
+            var apres = Date.now();
+            console.log('temps ecoule : ' + (apres - avant) + 'ms');
+
+            callback(restaurants);
+        } else {
+            console.log("Got an error: ", error, ", status code: ", response.statusCode)
+
+            callback(null);
+        }
+    });
+}
+
 function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
     'use strict';
 
@@ -143,8 +186,8 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
 
             for (let restaurant of data) {
                 restaurant.details_url = 'https://maps.googleapis.com/maps/api/place/details/json?key=' + process.env.GOOGLE_PLACE_API_KEY + '&placeid=' + restaurant.place_id;
-                if(typeof restaurant.photos === 'object' && restaurant.length !== 0){
-                    restaurant.photo_url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+restaurant.photos[0].photo_reference+'&key='+process.env.GOOGLE_PLACE_API_KEY;
+                if (typeof restaurant.photos === 'object' && restaurant.length !== 0) {
+                    restaurant.photo_url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + restaurant.photos[0].photo_reference + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
                 }
             }
 
@@ -356,3 +399,4 @@ exports.nearestPiscines = nearestPiscines;
 exports.nearestVelov = nearestVelov;
 exports.nearestLieuCulte = nearestLieuCulte;
 exports.nearestLieuCulteType = nearestLieuCulteType;
+exports.nearestHotels = nearestHotels;
