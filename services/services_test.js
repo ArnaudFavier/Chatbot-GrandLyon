@@ -27,9 +27,9 @@ function callback(result) {
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
 // Services.nearestPointCulturel({lat: 45.756715, lon: 4.831561}, 50, callback);
 
-// Appel de test pour obtenir les 5 restaurants les plus proches d'une position,
+// Appel de test pour obtenir les 5 stations velov les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
-Services.nearestVelov({lat: 45.756715, lon: 4.831561}, 5, callback);
+// Services.nearestVelov({lat: 45.756715, lon: 4.831561}, 5, callback);
 
 // Appel de test pour obtenir les restaurants les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
@@ -42,3 +42,11 @@ Services.nearestVelov({lat: 45.756715, lon: 4.831561}, 5, callback);
 // Appel de test pour obtenir les 3 piscines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
 // Services.nearestPiscines({lat: 45.756715, lon: 4.831561}, 3, callback);
+
+// Appel de test pour obtenir les 5 lieux de culte les plus proches d'une position,
+// en passant les coordonnées de Place Bellecour (à décommenter pour tester)
+// Services.nearestLieuCulte({lat: 45.756715, lon: 4.831561}, 100, callback);
+
+// Appel de test pour obtenir les 5 lieux de culte d'un type donné, les plus proches d'une position,
+// en passant les coordonnées de Place Bellecour (à décommenter pour tester)
+Services.nearestLieuCulteType({lat: 45.756715, lon: 4.831561}, 5, callback, 'Synagogue');
