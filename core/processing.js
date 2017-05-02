@@ -112,8 +112,7 @@ function processingRestaurant(response, location) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{\"location\":[]}") != -1) {
-			response = JSON.parse(response);
-			db.insertData("conversation", response, function(err, data) {
+			db.insertData("conversation", response.result, function(err, data) {
 				console.log(err);
 			});
 			core.askLocation();
