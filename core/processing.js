@@ -84,17 +84,13 @@ function processingWeather(response, location) {
 			var coord = "";
 			if(location) {
 
-			} else if(response.result.parameters.ville != undefined){
-				coord = response.result.parameters.ville;
+			} else if(response.result.parameters.geo-city != undefined){
+				coord = response.result.parameters.geo-city;
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
 				console.log(response);
 				var weather = response.data.current_condition['0'].lang_fr + ", " + response.data.current_condition['0'].temp_C + "°";
 				var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
-				if(response.result.parameters.ville != undefined){
-					answer = fd.replaceField(answer, 
-						"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
-				}
 				core.prepareMessage(answer);
 			});	
 		} else {
