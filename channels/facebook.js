@@ -98,6 +98,9 @@ function sendMessage(message) {
         case "quickreply":
             sendQuickReplyMessage(message);
             break;
+        case "location":
+            sendQuickReplyMessage(message);
+            break;
         case "template":
             sendTemplateMessage(message);
             break;
@@ -155,6 +158,29 @@ function sendQuickReplyMessage(message) {
             };
             messageData.message.quick_replies.push(quickreply);
         }
+        callSendAPI(messageData);
+    }
+}
+
+/*
+* Fonction qui envoie un message de type location
+*/
+function sendQuickReplyMessage(message) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
+        var messageData = {
+            recipient: {
+                id: message.senderID
+            },
+            message: {
+                text: message.text,
+                quick_replies: [
+                    {
+                        "content_type":"location",
+                    }
+                ]
+            }
+        };
         callSendAPI(messageData);
     }
 }

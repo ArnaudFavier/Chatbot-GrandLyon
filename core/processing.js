@@ -115,7 +115,7 @@ function processingRestaurant(response, location) {
 			db.insertData("conversation", object, function(err, data) {
 				console.log(err);
 			});
-			core.prepareMessage(response.result.fulfillment.speech);
+			core.askLocation();
 		} else if (fields.indexOf("{restaurants}") != -1 && location != null){
 			console.log("on appelle le service")
 			core.prepareMessage(response);
