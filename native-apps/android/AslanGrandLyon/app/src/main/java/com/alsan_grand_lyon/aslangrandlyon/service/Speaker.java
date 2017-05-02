@@ -20,7 +20,7 @@ public class Speaker implements OnInitListener {
     public Speaker(Context context){
         tts = new TextToSpeech(context, this);
         tts.setPitch(0.8f);
-        tts.setSpeechRate(0.9f);
+        tts.setSpeechRate(1.5f);
     }
 
     @Override

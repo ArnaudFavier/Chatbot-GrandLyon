@@ -45,10 +45,12 @@ public class GetMessagesTask extends AsyncTask<User, String, HttpResult> {
         Message lastMessage = messageDAO.selectMostRecentFromServer();
         HttpResult httpResult = null;
         if(lastMessage == null) {
+
             httpResult = CallAPI.getMessages(url,user.getToken(),user.getServerId(),"-1");
         } else {
             httpResult = CallAPI.getMessages(url,user.getToken(),user.getServerId(),lastMessage.getServerId());
         }
+
 
 
         if(httpResult.getCode() == 200) {
@@ -64,7 +66,8 @@ public class GetMessagesTask extends AsyncTask<User, String, HttpResult> {
             }
         }
 
-        DataSingleton.getInstance().addAllMessages(messageDAO.selectMessagesOrderByDateDesc(10,0));
+//        DataSingleton.getInstance().addAllMessages(messageDAO.selectMessagesOrderByDateDesc(10,0));
+        DataSingleton.getInstance().addAllMessages(messageDAO.selectAll());
         DataSingleton.getInstance().sortMessages();
 
         messageDAO.close();

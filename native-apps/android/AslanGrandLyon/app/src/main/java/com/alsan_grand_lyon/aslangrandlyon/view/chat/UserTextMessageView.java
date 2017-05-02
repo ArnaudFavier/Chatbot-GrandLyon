@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
@@ -24,7 +25,7 @@ public class UserTextMessageView extends FrameLayout {
     private TextMessage message = null;
     private TextView textView = null;
     private TextView dateTextView = null;
-    private ImageView imageView = null;
+    private ProgressBar progressBar = null;
     private boolean isExpended = false;
     private int linearLayoutHeight = -1;
 
@@ -36,7 +37,9 @@ public class UserTextMessageView extends FrameLayout {
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         textView = (TextView) findViewById(R.id.textView);
         dateTextView = (TextView) findViewById(R.id.dateTextView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        progressBar.setVisibility(GONE);
         isExpended = false;
         dateTextView.setHeight(0);
 
@@ -76,5 +79,10 @@ public class UserTextMessageView extends FrameLayout {
         this.textView.setText(message.getText());
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         this.dateTextView.setText(dateFormat.format(this.message.getDate()));
+        if(message.getServerId() != null && !message.getServerId().isEmpty()) {
+            this.progressBar.setVisibility(GONE);
+        } else {
+            this.progressBar.setVisibility(VISIBLE);
+        }
     }
 }

@@ -61,12 +61,15 @@ public class SendMessageTask extends AsyncTask<Message, String, MessageHttpResul
             }
         }
 
+
         messageDAO.open();
+        messageDAO.lock();
         if(message.getId() == -1) {
             message.setId(messageDAO.insert(message));
         } else {
             messageDAO.update(message);
         }
+        messageDAO.unlock();
         messageDAO.close();
 
         return messageHttpResult;

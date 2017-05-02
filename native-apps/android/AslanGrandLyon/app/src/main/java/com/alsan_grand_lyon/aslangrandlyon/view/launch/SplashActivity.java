@@ -36,7 +36,6 @@ public class SplashActivity extends AppCompatActivity  implements LoadingMessage
 
     @Override
     public void messagesLoaded(HttpResult httpResult) {
-        //TODO uncomment
         if(httpResult.getCode() == 200) {
             Intent intent = new Intent(this, ChatActivity.class);
             startActivity(intent);

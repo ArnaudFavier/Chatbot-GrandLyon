@@ -39,9 +39,12 @@ public class LoadMoreMessagesTask extends AsyncTask<Integer, String, Integer> {
             e.printStackTrace();
         }
         messageDAO.open();
+        messageDAO.lock();
         List<Message> messages = messageDAO.selectMessagesOrderByDateDesc(limit,offset);
+        //TODO RefreshMessagesTask
         DataSingleton.getInstance().addAllMessages(messages);
         DataSingleton.getInstance().sortMessages();
+        messageDAO.unlock();
         messageDAO.close();
 
         return messages.size();

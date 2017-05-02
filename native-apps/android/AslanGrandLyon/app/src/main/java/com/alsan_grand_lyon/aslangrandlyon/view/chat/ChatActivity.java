@@ -28,15 +28,19 @@ import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.User;
+import com.alsan_grand_lyon.aslangrandlyon.service.DownloadMessagesTask;
+import com.alsan_grand_lyon.aslangrandlyon.service.DownloadMessagesThread;
 import com.alsan_grand_lyon.aslangrandlyon.service.LoadMoreMessagesTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.MessageHttpResult;
 import com.alsan_grand_lyon.aslangrandlyon.service.SendMessageTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.SignOutTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.Speaker;
 import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
+import com.alsan_grand_lyon.aslangrandlyon.view.settings.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class ChatActivity extends AppCompatActivity
@@ -46,6 +50,8 @@ public class ChatActivity extends AppCompatActivity
     private final static int CHECK_CODE = 0x1;
     private final int SHORT_DURATION = 1000;
     private Speaker speaker = null;
+
+    private DownloadMessagesThread downloadMessagesThread = null;
 
     private ListView messagesListView = null;
     private LinearLayout buttonsLinearLayout = null;
@@ -57,6 +63,8 @@ public class ChatActivity extends AppCompatActivity
     private boolean signingOutFlag = false;
     private int limit = 2;
     private boolean loadingMoreMessagesFlag = false;
+
+    private List<Message> messages = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +89,9 @@ public class ChatActivity extends AppCompatActivity
         sendImageView = (ImageView) findViewById(R.id.sendImageView);
         microphoneImageView = (ImageView) findViewById(R.id.microphoneImageView);
 
-        //TODO
-        messageAdapter = new MessageAdapter(getApplicationContext(), DataSingleton.getInstance().getMessages());
+        messages = new ArrayList<>();
+        messages.addAll(DataSingleton.getInstance().getMessages());
+        messageAdapter = new MessageAdapter(getApplicationContext(), messages);
         messagesListView.setAdapter(messageAdapter);
         messagesListView.setDivider(null);
         messagesListView.setOnScrollListener(new AbsListView.OnScrollListener() {
@@ -119,21 +128,30 @@ public class ChatActivity extends AppCompatActivity
         });
 
         checkTTS();
+
+//        startDownloadMessagesThread();
     }
 
 
     private void loadMoreMessage() {
-        if(!loadingMoreMessagesFlag) {
-            loadingMoreMessagesFlag = true;
-            LoadMoreMessagesTask loadMoreMessagesTask = new LoadMoreMessagesTask(ChatActivity.this);
-            loadMoreMessagesTask.execute(limit,DataSingleton.getInstance().getMessages().size());
-        }
+//        if(!loadingMoreMessagesFlag) {
+//            loadingMoreMessagesFlag = true;
+//            LoadMoreMessagesTask loadMoreMessagesTask = new LoadMoreMessagesTask(ChatActivity.this);
+//            loadMoreMessagesTask.execute(limit,DataSingleton.getInstance().getMessages().size());
+//        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        startDownloadMessagesThread();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         checkTTS();
+//        startDownloadMessagesThread();
     }
 
     @Override
@@ -141,6 +159,7 @@ public class ChatActivity extends AppCompatActivity
         if(speaker != null) {
             speaker.destroy();
         }
+//        stopDownloadMessagesThread();
         super.onStop();
     }
 
@@ -150,6 +169,7 @@ public class ChatActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+//            stopDownloadMessagesThread();
             super.onBackPressed();
         }
     }
@@ -173,6 +193,8 @@ public class ChatActivity extends AppCompatActivity
 
         if (id == R.id.nav_sign_out) {
             signOut();
+        } else if (id == R.id.nav_settings) {
+            showSettings();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -193,6 +215,11 @@ public class ChatActivity extends AppCompatActivity
         adb.setCancelable(false);
 
         loadingAlertDialog = adb.show();
+    }
+
+    private void showSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     private void signOut() {
@@ -230,6 +257,7 @@ public class ChatActivity extends AppCompatActivity
             messageEditText.setText("");
             messageEditText.setEnabled(false);
             messageEditText.setEnabled(true);
+            // TODO new RefreshMessagesTask
             refreshMessagesListView();
             messagesListView.setSelection(messagesListView.getCount());
         }
@@ -240,22 +268,30 @@ public class ChatActivity extends AppCompatActivity
         if(httpResult.getCode() == 200) {
             Toast toast = Toast.makeText(this,"Message sent",Toast.LENGTH_LONG);
             toast.show();
+            User user = DataSingleton.getInstance().getUser();
+            DownloadMessagesTask downloadMessagesTask = new DownloadMessagesTask(this);
+            downloadMessagesTask.execute(user);
+            setAslanIsTyping(true);
         } else if (httpResult.getCode() == 403) {
             Toast toast = Toast.makeText(this,"403 ERROR",Toast.LENGTH_LONG);
             toast.show();
         } else {
-            System.out.println(httpResult.getCode() + " " + httpResult.getOutput());
             Toast toast = Toast.makeText(this,httpResult.getOutput(),Toast.LENGTH_LONG);
             toast.show();
         }
         messageAdapter.notifyDataSetChanged();
     }
 
+
     public void refreshMessagesListView() {
+        messages.clear();
+        messages.addAll(DataSingleton.getInstance().getMessages());
         messageAdapter.notifyDataSetChanged();
     }
 
     public void moreMessagesLoaded(int numberOfNewMessages) {
+        //TODO give List<Messages> as argument call refreshMessagesListView(List<Messages>)
+
         if(numberOfNewMessages < limit) {
             messagesListView.setOnScrollListener(null);
             messageAdapter.setCanLoadMoreMessages(false);
@@ -263,8 +299,8 @@ public class ChatActivity extends AppCompatActivity
             this.loadingMoreMessagesFlag = false;
         }
 
-
         refreshMessagesListView();
+
         if(messagesListView.getFirstVisiblePosition() == 0) {
             messagesListView.setSelection(numberOfNewMessages + 1);
         } else {
@@ -278,7 +314,7 @@ public class ChatActivity extends AppCompatActivity
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
 //        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().getDisplayLanguage());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.FRENCH);
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.you_can_speake));
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.you_can_speak));
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {
@@ -313,6 +349,18 @@ public class ChatActivity extends AppCompatActivity
         }
     }
 
+    public void readMessages(List<Message> messages){
+        String fullText = "";
+        for(Message message : messages) {
+            if(message instanceof TextMessage) {
+                fullText += ((TextMessage)message).getText();
+            }
+        }
+        if(!fullText.isEmpty()) {
+            speakOut(fullText);
+        }
+    }
+
     private void speakOut(String text) {
         if(!speaker.isSpeaking()) {
             speaker.speak(text);
@@ -324,5 +372,28 @@ public class ChatActivity extends AppCompatActivity
         Intent check = new Intent();
         check.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(check, CHECK_CODE);
+    }
+
+    private void startDownloadMessagesThread() {
+        if(downloadMessagesThread == null) {
+            downloadMessagesThread = new DownloadMessagesThread(this);
+            downloadMessagesThread.start();
+        } else if (downloadMessagesThread.isInterrupted()) {
+            downloadMessagesThread.start();
+        }
+    }
+
+    private void stopDownloadMessagesThread() {
+        if(downloadMessagesThread != null && downloadMessagesThread.isAlive()) {
+            downloadMessagesThread.interrupt();
+        }
+        downloadMessagesThread = null;
+    }
+
+    public void setAslanIsTyping(boolean isTyping) {
+        if(messageAdapter != null) {
+            messageAdapter.setAlsanIsTyping(isTyping);
+            refreshMessagesListView();
+        }
     }
 }

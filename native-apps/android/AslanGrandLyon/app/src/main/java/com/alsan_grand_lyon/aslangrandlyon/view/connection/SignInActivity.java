@@ -84,8 +84,8 @@ public class SignInActivity extends AppCompatActivity implements LoadingMessageA
 
         if(checkInputs()) {
             showLoadingDialog();
-            SignInTask signOutTask = new SignInTask(this);
-            signOutTask.execute(emailEditText.getText().toString(), passwordEditText.getText().toString());
+            SignInTask signInTask = new SignInTask(this);
+            signInTask.execute(emailEditText.getText().toString(), passwordEditText.getText().toString());
         }
     }
 

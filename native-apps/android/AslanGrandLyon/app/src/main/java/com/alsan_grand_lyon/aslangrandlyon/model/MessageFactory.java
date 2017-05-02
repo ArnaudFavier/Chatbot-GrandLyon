@@ -19,18 +19,18 @@ public class MessageFactory {
             String serverId = jsonObject.getString("_id");
             String userId = jsonObject.getString("user_id");
             String jsonBody = jsonObject.getString("message");
-            boolean isAslan = !jsonObject.isNull("isAslan");
+            boolean isAslan = jsonObject.getBoolean("isAslan");
 
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
             Date date = dateFormat.parse(jsonObject.getString("date"));
 
             JSONObject body = new JSONObject(jsonBody);
             String type = body.getString("type");
-
-            if(type.equals("text")) {
+//TODO uncomment and create quickreply
+//            if(type.equals("text")) {
                 String text = body.getString("text");
                 message = new TextMessage(serverId,date,jsonBody,isAslan,userId,text);
-            }
+//            }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -48,11 +48,11 @@ public class MessageFactory {
 
             JSONObject body = new JSONObject(jsonBody);
             String type = body.getString("type");
-
-            if(type.equals("text")) {
+//TODO uncomment and create quickreply
+//            if(type.equals("text")) {
                 String text = body.getString("text");
                 message = new TextMessage(id,serverId,date,jsonBody,isAslan,userId,text);
-            }
+//            }
 
         } catch (JSONException e) {
             e.printStackTrace();

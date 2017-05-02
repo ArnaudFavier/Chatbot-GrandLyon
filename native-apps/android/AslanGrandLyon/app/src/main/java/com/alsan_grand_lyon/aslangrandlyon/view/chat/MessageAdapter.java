@@ -11,6 +11,7 @@ import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
+import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 
 import java.util.List;
 
@@ -21,7 +22,9 @@ import java.util.List;
 
 public class MessageAdapter extends ArrayAdapter<Message> {
 
-    private boolean canLoadMoreMessages = true;
+    private boolean canLoadMoreMessages = false;
+
+    private boolean alsanIsTyping = false;
 
     public MessageAdapter(Context context, List<Message> messages) {
         super(context, 0, messages);
@@ -35,6 +38,14 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             if(!canLoadMoreMessages) {
                 ProgressBar progressBar = (ProgressBar)convertView.findViewById(R.id.progressBar);
                 progressBar.setVisibility(View.GONE);
+            }
+        } else if (position == getCount()-1) {
+            convertView = new AslanIsTypingView(this.getContext());
+            if(!alsanIsTyping) {
+                convertView.setVisibility(View.GONE);
+            } else {
+                DilatingDotsProgressBar dilatingDotsProgressBar = (DilatingDotsProgressBar) convertView.findViewById(R.id.progress);
+                dilatingDotsProgressBar.showNow();
             }
         } else {
             Message message = this.getItem(position);
@@ -58,13 +69,16 @@ public class MessageAdapter extends ArrayAdapter<Message> {
 
     @Override
     public int getCount() {
-        return super.getCount() + 1;
+        return super.getCount() + 2;
     }
 
     @Nullable
     @Override
     public Message getItem(int position) {
-        return super.getItem(position-1);
+        if(position < getCount() - 1) {
+            return super.getItem(position - 1);
+        }
+        return null;
     }
 
     public boolean isCanLoadMoreMessages() {
@@ -73,5 +87,13 @@ public class MessageAdapter extends ArrayAdapter<Message> {
 
     public void setCanLoadMoreMessages(boolean canLoadMoreMessages) {
         this.canLoadMoreMessages = canLoadMoreMessages;
+    }
+
+    public boolean isAlsanIsTyping() {
+        return alsanIsTyping;
+    }
+
+    public void setAlsanIsTyping(boolean alsanIsTyping) {
+        this.alsanIsTyping = alsanIsTyping;
     }
 }

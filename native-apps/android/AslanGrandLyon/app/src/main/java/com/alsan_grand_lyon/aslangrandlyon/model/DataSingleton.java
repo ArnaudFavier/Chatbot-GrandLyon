@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by Nico on 25/04/2017.
@@ -13,7 +16,6 @@ public class DataSingleton {
     private User user = null;
     private List<Message> messages = null;
     private static DataSingleton instance = null;
-
 
     private DataSingleton() {
         messages = new ArrayList<>();

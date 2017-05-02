@@ -9,12 +9,15 @@ import com.alsan_grand_lyon.aslangrandlyon.model.MessageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by Nico on 24/04/2017.
  */
 
 public class MessageDAO extends AbstractDAO {
+    private static final Lock mlock = new ReentrantLock();
     public static final String MESSAGE_KEY = "id";
     public static final String MESSAGE_SERVER_ID = "server_id";
     public static final String MESSAGE_USER_ID = "user_id";
@@ -33,6 +36,14 @@ public class MessageDAO extends AbstractDAO {
 
     public MessageDAO(Context context) {
         super(context);
+    }
+
+    public void lock() {
+        mlock.lock();
+    }
+
+    public void unlock() {
+        mlock.unlock();
     }
 
     public long insert(Message message) {
@@ -133,5 +144,41 @@ public class MessageDAO extends AbstractDAO {
         }
         cursor.close();
         return messages;
+    }
+
+    public List<Message> selectAll() {
+        String[] columns = {MessageDAO.MESSAGE_KEY, MessageDAO.MESSAGE_SERVER_ID, MessageDAO.MESSAGE_USER_ID,
+                MessageDAO.MESSAGE_JSON_BODY, MessageDAO.MESSAGE_DATE_LONG, MessageDAO.MESSAGE_IS_ASLAN};
+        Cursor cursor = sqLiteDatabase.query(MessageDAO.MESSAGE_TABLE_NAME, null, null, null, null, null, null);
+
+        List<Message> messages = new ArrayList<>();
+
+        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            long id = cursor.getLong(0);
+            String serverId = cursor.getString(1);
+            String userId = cursor.getString(2);
+            String jsonBody = cursor.getString(3);
+            long date = cursor.getLong(4);
+            boolean isAslan = true;
+            if(cursor.getInt(5) == 0) {
+                isAslan = false;
+            }
+            Message message = MessageFactory.createMessage(id,serverId,userId,jsonBody,date,isAslan);
+            messages.add(message);
+        }
+        cursor.close();
+        return messages;
+    }
+
+    public boolean exists(String serverId) {
+        String[] columns = {MessageDAO.MESSAGE_KEY, MessageDAO.MESSAGE_SERVER_ID, MessageDAO.MESSAGE_USER_ID,
+                MessageDAO.MESSAGE_JSON_BODY, MessageDAO.MESSAGE_DATE_LONG, MessageDAO.MESSAGE_IS_ASLAN};
+        String whereClause = MessageDAO.MESSAGE_SERVER_ID + " LIKE ?";
+        String[] whereArgs = new String[] {serverId};
+        Cursor cursor = sqLiteDatabase.query(MessageDAO.MESSAGE_TABLE_NAME, columns, whereClause, whereArgs, null, null, null);
+        if(cursor.getCount() == 0) {
+            return false;
+        }
+        return true;
     }
 }

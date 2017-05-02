@@ -104,12 +104,12 @@
 
                 <ImageView
                     android:id="@+id/microphoneImageView"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="bottom"
                     android:layout_margin="10dp"
-                    app:srcCompat="@drawable/microphone"
-                    android:layout_weight = "0"/>
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/microphone_dark" />
                 <EditText
                     android:id="@+id/messageEditText"
                     android:layout_width="match_parent"
@@ -125,12 +125,12 @@
 
                 <ImageView
                     android:id="@+id/sendImageView"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="bottom"
                     android:layout_margin="10dp"
-                    app:srcCompat="@drawable/send_button"
-                    android:layout_weight = "0"/>
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/send_button_dark" />
 
             </LinearLayout>
 

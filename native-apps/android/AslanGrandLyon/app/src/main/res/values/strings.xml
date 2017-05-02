@@ -10,6 +10,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="settings">Settings</string>
+
+    <string name="language">Langue :</string>
+    <string name="french">Français</string>
+    <string name="english">Anglais</string>
+    <string name="does_aslan_speak">Aslan doit-il parler ?</string>
 
     <string name="first_name">first name</string>
     <string name="last_name">last name</string>
@@ -33,7 +39,7 @@
     <string name="password_are_not_similar">Password are not similar...</string>
     <string name="error_when_sign_out">An error occured...</string>
     <string name="sorry_no_voice_input_supported">"Désolé, votre appareil ne supporte pas d'entrée vocale..."</string>
-    <string name="you_can_speake">"Vous pouvez parler ..."</string>
+    <string name="you_can_speak">"Vous pouvez parler ..."</string>
 
 
 </resources>

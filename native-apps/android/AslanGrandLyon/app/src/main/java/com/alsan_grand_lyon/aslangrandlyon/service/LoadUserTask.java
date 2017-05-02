@@ -16,12 +16,10 @@ import com.alsan_grand_lyon.aslangrandlyon.view.launch.SplashActivity;
 public class LoadUserTask extends AsyncTask<String, String, User> {
     private SplashActivity splashActivity;
     private UserDAO userDAO;
-    private MessageDAO messageDAO;
 
     public LoadUserTask(SplashActivity splashActivity) {
         this.splashActivity = splashActivity;
         this.userDAO = new UserDAO(splashActivity);
-        this.messageDAO = new MessageDAO(splashActivity);
     }
 
     @Override

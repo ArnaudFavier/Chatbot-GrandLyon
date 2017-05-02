@@ -12,7 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right|center_vertical"
         android:background="@drawable/user_message_background"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textView"
@@ -20,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="TextView"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
     </LinearLayout>
 
