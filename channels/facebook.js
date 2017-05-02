@@ -97,8 +97,10 @@ function sendMessage(message) {
         break;
         case "quickreply":
             sendQuickReplyMessage(message);
+            break;
         case "template":
             sendTemplateMessage(message);
+            break;
         break;
     }
 }
