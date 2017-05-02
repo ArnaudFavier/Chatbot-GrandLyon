@@ -15,7 +15,11 @@ var messageReceived;
 */
 function receivedMessage(message) {
     messageReceived = message;
-    runLogicLayer(message);
+    if(message.location != undefined) {
+        getLastIntent(message);
+    } else {
+        runLogicLayer(message);
+    }
 }
 
 /*
@@ -25,8 +29,8 @@ function runLogicLayer(message) {
     /*botlogic.defineCallback(callbackLogicLayer);
     if(message.senderID != undefined && message.text != undefined) {
         botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
-    }
-    recast.sendMessage(message.text, callbackLogicLayer);*/
+    }*/
+    /*recast.sendMessage(message.text, callbackLogicLayer);*/
     apiai.sendMessage(message.senderID, message.text, callbackLogicLayer)
 }
 
@@ -50,6 +54,21 @@ function processing(intent, response) {
             break;
         case "heure" :
             pr.processingHour(response);
+            break;
+        case "fontaine" :
+            pr.processingFountain(response);
+            break;
+        case "habitant":
+            pr.processingCitizen(response);
+            break;
+        case "jour":
+            pr.processingDate(response);
+            break;
+        case "meteo":
+            pr.processingWeather(response);
+            break;
+        case "restaurant":
+            pr.processingRestaurant(response, null);
             break;
         default :
             prepareMessage(response.result.fulfillment.speech);
@@ -82,7 +101,8 @@ function prepareMessage(response) {
 */
 function extractQuickReplies(fields) {
     var quickreplies = [];
-    for(var i=0;i<fields.length;i++) {
+    for(var i=0;i<fields.length;i++) 
+    {
         var json = undefined;
         try {
             json = JSON.parse(fields[i]);
@@ -131,25 +151,52 @@ function prepareMessageWithQuickReply(text, quickreply, messages) {
     messages.push(message);
 }
 
+function askLocation() {
+    var message = {
+        type: "location",
+        senderID: messageReceived.senderID,
+        channel: messageReceived.channel,
+        text: "J'ai besoin de votre localisation"
+    }
+    messages.push(message);
+}
+
 /*
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessages(messages) {
     if(messages.length > 0) {
         switch(messages[0].channel) {
-            case "Facebook":
+        case "Facebook":
             facebook.sendMessages(messages);
             break;
-            case "Telegram":
+        case "Telegram":
             telegram.sendMessages(messages);
             break;
-            case "Aslan":
+        case "Aslan":
             aslan.sendMessages(messages);
             break;
-            default:
+        default:
             return;
         }
     }
+}
+
+function getLastIntent(message) {
+    db.getData("conversation", {sessionId: message.senderId}, function(data) {
+        if(data.length == 0) {
+            console.log("Aucun intent trouvé");
+        } else {
+            switch(data[0].result.metadata.intentName;) {
+            case "restaurant":
+                apiai.sendMessage(message.senderID, "[localisation:success]", callbackLogicLayer)
+                pr.processingRestaurant(message.location);
+                break;
+            default:
+               break;
+            }
+        }
+    });
 }
 
 exports.receivedMessage = receivedMessage;
