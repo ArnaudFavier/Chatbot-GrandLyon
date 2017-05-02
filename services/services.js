@@ -73,10 +73,10 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180)
 }
 
-function nearestRestaurants(coordinates, count, callback) {
+function nearestPointCulturel(coordinates, count, callback) {
     var restaurants = new Array(3000);
 
-    const RESTAURANT_TYPE = 'RESTAURATION';
+    const PATRIMOINE_CULTUREL = 'PATRIMOINE_CULTUREL';
     var url = 'https://download.data.grandlyon.com/wfs/rdata?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=sit_sitra.sittourisme&SRSNAME=urn:ogc:def:crs:EPSG::4171';
 
     var avant = Date.now();
@@ -91,7 +91,7 @@ function nearestRestaurants(coordinates, count, callback) {
             for (let i = 0; i < data.features.length; ++i) {
                 elem = data.features[i];
                 // Si le lieu est un restaurant
-                if (elem.properties.type == RESTAURANT_TYPE) {
+                if (elem.properties.type == PATRIMOINE_CULTUREL) {
                     var restCoord = elem.geometry.coordinates;
                     elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
 
@@ -230,7 +230,7 @@ function nearestPiscines(coordinates, count, callback) {
 
 exports.getTimeAt = getTimeAt;
 exports.getDate = getDate;
-exports.nearestRestaurants = nearestRestaurants;
+exports.nearestPointCulturel = nearestPointCulturel;
 exports.nearestRestaurantsWithKeywords = nearestRestaurantsWithKeywords;
 exports.nearestFontaines = nearestFontaines;
 exports.nearestPiscines = nearestPiscines;
