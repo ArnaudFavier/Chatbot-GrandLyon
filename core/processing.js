@@ -81,6 +81,8 @@ function processingWeather(response, location) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{meteo}") != -1) {
+			console.log(response.result.parameters);
+			console.log(response.result.parameters.geo-city;)
 			var coord = "";
 			if(location) {
 
