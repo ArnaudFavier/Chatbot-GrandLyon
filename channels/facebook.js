@@ -99,7 +99,7 @@ function sendMessage(message) {
             sendQuickReplyMessage(message);
             break;
         case "location":
-            sendQuickReplyMessage(message);
+            sendLocationMessage(message);
             break;
         case "template":
             sendTemplateMessage(message);
@@ -165,7 +165,7 @@ function sendQuickReplyMessage(message) {
 /*
 * Fonction qui envoie un message de type location
 */
-function sendQuickReplyMessage(message) {
+function sendLocationMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
         var messageData = {
