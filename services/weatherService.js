@@ -28,7 +28,8 @@ function callAPI(url,callback) {
             console.log(body);
             callback(body);
         } catch (err){
-        	callback(null);
+        	console.log("ERROR");
+        	callback(body);
         }
 	});
 }
