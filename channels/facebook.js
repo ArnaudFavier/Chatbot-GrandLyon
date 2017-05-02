@@ -74,7 +74,7 @@ function extractMessage(event) {
             /*
             *   Coordonnées
             */
-            if(messageAttachments != undefined && messageAttachments.payload != undefined && messageAttachments.payload.coordinates != undefined) {
+            if(messageAttachments != undefined && messageAttachments[0].payload != undefined && messageAttachments[0].payload.coordinates != undefined) {
                 message["location"] = coordinates;
             }
             beginWriting(message.senderID);
