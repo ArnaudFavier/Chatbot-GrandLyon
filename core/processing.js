@@ -91,8 +91,14 @@ function processingWeather(response, location) {
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
 				console.log(response);
-				var weather = response.data.current_condition['0'].lang_fr + ", " + response.data.current_condition['0'].temp_C + "°";
-				var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
+				if(response.data != null && response.data.current_condition != null) {
+					var weather = "";
+					if(current_condition.lang_fr != null && current_condition.lang_fr.size() > 0)
+						weather = response.data.current_condition['0'].lang_fr['0'].value + ", ";
+					else
+						weather +=  response.data.current_condition['0'].temp_C + "°";
+					var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
+				}
 				core.prepareMessage(answer);
 			});	
 		} else {
