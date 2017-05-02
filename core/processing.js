@@ -77,8 +77,7 @@ function processingDate(response) {
 }
 
 function processingWeather(response, location) {
-	if(response != undefined && response.result != undefined && response.result.parameters != undefined 
-		&& ) {
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{meteo}") != -1) {
