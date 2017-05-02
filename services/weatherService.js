@@ -26,6 +26,7 @@ function callAPI(url,callback) {
 	});
 }
 
+exports.JSONP_LocalWeather = JSONP_LocalWeather;
 /*
  info à récupérer :
 	la température 		-> data.current_condition['0'].lang_fr
