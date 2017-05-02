@@ -91,6 +91,8 @@ function processingWeather(response, location) {
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
 				console.log(response);
+				console.log(esponse.data != null);
+				console.log(response.data.current_condition != null);
 				if(response.data != null && response.data.current_condition != null) {
 					var weather = "";
 					if(current_condition.lang_fr != null && current_condition.lang_fr.size() > 0)
@@ -98,8 +100,8 @@ function processingWeather(response, location) {
 					else
 						weather +=  response.data.current_condition['0'].temp_C + "°";
 					var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
+					core.prepareMessage(answer);
 				}
-				core.prepareMessage(answer);
 			});	
 		} else {
 			core.prepareMessage(response.result.fulfillment.speech);
