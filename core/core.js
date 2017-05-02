@@ -187,7 +187,7 @@ function getLastIntent(message) {
         if(data.length == 0) {
             console.log("Aucun intent trouvé");
         } else {
-            switch(data[0].result.metadata.intentName;) {
+            switch(data[0].result.metadata.intentName) {
             case "restaurant":
                 apiai.sendMessage(message.senderID, "[localisation:success]", callbackLogicLayer)
                 pr.processingRestaurant(message.location);
