@@ -25,7 +25,11 @@ function callback(result) {
 
 // Appel de test pour obtenir les 50 restaurants les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
-Services.nearestPointCulturel({lat: 45.756715, lon: 4.831561}, 50, callback);
+// Services.nearestPointCulturel({lat: 45.756715, lon: 4.831561}, 50, callback);
+
+// Appel de test pour obtenir les 5 restaurants les plus proches d'une position,
+// en passant les coordonnées de Place Bellecour (à décommenter pour tester)
+Services.nearestVelov({lat: 45.756715, lon: 4.831561}, 5, callback);
 
 // Appel de test pour obtenir les restaurants les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
