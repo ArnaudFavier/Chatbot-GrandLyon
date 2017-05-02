@@ -15,9 +15,8 @@ var messageReceived;
 */
 function receivedMessage(message) {
     messageReceived = message;
-    console.log("###################");
+    console.log(message);
     if(message.location != undefined) {
-        console.log("###################");
         getLastIntent(message);
     } else {
         runLogicLayer(message);
