@@ -87,7 +87,7 @@ function processingWeather(response, location) {
 			} else if(response.result.parameters.ville != undefined){
 				coord = response.result.parameters.ville;
 			}
-			serv.JSONP_LocalWeather(coord, date, function(data) {
+			serv.JSONP_LocalWeather(coord, formattedDate(), function(data) {
 				var weather = data.current_condition['0'].lang_fr + ", " + data.current_condition['0'].temp_C + "°";
 				var answer = fd.replaceField(response.result.fulfillment.speech, "{meteo}", weather);
 				if(response.result.parameters.ville != undefined){
@@ -129,6 +129,16 @@ function processingRestaurant(response, location) {
 	}
 }
 
+function formattedDate(d = new Date) {
+  let month = String(d.getMonth() + 1);
+  let day = String(d.getDate());
+  const year = String(d.getFullYear());
+
+  if (month.length < 2) month = '0' + month;
+  if (day.length < 2) day = '0' + day;
+
+  return `${year}-${month}-${day}/`;
+}
 exports.processingGrettings = processingGrettings;
 exports.processingHour = processingHour;
 exports.processingFountain = processingFountain;
