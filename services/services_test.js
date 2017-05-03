@@ -13,12 +13,12 @@ function callback(result) {
         console.log('Error');
     }
     else {
-        // console.log(result);
+        console.log(result);
 
         // A decommenter pour tester le chargement des details d'un restaurant
-        result[0].loadDetails(function (){
-            console.log(JSON.stringify(result[0]));
-        });
+        //result[0].loadDetails(function (){
+        //    console.log(JSON.stringify(result[0]));
+        //});
     }
 }
 

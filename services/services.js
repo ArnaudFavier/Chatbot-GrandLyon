@@ -197,7 +197,7 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
                     restaurant.photo_url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + restaurant.photos[0].photo_reference + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
                 }
 
-                restaurant.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.lon + '&daddr=' +  encodeURI(restaurant.vicinity);
+                restaurant.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr=' +  encodeURI(restaurant.vicinity);
 
                 restaurant.loadDetails = function (callback) {
                     request(this.details_url, (error2, response2, body2) => {
