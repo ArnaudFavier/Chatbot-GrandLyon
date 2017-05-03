@@ -112,10 +112,12 @@ function processingWeather(message) {
 }
 
 
-function processingRestaurant(response, key, location) {
+function processingRestaurant(response, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
+		console.log("Location");
+		console.log(location);
 		if(fields.indexOf("{\"location\":[]}") != -1) {
 			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
 			db.insertData("conversation", {sessionId: response.sessionId, metadata: response.result.metadata, fulfillment: response.result.fulfillment}, function(err, data) {
@@ -124,13 +126,7 @@ function processingRestaurant(response, key, location) {
 			core.askLocation();
 		} else if(fields.indexOf("{restaurants}") != -1 && location != null){
 			console.log(response);
-			if(key == undefined) {
-				key = [];
-			}
-			serv.nearestRestaurantsWithKeywords({long:2.3, lat:2.3}, [], function(result) {
-			    console.log(result);
-			});
-			serv.nearestRestaurantsWithKeywords(location, key, function(result) {
+			serv.nearestRestaurantsWithKeywords(location, [], function(result) {
 				core.prepareMessage({data: result});
 			});
 		} else {
