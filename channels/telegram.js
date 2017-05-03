@@ -16,6 +16,12 @@ telegram.on("text", (message) => {
     //telegram.sendMessage(message.chat.id, "Hello world");
 });
 
+telegram.on("location", (message) => {
+    console.log("YEAH");
+    receivedMessage(message);
+    //telegram.sendMessage(message.chat.id, "Hello world");
+});
+
 /*
 * Fonction appelé par quand on recoit un message
 */
