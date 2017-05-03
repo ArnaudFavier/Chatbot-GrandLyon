@@ -28,9 +28,12 @@ function sendMessage(message) {
 	switch(message.type) {
         case "text":
             sendTextMessage(message);
-        break;
+            break;
         case "quickreply":
             sendQuickReplyMessage(message);
+            break;
+        case "location":
+            sendLocationMessage(message);
         break;
     }
 }

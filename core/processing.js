@@ -157,22 +157,20 @@ function processingRestaurant(response, location) {
 				keyword.push(response.result.parameters["type-restaurant"]);
 			}
 			serv.nearestRestaurantsWithKeywords(location, keyword, function(result) {
-				loadRestauranteDetails(result, 0, function() {
-					var data = [];
-					for(var i=0;i<result.length;i++) {
-						var d = {
-							title: result[i].name,
-	                		image_url: result[i].photo_url,
-	                		subtitle: result[i].vicinity + " - " + result[i].rating + "/5",
-	                		url:result[i].details.url,
-	                		button_url:result[i].trajet_url,
-	                		button_title:"Y Aller"
-						}
-						data.push(d);
-	            	}
-					response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-					core.prepareMessage({text: response.result.fulfillment.speech, data: data});
-				});
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: result[i].name,
+                		image_url: result[i].photo_url,
+                		subtitle: result[i].vicinity + " - " + result[i].rating + "/5",
+                		url:result[i].trajet_url,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
+				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
 			});
 		} else {
 			core.prepareMessage(response.result.fulfillment.speech);
@@ -180,18 +178,6 @@ function processingRestaurant(response, location) {
 	} else {
 		core.prepareMessage(response.result.fulfillment.speech);
 	}
-}
-
-function loadRestauranteDetails(restaurants, index, callback) {
-	console.log(index);
-	restaurants[index].loadDetails(function (){
-        index++;
-        if(index == restaurants.length) {
-        	callback(restaurants);
-        } else {
-        	loadRestauranteDetails(restaurants, ++index, callback);
-        }
-    });
 }
 
 function formattedDate(d = new Date) {
