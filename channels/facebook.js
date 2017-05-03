@@ -232,7 +232,7 @@ function sendTemplateMessage(message) {
                         url: "",
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
-                    },
+                    },{
                         title: "Détails",
                         type: "web_url",
                         url: message.attachment[0].details_url,
@@ -259,7 +259,7 @@ function sendTemplateMessage(message) {
                         url: "",
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
-                    },
+                    }, {
                         title: "Détails",
                         type: "web_url",
                         url: message.attachment[1].details_url,
