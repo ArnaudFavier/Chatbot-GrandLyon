@@ -112,7 +112,7 @@ function processingWeather(message) {
 }
 
 
-function processingRestaurant(response, keywords, location) {
+function processingRestaurant(response, key, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
@@ -122,21 +122,17 @@ function processingRestaurant(response, keywords, location) {
 				console.log(err);
 			});
 			core.askLocation();
-		} else if(fields.indexOf("{restaurants}") != -1){
+		} else if(fields.indexOf("{restaurants}") != -1 && location != null){
 			console.log(response);
-			if(keywords != undefined) {
-				keywords = [];
+			if(key == undefined) {
+				key = [];
 			}
-			serv.nearestRestaurantsWithKeywords(location, keywords, function() {
-
+			serv.nearestRestaurantsWithKeywords({long:2.3, lat:2.3}, [], function(result) {
+			    console.log(result);
 			});
-			/*serv.getTimeAt(response.result.parameters.ville, function(hour) {
-				var answer = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
-				answer = fd.replaceField(answer, 
-					"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
-				console.log(answer);
-				core.prepareMessage(answer);
-			});*/
+			serv.nearestRestaurantsWithKeywords(location, key, function(result) {
+				core.prepareMessage({data: result});
+			});
 		} else {
 			core.prepareMessage(response.result.fulfillment.speech);
 		}
