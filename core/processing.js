@@ -228,7 +228,7 @@ function processingVelov(response, location) {
 					var d = {
 						title: result[i].properties.nom,
                 		image_url: "",
-                		subtitle: result[i].properties.available_bikes + " Vélo'v disponibles - "
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ - " + result[i].properties.available_bikes + " Vélo'v disponibles - "
                 			+ result[i].properties.adress + " " + result[0].properties.adresse2
                 			+ result[i].properties.commune,
                 		url:result[i].trajet_url,
@@ -299,7 +299,7 @@ function processingHotel(response, location) {
 					var d = {
 						title: result[i].properties.nom,
                 		image_url: "",
-                		subtitle: result[i].properties.classement + " - " + result[i].properties.telephone + " - " 
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ - " + result[i].properties.classement + " - " + result[i].properties.telephone + " - " 
                 			+ result[i].properties.adresse + " " + result[0].properties.commune 
                 			+ result[i].properties.codepostal
                 		,
@@ -336,7 +336,7 @@ function processingPatrimoineCulturel(response, location) {
 					var d = {
 						title: result[i].properties.nom,
                 		image_url: "",
-                		subtitle: result[i].properties.adresse + " " + result[0].properties.commune 
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ - " + result[i].properties.adresse + " " + result[0].properties.commune + " " 
                 			+ result[i].properties.codepostal
                 		,
                 		url:result[i].trajet_url,
