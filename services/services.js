@@ -108,7 +108,7 @@ function nearestPointCulturel(coordinates, count, callback) {
                 // Si le lieu est un restaurant
                 if (elem.properties.type === PATRIMOINE_CULTUREL) {
                     let restCoord = elem.geometry.coordinates;
-                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
 
                     restaurants[restId] = elem;
                     ++restId;
@@ -151,7 +151,7 @@ function nearestHotels(coordinates, count, callback) {
                 // Si le lieu est un restaurant
                 if (elem.properties.type === HOTELLERIE) {
                     let restCoord = elem.geometry.coordinates;
-                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
 
                     restaurants[restId] = elem;
                     ++restId;
@@ -187,7 +187,7 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
         keywordsFormat += ' AND (' + keywords[i] + ')';
     }
 
-    let url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.lon + '&radius=2000&rankBy=distance&type=restaurant&keyword=' + keywordsFormat + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
+    let url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.long + '&radius=2000&rankBy=distance&type=restaurant&keyword=' + keywordsFormat + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
 
     let avant = Date.now();
 
@@ -240,7 +240,7 @@ function nearestFontaines(coordinates, count, callback) {
         elem = data.features[i];
 
         let fontCoord = elem.geometry.coordinates;
-        elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, fontCoord[0], fontCoord[1]);
+        elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, fontCoord[0], fontCoord[1]);
 
         fontaines[fontId] = elem;
         ++fontId;
@@ -270,7 +270,7 @@ function nearestPiscines(coordinates, count, callback) {
         elem = data.features[i];
 
         let piscCoord = elem.geometry.coordinates;
-        elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, piscCoord[0], piscCoord[1]);
+        elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, piscCoord[0], piscCoord[1]);
 
         piscines[piscId] = elem;
         ++piscId;
@@ -306,7 +306,7 @@ function nearestVelov(coordinates, count, callback) {
                 elem = data.features[i];
 
                 let restCoord = elem.geometry.coordinates;
-                elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+                elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
 
                 restaurants[restId] = elem;
                 ++restId;
@@ -348,7 +348,7 @@ function nearestLieuCulte(coordinates, count, callback) {
                 elem = data.features[i];
 
                 let restCoord = elem.geometry.coordinates[0][0];
-                elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+                elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
 
                 restaurants[restId] = elem;
                 ++restId;
@@ -393,7 +393,7 @@ function nearestLieuCulteType(coordinates, count, callback, type) {
                 // Si le lieu est un restaurant
                 if (elem.properties.nom.toLowerCase().indexOf(typeLower) !== -1) {
                     let restCoord = elem.geometry.coordinates[0][0];
-                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
+                    elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
 
                     restaurants[restId] = elem;
                     ++restId;
