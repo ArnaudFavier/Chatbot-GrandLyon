@@ -122,6 +122,7 @@ function processingRestaurant(response, location) {
 			});
 			core.askLocation();
 		} else if(fields.indexOf("{restaurants}") != -1 && location != null){
+			console.log(location);
 			serv.nearestRestaurantsWithKeywords(location, [], function(result) {
 				console.log("Liste restaurants :");
 				console.log(result);
