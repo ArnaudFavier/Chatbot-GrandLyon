@@ -82,7 +82,7 @@ function processingWeather(message, location) {
 		console.log(fields);
 		if(fields.indexOf("{\"location\":[]}") != -1) {
 			message.result.fulfillment.speech = fd.removeFields(message.result.fulfillment.speech);
-			db.insertData("conversation", message.result, function(err, data) {
+			db.insertData("conversation", {sessionId: message.sessionId, metadata: message.result.metadata, fulfillment: message.result.fulfillment}, function(err, data) {
 				console.log(err);
 			});
 			core.askLocation();
