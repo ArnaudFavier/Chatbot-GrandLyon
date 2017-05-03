@@ -228,20 +228,20 @@ function sendTemplateMessage(message) {
         callSendAPI(messageData);
         for(var i=0;i<message.attachment.length;i++) {
             var element = {
-                title: message.attachment[i].name,
-                image_url: message.attachment[i].photo_url,
-                subtitle: message.attachment[i].vicinity + " - " + message.attachment[i].rating + "/5",
+                title: message.attachment[i].title,
+                image_url: message.attachment[i].image_url,
+                subtitle: message.attachment[i].subtitle,
                 default_action: {
                     type: "web_url",
-                    url: message.attachment[i].trajet_url,
+                    url: message.attachment[i].url,
                     messenger_extensions: true,
                     webview_height_ratio: "tall"
                 },
                 buttons: [
                     {
-                        title: "Y Aller",
+                        title: message.attachment[i].button_title,
                         type: "web_url",
-                        url: message.attachment[i].trajet_url,
+                        url: message.attachment[i].button_url,
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
                     }

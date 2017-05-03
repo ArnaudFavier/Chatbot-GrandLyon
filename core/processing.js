@@ -124,10 +124,20 @@ function processingRestaurant(response, location) {
 		} else if(fields.indexOf("{restaurants}") != -1 && location != null){
 			console.log(location);
 			serv.nearestRestaurantsWithKeywords(location, [], function(result) {
-				console.log("Liste restaurants :");
-				console.log(result);
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: result[i].name,
+                		image_url: result[i].photo_url,
+                		subtitle: result[i].vicinity + " - " + result[i].rating + "/5",
+                		url:result[i].trajet_url,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
 				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-				core.prepareMessage({text: response.result.fulfillment.speech, data: result});
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
 			});
 		} else {
 			core.prepareMessage(response.result.fulfillment.speech);
