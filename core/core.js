@@ -190,7 +190,7 @@ function receiveLocation(message) {
         } else {
             db.removeData("conversation", {sessionId: message.senderId}, function(error, data) {});
             console.log(data);
-            apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer);
+            apiai.sendMessage(message.senderID, '[\"localisation success\"]', callbackLogicLayer);
         }
     });
 }
