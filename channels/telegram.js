@@ -44,6 +44,9 @@ function sendMessage(message) {
         case "quickreply":
             sendQuickReplyMessage(message);
         break;
+        case "location":
+            sendLocationMessage(message);
+        break;
     }
 }
 
@@ -77,8 +80,25 @@ function sendQuickReplyMessage(message) {
             var button = [{
                 text: message.choices[i]
             }];
+            console.log(button);
             replykeyboard.keyboard.push(button);
         }
+        telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
+    }
+}
+
+/*
+* Fonction qui envoie un message de type location
+*/
+function sendLocationMessage(message) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
+        var replykeyboard = {keyboard:[], one_time_keyboard:true};
+        var button = [{
+            text: message.text,  
+            request_location : true
+        }];
+        replykeyboard.keyboard.push(button);
         telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
     }
 }
