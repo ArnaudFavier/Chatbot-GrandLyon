@@ -29,7 +29,7 @@ function receivedLocation(message) {
     var senderID = message.chat.id;
     var message = {
         channel: "Telegram",
-        senderID: senderID,
+        senderID: senderID.toString(),
         timestamp: message.date,
         first_name: message.from.first_name,
         last_name: message.from.last_name, 
@@ -49,7 +49,7 @@ function receivedMessage(message) {
     var senderID = message.chat.id;
     var message = {
         channel: "Telegram",
-        senderID: senderID,
+        senderID: senderID.toString(),
         timestamp: message.date,
         text: message.text,
         first_name: message.from.first_name,
