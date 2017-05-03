@@ -212,7 +212,7 @@ function sendFileMessage(message) {
 */
 function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
-    if(message.senderID != undefined && message.text != undefined) {
+    if(message.senderID != undefined && message.attachment != undefined) {
         var elements = [];
         console.log(message);
         /*{
