@@ -17,6 +17,9 @@ function receivedMessage(message, user) {
         first_name: user.firstname,
         last_name: user.name
     };
+    if(message.lat != undefined && message.long != undefined) {
+        m["location"] = {lat : message.lat, long: message.long};
+    } 
     console.log(JSON.stringify(m));
     core.receivedMessage(m);
 }
