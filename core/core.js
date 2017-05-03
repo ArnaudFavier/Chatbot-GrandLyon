@@ -193,6 +193,9 @@ function receiveLocation(message) {
             case "restaurant":
                 apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
                 break;
+            case "meteo":
+                apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
+                break;
             default:
                break;
             }
