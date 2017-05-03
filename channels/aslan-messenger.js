@@ -34,6 +34,7 @@ function sendMessage(message) {
             break;
         case "location":
             sendLocationMessage(message);
+            break;
         case "template":
             sendTemplateMessage(message);
         break;
