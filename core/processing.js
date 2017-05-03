@@ -398,5 +398,4 @@ exports.processingVelov = processingVelov;
 exports.processingLieuCulte = processingLieuCulte;
 exports.processingHotel = processingHotel;
 exports.processingPatrimoineCulturel = processingPatrimoineCulturel;
-exports.processingToilette = processingToilette;
 exports.processingRestaurant = processingRestaurant;
