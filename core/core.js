@@ -63,7 +63,6 @@ function processing(intent, response) {
         case "lieu-culte" :
         case "patrimoine-culturel" :
         case "piscine" :
-        case "toilette" :
         case "velov" :
         case "restaurant":
             pr.processingLocation(intent, response, messageReceived.location);

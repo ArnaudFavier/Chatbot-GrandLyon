@@ -32,9 +32,6 @@ function processingLocation(intent, response, location) {
 	        case "piscine" :
 	        	processingPiscine(response, location);
 	        	break;
-	        case "toilette" :
-	        	processingToilette(response, location);
-	        	break;
 	        case "velov" :
 	        	processingVelov(response, location);
 	        	break;
@@ -218,7 +215,31 @@ function processingRestaurant(response, location) {
 *   Fonction qui traite les réponses de type Velov
 */
 function processingVelov(response, location) {
-
+	/*if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.indexOf("{velov}") != -1 && location != null){
+			serv.nearestVelov(location, 4, function(result) {
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: result[i].properties.nom,
+                		image_url: "",
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
+                		url:result[i].trajet_url,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
+				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
+			});
+		} else {
+			core.prepareMessage(response.result.fulfillment.speech);
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}*/
 }
 
 
@@ -293,23 +314,64 @@ function processingHotel(response, location) {
 *   Fonction qui traite les réponses de type Patrimoine culturel
 */
 function processingPatrimoineCulturel(response, location) {
-
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.indexOf("{patrimoines}") != -1 && location != null){
+			serv.nearestPointCulturel(location, 4, function(result) {
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: result[i].properties.nom,
+                		image_url: "",
+                		subtitle: result[i].properties.adresse + " " + result[0].properties.commune 
+                			+ result[i].properties.codepostal
+                		,
+                		url:result[i].trajet_url,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
+				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
+			});
+		} else {
+			core.prepareMessage(response.result.fulfillment.speech);
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}
 }
-
-
-/*
-*   Fonction qui traite les réponses de type Toilette
-*/
-function processingToilette(response, location) {
-
-}
-
 
 /*
 *   Fonction qui traite les réponses de type Lieu Culte
 */
 function processingLieuCulte(response, location) {
-
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.indexOf("{lieu-culte}") != -1 && location != null){
+			serv.nearestLieuCulte(location, 4, function(result) {
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: result[i].properties.nom,
+                		image_url: "",
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
+                		url:result[i].trajet_url,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
+				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
+			});
+		} else {
+			core.prepareMessage(response.result.fulfillment.speech);
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}
 }
 
 
