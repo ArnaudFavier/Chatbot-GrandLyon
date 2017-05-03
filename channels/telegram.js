@@ -77,10 +77,12 @@ function sendQuickReplyMessage(message) {
     if(message.senderID != undefined && message.text != undefined) {
         var replykeyboard = {keyboard:[], one_time_keyboard:true};
         for(var i=0;i<message.choices.length;i++) {
-            var button = [message.choices[i]];
-            console.log(button);
+            var button = [{
+                text: message.choices[i]
+            }];
             replykeyboard.keyboard.push(button);
         }
+        console.log( {reply_markup: replykeyboard});
         telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
     }
 }
