@@ -92,7 +92,10 @@ function prepareMessage(response) {
     replie = fd.removeFields(replie);
     if(quickreplies.length > 0) {
         prepareMessageWithQuickReply(replie, quickreplies, messages);
-    } else if(replie != undefined ) {
+    } else if(response.data != undefined) {
+        prepareMessageTemplate(message, messages);
+    } 
+    else if(replie != undefined ) {
         prepareMessageWithText(replie, messages);
     }
     sendMessages(messages);
@@ -150,6 +153,19 @@ function prepareMessageWithQuickReply(text, quickreply, messages) {
         }
     } else {
         message.choices.push(quickreply);
+    }
+    messages.push(message);
+}
+
+/*
+*   Fonction qui prépare un message template
+*/
+function prepareMessageTemplate(m, messages) {
+    var message = {
+        type: "template",
+        senderID: messageReceived.senderID,
+        channel: messageReceived.channel,
+        attachment: m.data
     }
     messages.push(message);
 }
