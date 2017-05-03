@@ -277,6 +277,7 @@ function callSendAPI(messageData) {
             } else {
                 console.error("Unable to send message.");
                 console.error(error);
+                console.error(response);
             }
         });
     });
