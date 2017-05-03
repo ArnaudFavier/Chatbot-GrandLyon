@@ -226,7 +226,31 @@ function processingVelov(response, location) {
 *   Fonction qui traite les réponses de type Piscine
 */
 function processingPiscine(response, location) {
-
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.indexOf("{piscines}") != -1 && location != null){
+			serv.nearestPiscines(location, 4, function(result) {
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: result[0].properties.nom,
+                		image_url: "",
+                		subtitle: "À " + result[0].dist.toFixed(2) + "Km environ",
+                		url:result[i].trajet_url,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
+				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
+			});
+		} else {
+			core.prepareMessage(response.result.fulfillment.speech);
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}
 }
 
 
