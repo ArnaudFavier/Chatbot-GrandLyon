@@ -89,7 +89,7 @@ function processingWeather(message, location) {
 		} else if(fields.indexOf("{meteo}") != -1) {
 			var coord = "";
 			if(location) {
-				coord = location.latitude.toString() + "," + location.longitude.toString();
+				coord = location.lat.toString() + "," + location.long.toString();
 			} else if(message.result.parameters["geo-city"] != undefined){
 				coord = message.result.parameters["geo-city"];
 			}
