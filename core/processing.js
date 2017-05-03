@@ -226,11 +226,9 @@ function processingVelov(response, location) {
 				var data = [];
 				for(var i=0;i<result.length;i++) {
 					var d = {
-						title: result[i].properties.nom,
+						title: "Station de Vélo'v",
                 		image_url: "",
-                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ - " + result[i].properties.available_bikes + " Vélo'v disponibles - "
-                			+ result[i].properties.adress + " " + result[0].properties.adresse2
-                			+ result[i].properties.commune,
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ - " + result[i].properties.available_bikes + " Vélo'v disponibles - ",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
                 		button_title:"Y Aller",
