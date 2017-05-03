@@ -220,22 +220,15 @@ function sendTemplateMessage(message) {
                 subtitle: message.attachment[0].vicinity + " - " + message.attachment[0].rating + "/5",
                 default_action: {
                     type: "web_url",
-                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                    url: message.attachment[0].details_url,
                     messenger_extensions: true,
-                    webview_height_ratio: "tall",
-                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                    webview_height_ratio: "tall"
                 },
                 buttons: [
                     {
                         title: "Y-Aller",
                         type: "web_url",
                         url: "",
-                        messenger_extensions: true,
-                        webview_height_ratio: "tall"                      
-                    },{
-                        title: "Détails",
-                        type: "web_url",
-                        url: message.attachment[0].details_url,
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
                     }
@@ -247,22 +240,15 @@ function sendTemplateMessage(message) {
                 subtitle: message.attachment[1].vicinity + " - " + message.attachment[1].rating + "/5",
                 default_action: {
                     type: "web_url",
-                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                    url: message.attachment[1].details_url,
                     messenger_extensions: true,
-                    webview_height_ratio: "tall",
-                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                    webview_height_ratio: "tall"
                 },
                 buttons: [
                     {
                         title: "Y-Aller",
                         type: "web_url",
                         url: "",
-                        messenger_extensions: true,
-                        webview_height_ratio: "tall"                      
-                    }, {
-                        title: "Détails",
-                        type: "web_url",
-                        url: message.attachment[1].details_url,
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
                     }
