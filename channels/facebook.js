@@ -81,7 +81,6 @@ function extractMessage(event) {
             core.receivedMessage(message);
         } else {
             console.error("Unable to get name of user.");
-            console.error(response);
             console.error(error);
         }
     });
@@ -276,7 +275,6 @@ function callSendAPI(messageData) {
                     messageId, recipientId);
             } else {
                 console.error("Unable to send message.");
-                console.error(response);
                 console.error(error);
             }
         });
@@ -294,7 +292,6 @@ function beginWriting(id) {
 
         } else {
             console.error("Unable to send message.");
-            console.error(response);
             console.error(error);
         }
     });
@@ -311,7 +308,6 @@ function finishWriting(id, callback) {
             callback();
         } else {
             console.error("Unable to send message.");
-            console.error(response);
             console.error(error);
         }
     });
