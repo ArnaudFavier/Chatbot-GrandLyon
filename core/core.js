@@ -188,7 +188,7 @@ function receiveLocation(message) {
         if(data.length == 0) {
             console.log("Aucun intent trouvé");
         } else {
-            db.removeDate("conversation", {sessionId: message.senderId}, function(error, data) {});
+            db.removeData("conversation", {sessionId: message.senderId}, function(error, data) {});
             console.log(data);
             apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer);
         }
