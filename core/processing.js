@@ -134,7 +134,7 @@ function processingRestaurant(response, location) {
 						title: result[i].name,
                 		image_url: result[i].photo_url,
                 		subtitle: result[i].vicinity + " - " + result[i].rating + "/5",
-                		url:result[i].trajet_url,
+                		url:result[i].details.url,
                 		button_url:result[i].trajet_url,
                 		button_title:"Y Aller"
 					}
