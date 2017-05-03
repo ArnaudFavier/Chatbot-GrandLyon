@@ -51,7 +51,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class ChatActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, LocationListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private final static int REQ_CODE_SPEECH_INPUT = 100;
     private final static int CHECK_CODE = 0x1;
@@ -486,25 +486,5 @@ public class ChatActivity extends AppCompatActivity
                 });
         dialog.show();
     }
-
-
-    @Override
-    public void onLocationChanged(Location location) {
-
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-
-    }
+    
 }
