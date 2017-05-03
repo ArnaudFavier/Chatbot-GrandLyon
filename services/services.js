@@ -18,8 +18,6 @@ function getTimeAt(city, callback) {
     }, function (err, response) {
         if (!err) {
             let coordinates = response.json.results[0].geometry.location;
-
-            console.log("" + coordinates.lat + "," + coordinates.lng);
             // Timezone the geocode
             googleMapsClient.timezone({
                 location: [coordinates.lat, coordinates.lng],
@@ -91,7 +89,7 @@ function nearestPointCulturel(coordinates, count, callback) {
             for (let i = 0; i < data.features.length; ++i) {
                 elem = data.features[i];
                 // Si le lieu est un restaurant
-                if (elem.properties.type == PATRIMOINE_CULTUREL) {
+                if (elem.properties.type === PATRIMOINE_CULTUREL) {
                     let restCoord = elem.geometry.coordinates;
                     elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
 
@@ -134,7 +132,7 @@ function nearestHotels(coordinates, count, callback) {
             for (let i = 0; i < data.features.length; ++i) {
                 elem = data.features[i];
                 // Si le lieu est un restaurant
-                if (elem.properties.type == HOTELLERIE) {
+                if (elem.properties.type === HOTELLERIE) {
                     let restCoord = elem.geometry.coordinates;
                     elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.lon, restCoord[1], restCoord[0]);
 
@@ -152,7 +150,7 @@ function nearestHotels(coordinates, count, callback) {
 
             callback(restaurants);
         } else {
-            console.log("Got an error: ", error, ", status code: ", response.statusCode)
+            console.log("Got an error: ", error, ", status code: ", response.statusCode);
 
             callback(null);
         }
@@ -193,8 +191,7 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
                 restaurant.loadDetails = function (callback) {
                     request(this.details_url, (error2, response2, body2) => {
                         if (!error2 && response2.statusCode === 200) {
-                            const data = JSON.parse(body2).result;
-                            restaurant.details = data;
+                            restaurant.details = JSON.parse(body2).result;
                             callback(restaurant);
                         } else {
                             console.log("Got an error: ", error2, ", status code: ", response2.statusCode);
@@ -277,7 +274,7 @@ function nearestVelov(coordinates, count, callback) {
 
     let restaurants = new Array(3000);
 
-    let url = 'https://download.data.grandlyon.com/wfs/rdata?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=jcd_jcdecaux.jcdvelov&SRSNAME=urn:ogc:def:crs:EPSG::4171'
+    let url = 'https://download.data.grandlyon.com/wfs/rdata?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=jcd_jcdecaux.jcdvelov&SRSNAME=urn:ogc:def:crs:EPSG::4171';
 
     let avant = Date.now();
 
@@ -319,7 +316,7 @@ function nearestLieuCulte(coordinates, count, callback) {
 
     let restaurants = new Array(3000);
 
-    let url = 'https://download.data.grandlyon.com/wfs/grandlyon?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=adr_voie_lieu.adrlieuculte&SRSNAME=urn:ogc:def:crs:EPSG::4171'
+    let url = 'https://download.data.grandlyon.com/wfs/grandlyon?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=adr_voie_lieu.adrlieuculte&SRSNAME=urn:ogc:def:crs:EPSG::4171';
 
     let avant = Date.now();
 
@@ -349,7 +346,7 @@ function nearestLieuCulte(coordinates, count, callback) {
 
             callback(restaurants);
         } else {
-            console.log("Got an error: ", error, ", status code: ", response.statusCode)
+            console.log("Got an error: ", error, ", status code: ", response.statusCode);
 
             callback(null);
         }
@@ -361,7 +358,7 @@ function nearestLieuCulteType(coordinates, count, callback, type) {
 
     let restaurants = new Array(3000);
 
-    let url = 'https://download.data.grandlyon.com/wfs/grandlyon?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=adr_voie_lieu.adrlieuculte&SRSNAME=urn:ogc:def:crs:EPSG::4171'
+    let url = 'https://download.data.grandlyon.com/wfs/grandlyon?SERVICE=WFS&VERSION=2.0.0&outputformat=GEOJSON&request=GetFeature&typename=adr_voie_lieu.adrlieuculte&SRSNAME=urn:ogc:def:crs:EPSG::4171';
 
     let avant = Date.now();
 
@@ -395,7 +392,7 @@ function nearestLieuCulteType(coordinates, count, callback, type) {
 
             callback(restaurants);
         } else {
-            console.log("Got an error: ", error, ", status code: ", response.statusCode)
+            console.log("Got an error: ", error, ", status code: ", response.statusCode);
 
             callback(null);
         }

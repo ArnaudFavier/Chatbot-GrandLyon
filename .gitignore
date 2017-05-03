@@ -38,3 +38,6 @@ jspm_packages
 
 # Environment file
 .env
+
+# WebStorm project files
+.idea/*

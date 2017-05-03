@@ -7,7 +7,7 @@ var _PremiumApiKey = "0534869c3fd947dd85f70926170205";//process.env.WEATHER_API_
 
 // -------------------------------------------
 const format = "json";
-const language = "fr"
+const language = "fr";
 
 // Le format de la date doit etre YYYY-MM-DD, genre 2017-05-02
 function JSONP_LocalWeather(city, date, callback) {

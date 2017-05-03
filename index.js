@@ -18,7 +18,7 @@ const url = require('url');
 const facebook = require('./channels/facebook.js');
 const telegram = require('./channels/telegram.js');
 const aslan = require('./aslan-messenger/aslan.js');
-var app = express();
+const app = express();
 
 app.set('port', process.env.PORT || 5555);
 app.use(bodyParser.json());
@@ -28,8 +28,8 @@ app.use(express.static('public')); // To make files in 'public' reachable
  * GET '/'
  */
 app.get('/', function(req, res) {
-    var pathname = 'public';
-    if (url.parse(req.url).pathname == '/') {
+    let pathname = 'public';
+    if (url.parse(req.url).pathname === '/') {
         pathname += '/index.html';
     } else {
         pathname += url.parse(req.url).pathname;

@@ -9,15 +9,16 @@ var Services = require('./services.js');
 
 // Callback example
 function callback(result) {
-    if (result == undefined || result == null) {
+    if (typeof result === 'undefined' || result === null) {
         console.log('Error');
     }
     else {
-        console.log(result);
+        console.log(JSON.stringify(result[0]));
 
-/*      A decomenter pour tester le chargement des details d'un restaurant
+        // A decommenter pour tester le chargement des details d'un restaurant
+/*
         result[0].loadDetails(function (){
-            console.log(result[0].details);
+            console.log(JSON.stringify(result[0]));
         });
 */
     }
@@ -39,7 +40,7 @@ function callback(result) {
 
 // Appel de test pour obtenir les restaurants les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
-Services.nearestRestaurantsWithKeywords({lat: 45.756715, lon: 4.831561}, ['sushi','asiatique'], callback);
+// Services.nearestRestaurantsWithKeywords({lat: 45.756715, lon: 4.831561}, ['sushi','asiatique'], callback);
 
 // Appel de test pour obtenir les 3 fontaines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
@@ -47,7 +48,7 @@ Services.nearestRestaurantsWithKeywords({lat: 45.756715, lon: 4.831561}, ['sushi
 
 // Appel de test pour obtenir les 3 piscines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
-// Services.nearestPiscines({lat: 45.756715, lon: 4.831561}, 3, callback);
+ Services.nearestPiscines({lat: 45.756715, lon: 4.831561}, 3, callback);
 
 // Appel de test pour obtenir les 5 lieux de culte les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
