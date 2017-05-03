@@ -209,15 +209,14 @@ function sendMessages(messages) {
 }
 
 function receiveLocation(message) {
-    console.log(message.senderId);
-    db.getData("conversation", {sessionId: message.senderId}, function(error, data) {
+    db.getData("conversation", {sessionId: message.senderID}, function(error, data) {
         console.log(error);
         console.log(data);
         if(error == null) {
             if(data.length == 0) {
                 console.log("Aucun intent trouvé");
             } else {
-                db.removeData("conversation", {sessionId: message.senderId}, function(error, data) {});
+                db.removeData("conversation", {sessionId: message.senderID}, function(error, data) {});
                 switch(data[0].metadata.intentName) {
                 case "restaurant":
                     apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
