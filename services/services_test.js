@@ -46,7 +46,7 @@ function callback(result) {
 
 // Appel de test pour obtenir les 3 piscines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
-Services.nearestPiscines({lat: 45.756715, long: 4.831561}, 3, callback);
+// Services.nearestPiscines({lat: 45.756715, long: 4.831561}, 3, callback);
 
 // Appel de test pour obtenir les 5 lieux de culte les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
@@ -58,7 +58,7 @@ Services.nearestPiscines({lat: 45.756715, long: 4.831561}, 3, callback);
 
 // Appel de test pour obtenir les 5 hotels les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
-// Services.nearestHotels({lat: 45.756715, long: 4.831561}, 5, callback);
+ Services.nearestHotels({lat: 45.756715, long: 4.831561}, 5, callback);
 
 // Appel de test pour obtenir le nom d'une ville en fonction de ses coordonnées,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)

@@ -109,6 +109,7 @@ function nearestPointCulturel(coordinates, count, callback) {
                 if (elem.properties.type === PATRIMOINE_CULTUREL) {
                     let restCoord = elem.geometry.coordinates;
                     elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
+                    elem.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr='  + restCoord[1] + ',' + restCoord[0];
 
                     restaurants[restId] = elem;
                     ++restId;
@@ -152,6 +153,7 @@ function nearestHotels(coordinates, count, callback) {
                 if (elem.properties.type === HOTELLERIE) {
                     let restCoord = elem.geometry.coordinates;
                     elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
+                    elem.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr='  + restCoord[1] + ',' + restCoord[0];
 
                     restaurants[restId] = elem;
                     ++restId;
@@ -315,6 +317,7 @@ function nearestVelov(coordinates, count, callback) {
 
                 let restCoord = elem.geometry.coordinates;
                 elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
+                elem.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr='  + restCoord[1] + ',' + restCoord[0];
 
                 restaurants[restId] = elem;
                 ++restId;
