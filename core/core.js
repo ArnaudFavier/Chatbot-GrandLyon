@@ -188,17 +188,9 @@ function receiveLocation(message) {
         if(data.length == 0) {
             console.log("Aucun intent trouvé");
         } else {
+            db.removeDate("conversation", {sessionId: message.senderId}, function(error, data) {});
             console.log(data);
-            switch(data[0].metadata.intentName) {
-            case "restaurant":
-                apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
-                break;
-            case "meteo":
-                apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
-                break;
-            default:
-               break;
-            }
+            apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer);
         }
     });
 }
