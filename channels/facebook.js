@@ -218,7 +218,6 @@ function sendTemplateMessage(message) {
         *   Envoie du message avant le template
         */
         var messageData = {
-            var messageData = {
             recipient: {
                 id: message.senderID
             },
