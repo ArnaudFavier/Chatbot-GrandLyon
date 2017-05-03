@@ -248,6 +248,7 @@ function nearestFontaines(coordinates, count, callback) {
 
         let fontCoord = elem.geometry.coordinates;
         elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, fontCoord[0], fontCoord[1]);
+        elem.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr='  + fontCoord[0] + ',' + fontCoord[1];
 
         fontaines[fontId] = elem;
         ++fontId;
