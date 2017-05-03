@@ -191,7 +191,7 @@ function getLastIntent(message) {
             console.log(data);
             switch(data[0].metadata.intentName) {
             case "restaurant":
-                apiai.sendMessage(message.senderID, "[localisation:success]", callbackLogicLayer)
+                apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
                 break;
             default:
                break;
