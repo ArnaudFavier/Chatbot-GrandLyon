@@ -82,7 +82,7 @@ function sendQuickReplyMessage(message) {
             }];
             replykeyboard.keyboard.push(button);
         }
-        console.log( {reply_markup: replykeyboard});
+        console.log(JSON.stringify({reply_markup: {keyboard:[[{text:"coucou"}]]}}));
         //telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
         telegram.sendMessage(message.senderID, message.text, {reply_markup: {keyboard:[[{text:"coucou"}]]}});
     }
