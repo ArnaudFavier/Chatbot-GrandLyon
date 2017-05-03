@@ -221,7 +221,7 @@ function sendTemplateMessage(message) {
                 subtitle: message.attachment[i].vicinity + " - " + message.attachment[i].rating + "/5",
                 default_action: {
                     type: "web_url",
-                    url: message.attachment[i].details_url,
+                    url: message.attachment[i].trajet_url,
                     messenger_extensions: true,
                     webview_height_ratio: "tall"
                 },
@@ -229,7 +229,7 @@ function sendTemplateMessage(message) {
                     {
                         title: "Y Aller",
                         type: "web_url",
-                        url: message.attachment[i].details_url,
+                        url: message.attachment[i].trajet_url,
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
                     }
