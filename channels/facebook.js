@@ -213,30 +213,7 @@ function sendFileMessage(message) {
 function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.attachment != undefined) {
-        var elements = [
-            {
-                title: "Classic White T-Shirt",
-                image_url: "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
-                subtitle: "100% Cotton, 200% Comfortable",
-                default_action: {
-                    type: "web_url",
-                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
-                    messenger_extensions: true,
-                    webview_height_ratio: "tall",
-                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
-                },
-                buttons: [
-                    {
-                        title: "Buy",
-                        type: "web_url",
-                        url: "https://peterssendreceiveapp.ngrok.io/shop?item=100",
-                        messenger_extensions: true,
-                        webview_height_ratio: "tall",
-                        fallback_url: "https://peterssendreceiveapp.ngrok.io/"                        
-                    }
-                ]
-            } 
-        ];              
+        var elements = [];              
         var messageData = {
             recipient: {
                 id: message.senderID
@@ -247,8 +224,31 @@ function sendTemplateMessage(message) {
                     payload: {
                         template_type: "list",
                         top_element_style: "compact",
-                        elements: elements                
-                    },
+                        elements: [
+                            {
+                                title: "Classic White T-Shirt",
+                                image_url: "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
+                                subtitle: "100% Cotton, 200% Comfortable",
+                                default_action: {
+                                    type: "web_url",
+                                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                                    messenger_extensions: true,
+                                    webview_height_ratio: "tall",
+                                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                                },
+                                buttons: [
+                                    {
+                                        title: "Buy",
+                                        type: "web_url",
+                                        url: "https://peterssendreceiveapp.ngrok.io/shop?item=100",
+                                        messenger_extensions: true,
+                                        webview_height_ratio: "tall",
+                                        fallback_url: "https://peterssendreceiveapp.ngrok.io/"                        
+                                    }
+                                ]
+                            } 
+                        ]
+                    }
                 }
             }
         };
