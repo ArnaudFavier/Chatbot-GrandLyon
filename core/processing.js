@@ -183,6 +183,7 @@ function processingRestaurant(response, location) {
 }
 
 function loadRestauranteDetails(restaurants, index, callback) {
+	console.log(index);
 	restaurants[index].loadDetails(function (){
         index++;
         if(index == restaurants.length) {
