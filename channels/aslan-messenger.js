@@ -11,7 +11,7 @@ function receivedMessage(message, user) {
     console.log("Aslan received a message");
     var m = {
         channel: "Aslan",
-        senderID: user._id,
+        senderID: user._id.toString(),
         timestamp: new Date(),
         text: message.text,
         first_name: user.firstname,
