@@ -81,21 +81,21 @@ function processingWeather(message, location) {
 		var fields = fd.extractFields(message.result.fulfillment.speech);
 		console.log(fields);
 		if(fields.indexOf("{\"location\":[]}") != -1) {
-			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-			db.insertData("conversation", response.result, function(err, data) {
+			message.result.fulfillment.speech = fd.removeFields(message.result.fulfillment.speech);
+			db.insertData("conversation", message.result, function(err, data) {
 				console.log(err);
 			});
 			core.askLocation();
 		} else if(fields.indexOf("{meteo}") != -1) {
 			var coord = "";
 			if(location) {
-
+				coord = location.latitude.toString() + "," + location.longitude.toString();
 			} else if(message.result.parameters["geo-city"] != undefined){
 				coord = message.result.parameters["geo-city"];
 			}
 			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
-				console.log(response.data);
 				if(response.data != null && response.data.current_condition != null) {
+					console.log(response.data);
 					var weather = "";
 					if(response.data.current_condition['0'].lang_fr != null)
 						weather = response.data.current_condition['0'].lang_fr['0'].value + ", ";
