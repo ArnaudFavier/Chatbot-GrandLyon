@@ -76,7 +76,7 @@ function processingDate(response) {
 
 }
 
-function processingWeather(message, location) {
+function processingWeather(message) {
 	if(message != undefined && message.result != undefined && message.result.parameters != undefined) {
 		var fields = fd.extractFields(message.result.fulfillment.speech);
 		console.log(fields);
@@ -87,13 +87,12 @@ function processingWeather(message, location) {
 			});
 			core.askLocation();
 		} else if(fields.indexOf("{meteo}") != -1) {
-			var coord = "";
-			if(location) {
-				coord = location.lat.toString() + "," + location.long.toString();
-			} else if(message.result.parameters["geo-city"] != undefined){
-				coord = message.result.parameters["geo-city"];
+			var coord = message.result.parameters["geo-city"];
+			var date = message.result.parameters["date"];
+			if(date != undefined) {
+				date = formattedDate();
 			}
-			servWeather.JSONP_LocalWeather(coord, formattedDate(), function(response) {
+			servWeather.JSONP_LocalWeather(coord, date, function(response) {
 				if(response.data != null && response.data.current_condition != null) {
 					console.log(response.data);
 					var weather = "";
@@ -113,7 +112,7 @@ function processingWeather(message, location) {
 }
 
 
-function processingRestaurant(response, location) {
+function processingRestaurant(response, keywords, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		console.log(fields);
@@ -123,9 +122,14 @@ function processingRestaurant(response, location) {
 				console.log(err);
 			});
 			core.askLocation();
-		} else if (fields.indexOf("{restaurants}") != -1 && location != null){
-			console.log("on appelle le service")
-			core.prepareMessage(response);
+		} else if(fields.indexOf("{restaurants}") != -1){
+			console.log(response);
+			if(keywords != undefined) {
+				keywords = [];
+			}
+			serv.nearestRestaurantsWithKeywords(location, keywords, function() {
+
+			});
 			/*serv.getTimeAt(response.result.parameters.ville, function(hour) {
 				var answer = fd.replaceField(response.result.fulfillment.speech, "{heure}",hour);
 				answer = fd.replaceField(answer, 

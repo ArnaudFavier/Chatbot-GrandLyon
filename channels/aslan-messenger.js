@@ -78,7 +78,17 @@ function sendTextMessage(message) {
 */
 function sendQuickReplyMessage(message) {
     if(message.senderID != undefined && message.text != undefined) {
-        message.message = {text : message.text, type: "quickreplies"};
+        message.message = {text : message.text, type: "quickreplies", quickreplies: message.choices};
+        save(message);
+    }
+}
+
+/*
+* Fonction qui envoie un message de type location
+*/
+function sendLocationMessage(message) {
+    if(message.senderID != undefined && message.text != undefined) {
+        message.message = {text : message.text, type: "location"};
         save(message);
     }
 }
