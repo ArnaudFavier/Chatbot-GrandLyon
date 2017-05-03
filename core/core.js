@@ -165,8 +165,6 @@ function prepareMessageWithQuickReply(text, quickreply, messages) {
 *   Fonction qui prépare un message template
 */
 function prepareMessageTemplate(m, messages) {
-    console.log("Message template")
-    console.log(m);
     var message = {
         type: "template",
         senderID: messageReceived.senderID,
@@ -210,8 +208,6 @@ function sendMessages(messages) {
 
 function receiveLocation(message) {
     db.getData("conversation", {sessionId: message.senderID}, function(error, data) {
-        console.log(error);
-        console.log(data);
         if(error == null) {
             if(data.length == 0) {
                 console.log("Aucun intent trouvé");

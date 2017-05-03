@@ -123,7 +123,11 @@ function processingRestaurant(response, location) {
 			core.askLocation();
 		} else if(fields.indexOf("{restaurants}") != -1 && location != null){
 			console.log(location);
-			serv.nearestRestaurantsWithKeywords(location, [], function(result) {
+			var keyword = [];
+			if(response.result.parameters["type-restaurant"] != undefined) {
+				keyword.push(response.result.parameters["type-restaurant"]);
+			}
+			serv.nearestRestaurantsWithKeywords(location, keyword, function(result) {
 				var data = [];
 				for(var i=0;i<result.length;i++) {
 					var d = {
