@@ -85,11 +85,10 @@ function sendQuickReplyMessage(message) {
         //console.log(JSON.stringify({reply_markup: {keyboard:[[{text:"coucou"}]]}}));
         const opts = {
     reply_markup: {
-      inline_keyboard: [
+      keyboard: [
         [
           {
-            text: 'Edit Text',
-            callback_data: 'edit'
+            text: 'Edit Text'
           }
         ]
       ]
