@@ -160,7 +160,9 @@ function processingFountain(response, location) {
                 		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
+                		button_title:"Y Aller",
+                		lat: result[i].geometry.coordinates[1],
+                		long: result[i].geometry.coordinates[0]
 					}
 					data.push(d);
             	}
@@ -196,7 +198,9 @@ function processingRestaurant(response, location) {
                 		subtitle: result[i].vicinity + " - " + result[i].rating + "/5",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
+                		button_title:"Y Aller",
+                		lat:result[i].geometry.location.lat,
+                		long: result[i].geometry.location.lng
 					}
 					data.push(d);
             	}
@@ -227,7 +231,9 @@ function processingVelov(response, location) {
                 		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
+                		button_title:"Y Aller",
+                		lat: result[i].geometry.coordinates[1],
+                		long: result[i].geometry.coordinates[0]
 					}
 					data.push(d);
             	}
@@ -259,7 +265,9 @@ function processingPiscine(response, location) {
                 		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
+                		button_title:"Y Aller",
+                		lat: result[i].geometry.coordinates[1],
+                		long: result[i].geometry.coordinates[0]
 					}
 					data.push(d);
             	}
@@ -294,7 +302,9 @@ function processingHotel(response, location) {
                 		,
                 		url:result[0].properties.siteweb,
                 		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
+                		button_title:"Y Aller",
+                		lat: result[i].geometry.coordinates[1],
+                		long: result[i].geometry.coordinates[0]
 					}
 					data.push(d);
             	}
@@ -328,7 +338,9 @@ function processingPatrimoineCulturel(response, location) {
                 		,
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
+                		button_title:"Y Aller",
+                		lat: result[i].geometry.coordinates[1],
+                		long: result[i].geometry.coordinates[0]
 					}
 					data.push(d);
             	}
@@ -359,7 +371,9 @@ function processingLieuCulte(response, location) {
                 		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
+                		button_title:"Y Aller",
+                		lat: result[i].geometry.coordinates[1],
+                		long: result[i].geometry.coordinates[0]
 					}
 					data.push(d);
             	}

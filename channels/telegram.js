@@ -47,6 +47,9 @@ function sendMessage(message) {
         case "location":
             sendLocationMessage(message);
         break;
+        case "template":
+            sendTemplateMessage(message);
+        break;
     }
 }
 
@@ -91,6 +94,37 @@ function sendQuickReplyMessage(message) {
 * Fonction qui envoie un message de type location
 */
 function sendLocationMessage(message) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
+        var replykeyboard = {keyboard:[], one_time_keyboard:true};
+        var button = [{
+            text: message.text,  
+            request_location : true
+        }];
+        replykeyboard.keyboard.push(button);
+        telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
+    }
+}
+
+/*
+* Fonction qui envoie un message de type location
+*/
+function sendTemplateMessage(message) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.attachment != undefined) {
+        var elements = [];
+        /*
+        *   Envoie du message avant le template
+        */
+        telegram.sendMessage(message.senderID, message.text);
+        for(var i=0;i<message.attachment.length;i++) {
+            telegram.sendVenue(message.senderID, message.attachment[i].lat, message.attachment[i].long, message.attachment[i].title, message.attachment[i].subtitle)
+            if(i==3)break;
+        }
+    }
+}
+
+function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
         var replykeyboard = {keyboard:[], one_time_keyboard:true};
