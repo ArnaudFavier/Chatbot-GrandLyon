@@ -235,7 +235,6 @@ function processingVelov(response, location) {
                 		lat: result[i].geometry.coordinates[1],
                 		long: result[i].geometry.coordinates[0]
 					}
-					console.log(d);
 					data.push(d);
             	}
 				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
@@ -301,12 +300,13 @@ function processingHotel(response, location) {
                 			+ result[i].properties.adresse + " " + result[0].properties.commune 
                 			+ result[i].properties.codepostal
                 		,
-                		url:result[0].properties.siteweb,
+                		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
                 		button_title:"Y Aller",
                 		lat: result[i].geometry.coordinates[1],
                 		long: result[i].geometry.coordinates[0]
 					}
+					console.log(d);
 					data.push(d);
             	}
 				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
