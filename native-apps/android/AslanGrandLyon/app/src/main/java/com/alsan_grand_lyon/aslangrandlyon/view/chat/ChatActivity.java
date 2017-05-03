@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.EditText;
@@ -30,11 +31,11 @@ import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.User;
 import com.alsan_grand_lyon.aslangrandlyon.service.DownloadMessagesTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.DownloadMessagesThread;
-import com.alsan_grand_lyon.aslangrandlyon.service.LoadMoreMessagesTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.MessageHttpResult;
 import com.alsan_grand_lyon.aslangrandlyon.service.SendMessageTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.SignOutTask;
 import com.alsan_grand_lyon.aslangrandlyon.service.Speaker;
+import com.alsan_grand_lyon.aslangrandlyon.settings.Settings;
 import com.alsan_grand_lyon.aslangrandlyon.view.connection.SignInActivity;
 import com.alsan_grand_lyon.aslangrandlyon.view.settings.SettingsActivity;
 
@@ -126,6 +127,16 @@ public class ChatActivity extends AppCompatActivity
                 promptSpeechInput();
             }
         });
+
+        ((EditText)findViewById(R.id.messageEditText)).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                scrollToBottom();
+                return false;
+            }
+        });
+        messagesListView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
+        messagesListView.setStackFromBottom(true);
 
         checkTTS();
 
@@ -257,17 +268,14 @@ public class ChatActivity extends AppCompatActivity
             messageEditText.setText("");
             messageEditText.setEnabled(false);
             messageEditText.setEnabled(true);
-            // TODO new RefreshMessagesTask
             refreshMessagesListView();
             messagesListView.setSelection(messagesListView.getCount());
+            scrollToBottom();
         }
     }
 
     public void messageSent(MessageHttpResult httpResult) {
-        //TODO faire differement (progress bar sur le message ...)
         if(httpResult.getCode() == 200) {
-            Toast toast = Toast.makeText(this,"Message sent",Toast.LENGTH_LONG);
-            toast.show();
             User user = DataSingleton.getInstance().getUser();
             DownloadMessagesTask downloadMessagesTask = new DownloadMessagesTask(this);
             downloadMessagesTask.execute(user);
@@ -290,8 +298,6 @@ public class ChatActivity extends AppCompatActivity
     }
 
     public void moreMessagesLoaded(int numberOfNewMessages) {
-        //TODO give List<Messages> as argument call refreshMessagesListView(List<Messages>)
-
         if(numberOfNewMessages < limit) {
             messagesListView.setOnScrollListener(null);
             messageAdapter.setCanLoadMoreMessages(false);
@@ -315,6 +321,7 @@ public class ChatActivity extends AppCompatActivity
 //        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().getDisplayLanguage());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.FRENCH);
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.you_can_speak));
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS,1000);
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {
@@ -330,8 +337,13 @@ public class ChatActivity extends AppCompatActivity
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList<String> buffer = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String result = buffer.get(0);
-                    //TODO si texte vide
                     messageEditText.setText(result);
+                } else if(resultCode == RESULT_CANCELED){
+                    if(data == null) {
+                        Toast.makeText(getApplicationContext(), "RESULT_CANCELED : null", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "RESULT_CANCELED : not null", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
             }
@@ -362,9 +374,12 @@ public class ChatActivity extends AppCompatActivity
     }
 
     private void speakOut(String text) {
-        if(!speaker.isSpeaking()) {
-            speaker.speak(text);
-            speaker.pause(SHORT_DURATION);
+        Settings settings = new Settings(this);
+        if(settings.isAslanSpeaking()) {
+            if (!speaker.isSpeaking()) {
+                speaker.speak(text);
+                speaker.pause(SHORT_DURATION);
+            }
         }
     }
 
@@ -395,5 +410,14 @@ public class ChatActivity extends AppCompatActivity
             messageAdapter.setAlsanIsTyping(isTyping);
             refreshMessagesListView();
         }
+    }
+
+    public void scrollToBottom() {
+        messagesListView.setSelection(messageAdapter.getCount() - 1);
+    }
+
+    public void showToast(String message) {
+        Toast toast = Toast.makeText(this,message,Toast.LENGTH_LONG);
+        toast.show();
     }
 }

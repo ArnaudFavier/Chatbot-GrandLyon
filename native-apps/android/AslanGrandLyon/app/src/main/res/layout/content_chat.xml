@@ -94,6 +94,7 @@
             </HorizontalScrollView>
 
             <LinearLayout
+                android:id="@+id/inputLinearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -110,18 +111,19 @@
                     android:layout_margin="10dp"
                     android:layout_weight="0"
                     app:srcCompat="@drawable/microphone_dark" />
+
                 <EditText
                     android:id="@+id/messageEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_margin="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/input_background"
                     android:ems="10"
                     android:hint="Envoyer un message"
                     android:inputType="textMultiLine"
-                    android:padding="10dp"
-                    android:layout_gravity="center"
-                    android:layout_weight = "1"/>
+                    android:padding="10dp" />
 
                 <ImageView
                     android:id="@+id/sendImageView"

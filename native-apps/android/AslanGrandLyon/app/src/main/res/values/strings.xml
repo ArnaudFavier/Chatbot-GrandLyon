@@ -41,5 +41,7 @@
     <string name="sorry_no_voice_input_supported">"Désolé, votre appareil ne supporte pas d'entrée vocale..."</string>
     <string name="you_can_speak">"Vous pouvez parler ..."</string>
 
+    <string name="alsan_cant_answer">"Alsan ne peut pas répondre..."</string>
+
 
 </resources>

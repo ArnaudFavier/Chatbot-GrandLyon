@@ -42,38 +42,51 @@ public class DownloadMessagesTask extends AsyncTask<User, String, List<Message>>
         User user = params[0];
         String url = chatActivity.getString(R.string.server_url) + chatActivity.getString(R.string.server_message);
 
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        messageDAO.open();
-        messageDAO.lock();
-
+        int timeToSleep = 3000;
+        int numberOfNewMessages = 0;
+        int maxAttempt = 0;
         List<Message> messages = new ArrayList<>();
-        Message lastMessage = messageDAO.selectMostRecentFromServer();
-        if (lastMessage != null) {
-            HttpResult httpResult = CallAPI.getMessages(url, user.getToken(), user.getServerId(), lastMessage.getServerId());
-            if (httpResult.getCode() == 200) {
-                try {
-                    JSONObject jsonObject = new JSONObject(httpResult.getOutput());
-                    JSONArray jsonArray = jsonObject.getJSONArray("messages");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        Message message = MessageFactory.createMessageFromJson(jsonArray.getJSONObject(i));
-                        if(!messageDAO.exists(message.getServerId())) {
-                            messageDAO.insert(message);
-                            messages.add(message);
-                        }
-                    }
-                } catch (JSONException e) {
-                    httpResult.setCode(-1);
-                }
 
+        while(numberOfNewMessages == 0 && maxAttempt < 3) {
+
+            try {
+                Thread.sleep(timeToSleep);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        }
+            messageDAO.open();
+            messageDAO.lock();
 
-        messageDAO.unlock();
-        messageDAO.close();
+            Message lastMessage = messageDAO.selectMostRecentFromServer();
+            if (lastMessage != null) {
+                HttpResult httpResult = CallAPI.getMessages(url, user.getToken(), user.getServerId(), lastMessage.getServerId());
+                if (httpResult.getCode() == 200) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(httpResult.getOutput());
+                        JSONArray jsonArray = jsonObject.getJSONArray("messages");
+                        System.out.println("--->" + jsonArray.toString());
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            Message message = MessageFactory.createMessageFromJson(jsonArray.getJSONObject(i));
+                            if (!messageDAO.exists(message.getServerId())) {
+                                messageDAO.insert(message);
+                                messages.add(message);
+                            }
+                        }
+                    } catch (JSONException e) {
+                        httpResult.setCode(-1);
+                    }
+                } else {
+                    System.out.println("--->" + httpResult.toString());
+                }
+            }
+
+            messageDAO.unlock();
+            messageDAO.close();
+
+            timeToSleep = 1000;
+            maxAttempt++;
+            numberOfNewMessages = messages.size();
+        }
 
         return messages;
     }
@@ -90,7 +103,12 @@ public class DownloadMessagesTask extends AsyncTask<User, String, List<Message>>
         messageDAO.close();
         chatActivity.setAslanIsTyping(false);
         chatActivity.refreshMessagesListView();
-        chatActivity.readMessages(result);
+        if(result.size() > 0) {
+            chatActivity.readMessages(result);
+            chatActivity.scrollToBottom();
+        } else {
+            chatActivity.showToast(chatActivity.getString(R.string.alsan_cant_answer));
+        }
 
     }
 
