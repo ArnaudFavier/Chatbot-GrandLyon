@@ -219,7 +219,7 @@ function processingRestaurant(response, location) {
 *   Fonction qui traite les réponses de type Velov
 */
 function processingVelov(response, location) {
-	/*if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		if(fields.indexOf("{velov}") != -1 && location != null){
 			serv.nearestVelov(location, 4, function(result) {
@@ -228,7 +228,9 @@ function processingVelov(response, location) {
 					var d = {
 						title: result[i].properties.nom,
                 		image_url: "",
-                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
+                		subtitle: result[i].properties.available_bikes + " Velov disponibles - "
+                			+ result[i].properties.adress + " " + result[0].properties.adresse2
+                			+ result[i].properties.commune,
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
                 		button_title:"Y Aller",
@@ -245,7 +247,7 @@ function processingVelov(response, location) {
 		}
 	} else {
 		core.prepareMessage(response.result.fulfillment.speech);
-	}*/
+	}
 }
 
 
