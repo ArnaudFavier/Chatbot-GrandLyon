@@ -242,8 +242,8 @@ function sendTemplateMessage(message) {
                         title: message.attachment[i].button_title,
                         type: "web_url",
                         url: message.attachment[i].button_url,
-                        messenger_extensions: false,
-                        webview_height_ratio: "tall"                      
+                        messenger_extensions: true,
+                        webview_height_ratio: "compact"                      
                     }
                 ]
             }
