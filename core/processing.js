@@ -228,7 +228,7 @@ function processingVelov(response, location) {
 					var d = {
 						title: result[i].properties.nom,
                 		image_url: "",
-                		subtitle: result[i].properties.available_bikes + " Velov disponibles - "
+                		subtitle: result[i].properties.available_bikes + " Vélo'v disponibles - "
                 			+ result[i].properties.adress + " " + result[0].properties.adresse2
                 			+ result[i].properties.commune,
                 		url:result[i].trajet_url,

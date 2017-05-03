@@ -138,15 +138,10 @@ function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.attachment != undefined) {
         var elements = [];
-        /*
-        *   Envoie du message avant le template
-        */
-        telegram.sendMessage(message.senderID, message.text);
-        telegram.sendVenue(message.senderID, message.attachment[0].lat, message.attachment[0].long, message.attachment[0].title, message.attachment[0].subtitle);
-        /*for(var i=0;i<message.attachment.length;i++) {
+        for(var i=0;i<message.attachment.length;i++) {
             telegram.sendVenue(message.senderID, message.attachment[i].lat, message.attachment[i].long, message.attachment[i].title, message.attachment[i].subtitle)
             if(i==3)break;
-        }*/
+        }
     }
 }
 
