@@ -356,6 +356,7 @@ function nearestLieuCulte(coordinates, count, callback) {
 
                 let restCoord = elem.geometry.coordinates[0][0];
                 elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
+                elem.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr='  + restCoord[1] + ',' + restCoord[0];
 
                 restaurants[restId] = elem;
                 ++restId;
@@ -401,6 +402,7 @@ function nearestLieuCulteType(coordinates, count, callback, type) {
                 if (elem.properties.nom.toLowerCase().indexOf(typeLower) !== -1) {
                     let restCoord = elem.geometry.coordinates[0][0];
                     elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, restCoord[1], restCoord[0]);
+                    elem.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr='  + restCoord[1] + ',' + restCoord[0];
 
                     restaurants[restId] = elem;
                     ++restId;
