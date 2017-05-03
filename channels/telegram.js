@@ -32,7 +32,7 @@ function receivedLocation(message) {
         senderID: senderID,
         timestamp: message.date,
         first_name: message.from.first_name,
-        last_name: message.from.last_name  
+        last_name: message.from.last_name, 
         location: {
             lat: message.location.latitude,
             long: message.location.longitude 
