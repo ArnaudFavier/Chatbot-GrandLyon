@@ -93,7 +93,7 @@ function prepareMessage(response) {
     if(quickreplies.length > 0) {
         prepareMessageWithQuickReply(replie, quickreplies, messages);
     } else if(response.data != undefined) {
-        prepareMessageTemplate(message, messages);
+        prepareMessageTemplate(response.data, messages);
     } 
     else if(replie != undefined ) {
         prepareMessageWithText(replie, messages);
