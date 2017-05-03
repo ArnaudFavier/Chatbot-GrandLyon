@@ -160,7 +160,7 @@ function processingFountain(response, location) {
 					var d = {
 						title: "Fontaine d'eau potable",
                 		image_url: "",
-                		subtitle: "À " + result[0].dist.toFixed(2) + "Km environ",
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
                 		button_title:"Y Aller"
@@ -233,9 +233,9 @@ function processingPiscine(response, location) {
 				var data = [];
 				for(var i=0;i<result.length;i++) {
 					var d = {
-						title: result[0].properties.nom,
+						title: result[i].properties.nom,
                 		image_url: "",
-                		subtitle: "À " + result[0].dist.toFixed(2) + "Km environ",
+                		subtitle: "À " + result[i].dist.toFixed(2) + "Km environ",
                 		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
                 		button_title:"Y Aller"
@@ -258,7 +258,34 @@ function processingPiscine(response, location) {
 *   Fonction qui traite les réponses de type Hotel
 */
 function processingHotel(response, location) {
-
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.indexOf("{hotels}") != -1 && location != null){
+			serv.nearestHotels(location, 4, function(result) {
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: result[i].properties.nom,
+                		image_url: "",
+                		subtitle: result[i].properties.classement + " - " + result[i].properties.telephone + " - " 
+                			+ result[i].properties.adresse + " " + result[0].properties.commune 
+                			+ result[i].properties.codepostal
+                		,
+                		url:result[0].properties.siteweb,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
+				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
+			});
+		} else {
+			core.prepareMessage(response.result.fulfillment.speech);
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}
 }
 
 
