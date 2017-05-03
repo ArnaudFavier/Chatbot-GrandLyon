@@ -228,7 +228,7 @@ function sendTemplateMessage(message) {
                     {
                         title: "Y-Aller",
                         type: "web_url",
-                        url: "",
+                        url: message.attachment[0].details_url,
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
                     }
@@ -248,7 +248,7 @@ function sendTemplateMessage(message) {
                     {
                         title: "Y-Aller",
                         type: "web_url",
-                        url: "",
+                        url: message.attachment[1].details_url,
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
                     }
