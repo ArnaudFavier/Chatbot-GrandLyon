@@ -9,6 +9,52 @@ const db = require('./../AslanDBConnector.js');
 /*
 *   Fonction qui traite les réponses de type Bonjour
 */
+function processingLocation(intent, response, location) {
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.indexOf("{\"location\":[]}") != -1) {
+			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+			db.insertData("conversation", {sessionId: response.sessionId, metadata: response.result.metadata, fulfillment: response.result.fulfillment}, function(err, data) {
+				console.log(err);
+			});
+			core.askLocation();
+		} else {
+			switch(intent) {
+			case "hotel" :
+				processingHotel(response, location);
+				break;
+	        case "lieu-culte" :
+	        	processingLieuCulte(response, location);
+	        	break;
+	        case "patrimoine-culturel" :
+	        	processingPatrimoineCulturel(response, location);
+	        	break;
+	        case "piscine" :
+	        	processingPiscine(response, location);
+	        	break;
+	        case "toilette" :
+	        	processingToilette(response, location);
+	        	break;
+	        case "velov" :
+	        	processingVelov(response, location);
+	        	break;
+	        case "fontaine":
+	        	processingFountain(response, location);
+	        	break;
+	        case "restaurant":
+	        	processingRestaurant(response, location);
+	        	break;
+			}
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}
+}
+
+
+/*
+*   Fonction qui traite les réponses de type Bonjour
+*/
 function processingGrettings(information, response) {
 	if(information != undefined && response != undefined && information.first_name != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
@@ -39,44 +85,6 @@ function processingHour(response) {
 					"{\"ville\":[\"" + response.result.parameters.ville + "\"]}", response.result.parameters.ville);
 				core.prepareMessage(answer);
 			});	
-		}
-	} else {
-		core.prepareMessage(response.result.fulfillment.speech);
-	}
-}
-
-
-/*
-*   Fonction qui traite les réponses de type Fontaine
-*/
-function processingFountain(response, location) {
-	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
-		var fields = fd.extractFields(response.result.fulfillment.speech);
-		if(fields.indexOf("{\"location\":[]}") != -1) {
-			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-			db.insertData("conversation", {sessionId: response.sessionId, metadata: response.result.metadata, fulfillment: response.result.fulfillment}, function(err, data) {
-				console.log(err);
-			});
-			core.askLocation();
-		} else if(fields.indexOf("{fontaines}") != -1 && location != null){
-			serv.nearestRestaurantsWithKeywords(location, keyword, function(result) {
-				var data = [];
-				for(var i=0;i<result.length;i++) {
-					var d = {
-						title: "Fontaine d'eau potable",
-                		image_url: "",
-                		subtitle: "À " + result[0].dist.toFixed(2) + "Km environ",
-                		url:result[i].trajet_url,
-                		button_url:result[i].trajet_url,
-                		button_title:"Y Aller"
-					}
-					data.push(d);
-            	}
-				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
-			});
-		} else {
-			core.prepareMessage(response.result.fulfillment.speech);
 		}
 	} else {
 		core.prepareMessage(response.result.fulfillment.speech);
@@ -140,18 +148,44 @@ function processingWeather(message) {
 
 
 /*
+*   Fonction qui traite les réponses de type Fontaine
+*/
+function processingFountain(response, location) {
+	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
+		var fields = fd.extractFields(response.result.fulfillment.speech);
+		if(fields.indexOf("{fontaines}") != -1 && location != null){
+			serv.nearestRestaurantsWithKeywords(location, keyword, function(result) {
+				var data = [];
+				for(var i=0;i<result.length;i++) {
+					var d = {
+						title: "Fontaine d'eau potable",
+                		image_url: "",
+                		subtitle: "À " + result[0].dist.toFixed(2) + "Km environ",
+                		url:result[i].trajet_url,
+                		button_url:result[i].trajet_url,
+                		button_title:"Y Aller"
+					}
+					data.push(d);
+            	}
+				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
+				core.prepareMessage({text: response.result.fulfillment.speech, data: data});
+			});
+		} else {
+			core.prepareMessage(response.result.fulfillment.speech);
+		}
+	} else {
+		core.prepareMessage(response.result.fulfillment.speech);
+	}
+}
+
+
+/*
 *   Fonction qui traite les réponses de type Restaurant
 */
 function processingRestaurant(response, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
-		if(fields.indexOf("{\"location\":[]}") != -1) {
-			response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
-			db.insertData("conversation", {sessionId: response.sessionId, metadata: response.result.metadata, fulfillment: response.result.fulfillment}, function(err, data) {
-				console.log(err);
-			});
-			core.askLocation();
-		} else if(fields.indexOf("{restaurants}") != -1 && location != null){
+		if(fields.indexOf("{restaurants}") != -1 && location != null){
 			var keyword = [];
 			if(response.result.parameters["type-restaurant"] != undefined) {
 				keyword.push(response.result.parameters["type-restaurant"]);
@@ -180,6 +214,54 @@ function processingRestaurant(response, location) {
 	}
 }
 
+/*
+*   Fonction qui traite les réponses de type Velov
+*/
+function processingVelov(response, location) {
+
+}
+
+
+/*
+*   Fonction qui traite les réponses de type Piscine
+*/
+function processingPiscine(response, location) {
+
+}
+
+
+/*
+*   Fonction qui traite les réponses de type Hotel
+*/
+function processingHotel(response, location) {
+
+}
+
+
+/*
+*   Fonction qui traite les réponses de type Patrimoine culturel
+*/
+function processingPatrimoineCulturel(response, location) {
+
+}
+
+
+/*
+*   Fonction qui traite les réponses de type Toilette
+*/
+function processingToilette(response, location) {
+
+}
+
+
+/*
+*   Fonction qui traite les réponses de type Lieu Culte
+*/
+function processingLieuCulte(response, location) {
+
+}
+
+
 function formattedDate(d = new Date) {
   let month = String(d.getMonth() + 1);
   let day = String(d.getDate());
@@ -190,10 +272,18 @@ function formattedDate(d = new Date) {
 
   return `${year}-${month}-${day}`;
 }
+
+
 exports.processingGrettings = processingGrettings;
 exports.processingHour = processingHour;
 exports.processingFountain = processingFountain;
 exports.processingCitizen = processingCitizen;
 exports.processingDate = processingDate;
 exports.processingWeather = processingWeather;
+exports.processingPiscine = processingPiscine;
+exports.processingVelov = processingVelov;
+exports.processingLieuCulte = processingLieuCulte;
+exports.processingHotel = processingHotel;
+exports.processingPatrimoineCulturel = processingPatrimoineCulturel;
+exports.processingToilette = processingToilette;
 exports.processingRestaurant = processingRestaurant;

@@ -59,7 +59,14 @@ function processing(intent, response) {
             pr.processingHour(response);
             break;
         case "fontaine" :
-            pr.processingFountain(response, messageReceived.location);
+        case "hotel" :
+        case "lieu-culte" :
+        case "patrimoine-culturel" :
+        case "piscine" :
+        case "toilette" :
+        case "velov" :
+        case "restaurant":
+            pr.processingLocation(intent, response, messageReceived.location);
             break;
         case "habitant":
             pr.processingCitizen(response);
@@ -69,9 +76,6 @@ function processing(intent, response) {
             break;
         case "meteo":
             pr.processingWeather(response);
-            break;
-        case "restaurant":
-            pr.processingRestaurant(response, messageReceived.location);
             break;
         default :
             prepareMessage(response.result.fulfillment.speech);
