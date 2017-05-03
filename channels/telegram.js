@@ -82,9 +82,21 @@ function sendQuickReplyMessage(message) {
             }];
             replykeyboard.keyboard.push(button);
         }
-        console.log(JSON.stringify({reply_markup: {keyboard:[[{text:"coucou"}]]}}));
+        //console.log(JSON.stringify({reply_markup: {keyboard:[[{text:"coucou"}]]}}));
+        const opts = {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Edit Text',
+            callback_data: 'edit'
+          }
+        ]
+      ]
+    }
+  };
         //telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
-        telegram.sendMessage(message.senderID, message.text, {reply_markup: {keyboard:[[{text:"coucou"}]]}});
+        telegram.sendMessage(message.senderID, message.text,opts);// {reply_markup: {keyboard:[[{text:"coucou"}]]}});
     }
 }
 
