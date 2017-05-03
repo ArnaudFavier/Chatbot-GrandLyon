@@ -54,7 +54,7 @@ function register(req, res) {
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
     			db.createUser(email, firstname, name, password, function(data) {
-    				console.log(JSON.stringify({_id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token});
+    				console.log(JSON.stringify({_id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token}));
 			    	if(data.length == 0) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
