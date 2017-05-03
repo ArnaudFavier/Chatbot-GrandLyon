@@ -214,7 +214,7 @@ function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.attachment != undefined) {
         var elements = [];
-        for(int i=0;i<message.attachment.length;i++) {
+        for(var i=0;i<message.attachment.length;i++) {
             var element = {
                 title: message.attachment[i].name,
                 image_url: message.attachment[i].photo_url,
