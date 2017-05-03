@@ -183,7 +183,12 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
         keywordsFormat += ' AND (' + keywords[i] + ')';
     }
 
-    let url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.long + '&radius=2000&rankBy=distance&type=restaurant&keyword=' + keywordsFormat + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
+    let url;
+    if (keywords.length !== 0) {
+        url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.long + '&rankby=distance&type=restaurant&keyword=' + keywordsFormat + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
+    } else {
+        url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.long + '&radius=2000&type=restaurant&keyword=' + keywordsFormat + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
+    }
 
     const request = require('request');
 
@@ -197,7 +202,7 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
                     restaurant.photo_url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + restaurant.photos[0].photo_reference + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
                 }
 
-                restaurant.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr=' +  encodeURI(restaurant.vicinity);
+                restaurant.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr=' + encodeURI(restaurant.vicinity);
 
                 restaurant.loadDetails = function (callback) {
                     request(this.details_url, (error2, response2, body2) => {
