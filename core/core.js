@@ -17,7 +17,7 @@ function receivedMessage(message) {
     messageReceived = message;
     console.log(message);
     if(message.location != undefined) {
-        getLastIntent(message);
+        receiveLocation(message);
     } else if(message.text != undefined ) {
         runLogicLayer(message);
     }
@@ -32,7 +32,7 @@ function runLogicLayer(message) {
         botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
     }*/
     /*recast.sendMessage(message.text, callbackLogicLayer);*/
-    apiai.sendMessage(message.senderID, message.text, callbackLogicLayer)
+    apiai.sendMessage(message.senderID, message.text, callbackLogicLayer);
 }
 
 /*
@@ -183,7 +183,7 @@ function sendMessages(messages) {
     }
 }
 
-function getLastIntent(message) {
+function receiveLocation(message) {
     db.getData("conversation", {sessionId: message.senderId}, function(error, data) {
         if(data.length == 0) {
             console.log("Aucun intent trouvé");
