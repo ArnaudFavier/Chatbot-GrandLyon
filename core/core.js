@@ -209,10 +209,11 @@ function sendMessages(messages) {
 }
 
 function receiveLocation(message) {
+    console.log(message.senderId);
     db.getData("conversation", {sessionId: message.senderId}, function(error, data) {
         console.log(error);
         console.log(data);
-        if(error != null) {
+        if(error == null) {
             if(data.length == 0) {
                 console.log("Aucun intent trouvé");
             } else {
