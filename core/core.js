@@ -86,17 +86,21 @@ function processing(intent, response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    var replie = response;
-    var fields = fd.extractFields(replie);
-    var quickreplies = extractQuickReplies(fields);
-    replie = fd.removeFields(replie);
-    if(quickreplies.length > 0) {
-        prepareMessageWithQuickReply(replie, quickreplies, messages);
-    } else if(response.data != undefined) {
+    if(response.data != undefined) {
         prepareMessageTemplate(response.data, messages);
-    } 
-    else if(replie != undefined ) {
-        prepareMessageWithText(replie, messages);
+    }  else {
+        var replie = response;
+        var fields = fd.extractFields(replie);
+        var quickreplies = extractQuickReplies(fields);
+        replie = fd.removeFields(replie);
+        if(quickreplies.length > 0) {
+            prepareMessageWithQuickReply(replie, quickreplies, messages);
+        } else if(response.data != undefined) {
+            prepareMessageTemplate(response.data, messages);
+        } 
+        else if(replie != undefined ) {
+            prepareMessageWithText(replie, messages);
+        }
     }
     sendMessages(messages);
 }
