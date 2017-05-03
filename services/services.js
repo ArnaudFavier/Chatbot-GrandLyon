@@ -11,6 +11,23 @@ function convertDateToUTC(date) {
     return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
 }
 
+function nomVillePourCoordonnees(coords, callback) {
+    googleMapsClient.reverseGeocode({
+        latlng: [coords.lat, coords.lon]
+    }, function (err, response) {
+        let data = response.json.results[0];
+        for (let i = 0; i < data.address_components.length; ++i) {
+            let component = data.address_components[i];
+            if (component.types.indexOf('locality') !== -1
+                || component.types.indexOf('administrative_area_level_1') !== -1) {
+                callback(component.long_name);
+                return;
+            }
+        }
+        callback('undefined');
+    });
+}
+
 function getTimeAt(city, callback) {
     // Geocode an address.
     googleMapsClient.geocode({
@@ -61,7 +78,7 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
         Math.sin(dLon / 2) * Math.sin(dLon / 2)
-        ;
+    ;
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     let d = R * c; // Distance in km
     return d;
@@ -409,3 +426,4 @@ exports.nearestVelov = nearestVelov;
 exports.nearestLieuCulte = nearestLieuCulte;
 exports.nearestLieuCulteType = nearestLieuCulteType;
 exports.nearestHotels = nearestHotels;
+exports.nomVillePourCoordonnees = nomVillePourCoordonnees;

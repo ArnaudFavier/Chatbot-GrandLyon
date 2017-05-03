@@ -13,7 +13,7 @@ function callback(result) {
         console.log('Error');
     }
     else {
-        console.log(JSON.stringify(result[0]));
+        console.log(result);
 
         // A decommenter pour tester le chargement des details d'un restaurant
 /*
@@ -48,7 +48,7 @@ function callback(result) {
 
 // Appel de test pour obtenir les 3 piscines les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
- Services.nearestPiscines({lat: 45.756715, lon: 4.831561}, 3, callback);
+// Services.nearestPiscines({lat: 45.756715, lon: 4.831561}, 3, callback);
 
 // Appel de test pour obtenir les 5 lieux de culte les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
@@ -61,3 +61,9 @@ function callback(result) {
 // Appel de test pour obtenir les 5 hotels les plus proches d'une position,
 // en passant les coordonnées de Place Bellecour (à décommenter pour tester)
 // Services.nearestHotels({lat: 45.756715, lon: 4.831561}, 5, callback);
+
+// Appel de test pour obtenir le nom d'une ville en fonction de ses coordonnées,
+// en passant les coordonnées de Place Bellecour (à décommenter pour tester)
+// Services.nomVillePourCoordonnees({lat:  40.730610, lon: -73.935242}, callback); // New York
+// Services.nomVillePourCoordonnees({lat: 45.756715, lon: 4.831561}, callback); // Place Bellecour
+Services.nomVillePourCoordonnees({lat:  55.7522200, lon: 37.6155600}, callback); // New York
