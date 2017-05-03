@@ -65,4 +65,11 @@ public class TextMessage extends Message {
         }
     }
 
+    @Override
+    public String toString() {
+        return "TextMessage{" +
+                "Super=" + super.toString() +
+                "text='" + text + '\'' +
+                '}';
+    }
 }

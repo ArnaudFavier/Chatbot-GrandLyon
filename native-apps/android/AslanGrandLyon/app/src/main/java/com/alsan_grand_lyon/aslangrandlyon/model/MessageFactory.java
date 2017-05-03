@@ -1,12 +1,15 @@
 package com.alsan_grand_lyon.aslangrandlyon.model;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Nico on 26/04/2017.
@@ -26,11 +29,18 @@ public class MessageFactory {
 
             JSONObject body = new JSONObject(jsonBody);
             String type = body.getString("type");
-//TODO uncomment and create quickreply
-//            if(type.equals("text")) {
+            if(type.equals("text")) {
                 String text = body.getString("text");
                 message = new TextMessage(serverId,date,jsonBody,isAslan,userId,text);
-//            }
+            } else if (type.equals("quickreplies")) {
+                String text = body.getString("text");
+                List<String> quickReplies = new ArrayList<>();
+                JSONArray quickrepliesJson = body.getJSONArray("quickreplies");
+                for (int i = 0; i < quickrepliesJson.length(); i++) {
+                    quickReplies.add(quickrepliesJson.getString(i));
+                }
+                message = new QuickReplyMessage(serverId,date,jsonBody,isAslan,userId,text,quickReplies);
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -48,11 +58,21 @@ public class MessageFactory {
 
             JSONObject body = new JSONObject(jsonBody);
             String type = body.getString("type");
-//TODO uncomment and create quickreply
-//            if(type.equals("text")) {
+            if(type.equals("text")) {
                 String text = body.getString("text");
                 message = new TextMessage(id,serverId,date,jsonBody,isAslan,userId,text);
-//            }
+            } else if (type.equals("quickreplies")) {
+                String text = body.getString("text");
+                List<String> quickReplies = new ArrayList<>();
+                JSONArray quickrepliesJson = body.getJSONArray("quickreplies");
+                for (int i = 0; i < quickrepliesJson.length(); i++) {
+                    quickReplies.add(quickrepliesJson.getString(i));
+                }
+                message = new QuickReplyMessage(serverId,date,jsonBody,isAslan,userId,text,quickReplies);
+            } else if (type.equals("location")) {
+                String text = body.getString("text");
+                message = new LocationQuickReplyMessage(id,serverId,date,jsonBody,isAslan,userId,text);
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();

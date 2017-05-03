@@ -1,7 +1,10 @@
 package com.alsan_grand_lyon.aslangrandlyon.view.chat;
 
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
@@ -17,6 +20,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,7 +30,9 @@ import android.widget.Toast;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
+import com.alsan_grand_lyon.aslangrandlyon.model.LocationQuickReplyMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
+import com.alsan_grand_lyon.aslangrandlyon.model.QuickReplyMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.User;
 import com.alsan_grand_lyon.aslangrandlyon.service.DownloadMessagesTask;
@@ -45,7 +51,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class ChatActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, LocationListener {
 
     private final static int REQ_CODE_SPEECH_INPUT = 100;
     private final static int CHECK_CODE = 0x1;
@@ -141,6 +147,7 @@ public class ChatActivity extends AppCompatActivity
         checkTTS();
 
 //        startDownloadMessagesThread();
+        refreshMessagesListView();
     }
 
 
@@ -258,20 +265,25 @@ public class ChatActivity extends AppCompatActivity
     private void sendMessage() {
         //TODO tester quel type de message, pour l'instant seulement TextMessage
         if(messageEditText.getText().toString() != null && !messageEditText.getText().toString().isEmpty()) {
-            User user = DataSingleton.getInstance().getUser();
-            Message newMessage = new TextMessage(new Date(),user.getServerId(),messageEditText.getText().toString());
-            newMessage.setUserId(user.getServerId());
-            DataSingleton.getInstance().addMessage(newMessage);
-            DataSingleton.getInstance().sortMessages();
-            SendMessageTask sendMessageTask = new SendMessageTask(this);
-            sendMessageTask.execute(newMessage);
+            sendMessage(messageEditText.getText().toString());
             messageEditText.setText("");
             messageEditText.setEnabled(false);
             messageEditText.setEnabled(true);
-            refreshMessagesListView();
-            messagesListView.setSelection(messagesListView.getCount());
-            scrollToBottom();
         }
+    }
+
+    private void sendMessage(String text) {
+        User user = DataSingleton.getInstance().getUser();
+        Message newMessage = new TextMessage(new Date(),user.getServerId(),text);
+        newMessage.setUserId(user.getServerId());
+        DataSingleton.getInstance().addMessage(newMessage);
+        DataSingleton.getInstance().sortMessages();
+        SendMessageTask sendMessageTask = new SendMessageTask(this);
+        sendMessageTask.execute(newMessage);
+
+        refreshMessagesListView();
+        messagesListView.setSelection(messagesListView.getCount());
+        scrollToBottom();
     }
 
     public void messageSent(MessageHttpResult httpResult) {
@@ -294,6 +306,40 @@ public class ChatActivity extends AppCompatActivity
     public void refreshMessagesListView() {
         messages.clear();
         messages.addAll(DataSingleton.getInstance().getMessages());
+        if (messages.get(messages.size() - 1) instanceof QuickReplyMessage) {
+            buttonsLinearLayout.removeAllViews();
+            QuickReplyMessage message = (QuickReplyMessage) messages.get(messages.size() - 1);
+            for (String quickReply : message.getQuickReplies()) {
+                final Button button = new Button(this);
+                button.setText(quickReply);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sendMessage(button.getText().toString());
+                    }
+                });
+                buttonsLinearLayout.addView(button);
+            }
+            buttonsLinearLayout.setVisibility(View.VISIBLE);
+        } else if (messages.get(messages.size()-1) instanceof LocationQuickReplyMessage) {
+            buttonsLinearLayout.removeAllViews();
+            LocationQuickReplyMessage message = (LocationQuickReplyMessage) messages.get(messages.size() - 1);
+
+            final Button button = new Button(this);
+            button.setText(getString(R.string.location));
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    sendMessage(button.getText().toString());
+                }
+            });
+            buttonsLinearLayout.addView(button);
+
+            buttonsLinearLayout.setVisibility(View.VISIBLE);
+        }else {
+            buttonsLinearLayout.removeAllViews();
+            buttonsLinearLayout.setVisibility(View.GONE);
+        }
         messageAdapter.notifyDataSetChanged();
     }
 
@@ -419,5 +465,46 @@ public class ChatActivity extends AppCompatActivity
     public void showToast(String message) {
         Toast toast = Toast.makeText(this,message,Toast.LENGTH_LONG);
         toast.show();
+    }
+
+    private void showAlert() {
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Enable Location")
+                .setMessage("Your Locations Settings is set to 'Off'.\nPlease Enable Location to " +
+                        "use this app")
+                .setPositiveButton("Location Settings", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                        Intent myIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivity(myIntent);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                    }
+                });
+        dialog.show();
+    }
+
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
     }
 }

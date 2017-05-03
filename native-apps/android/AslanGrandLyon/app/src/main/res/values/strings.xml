@@ -43,5 +43,7 @@
 
     <string name="alsan_cant_answer">"Alsan ne peut pas répondre..."</string>
 
+    <string name="location">Localisation</string>
+
 
 </resources>
