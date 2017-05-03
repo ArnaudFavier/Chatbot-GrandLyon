@@ -24,7 +24,7 @@
             }, 
             "properties": {
                 "gid": "816", 
-                "nom": "Piscine Andr\u00c3\u00a9 Boulloche"
+                "nom": "Piscine André Boulloche"
             }, 
             "type": "Feature"
         }, 
@@ -164,7 +164,7 @@
             }, 
             "properties": {
                 "gid": "1031", 
-                "nom": "Piscine de Saint-Exup\u00c3\u00a9ry"
+                "nom": "Piscine de Saint-Exupéry"
             }, 
             "type": "Feature"
         }, 
@@ -178,7 +178,7 @@
             }, 
             "properties": {
                 "gid": "1050", 
-                "nom": "Piscine d'\u00c3\u00a9t\u00c3\u00a9 de la Duch\u00c3\u00a8re"
+                "nom": "Piscine d'été de la Duchère"
             }, 
             "type": "Feature"
         }, 
@@ -220,7 +220,7 @@
             }, 
             "properties": {
                 "gid": "1368", 
-                "nom": "Centre Nautique Mend\u00c3\u00a8s-France"
+                "nom": "Centre Nautique Mendès-France"
             }, 
             "type": "Feature"
         }, 
@@ -402,7 +402,7 @@
             }, 
             "properties": {
                 "gid": "1688", 
-                "nom": "Centre Nautique Andr\u00c3\u00a9 Sousi"
+                "nom": "Centre Nautique André Sousi"
             }, 
             "type": "Feature"
         }, 
@@ -416,7 +416,7 @@
             }, 
             "properties": {
                 "gid": "1813", 
-                "nom": "Piscine du Rh\u00c3\u00b4ne"
+                "nom": "Piscine du Rhône"
             }, 
             "type": "Feature"
         }, 
@@ -444,7 +444,7 @@
             }, 
             "properties": {
                 "gid": "2026", 
-                "nom": "Piscine d'\u00c3\u00a9t\u00c3\u00a9 Jean Mermoz"
+                "nom": "Piscine d'été Jean Mermoz"
             }, 
             "type": "Feature"
         }, 
