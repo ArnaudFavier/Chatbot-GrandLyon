@@ -71,7 +71,7 @@ function processing(intent, response) {
             pr.processingWeather(response);
             break;
         case "restaurant":
-            pr.processingRestaurant(response, null);
+            pr.processingRestaurant(response, location);
             break;
         default :
             prepareMessage(response.result.fulfillment.speech);
