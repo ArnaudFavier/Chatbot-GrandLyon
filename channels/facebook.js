@@ -213,7 +213,62 @@ function sendFileMessage(message) {
 function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.attachment != undefined) {
-        var elements = [];              
+        var elements = [
+            {
+                title: message.attachment[0].name,
+                image_url: message.attachment[0].icon,
+                subtitle: message.attachment[0].vicinity + " - " + message.attachment[0].rating + "/5",
+                default_action: {
+                    type: "web_url",
+                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                    messenger_extensions: true,
+                    webview_height_ratio: "tall",
+                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                },
+                buttons: [
+                    {
+                        title: "Y-Aller",
+                        type: "web_url",
+                        url: "",
+                        messenger_extensions: true,
+                        webview_height_ratio: "tall"                      
+                    },
+                        title: "Détails",
+                        type: "web_url",
+                        url: message.attachment[0].details_url,
+                        messenger_extensions: true,
+                        webview_height_ratio: "tall"                      
+                    }
+                ]
+            },
+            {
+                title: message.attachment[1].name,
+                image_url: message.attachment[1].icon,
+                subtitle: message.attachment[1].vicinity + " - " + message.attachment[1].rating + "/5",
+                default_action: {
+                    type: "web_url",
+                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                    messenger_extensions: true,
+                    webview_height_ratio: "tall",
+                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                },
+                buttons: [
+                    {
+                        title: "Y-Aller",
+                        type: "web_url",
+                        url: "",
+                        messenger_extensions: true,
+                        webview_height_ratio: "tall"                      
+                    },
+                        title: "Détails",
+                        type: "web_url",
+                        url: message.attachment[1].details_url,
+                        messenger_extensions: true,
+                        webview_height_ratio: "tall"                      
+                    }
+                ]
+            }
+        ];              
         var messageData = {
             recipient: {
                 id: message.senderID
@@ -224,52 +279,8 @@ function sendTemplateMessage(message) {
                     payload: {
                         template_type: "list",
                         top_element_style: "compact",
-                        elements: [
-                            {
-                                title: "Classic White T-Shirt",
-                                image_url: "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
-                                subtitle: "100% Cotton, 200% Comfortable",
-                                default_action: {
-                                    type: "web_url",
-                                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
-                                    messenger_extensions: true,
-                                    webview_height_ratio: "tall",
-                                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
-                                },
-                                buttons: [
-                                    {
-                                        title: "Buy",
-                                        type: "web_url",
-                                        url: "https://peterssendreceiveapp.ngrok.io/shop?item=100",
-                                        messenger_extensions: true,
-                                        webview_height_ratio: "tall",
-                                        fallback_url: "https://peterssendreceiveapp.ngrok.io/"                        
-                                    }
-                                ]
-                            },
-                            {
-                                title: "Classic White T-Shirt",
-                                image_url: "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
-                                subtitle: "100% Cotton, 200% Comfortable",
-                                default_action: {
-                                    type: "web_url",
-                                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
-                                    messenger_extensions: true,
-                                    webview_height_ratio: "tall",
-                                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
-                                },
-                                buttons: [
-                                    {
-                                        title: "Buy",
-                                        type: "web_url",
-                                        url: "https://peterssendreceiveapp.ngrok.io/shop?item=100",
-                                        messenger_extensions: true,
-                                        webview_height_ratio: "tall",
-                                        fallback_url: "https://peterssendreceiveapp.ngrok.io/"                        
-                                    }
-                                ]
-                            }  
-                        ]
+                        elements: elements
+                    
                     }
                 }
             }
