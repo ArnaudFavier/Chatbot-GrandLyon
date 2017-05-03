@@ -75,7 +75,7 @@ function sendTextMessage(message) {
 function sendQuickReplyMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
-        var replykeyboard = {keyboard:[], one_time_keyboard:true};
+        var replykeyboard = {keyboard:[]};
         for(var i=0;i<message.choices.length;i++) {
             var button = [{
                 text: message.choices[i]
@@ -83,19 +83,7 @@ function sendQuickReplyMessage(message) {
             replykeyboard.keyboard.push(button);
         }
         //console.log(JSON.stringify({reply_markup: {keyboard:[[{text:"coucou"}]]}}));
-        const opts = {
-    reply_markup: {
-      keyboard: [
-        [
-          {
-            text: 'Edit Text'
-          }
-        ]
-      ]
-    }
-  };
-        //telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
-        telegram.sendMessage(message.senderID, message.text,opts);// {reply_markup: {keyboard:[[{text:"coucou"}]]}});
+        telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
     }
 }
 
