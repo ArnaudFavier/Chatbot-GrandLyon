@@ -214,7 +214,6 @@ function receiveLocation(message) {
             console.log("Aucun intent trouvé");
         } else {
             db.removeData("conversation", {sessionId: message.senderId}, function(error, data) {});
-            console.log(data);
             switch(data[0].metadata.intentName) {
             case "restaurant":
                 apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
