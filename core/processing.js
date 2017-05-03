@@ -123,7 +123,6 @@ function processingRestaurant(response, location) {
 			core.askLocation();
 		} else if(fields.indexOf("{restaurants}") != -1 && location != null){
 			serv.nearestRestaurantsWithKeywords(location, [], function(result) {
-				console.log(result);
 				response.result.fulfillment.speech = fd.removeFields(response.result.fulfillment.speech);
 				core.prepareMessage({text: response.result.fulfillment.speech, data: result});
 			});

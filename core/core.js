@@ -86,8 +86,8 @@ function processing(intent, response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    if(response.data != undefined) {
-        prepareMessageTemplate(response.data, messages);
+    if(response.data != undefined && response.text != undefined) {
+        prepareMessageTemplate(response, messages);
     }  else {
         var replie = response;
         var fields = fd.extractFields(replie);
@@ -165,10 +165,13 @@ function prepareMessageWithQuickReply(text, quickreply, messages) {
 *   Fonction qui prépare un message template
 */
 function prepareMessageTemplate(m, messages) {
+    console.log("Message template")
+    console.log(m);
     var message = {
         type: "template",
         senderID: messageReceived.senderID,
         channel: messageReceived.channel,
+        text: m.text,
         attachment: m.data
     }
     messages.push(message);

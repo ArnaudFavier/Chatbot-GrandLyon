@@ -214,7 +214,6 @@ function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.attachment != undefined) {
         var elements = [];
-        console.log(message);
         /*{
         "title": "Classic White T-Shirt",
         "image_url": "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
