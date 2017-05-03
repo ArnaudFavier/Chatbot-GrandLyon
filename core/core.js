@@ -210,22 +210,26 @@ function sendMessages(messages) {
 
 function receiveLocation(message) {
     db.getData("conversation", {sessionId: message.senderId}, function(error, data) {
-        if(data.length == 0) {
-            console.log("Aucun intent trouvé");
-        } else {
-            db.removeData("conversation", {sessionId: message.senderId}, function(error, data) {});
-            switch(data[0].metadata.intentName) {
-            case "restaurant":
-                apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
-                break;
-            case "meteo":
-                serv.nomVillePourCoordonnees(message.location, function(city){
-                    apiai.sendMessage(message.senderID, city, callbackLogicLayer);
-                });
-                break;
-            default:
-               break;
+        if(error != null) {
+            if(data.length == 0) {
+                console.log("Aucun intent trouvé");
+            } else {
+                db.removeData("conversation", {sessionId: message.senderId}, function(error, data) {});
+                switch(data[0].metadata.intentName) {
+                case "restaurant":
+                    apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
+                    break;
+                case "meteo":
+                    serv.nomVillePourCoordonnees(message.location, function(city){
+                        apiai.sendMessage(message.senderID, city, callbackLogicLayer);
+                    });
+                    break;
+                default:
+                   break;
+                }
             }
+        } else {
+            console.log(error);
         }
     });
 }
