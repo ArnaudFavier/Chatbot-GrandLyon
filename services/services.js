@@ -180,7 +180,7 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
     let restaurants = new Array(3000);
 
     let keywordsFormat = '';
-    if (keywords != null && keywords.length !== 0) {
+    if (keywords.length !== 0) {
         keywordsFormat += '(' + keywords[0] + ')';
     }
     for (let i = 1; i < keywords.length; ++i) {
