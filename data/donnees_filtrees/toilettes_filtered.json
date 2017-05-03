@@ -1,0 +1,2232 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    45.824747798063505, 
+                    4.895162394684355
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "RILLIEUX-LA-PAPE", 
+                "gid": "1", 
+                "numerodansvoie": "", 
+                "observation": "Vers Place du Ch\u00e2teau", 
+                "voie": "Rue de la Barse"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.66544854498272, 
+                    4.849116372144825
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "FEYZIN", 
+                "gid": "2", 
+                "numerodansvoie": "", 
+                "observation": "Proche rue Andr\u00e9 Gelas", 
+                "voie": "Place Claudius B\u00e9ry"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.66738958340642, 
+                    4.855443856825116
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "FEYZIN", 
+                "gid": "3", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de l'Eglise"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.81256645067743, 
+                    4.89565971748305
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "RILLIEUX-LA-PAPE", 
+                "gid": "4", 
+                "numerodansvoie": "", 
+                "observation": "Vers terrain de p\u00e9tanque", 
+                "voie": "Place du March\u00e9"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.820369539622085, 
+                    4.761121087296351
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DARDILLY", 
+                "gid": "5", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de la Porte de Lyon"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.805376402969074, 
+                    4.753718736539401
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DARDILLY", 
+                "gid": "6", 
+                "numerodansvoie": "1", 
+                "observation": "Passage entre la boucherie et le tabac/presse", 
+                "voie": "Place de l'Eglise"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.695273721621646, 
+                    4.964040503970589
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "7", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "All\u00e9e du Fort"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77590150016326, 
+                    4.995369511512939
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MEYZIEU", 
+                "gid": "8", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place Roger Matray"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.762863888305624, 
+                    4.965170035776629
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DECINES-CHARPIEU", 
+                "gid": "9", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place Henri Barbusse"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76560516805154, 
+                    4.956211829182664
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DECINES-CHARPIEU", 
+                "gid": "10", 
+                "numerodansvoie": "", 
+                "observation": "Sur parking du stade", 
+                "voie": "Avenue Jean Mac\u00e9"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.769340580707265, 
+                    4.947438815532764
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DECINES-CHARPIEU", 
+                "gid": "11", 
+                "numerodansvoie": "", 
+                "observation": "Sur Parking", 
+                "voie": "Place de la Lib\u00e9ration"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69479512267949, 
+                    4.875663242496673
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VENISSIEUX", 
+                "gid": "12", 
+                "numerodansvoie": "", 
+                "observation": "Proche angle Avenue du Pr\u00e9sident Edouard Herriot", 
+                "voie": "Rue Georges Lyvet"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71282007526854, 
+                    4.861049987496801
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-FONS", 
+                "gid": "13", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Rue Montesquieu"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74366425475681, 
+                    4.971698560264366
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CHASSIEU", 
+                "gid": "14", 
+                "numerodansvoie": "", 
+                "observation": "Sur Parking", 
+                "voie": "Place de la Mairie"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.66690566131562, 
+                    4.956401902939072
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MIONS", 
+                "gid": "15", 
+                "numerodansvoie": "", 
+                "observation": "Proche angle Rue Joanny Sage", 
+                "voie": "Rue de l'Egalit\u00e9"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.784739747508496, 
+                    4.744318505938651
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CHARBONNIERES-LES-BAINS", 
+                "gid": "16", 
+                "numerodansvoie": "9", 
+                "observation": "", 
+                "voie": "Avenue Denis Delorme"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77742577860399, 
+                    4.925354178559327
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VAULX-EN-VELIN", 
+                "gid": "17", 
+                "numerodansvoie": "", 
+                "observation": "Entre Rue Albert Camus et Rue Robert Desnos\r\nPas sur les plans", 
+                "voie": "place du Carreau"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.865945347166374, 
+                    4.832323417170821
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "ALBIGNY-SUR-SAONE", 
+                "gid": "18", 
+                "numerodansvoie": "", 
+                "observation": "Derri\u00e8re \u00e9glise", 
+                "voie": "Place du Docteur Aloin"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73570358643725, 
+                    4.804748355324412
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "gid": "19", 
+                "numerodansvoie": "10", 
+                "observation": "", 
+                "voie": "Boulevard Baron du Marais"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.778499445696596, 
+                    4.744005552270555
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CHARBONNIERES-LES-BAINS", 
+                "gid": "20", 
+                "numerodansvoie": "", 
+                "observation": "Sous la mairie", 
+                "voie": "Place Bad Abbach"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74329015281556, 
+                    4.723115737319697
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CRAPONNE", 
+                "gid": "21", 
+                "numerodansvoie": "22", 
+                "observation": "", 
+                "voie": "Avenue Jean Bergeron"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.72581657501205, 
+                    4.806597568906645
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "LA MULATIERE", 
+                "gid": "22", 
+                "numerodansvoie": "", 
+                "observation": "Angle All\u00e9e du cimeti\u00e8re", 
+                "voie": "Chemin de Chassagnes"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.82204463163542, 
+                    4.872377315430272
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SATHONAY-CAMP", 
+                "gid": "23", 
+                "numerodansvoie": "", 
+                "observation": "Face N\u00b043", 
+                "voie": "Boulevard Castellane"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.728952946780154, 
+                    4.809709121159061
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "LA MULATIERE", 
+                "gid": "24", 
+                "numerodansvoie": "", 
+                "observation": "Angle Rue mar\u00e9chal de Lattre de Tassigny", 
+                "voie": "Rue de Verdun"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.70282869528014, 
+                    4.819065241336666
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "PIERRE-BENITE", 
+                "gid": "25", 
+                "numerodansvoie": "106", 
+                "observation": "Square Manillier - Fa\u00e7e N\u00b0 106", 
+                "voie": "Rue Amp\u00e8re"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78681022856659, 
+                    4.92088152679833
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VAULX-EN-VELIN", 
+                "gid": "26", 
+                "numerodansvoie": "", 
+                "observation": "Angle Avenue du 8 Mai 1945 et Rue Lakanal", 
+                "voie": "Square Gilbert Dru"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74779418841608, 
+                    4.800440671314512
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "gid": "27", 
+                "numerodansvoie": "", 
+                "observation": "Angle Rue de Chavril et Boulevard des Provinces", 
+                "voie": "Place Lieutenant Soubeirat"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75144299885128, 
+                    4.765927635284216
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "TASSIN-LA-DEMI-LUNE", 
+                "gid": "28", 
+                "numerodansvoie": "81", 
+                "observation": "Sur le parking du rond-point d'Ala\u00ef", 
+                "voie": "Rue Professeur Deperet"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.88098576913949, 
+                    4.863430486453661
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MONTANAY", 
+                "gid": "29", 
+                "numerodansvoie": "714", 
+                "observation": "Vers Place de la Poype - Face au N\u00b0731", 
+                "voie": "Rue Centrale"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.89745990390201, 
+                    4.841236677177369
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "GENAY", 
+                "gid": "30", 
+                "numerodansvoie": "", 
+                "observation": "Sous le parking couvert, au bas escalier", 
+                "voie": "Place de la Mairie"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.89820345595049, 
+                    4.849898973982582
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "GENAY", 
+                "gid": "31", 
+                "numerodansvoie": "", 
+                "observation": "Entr\u00e9e parking cimeti\u00e8re", 
+                "voie": "Rue de la Grande Verch\u00e8re"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.700536571898425, 
+                    4.788077576399986
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-GENIS-LAVAL", 
+                "gid": "32", 
+                "numerodansvoie": "", 
+                "observation": "Angle rue de l'Egalit\u00e9 - vers cimeti\u00e8re", 
+                "voie": "Rue Fr\u00e8re Benoit"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.70356052008787, 
+                    4.82385760281112
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "PIERRE-BENITE", 
+                "gid": "33", 
+                "numerodansvoie": "", 
+                "observation": "Angle Place Jean Jaur\u00e8s.", 
+                "voie": "Rue Paul Bert"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71627858483937, 
+                    4.819684358887464
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "34", 
+                "numerodansvoie": "", 
+                "observation": "A proximit\u00e9 de la Rue Elys\u00e9e Reclus", 
+                "voie": "Place Kellermann"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71385763974071, 
+                    4.811473709761648
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "35", 
+                "numerodansvoie": "", 
+                "observation": "Angle Rue Jean Mac\u00e9", 
+                "voie": "Rue Charton"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.765375747211344, 
+                    4.784229824158622
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "TASSIN-LA-DEMI-LUNE", 
+                "gid": "36", 
+                "numerodansvoie": "11", 
+                "observation": "", 
+                "voie": "Chemin de la Vernique"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.67232179080366, 
+                    4.822484556364235
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "IRIGNY", 
+                "gid": "37", 
+                "numerodansvoie": "4", 
+                "observation": "Face \u00e0 la biblioth\u00e8que", 
+                "voie": "Place de l'Europe"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77004201315561, 
+                    4.964976033016049
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DECINES-CHARPIEU", 
+                "gid": "38", 
+                "numerodansvoie": "", 
+                "observation": "Sur Parking immeuble - Vers Garages", 
+                "voie": "Rue Parmentier"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.746100310831004, 
+                    4.971996179774671
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CHASSIEU", 
+                "gid": "39", 
+                "numerodansvoie": "", 
+                "observation": "Sur Parking", 
+                "voie": "Place de la R\u00e9publique"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.814187227869, 
+                    4.715535271537072
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "LA TOUR-DE-SALVAGNY", 
+                "gid": "40", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de la Mairie"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69629526583031, 
+                    4.94155752034102
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "41", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place Ferdinand Buisson"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69056794492345, 
+                    4.937344601317728
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "42", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place Roger Salengro"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7050047078388, 
+                    4.900767796854939
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "43", 
+                "numerodansvoie": "", 
+                "observation": "Angle 2\u00e8me Avenue Cit\u00e9 Berliet", 
+                "voie": "6\u00e8me Rue Cit\u00e9 Berliet"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.66488360666138, 
+                    4.895332586717111
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CORBAS", 
+                "gid": "44", 
+                "numerodansvoie": "", 
+                "observation": "Proche angle Avenue Corbetta", 
+                "voie": "Rue des Fr\u00e8res Lumi\u00e8re"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.66598609226218, 
+                    4.904490256888068
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CORBAS", 
+                "gid": "45", 
+                "numerodansvoie": "", 
+                "observation": "Proche angle Chemin de Grange Blanche", 
+                "voie": "Rue de l'Aviation"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69457426067347, 
+                    4.793177408357731
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-GENIS-LAVAL", 
+                "gid": "46", 
+                "numerodansvoie": "", 
+                "observation": "Vers rue de la Halle", 
+                "voie": "Place Mar\u00e9chal Joffre"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.746745565157276, 
+                    4.723791455016978
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CRAPONNE", 
+                "gid": "47", 
+                "numerodansvoie": "82", 
+                "observation": "", 
+                "voie": "Place Andr\u00e9e-Marie Perrin"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74646180029631, 
+                    4.723812754191411
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CRAPONNE", 
+                "gid": "48", 
+                "numerodansvoie": "82", 
+                "observation": "", 
+                "voie": "Place Andr\u00e9e-Marie Perrin"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.819160530408524, 
+                    4.750256898812254
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DARDILLY", 
+                "gid": "49", 
+                "numerodansvoie": "28", 
+                "observation": "Derri\u00e8re l'\u00e9glise", 
+                "voie": "Chemin de Pierre Blanche"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7610241097415, 
+                    4.759935381326042
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "TASSIN-LA-DEMI-LUNE", 
+                "gid": "50", 
+                "numerodansvoie": "81", 
+                "observation": "", 
+                "voie": "Avenue du 8 Mai 1945"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76305183567234, 
+                    4.766315372095955
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "TASSIN-LA-DEMI-LUNE", 
+                "gid": "51", 
+                "numerodansvoie": "", 
+                "observation": "Parc de l'Orang\u00e8re", 
+                "voie": "Rue de Belgique"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71495747275943, 
+                    4.805252138224025
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "52", 
+                "numerodansvoie": "", 
+                "observation": "A c\u00f4t\u00e9 de l'\u00e9glise", 
+                "voie": "Place Anatole France"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.733471848499924, 
+                    4.7972448516247
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "gid": "53", 
+                "numerodansvoie": "34", 
+                "observation": "Face N\u00b0 34 (cimeti\u00e8re)", 
+                "voie": "Chemin de Montray"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.878521590910275, 
+                    4.85865098327
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MONTANAY", 
+                "gid": "54", 
+                "numerodansvoie": "", 
+                "observation": "Entr\u00e9e parking \"Biblioth\u00e8que Municipale\" - vers Mairie", 
+                "voie": "Rue Centrale"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.86581578618157, 
+                    4.834619741183977
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "ALBIGNY-SUR-SAONE", 
+                "gid": "55", 
+                "numerodansvoie": "", 
+                "observation": "Halte Fluviale", 
+                "voie": "Quai G\u00e9n\u00e9ral de Gaulle"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.87685389113242, 
+                    4.838144416111414
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "NEUVILLE-SUR-SAONE", 
+                "gid": "56", 
+                "numerodansvoie": "", 
+                "observation": "Vers Pont de Neuville", 
+                "voie": "Place du March\u00e9"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71379929801454, 
+                    4.806986457769947
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "57", 
+                "numerodansvoie": "1", 
+                "observation": "A c\u00f4t\u00e9 N\u00b0 1", 
+                "voie": "Rue Etienne Dolet"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.80557257414237, 
+                    4.885079098428204
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "RILLIEUX-LA-PAPE", 
+                "gid": "58", 
+                "numerodansvoie": "", 
+                "observation": "A c\u00f4t\u00e9 abribus - Route de Gen\u00e8ve", 
+                "voie": "Place Canellas"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71883616365426, 
+                    4.800339764099879
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "59", 
+                "numerodansvoie": "16", 
+                "observation": "Face N\u00b0 16", 
+                "voie": "Rue Berthelot"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74035759033373, 
+                    4.725118082899145
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CRAPONNE", 
+                "gid": "60", 
+                "numerodansvoie": "", 
+                "observation": "Face entr\u00e9e du cimeti\u00e8re", 
+                "voie": "Rue du Cimeti\u00e8re"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.64709994355319, 
+                    4.812729343657346
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VERNAISON", 
+                "gid": "61", 
+                "numerodansvoie": "76", 
+                "observation": "Face N\u00b076.", 
+                "voie": "Place du 11 Novembre 1918 et du 8 Mai 1945"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.680937388320366, 
+                    4.815319269638064
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "IRIGNY", 
+                "gid": "62", 
+                "numerodansvoie": "", 
+                "observation": "Int\u00e9rieur du nouveau cimeti\u00e8re", 
+                "voie": "Chemin de Presles"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.746147376198635, 
+                    4.789822021959972
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "gid": "63", 
+                "numerodansvoie": "", 
+                "observation": "Angle rue Laurent Paul", 
+                "voie": "Place Laurent Paul"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69593481896712, 
+                    4.949012273923696
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "64", 
+                "numerodansvoie": "", 
+                "observation": "Angle Rue Rhin et Danube et Rue Louis Braille", 
+                "voie": "Rue Rhin et Danube"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75475927747848, 
+                    4.726183881508117
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-GENIS-LES-OLLIERES", 
+                "gid": "65", 
+                "numerodansvoie": "", 
+                "observation": "Place de l'\u00e9glise - \u00e0 droite de l'\u00e9glise", 
+                "voie": "Rue de l'Eglise"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.64647207349507, 
+                    4.814115992017667
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VERNAISON", 
+                "gid": "66", 
+                "numerodansvoie": "", 
+                "observation": "Angle rue port Puy", 
+                "voie": "Quai du Bassin"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.679336805976405, 
+                    4.781954598460568
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-GENIS-LAVAL", 
+                "gid": "67", 
+                "numerodansvoie": "", 
+                "observation": "Angle rue Paul Frantz", 
+                "voie": "Avenue Chanoine Cartellier"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.67432620974362, 
+                    4.818219275957969
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "IRIGNY", 
+                "gid": "68", 
+                "numerodansvoie": "16", 
+                "observation": "Fa\u00e7e N\u00b0 16 (ancien cimeti\u00e8re).", 
+                "voie": "Rue de Taillepied"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76827976780711, 
+                    4.956090337515333
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DECINES-CHARPIEU", 
+                "gid": "69", 
+                "numerodansvoie": "18", 
+                "observation": "C\u00f4t\u00e9 poste - vers arr\u00eat bus", 
+                "voie": "Avenue Jean Mac\u00e9"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.824512594471464, 
+                    4.89561119194673
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "RILLIEUX-LA-PAPE", 
+                "gid": "70", 
+                "numerodansvoie": "", 
+                "observation": "Vers terrain de p\u00e9tanque", 
+                "voie": "All\u00e9e de Laffrey"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.72538213988847, 
+                    4.778850327713934
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "gid": "71", 
+                "numerodansvoie": "93", 
+                "observation": "Route de la Lib\u00e9ration - Face N\u00b0 93", 
+                "voie": "Place Henri R\u00e9vy"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69275782367708, 
+                    4.806142551576872
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-GENIS-LAVAL", 
+                "gid": "72", 
+                "numerodansvoie": "", 
+                "observation": "Face N\u00b0 17", 
+                "voie": "Place des Collonges"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.81047972224748, 
+                    4.813527150861963
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-CYR-AU-MONT-D'OR", 
+                "gid": "73", 
+                "numerodansvoie": "", 
+                "observation": "Face au cimeti\u00e8re.", 
+                "voie": "Rue du Cimeti\u00e8re"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.81042592514842, 
+                    4.75129656836591
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DARDILLY", 
+                "gid": "74", 
+                "numerodansvoie": "", 
+                "observation": "Proche cimeti\u00e8re", 
+                "voie": "Avenue de Verdun"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.81430395771364, 
+                    4.819298687369301
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-CYR-AU-MONT-D'OR", 
+                "gid": "75", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de la R\u00e9publique"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.87974911102916, 
+                    4.836575761960227
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "NEUVILLE-SUR-SAONE", 
+                "gid": "76", 
+                "numerodansvoie": "", 
+                "observation": "Place Jean Christophe", 
+                "voie": "Avenue Jean Christophe"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.877874689919004, 
+                    4.838407188549134
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "NEUVILLE-SUR-SAONE", 
+                "gid": "77", 
+                "numerodansvoie": "", 
+                "observation": "Parking Place de Verdun", 
+                "voie": "Rue Rey Loras"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.81349526130767, 
+                    4.71508102825869
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "LA TOUR-DE-SALVAGNY", 
+                "gid": "78", 
+                "numerodansvoie": "12", 
+                "observation": "", 
+                "voie": "Rue de l'Eglise"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76851347420311, 
+                    4.93834704666009
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DECINES-CHARPIEU", 
+                "gid": "79", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de Stepanavan"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.72490771239014, 
+                    4.858524769873542
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VENISSIEUX", 
+                "gid": "80", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place Ennemond Romand"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.707339156398085, 
+                    4.821498425514695
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "PIERRE-BENITE", 
+                "gid": "81", 
+                "numerodansvoie": "", 
+                "observation": "Face Rue Vaillant Couturier - Square Claude Beaumont", 
+                "voie": "Boulevard de l'Europe"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7026897708778, 
+                    4.862740910998177
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-FONS", 
+                "gid": "82", 
+                "numerodansvoie": "", 
+                "observation": "Proche angle Rue du Docteur Louis Jugnet", 
+                "voie": "Avenue Antoine Gravallon"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.86516806439683, 
+                    4.831366865184797
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "ALBIGNY-SUR-SAONE", 
+                "gid": "83", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Rue Etienne Richerand"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.66162262623596, 
+                    4.955041450486656
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MIONS", 
+                "gid": "84", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Rue du 11 Novembre 1918"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.80362267913996, 
+                    4.880975657984406
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "RILLIEUX-LA-PAPE", 
+                "gid": "85", 
+                "numerodansvoie": "", 
+                "observation": "Parking de la chapelle vers Route de Strasbourg", 
+                "voie": "Chemin de la Chapelle"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.79369447615489, 
+                    5.042183917014825
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "JONAGE", 
+                "gid": "86", 
+                "numerodansvoie": "", 
+                "observation": "Face au cimeti\u00e8re", 
+                "voie": "Rue du Repos"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.82463388170044, 
+                    4.874602493775128
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SATHONAY-CAMP", 
+                "gid": "87", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Rue de la Poste"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.81795326817173, 
+                    4.905257075261221
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "RILLIEUX-LA-PAPE", 
+                "gid": "88", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place Mar\u00e9chal Juin"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.820849133881275, 
+                    4.896391672424367
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "RILLIEUX-LA-PAPE", 
+                "gid": "89", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de Verdun"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.87511351270928, 
+                    4.841807710920908
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "NEUVILLE-SUR-SAONE", 
+                "gid": "90", 
+                "numerodansvoie": "", 
+                "observation": "Angle Avenue du 11 Novembre 1918", 
+                "voie": "Rue Pierre Dugelay"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.89759424169328, 
+                    4.840276290710495
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "GENAY", 
+                "gid": "91", 
+                "numerodansvoie": "", 
+                "observation": "Dans le Square G\u00e9n\u00e9ral de Gaulle - Face N\u00b064", 
+                "voie": "Rue des Ecoles"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.698789851173984, 
+                    4.856898473537099
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-FONS", 
+                "gid": "92", 
+                "numerodansvoie": "", 
+                "observation": "Proche cimeti\u00e8res des Clochettes\r\nYves Farges", 
+                "voie": "Rue de Bellevue"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.69433239388671, 
+                    4.935840173370529
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "93", 
+                "numerodansvoie": "", 
+                "observation": "Face N\u00b035", 
+                "voie": "Place de l'H\u00f4tel de Ville Charles Ottina"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.70359154213994, 
+                    4.82547394037958
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "PIERRE-BENITE", 
+                "gid": "94", 
+                "numerodansvoie": "6", 
+                "observation": "Face N\u00b0 6.", 
+                "voie": "Place de la Paix"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77474208185153, 
+                    4.778432075843628
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "ECULLY", 
+                "gid": "95", 
+                "numerodansvoie": "", 
+                "observation": "Face N\u00b06", 
+                "voie": "Place Charles de Gaulle"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.717314401291695, 
+                    4.812428076825445
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "96", 
+                "numerodansvoie": "", 
+                "observation": "Angle Rue Aulagne", 
+                "voie": "Rue Pierre S\u00e9mard"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77542114086108, 
+                    4.966958291609796
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "DECINES-CHARPIEU", 
+                "gid": "97", 
+                "numerodansvoie": "", 
+                "observation": "Sur Parking", 
+                "voie": "Place Mend\u00e8s France"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.70377849803141, 
+                    4.872368235704226
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VENISSIEUX", 
+                "gid": "98", 
+                "numerodansvoie": "", 
+                "observation": "Entre square Gabriel P\u00e9ri et Rue Danielle Casanova", 
+                "voie": "Rue Danielle Casanova"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.760567722216244, 
+                    5.011599860339397
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MEYZIEU", 
+                "gid": "99", 
+                "numerodansvoie": "", 
+                "observation": "Sur parking cimet\u00e8re - Rue de Marseille", 
+                "voie": "Cimeti\u00e9re des Plant\u00e9es"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.766115012404164, 
+                    5.001105929748658
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MEYZIEU", 
+                "gid": "100", 
+                "numerodansvoie": "2", 
+                "observation": "Sur parking salle des f\u00eates", 
+                "voie": "All\u00e9e Joann\u00e8s Gonon"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77041037393722, 
+                    4.91988242395611
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VAULX-EN-VELIN", 
+                "gid": "101", 
+                "numerodansvoie": "", 
+                "observation": "Angle avenue Grandcl\u00e9ment", 
+                "voie": "Place Roger Laurent"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73741990024948, 
+                    4.761692718632633
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "FRANCHEVILLE", 
+                "gid": "102", 
+                "numerodansvoie": "2", 
+                "observation": "", 
+                "voie": "Rue de la Doulline"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.77762507003825, 
+                    4.917280821722306
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VAULX-EN-VELIN", 
+                "gid": "103", 
+                "numerodansvoie": "", 
+                "observation": "Face au N\u00b034", 
+                "voie": "Rue Fran\u00e7ois Rabelais"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78501442096892, 
+                    4.912351813556143
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VAULX-EN-VELIN", 
+                "gid": "104", 
+                "numerodansvoie": "", 
+                "observation": "Place du march\u00e9", 
+                "voie": "Place Fran\u00e7ois Mauriac"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.82299887756393, 
+                    4.82006309383006
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-CYR-AU-MONT-D'OR", 
+                "gid": "105", 
+                "numerodansvoie": "80", 
+                "observation": "", 
+                "voie": "Route du Mont Cindre"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.706194678646014, 
+                    4.811499466613304
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "PIERRE-BENITE", 
+                "gid": "106", 
+                "numerodansvoie": "", 
+                "observation": "Angle Chemin de montmein (cimeti\u00e8re)", 
+                "voie": "Rue du Grand Perron"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.71823036298087, 
+                    4.817931501123706
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "107", 
+                "numerodansvoie": "95", 
+                "observation": "Rue Pierre S\u00e9mard - face N\u00b0 95", 
+                "voie": "Square Jean Jaur\u00e8s"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.78621173675743, 
+                    4.927366280373431
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VAULX-EN-VELIN", 
+                "gid": "108", 
+                "numerodansvoie": "", 
+                "observation": "Rue Claude Chapuis - A cot\u00e9 du bungalow AE", 
+                "voie": "Place Gilbert Boissier"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.64776949733732, 
+                    4.815921969673039
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VERNAISON", 
+                "gid": "109", 
+                "numerodansvoie": "", 
+                "observation": "Vers l'\u00eele Jaricot", 
+                "voie": "Halle des sports"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.785608909235364, 
+                    4.929061190212395
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VAULX-EN-VELIN", 
+                "gid": "110", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place Antoine Saunier"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.75896577502379, 
+                    4.878502729420112
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "VILLEURBANNE", 
+                "gid": "111", 
+                "numerodansvoie": "31", 
+                "observation": "A droite du N\u00b031", 
+                "voie": "Avenue Antoine de Saint-Exup\u00e9ry"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74678368915965, 
+                    4.964821791910197
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CHASSIEU", 
+                "gid": "112", 
+                "numerodansvoie": "", 
+                "observation": "C\u00f4t\u00e9 Rue Z\u00e9n\u00e9zini", 
+                "voie": "Place Louis Pradel"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.70646983834621, 
+                    4.977341853051216
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "113", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Rue Honor\u00e9 de Balzac"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.700152010574946, 
+                    4.943320937271812
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "114", 
+                "numerodansvoie": "", 
+                "observation": "Sur le parking", 
+                "voie": "Rue Jean-Jacques Rousseau"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73530376747721, 
+                    4.78536433870485
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "gid": "115", 
+                "numerodansvoie": "", 
+                "observation": "Angle rue L\u00e9on Granier", 
+                "voie": "Chemin des Razes"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.67062226718363, 
+                    4.898566132550249
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CORBAS", 
+                "gid": "116", 
+                "numerodansvoie": "", 
+                "observation": "Proche Entr\u00e9e Mairie", 
+                "voie": "Place Charles Jocteur"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.74421898409097, 
+                    4.783464964547587
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINTE-FOY-LES-LYON", 
+                "gid": "117", 
+                "numerodansvoie": "", 
+                "observation": "Angle chemin des fonds", 
+                "voie": "Rue Jean-L\u00e9on Blondeau"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.67523169310993, 
+                    4.900545913453668
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CORBAS", 
+                "gid": "118", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place du 19 Mars 1962"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.757004745958845, 
+                    4.737148359108848
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-GENIS-LES-OLLIERES", 
+                "gid": "119", 
+                "numerodansvoie": "9", 
+                "observation": "Int\u00e9rieur du cimeti\u00e8re", 
+                "voie": "Rue des Mourrons"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.6974866941849, 
+                    4.94324130380851
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-PRIEST", 
+                "gid": "120", 
+                "numerodansvoie": "", 
+                "observation": "Proche centre d'action social", 
+                "voie": "Mont\u00e9e de la Carni\u00e8re"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.721992965131264, 
+                    4.803634466428852
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "OULLINS", 
+                "gid": "121", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Rue Fernand Forest"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.756419619063706, 
+                    4.725474967554032
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "SAINT-GENIS-LES-OLLIERES", 
+                "gid": "122", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de la Mairie"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.747086519382, 
+                    4.756253973093767
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "FRANCHEVILLE", 
+                "gid": "123", 
+                "numerodansvoie": "2", 
+                "observation": "", 
+                "voie": "Rue de la Chapelle de Bel Air"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73886766268662, 
+                    4.773652327687377
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "FRANCHEVILLE", 
+                "gid": "124", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de l'Europe"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.73608600566933, 
+                    4.764039272483919
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "FRANCHEVILLE", 
+                "gid": "125", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place de l'H\u00f4tel de Ville"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.737891858050716, 
+                    4.716559276075929
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CRAPONNE", 
+                "gid": "126", 
+                "numerodansvoie": "841", 
+                "observation": "", 
+                "voie": "Rue du 8 Mai 1945"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.76101858633575, 
+                    5.000388826196732
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "MEYZIEU", 
+                "gid": "127", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place du 11 Novembre 1918"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.79645776834172, 
+                    5.046872568782616
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "JONAGE", 
+                "gid": "128", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Place G\u00e9n\u00e9ral de Gaulle"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.7687955988831, 
+                    4.773359952854685
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "ECULLY", 
+                "gid": "129", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Avenue des Granges"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.774102998243464, 
+                    4.78214691480641
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "ECULLY", 
+                "gid": "130", 
+                "numerodansvoie": "2", 
+                "observation": "", 
+                "voie": "Rue Auguste Tramier"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    45.79356931271701, 
+                    4.784932131792145
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "commune": "CHAMPAGNE-AU-MONT-D'OR", 
+                "gid": "131", 
+                "numerodansvoie": "", 
+                "observation": "", 
+                "voie": "Chemin du Cimeti\u00e8re"
+            }, 
+            "type": "Feature"
+        }
+    ], 
+    "type": "FeatureCollection"
+}

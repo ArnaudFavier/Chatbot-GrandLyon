@@ -7,6 +7,8 @@ const telegram = require('./../channels/telegram.js');
 const aslan = require('./../channels/aslan-messenger.js');
 const pr = require('./processing.js');
 const fd = require('./field.js');
+const db = require('./../AslanDBConnector.js');
+const serv = require('./../services/services.js');
 
 var messageReceived;
 
@@ -15,7 +17,12 @@ var messageReceived;
 */
 function receivedMessage(message) {
     messageReceived = message;
-    runLogicLayer(message);
+    console.log(message);
+    if(message.location != undefined) {
+        receiveLocation(message);
+    } else if(message.text != undefined ) {
+        runLogicLayer(message);
+    }
 }
 
 /*
@@ -27,7 +34,7 @@ function runLogicLayer(message) {
         botlogic.sendMessage(message.text, `session-${message.senderID}`, {});
     }*/
     /*recast.sendMessage(message.text, callbackLogicLayer);*/
-    apiai.sendMessage(message.senderID, message.text, callbackLogicLayer)
+    apiai.sendMessage(message.senderID, message.text, callbackLogicLayer);
 }
 
 /*
@@ -46,10 +53,25 @@ function callbackLogicLayer(response) {
 function processing(intent, response) {
     switch(intent) {
         case "bonjour" :
-            pr.processingGrettings(response);
+            pr.processingGrettings(messageReceived, response);
             break;
         case "heure" :
             pr.processingHour(response);
+            break;
+        case "fontaine" :
+            pr.processingFountain(response);
+            break;
+        case "habitant":
+            pr.processingCitizen(response);
+            break;
+        case "jour":
+            pr.processingDate(response);
+            break;
+        case "meteo":
+            pr.processingWeather(response);
+            break;
+        case "restaurant":
+            pr.processingRestaurant(response, messageReceived.location);
             break;
         default :
             prepareMessage(response.result.fulfillment.speech);
@@ -64,14 +86,21 @@ function processing(intent, response) {
 */
 function prepareMessage(response) {
     var messages = [];
-    var replie = response;
-    var fields = fd.extractFields(replie);
-    var quickreplies = extractQuickReplies(fields);
-    replie = fd.removeFields(replie);
-    if(quickreplies.length > 0) {
-        prepareMessageWithQuickReply(replie, quickreplies, messages);
-    } else if(replie != undefined ) {
-        prepareMessageWithText(replie, messages);
+    if(response.data != undefined && response.text != undefined) {
+        prepareMessageTemplate(response, messages);
+    }  else {
+        var replie = response;
+        var fields = fd.extractFields(replie);
+        var quickreplies = extractQuickReplies(fields);
+        replie = fd.removeFields(replie);
+        if(quickreplies.length > 0) {
+            prepareMessageWithQuickReply(replie, quickreplies, messages);
+        } else if(response.data != undefined) {
+            prepareMessageTemplate(response.data, messages);
+        } 
+        else if(replie != undefined ) {
+            prepareMessageWithText(replie, messages);
+        }
     }
     sendMessages(messages);
 }
@@ -133,25 +162,76 @@ function prepareMessageWithQuickReply(text, quickreply, messages) {
 }
 
 /*
+*   Fonction qui prépare un message template
+*/
+function prepareMessageTemplate(m, messages) {
+    var message = {
+        type: "template",
+        senderID: messageReceived.senderID,
+        channel: messageReceived.channel,
+        text: m.text,
+        attachment: m.data
+    }
+    messages.push(message);
+}
+
+function askLocation() {
+    var message = {
+        type: "location",
+        senderID: messageReceived.senderID,
+        channel: messageReceived.channel,
+        text: "J'ai besoin de ta localisation"
+    }
+    sendMessages([message]);
+}
+
+/*
 *   Fonction qui appelle la fonction d'envoie de message
 */
 function sendMessages(messages) {
     if(messages.length > 0) {
         switch(messages[0].channel) {
-            case "Facebook":
+        case "Facebook":
             facebook.sendMessages(messages);
             break;
-            case "Telegram":
+        case "Telegram":
             telegram.sendMessages(messages);
             break;
-            case "Aslan":
+        case "Aslan":
             aslan.sendMessages(messages);
             break;
-            default:
+        default:
             return;
         }
     }
 }
 
+function receiveLocation(message) {
+    db.getData("conversation", {sessionId: message.senderID}, function(error, data) {
+        if(error == null) {
+            if(data.length == 0) {
+                console.log("Aucun intent trouvé");
+            } else {
+                db.removeData("conversation", {sessionId: message.senderID}, function(error, data) {});
+                switch(data[0].metadata.intentName) {
+                case "restaurant":
+                    apiai.sendMessage(message.senderID, '["localisation success"]', callbackLogicLayer)
+                    break;
+                case "meteo":
+                    serv.nomVillePourCoordonnees(message.location, function(city){
+                        apiai.sendMessage(message.senderID, city, callbackLogicLayer);
+                    });
+                    break;
+                default:
+                   break;
+                }
+            }
+        } else {
+            console.log(error);
+        }
+    });
+}
+
+exports.askLocation = askLocation;
 exports.receivedMessage = receivedMessage;
 exports.prepareMessage = prepareMessage;

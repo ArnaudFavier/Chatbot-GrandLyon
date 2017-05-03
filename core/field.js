@@ -6,8 +6,7 @@
 function removeFields(response) {
     var string = response;
     var fields = extractFields(response);
-    for(var i=0;i<fields.length;i++) 
-    {
+    for(var i=0;i<fields.length;i++) {
         string = string.replace(fields[i], "");
     }
     return string;
@@ -18,8 +17,7 @@ function removeFields(response) {
 */
 function replaceField(response, field, value) {
     var string = response;
-    string.replace(field, value);
-    return string;
+    return string.replace(field, value);
 }
 
 /*
@@ -33,7 +31,6 @@ function extractFields(response) {
     }
     return fields;
 }
-
 
 exports.removeFields = removeFields;
 exports.replaceField = replaceField;

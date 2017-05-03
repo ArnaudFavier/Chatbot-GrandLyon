@@ -130,6 +130,7 @@ function receive(req, res) {
 				    	if(data.length == 0) {
 				    		res.status(500).send(JSON.stringify({error: error.toString()}));
 				    	} else {
+				    		messenger.receivedMessage(message, results[0]);
 				    		res.status(200).send(JSON.stringify(data[0]));
 				    	}
 	    			});
@@ -142,7 +143,6 @@ function receive(req, res) {
 			    res.status(404).send(JSON.stringify({error: "User not found"}));
     		} 
     	});
-    	//Traitement de la requete
     } else {
 		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
 	}

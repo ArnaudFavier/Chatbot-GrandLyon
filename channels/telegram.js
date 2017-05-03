@@ -1,4 +1,5 @@
 'use strict';
+
 const request = require('request');
 const core = require('./../core/core.js');
 const TelegramBot = require('node-telegram-bot-api');
@@ -26,8 +27,8 @@ function receivedMessage(message) {
         senderID: senderID,
         timestamp: message.date,
         text: message.text,
-        first_name: message.first_name,
-        last_name: message.last_name     
+        first_name: message.from.first_name,
+        last_name: message.from.last_name     
     };
     core.receivedMessage(message);
 }
@@ -42,6 +43,9 @@ function sendMessage(message) {
         break;
         case "quickreply":
             sendQuickReplyMessage(message);
+        break;
+        case "location":
+            sendLocationMessage(message);
         break;
     }
 }
@@ -71,13 +75,30 @@ function sendTextMessage(message) {
 function sendQuickReplyMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.text != undefined) {
-        var replykeyboard = {keyboard:[], one_time_keyboard:true};
+        var replykeyboard = {keyboard:[]};
         for(var i=0;i<message.choices.length;i++) {
             var button = [{
                 text: message.choices[i]
             }];
             replykeyboard.keyboard.push(button);
         }
+        //console.log(JSON.stringify({reply_markup: {keyboard:[[{text:"coucou"}]]}}));
+        telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
+    }
+}
+
+/*
+* Fonction qui envoie un message de type location
+*/
+function sendLocationMessage(message) {
+    console.log("Messages sended : ", JSON.stringify(message));
+    if(message.senderID != undefined && message.text != undefined) {
+        var replykeyboard = {keyboard:[], one_time_keyboard:true};
+        var button = [{
+            text: message.text,  
+            request_location : true
+        }];
+        replykeyboard.keyboard.push(button);
         telegram.sendMessage(message.senderID, message.text, {reply_markup: replykeyboard});
     }
 }

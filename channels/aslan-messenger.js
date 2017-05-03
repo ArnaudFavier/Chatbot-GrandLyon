@@ -1,4 +1,5 @@
 'use strict';
+
 const request = require('request');
 const core = require('./../core/core.js');
 const db = require('./../aslan-messenger/aslan-db.js');
@@ -7,53 +8,30 @@ const db = require('./../aslan-messenger/aslan-db.js');
 * Fonction appelé par les routes lors de la reception d'un message
 */
 function receivedMessage(message, user) {
-    var senderID = message.user_id;
-    var timeOfMessage = message.date;
-    var messageText = message.text;
-
+    console.log("Aslan received a message");
     var m = {
         channel: "Aslan",
-        senderID: senderID,
-        timestamp: timeOfMessage,
-        text: messageText,
-        first_name: user.first_name,
+        senderID: user._id,
+        timestamp: new Date(),
+        text: message.text,
+        first_name: user.firstname,
         last_name: user.name
     };
-
-    core.receivedMessage(message);
+    console.log(JSON.stringify(m));
+    core.receivedMessage(m);
 }
 
 /*
 * Fonction appelé par le core pour envoyer un message sur la channel Aslan Messenger
 */
 function sendMessage(message) {
-	var data = req.body;
-    var user_id = data.user_id;
-    var token = data.token;
-    var message = data.message;
-    if(user_id != undefined && token != undefined && message != undefined) {
-    	console.log(JSON.stringify(data));
-    	db.getUserById(user_id, function(error, results) {
-    		console.log(JSON.stringify(results));
-    		if(results.length == 1) {
-    			if(results[0].token == token) {
-	    			db.createMessage(user_id, message, function(data){
-	    				console.log(data)
-				    	if(data.length == 0) {
-				    		res.status(500).send(JSON.stringify({error: error.toString()}));
-				    	} else {
-				    		res.status(200).send(JSON.stringify(data[0]));
-				    	}
-	    			});
-	    		} else {
-	    			res.status(403).send(JSON.stringify({error: "Token invalid"}));
-	    			console.log("Error : token invalid");
-	    		}
-    		} else {
-    			console.log("Error : user not found");
-			    res.status(404).send(JSON.stringify({error: "User not found"}));
-    		} 
-    	});
+	switch(message.type) {
+        case "text":
+            sendTextMessage(message);
+        break;
+        case "quickreply":
+            sendQuickReplyMessage(message);
+        break;
     }
 }
 
@@ -61,21 +39,58 @@ function sendMessage(message) {
 * Fonction appelé par le core pour envoyer des messages sur la channel Aslan Messenger
 */
 function sendMessages(messages) {
+    for(var i=0;i<messages.length;i++) {
+        sendMessage(messages[i]);
+    }
+}
 
+/*
+* Fonction qui sauvegarde un message en DB
+*/
+function save(m) {
+    console.log(JSON.stringify(m));
+    var user_id = m.senderID.toString();
+    var message = m.message;
+    if(user_id != undefined && message != undefined) {
+        db.createMessage(user_id, message, true, function(data){
+            console.log(data)
+            if(data.length == 0) {
+                console.log("Error create message");
+            } else {
+                console.log(JSON.stringify(data[0]));
+            }
+        });
+    }
 }
 
 /*
 * Fonction qui envoie un message de type text
 */
 function sendTextMessage(message) {
-
+    if(message.senderID != undefined && message.text != undefined) {
+        message.message = {text : message.text, type: "text"};
+        save(message);
+    }
 }
 
 /*
 * Fonction qui envoie un message de type quickreply
 */
 function sendQuickReplyMessage(message) {
+    if(message.senderID != undefined && message.text != undefined) {
+        message.message = {text : message.text, type: "quickreplies", quickreplies: message.choices};
+        save(message);
+    }
+}
 
+/*
+* Fonction qui envoie un message de type location
+*/
+function sendLocationMessage(message) {
+    if(message.senderID != undefined && message.text != undefined) {
+        message.message = {text : message.text, type: "location"};
+        save(message);
+    }
 }
 
 /*

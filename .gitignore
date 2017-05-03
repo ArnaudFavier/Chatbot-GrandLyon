@@ -39,6 +39,7 @@ jspm_packages
 # Environment file
 .env
 
+<<<<<<< HEAD
 
 # Begin Android GitIgnore
 # Built application files
@@ -82,3 +83,7 @@ captures/
 # Keystore files
 *.jks
 # End Android GitIgnore
+=======
+# WebStorm project files
+.idea/*
+>>>>>>> dev

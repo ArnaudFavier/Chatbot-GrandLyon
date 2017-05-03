@@ -1,14 +1,20 @@
 package com.alsan_grand_lyon.aslangrandlyon.view.chat;
 
+import android.Manifest;
 import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -51,7 +57,10 @@ import java.util.List;
 import java.util.Locale;
 
 public class ChatActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, LocationListener {
+
+    protected LocationManager locationManager;
+    private final static int PERMISSION_LOCATION_CODE = 0x2;
 
     private final static int REQ_CODE_SPEECH_INPUT = 100;
     private final static int CHECK_CODE = 0x1;
@@ -130,7 +139,8 @@ public class ChatActivity extends AppCompatActivity
         microphoneImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                promptSpeechInput();
+//                promptSpeechInput();
+                askLocationPermission();
             }
         });
 
@@ -330,7 +340,7 @@ public class ChatActivity extends AppCompatActivity
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sendMessage(button.getText().toString());
+                    askLocationPermission();
                 }
             });
             buttonsLinearLayout.addView(button);
@@ -384,12 +394,6 @@ public class ChatActivity extends AppCompatActivity
                     ArrayList<String> buffer = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String result = buffer.get(0);
                     messageEditText.setText(result);
-                } else if(resultCode == RESULT_CANCELED){
-                    if(data == null) {
-                        Toast.makeText(getApplicationContext(), "RESULT_CANCELED : null", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "RESULT_CANCELED : not null", Toast.LENGTH_SHORT).show();
-                    }
                 }
                 break;
             }
@@ -401,6 +405,18 @@ public class ChatActivity extends AppCompatActivity
                     install.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
                     startActivity(install);
                 }
+                break;
+            }
+            case PERMISSION_LOCATION_CODE: {
+                LocationManager locateManager=(LocationManager)getSystemService(LOCATION_SERVICE);
+                boolean enabled = locateManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                if(enabled) {
+                    sendLoncation(getLocation());
+                } else {
+                    Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+                }
+                break;
             }
             default:
                 break;
@@ -467,24 +483,92 @@ public class ChatActivity extends AppCompatActivity
         toast.show();
     }
 
-    private void showAlert() {
-        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("Enable Location")
-                .setMessage("Your Locations Settings is set to 'Off'.\nPlease Enable Location to " +
-                        "use this app")
-                .setPositiveButton("Location Settings", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-                        Intent myIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                        startActivity(myIntent);
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-                    }
-                });
-        dialog.show();
+
+
+    private void askLocationPermission(){
+        //TODO
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                        && this.checkSelfPermission(
+                        Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                        && this.checkSelfPermission(
+                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                                    Manifest.permission.ACCESS_FINE_LOCATION},
+                            PERMISSION_LOCATION_CODE);
+                } else {
+                    Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+                }
+            }
+
+        } else {
+            Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+        }
     }
-    
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String[] permissions, int[] grantResults) {
+        if (requestCode == PERMISSION_LOCATION_CODE
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+        }
+    }
+
+    public Location getLocation() {
+        Location location = null;
+        try {
+            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+                }
+            } else {
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+            }
+            if (locationManager != null) {
+                location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            } else {
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return location;
+    }
+
+    public void sendLocation(Location location) {
+        if(location != null) {
+            
+        }
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
+
 }
