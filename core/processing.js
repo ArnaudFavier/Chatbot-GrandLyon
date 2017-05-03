@@ -154,7 +154,7 @@ function processingFountain(response, location) {
 	if(response != undefined && response.result != undefined && response.result.parameters != undefined) {
 		var fields = fd.extractFields(response.result.fulfillment.speech);
 		if(fields.indexOf("{fontaines}") != -1 && location != null){
-			serv.nearestRestaurantsWithKeywords(location, keyword, function(result) {
+			serv.nearestFontaines(location, 4, function(result) {
 				var data = [];
 				for(var i=0;i<result.length;i++) {
 					var d = {
