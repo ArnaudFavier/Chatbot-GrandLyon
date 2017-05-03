@@ -63,10 +63,10 @@ function processingFountain(response, location) {
 				var data = [];
 				for(var i=0;i<result.length;i++) {
 					var d = {
-						title: result[i].name,
-                		image_url: result[i].photo_url,
-                		subtitle: result[i].vicinity + " - " + result[i].rating + "/5",
-                		url:result[i].details.url,
+						title: "Fontaine d'eau potable",
+                		image_url: "",
+                		subtitle: "À " + result[0].dist.toFixed(2) + "Km environ",
+                		url:result[i].trajet_url,
                 		button_url:result[i].trajet_url,
                 		button_title:"Y Aller"
 					}
