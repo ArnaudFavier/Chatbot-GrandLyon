@@ -34,6 +34,8 @@ function sendMessage(message) {
             break;
         case "location":
             sendLocationMessage(message);
+        case "template":
+            sendTemplateMessage(message);
         break;
     }
 }
@@ -92,6 +94,16 @@ function sendQuickReplyMessage(message) {
 function sendLocationMessage(message) {
     if(message.senderID != undefined && message.text != undefined) {
         message.message = {text : message.text, type: "location"};
+        save(message);
+    }
+}
+
+/*
+* Fonction qui envoie un message de type template
+*/
+function sendTemplateMessage(message) {
+    if(message.senderID != undefined && message.text != undefined) {
+        message.message = {text : message.text, type: "template"};
         save(message);
     }
 }
