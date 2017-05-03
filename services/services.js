@@ -194,7 +194,15 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
 
     request(url, (error, response, body) => {
         if (!error && response.statusCode === 200) {
-            const data = JSON.parse(body).results;
+            let data = JSON.parse(body).results;
+
+            const dataFiltered = [];
+            for (let restaurant of data) {
+                if(restaurant.types.indexOf('lodging') === -1){
+                    dataFiltered.push(restaurant);
+                }
+            }
+            data = dataFiltered;
 
             for (let restaurant of data) {
                 restaurant.details_url = 'https://maps.googleapis.com/maps/api/place/details/json?key=' + process.env.GOOGLE_PLACE_API_KEY + '&placeid=' + restaurant.place_id;
