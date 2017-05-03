@@ -182,7 +182,7 @@ function askLocation() {
         type: "location",
         senderID: messageReceived.senderID,
         channel: messageReceived.channel,
-        text: "J'ai besoin de votre localisation"
+        text: "J'ai besoin de ta localisation"
     }
     sendMessages([message]);
 }

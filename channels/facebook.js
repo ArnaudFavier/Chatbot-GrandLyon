@@ -214,6 +214,19 @@ function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.attachment != undefined) {
         var elements = [];
+        /*
+        *   Envoie du message avant le template
+        */
+        var messageData = {
+            var messageData = {
+            recipient: {
+                id: message.senderID
+            },
+            message: {
+                text: message.text
+            }
+        };
+        callSendAPI(messageData);
         for(var i=0;i<message.attachment.length;i++) {
             var element = {
                 title: message.attachment[i].name,
@@ -237,8 +250,17 @@ function sendTemplateMessage(message) {
             }
             elements.push(element);
             if(i==3)break;
-        }             
-        var messageData = {
+        }
+        if(message.attachment.length > 4) {
+            var buttons = [
+                    {
+                        title: "Voir plus",
+                        type: "postback",
+                        payload: "payload"                        
+                    }
+                ]
+        }  
+        var templateData = {
             recipient: {
                 id: message.senderID
             },
@@ -248,12 +270,13 @@ function sendTemplateMessage(message) {
                     payload: {
                         template_type: "list",
                         top_element_style: "compact",
-                        elements: elements
+                        elements: elements,
+                        buttons: buttons
                     }
                 }
             }
         };
-        callSendAPI(messageData);
+        callSendAPI(templateData);
     }
 }
 
