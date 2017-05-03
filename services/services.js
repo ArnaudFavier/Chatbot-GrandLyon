@@ -279,6 +279,7 @@ function nearestPiscines(coordinates, count, callback) {
 
         let piscCoord = elem.geometry.coordinates;
         elem.dist = getDistanceFromLatLonInKm(coordinates.lat, coordinates.long, piscCoord[0], piscCoord[1]);
+        elem.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.long + '&daddr='  + piscCoord[0] + ',' + piscCoord[1];
 
         piscines[piscId] = elem;
         ++piscId;
