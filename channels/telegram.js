@@ -17,10 +17,29 @@ telegram.on("text", (message) => {
 });
 
 telegram.on("location", (message) => {
-    console.log("YEAH");
-    receivedMessage(message);
+    receivedLocation(message);
     //telegram.sendMessage(message.chat.id, "Hello world");
 });
+
+/*
+* Fonction appelé par quand on recoit une localisation
+*/
+function receivedLocation(message) {
+    console.log(JSON.stringify(message));
+    var senderID = message.chat.id;
+    var message = {
+        channel: "Telegram",
+        senderID: senderID,
+        timestamp: message.date,
+        first_name: message.from.first_name,
+        last_name: message.from.last_name  
+        location: {
+            lat: message.location.latitude,
+            long: message.location.longitude 
+        }   
+    };
+    core.receivedMessage(message);
+}
 
 /*
 * Fonction appelé par quand on recoit un message
