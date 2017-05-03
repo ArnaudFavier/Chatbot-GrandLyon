@@ -59,7 +59,7 @@ function processing(intent, response) {
             pr.processingHour(response);
             break;
         case "fontaine" :
-            pr.processingFountain(response);
+            pr.processingFountain(response, messageReceived.location);
             break;
         case "habitant":
             pr.processingCitizen(response);
@@ -219,6 +219,7 @@ function receiveLocation(message) {
                     break;
                 case "meteo":
                     serv.nomVillePourCoordonnees(message.location, function(city){
+                        console.log(city);
                         apiai.sendMessage(message.senderID, city, callbackLogicLayer);
                     });
                     break;
