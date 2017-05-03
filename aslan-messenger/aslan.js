@@ -20,9 +20,6 @@ function signIn(req, res) {
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		console.log("ici");
-			    		console.log(results[0]);
-			    		console.log("ici");
 			    		console.log(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
 			    		res.status(200).send(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
@@ -57,7 +54,7 @@ function register(req, res) {
 			    res.status(403).send(JSON.stringify({error: "Unauthorized account"}));
     		} else if(results.length == 0) {
     			db.createUser(email, firstname, name, password, function(data) {
-    				console.log(data)
+    				console.log(JSON.stringify({_id: data[0]._id.toString() , name: name, firstname: firstname, email: data[0].email, token : data[0].token});
 			    	if(data.length == 0) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
