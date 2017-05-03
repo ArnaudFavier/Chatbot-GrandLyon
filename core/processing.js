@@ -273,7 +273,7 @@ function formattedDate(d = new Date) {
   return `${year}-${month}-${day}`;
 }
 
-
+exports.processingLocation = processingLocation;
 exports.processingGrettings = processingGrettings;
 exports.processingHour = processingHour;
 exports.processingFountain = processingFountain;
