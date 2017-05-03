@@ -175,10 +175,6 @@ function nearestHotels(coordinates, count, callback) {
 }
 
 function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
-    'use strict';
-
-    let restaurants = new Array(3000);
-
     let keywordsFormat = '';
     if (keywords.length !== 0) {
         keywordsFormat += '(' + keywords[0] + ')';
@@ -189,15 +185,11 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
 
     let url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + coordinates.lat + ',' + coordinates.long + '&radius=2000&rankBy=distance&type=restaurant&keyword=' + keywordsFormat + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
 
-    let avant = Date.now();
-
     const request = require('request');
 
     request(url, (error, response, body) => {
         if (!error && response.statusCode === 200) {
             const data = JSON.parse(body).results;
-            let elem;
-            let restId = 0;
 
             for (let restaurant of data) {
                 restaurant.details_url = 'https://maps.googleapis.com/maps/api/place/details/json?key=' + process.env.GOOGLE_PLACE_API_KEY + '&placeid=' + restaurant.place_id;
@@ -205,7 +197,6 @@ function nearestRestaurantsWithKeywords(coordinates, keywords, callback) {
                     restaurant.photo_url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + restaurant.photos[0].photo_reference + '&key=' + process.env.GOOGLE_PLACE_API_KEY;
                 }
 
-                console.log(restaurant.formatted_address);
                 restaurant.trajet_url = 'https://maps.google.com?saddr=' + coordinates.lat + ',' + coordinates.lon + '&daddr=' +  encodeURI(restaurant.vicinity);
 
                 restaurant.loadDetails = function (callback) {
@@ -290,7 +281,6 @@ function nearestPiscines(coordinates, count, callback) {
 }
 
 function nearestVelov(coordinates, count, callback) {
-    'use strict';
 
     let restaurants = new Array(3000);
 
@@ -332,7 +322,7 @@ function nearestVelov(coordinates, count, callback) {
 }
 
 function nearestLieuCulte(coordinates, count, callback) {
-    'use strict';
+
 
     let restaurants = new Array(3000);
 
@@ -374,7 +364,7 @@ function nearestLieuCulte(coordinates, count, callback) {
 }
 
 function nearestLieuCulteType(coordinates, count, callback, type) {
-    'use strict';
+
 
     let restaurants = new Array(3000);
 
