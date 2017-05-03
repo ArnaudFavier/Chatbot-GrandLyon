@@ -107,7 +107,7 @@ function sendLocationMessage(message) {
 */
 function sendTemplateMessage(message) {
     if(message.senderID != undefined && message.text != undefined) {
-        message.message = {text : message.text, type: "template"};
+        message.message = {text : message.text, attachement: message.data, type: "template"};
         save(message);
     }
 }
