@@ -246,7 +246,29 @@ function sendTemplateMessage(message) {
                                         fallback_url: "https://peterssendreceiveapp.ngrok.io/"                        
                                     }
                                 ]
-                            } 
+                            },
+                            {
+                                title: "Classic White T-Shirt",
+                                image_url: "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
+                                subtitle: "100% Cotton, 200% Comfortable",
+                                default_action: {
+                                    type: "web_url",
+                                    url: "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                                    messenger_extensions: true,
+                                    webview_height_ratio: "tall",
+                                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                                },
+                                buttons: [
+                                    {
+                                        title: "Buy",
+                                        type: "web_url",
+                                        url: "https://peterssendreceiveapp.ngrok.io/shop?item=100",
+                                        messenger_extensions: true,
+                                        webview_height_ratio: "tall",
+                                        fallback_url: "https://peterssendreceiveapp.ngrok.io/"                        
+                                    }
+                                ]
+                            }  
                         ]
                     }
                 }
