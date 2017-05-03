@@ -213,48 +213,31 @@ function sendFileMessage(message) {
 function sendTemplateMessage(message) {
     console.log("Messages sended : ", JSON.stringify(message));
     if(message.senderID != undefined && message.attachment != undefined) {
-        var elements = [
-            {
-                title: message.attachment[0].name,
-                image_url: message.attachment[0].icon,
-                subtitle: message.attachment[0].vicinity + " - " + message.attachment[0].rating + "/5",
+        var elements = [];
+        for(int i=0;i<message.attachment.length;i++) {
+            var element = {
+                title: message.attachment[i].name,
+                image_url: message.attachment[i].photo_url,
+                subtitle: message.attachment[i].vicinity + " - " + message.attachment[i].rating + "/5",
                 default_action: {
                     type: "web_url",
-                    url: message.attachment[0].details_url,
+                    url: message.attachment[i].details_url,
                     messenger_extensions: true,
                     webview_height_ratio: "tall"
                 },
                 buttons: [
                     {
-                        title: "Y-Aller",
+                        title: "Y Aller",
                         type: "web_url",
-                        url: message.attachment[0].details_url,
-                        messenger_extensions: true,
-                        webview_height_ratio: "tall"                      
-                    }
-                ]
-            },
-            {
-                title: message.attachment[1].name,
-                image_url: message.attachment[1].icon,
-                subtitle: message.attachment[1].vicinity + " - " + message.attachment[1].rating + "/5",
-                default_action: {
-                    type: "web_url",
-                    url: message.attachment[1].details_url,
-                    messenger_extensions: true,
-                    webview_height_ratio: "tall"
-                },
-                buttons: [
-                    {
-                        title: "Y-Aller",
-                        type: "web_url",
-                        url: message.attachment[1].details_url,
+                        url: message.attachment[i].details_url,
                         messenger_extensions: true,
                         webview_height_ratio: "tall"                      
                     }
                 ]
             }
-        ];              
+            elements.push(element);
+            if(i==3)break;
+        }             
         var messageData = {
             recipient: {
                 id: message.senderID
@@ -266,7 +249,6 @@ function sendTemplateMessage(message) {
                         template_type: "list",
                         top_element_style: "compact",
                         elements: elements
-                    
                     }
                 }
             }
