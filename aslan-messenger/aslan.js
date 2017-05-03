@@ -20,7 +20,9 @@ function signIn(req, res) {
 			    	if(error) {
 			    		res.status(500).send(JSON.stringify({error: error.toString()}));
 			    	} else {
-			    		console.log(results[0]._id.toString());
+			    		console.log("ici");
+			    		console.log(results[0]);
+			    		console.log("ici");
 			    		console.log(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
 			    			name: results[0].name, token : results[0].token}));
 			    		res.status(200).send(JSON.stringify({_id: results[0]._id.toString(), email: results[0].email, firstname: results[0].firstname, 
