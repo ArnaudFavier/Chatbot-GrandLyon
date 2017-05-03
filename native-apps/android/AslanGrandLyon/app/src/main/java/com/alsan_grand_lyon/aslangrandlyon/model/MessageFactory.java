@@ -40,6 +40,32 @@ public class MessageFactory {
                     quickReplies.add(quickrepliesJson.getString(i));
                 }
                 message = new QuickReplyMessage(serverId,date,jsonBody,isAslan,userId,text,quickReplies);
+            } else if (type.equals("location")) {
+                String text = body.getString("text");
+                message = new LocationQuickReplyMessage(serverId,date,jsonBody,isAslan,userId,text);
+            } else if (type.equals("location_answer")) {
+                String text = body.getString("text");
+                double latitude = body.getDouble("lat");
+                double longitude = body.getDouble("long");
+                message = new LocationMessage(serverId,date,jsonBody,isAslan,userId,text,latitude,longitude);
+            } else if (type.equals("template")) {
+                String text = body.getString("text");
+                List<Template> templates = new ArrayList<>();
+                if(!body.isNull("attachment")) {
+                    JSONArray jsonAttachment = body.getJSONArray("attachment");
+                    for(int i = 0; i < jsonAttachment.length(); i++) {
+                        JSONObject jsonTemplate = (JSONObject)jsonAttachment.get(i);
+                        String title = jsonTemplate.getString("title");
+                        String imageUrl = jsonTemplate.getString("image_url");
+                        String subtitle = jsonTemplate.getString("subtitle");
+                        String url = jsonTemplate.getString("url");
+                        String buttonUrl = jsonTemplate.getString("button_url");
+                        String buttonTitle = jsonTemplate.getString("button_title");
+                        Template template = new Template(title,imageUrl,subtitle,url,buttonUrl,buttonTitle);
+                        templates.add(template);
+                    }
+                }
+                message = new TemplatesMessage(serverId,date,jsonBody,isAslan,userId,text,templates);
             }
 
         } catch (JSONException e) {
@@ -72,6 +98,29 @@ public class MessageFactory {
             } else if (type.equals("location")) {
                 String text = body.getString("text");
                 message = new LocationQuickReplyMessage(id,serverId,date,jsonBody,isAslan,userId,text);
+            } else if (type.equals("location_answer")) {
+                String text = body.getString("text");
+                double latitude = body.getDouble("lat");
+                double longitude = body.getDouble("long");
+                message = new LocationMessage(id,serverId,date,jsonBody,isAslan,userId,text,latitude,longitude);
+            } else if (type.equals("template")) {
+                String text = body.getString("text");
+                List<Template> templates = new ArrayList<>();
+                if(!body.isNull("attachment")) {
+                    JSONArray jsonAttachment = body.getJSONArray("attachment");
+                    for(int i = 0; i < jsonAttachment.length(); i++) {
+                        JSONObject jsonTemplate = (JSONObject)jsonAttachment.get(i);
+                        String title = jsonTemplate.getString("title");
+                        String imageUrl = jsonTemplate.getString("image_url");
+                        String subtitle = jsonTemplate.getString("subtitle");
+                        String url = jsonTemplate.getString("url");
+                        String buttonUrl = jsonTemplate.getString("button_url");
+                        String buttonTitle = jsonTemplate.getString("button_title");
+                        Template template = new Template(title,imageUrl,subtitle,url,buttonUrl,buttonTitle);
+                        templates.add(template);
+                    }
+                }
+                message = new TemplatesMessage(id,serverId,date,jsonBody,isAslan,userId,text,templates);
             }
 
         } catch (JSONException e) {

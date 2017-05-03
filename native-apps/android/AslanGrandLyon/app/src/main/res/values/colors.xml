@@ -13,4 +13,6 @@
     <color name="galery">#EEEEEE</color>
     <color name="silver">#BDC3C7</color>
     <color name="smoke">#ECECEC</color>
+    <color name="transparent">#00000000</color>
+
 </resources>

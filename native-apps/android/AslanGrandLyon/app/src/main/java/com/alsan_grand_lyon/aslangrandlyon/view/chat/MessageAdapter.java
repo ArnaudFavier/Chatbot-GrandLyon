@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.model.Profile;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
+import com.alsan_grand_lyon.aslangrandlyon.model.TemplatesMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.TextMessage;
 import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 
@@ -54,6 +55,10 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                     AslanTextMessageView aslanTextMessageView = new AslanTextMessageView(getContext());
                     aslanTextMessageView.setMessage((TextMessage) message);
                     convertView = aslanTextMessageView;
+                } else if(message instanceof TemplatesMessage) {
+                    AslanTemplatesMessageView aslanTemplatesMessageView = new AslanTemplatesMessageView(getContext());
+                    aslanTemplatesMessageView.setMessage((TemplatesMessage) message);
+                    convertView = aslanTemplatesMessageView;
                 }
             } else {
                 if (message instanceof TextMessage) {

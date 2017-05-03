@@ -42,7 +42,7 @@ public class DownloadMessagesTask extends AsyncTask<User, String, List<Message>>
         User user = params[0];
         String url = chatActivity.getString(R.string.server_url) + chatActivity.getString(R.string.server_message);
 
-        int timeToSleep = 3000;
+        int timeToSleep = 2000;
         int numberOfNewMessages = 0;
         int maxAttempt = 0;
         List<Message> messages = new ArrayList<>();
@@ -64,19 +64,20 @@ public class DownloadMessagesTask extends AsyncTask<User, String, List<Message>>
                     try {
                         JSONObject jsonObject = new JSONObject(httpResult.getOutput());
                         JSONArray jsonArray = jsonObject.getJSONArray("messages");
-                        System.out.println("--->" + jsonArray.toString());
+                        System.out.println("--->DownloadMessagesTask.doInBackground : " + jsonArray.toString());
                         for (int i = 0; i < jsonArray.length(); i++) {
                             Message message = MessageFactory.createMessageFromJson(jsonArray.getJSONObject(i));
                             if (!messageDAO.exists(message.getServerId())) {
                                 messageDAO.insert(message);
                                 messages.add(message);
+                                System.out.println("--->DownloadMessagesTask.doInBackground : " + message);
                             }
                         }
                     } catch (JSONException e) {
                         httpResult.setCode(-1);
                     }
                 } else {
-                    System.out.println("--->" + httpResult.toString());
+                    System.out.println("--->DownloadMessagesTask.doInBackground : ERROR - " + httpResult.toString());
                 }
             }
 

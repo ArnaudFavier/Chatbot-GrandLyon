@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -21,6 +22,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -36,6 +38,7 @@ import android.widget.Toast;
 
 import com.alsan_grand_lyon.aslangrandlyon.R;
 import com.alsan_grand_lyon.aslangrandlyon.model.DataSingleton;
+import com.alsan_grand_lyon.aslangrandlyon.model.LocationMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.LocationQuickReplyMessage;
 import com.alsan_grand_lyon.aslangrandlyon.model.Message;
 import com.alsan_grand_lyon.aslangrandlyon.model.QuickReplyMessage;
@@ -58,6 +61,8 @@ import java.util.Locale;
 
 public class ChatActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, LocationListener {
+
+    private AudioManager audio;
 
     protected LocationManager locationManager;
     private final static int PERMISSION_LOCATION_CODE = 0x2;
@@ -98,6 +103,7 @@ public class ChatActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         messagesListView = (ListView) findViewById(R.id.messagesListView);
         buttonsLinearLayout = (LinearLayout) findViewById(R.id.buttonsLinearLayout);
@@ -139,8 +145,7 @@ public class ChatActivity extends AppCompatActivity
         microphoneImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                promptSpeechInput();
-                askLocationPermission();
+                promptSpeechInput();
             }
         });
 
@@ -189,6 +194,25 @@ public class ChatActivity extends AppCompatActivity
         }
 //        stopDownloadMessagesThread();
         super.onStop();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                return true;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+                return true;
+            case KeyEvent.KEYCODE_BACK :
+                onBackPressed();
+                return true;
+            default:
+                return true;
+        }
     }
 
     @Override
@@ -295,6 +319,7 @@ public class ChatActivity extends AppCompatActivity
         messagesListView.setSelection(messagesListView.getCount());
         scrollToBottom();
     }
+
 
     public void messageSent(MessageHttpResult httpResult) {
         if(httpResult.getCode() == 200) {
@@ -408,14 +433,7 @@ public class ChatActivity extends AppCompatActivity
                 break;
             }
             case PERMISSION_LOCATION_CODE: {
-                LocationManager locateManager=(LocationManager)getSystemService(LOCATION_SERVICE);
-                boolean enabled = locateManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-                if(enabled) {
-                    sendLoncation(getLocation());
-                } else {
-                    Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
-                }
+                sendLocation();
                 break;
             }
             default:
@@ -500,16 +518,15 @@ public class ChatActivity extends AppCompatActivity
                                     Manifest.permission.ACCESS_FINE_LOCATION},
                             PERMISSION_LOCATION_CODE);
                 } else {
-                    Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+                    sendLocation();
                 }
             }
 
         } else {
-            Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+            sendLocation();
         }
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -545,9 +562,33 @@ public class ChatActivity extends AppCompatActivity
         return location;
     }
 
+    public void sendLocation() {
+        LocationManager locateManager=(LocationManager)getSystemService(LOCATION_SERVICE);
+        boolean enabled = locateManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if(enabled) {
+            sendLocation(getLocation());
+        } else {
+            Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+        }
+    }
+
     public void sendLocation(Location location) {
+        System.out.println("--->ChatActivity.sendLocation : " + location);
         if(location != null) {
-            
+            User user = DataSingleton.getInstance().getUser();
+            Message newMessage = new LocationMessage(new Date(),user.getServerId(),getString(R.string.location)
+                    + " : " + location.getLatitude() + ", " + location.getLongitude(),location.getLatitude(),location.getLongitude());
+            System.out.println("--->ChatActivity.sendLocation : " + newMessage);
+            newMessage.setUserId(user.getServerId());
+            DataSingleton.getInstance().addMessage(newMessage);
+            DataSingleton.getInstance().sortMessages();
+            SendMessageTask sendMessageTask = new SendMessageTask(this);
+            sendMessageTask.execute(newMessage);
+
+            refreshMessagesListView();
+            messagesListView.setSelection(messagesListView.getCount());
+            scrollToBottom();
         }
     }
 

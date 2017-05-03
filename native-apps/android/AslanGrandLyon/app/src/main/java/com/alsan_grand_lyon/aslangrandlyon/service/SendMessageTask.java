@@ -44,6 +44,7 @@ public class SendMessageTask extends AsyncTask<Message, String, MessageHttpResul
         String url = chatActivity.getString(R.string.server_url)
                 + chatActivity.getString(R.string.server_message);
         HttpResult httpResult = CallAPI.sendMessage(url,userId,token,jsonMessageString);
+        System.out.println("--->SendMessageTask.doInBackground : " + message);
         MessageHttpResult messageHttpResult = new MessageHttpResult(httpResult.getCode(),
                 httpResult.getOutput(),httpResult.getException(),message);
         if(httpResult.getCode() == 200) {
