@@ -6,9 +6,9 @@ const fs = require('fs');
 env(__dirname + '/.env');*/
 
 /*Quentin*///var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslanmessenger-shard-00-00-rh6fw.mongodb.net:27017,aslanmessenger-shard-00-01-rh6fw.mongodb.net:27017,aslanmessenger-shard-00-02-rh6fw.mongodb.net:27017/AslanMessenger?ssl=true&replicaSet=AslanMessenger-shard-0&authSource=admin'
-/*Nicolas*///var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslandb-shard-00-00-fdkfh.mongodb.net:27017,aslandb-shard-00-01-fdkfh.mongodb.net:27017,aslandb-shard-00-02-fdkfh.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=AslanDB-shard-0&authSource=admin';
+/*Nicolas*/var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslandb-shard-00-00-fdkfh.mongodb.net:27017,aslandb-shard-00-01-fdkfh.mongodb.net:27017,aslandb-shard-00-02-fdkfh.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=AslanDB-shard-0&authSource=admin';
 /*Olivier*///var url = 'mongodb://' + process.env.MONGO_DB_TOKEN + '@aslandb-shard-00-01-yened.mongodb.net:27017/grandlyon?ssl=true&authSource=admin';
-/*Quentin2*/var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslandb-shard-00-00-vrrhw.mongodb.net:27017,aslandb-shard-00-01-vrrhw.mongodb.net:27017,aslandb-shard-00-02-vrrhw.mongodb.net:27017/AslanDB>?ssl=true&replicaSet=AslanDB-shard-0&authSource=admin';
+/*Quentin2*///var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslandb-shard-00-00-vrrhw.mongodb.net:27017,aslandb-shard-00-01-vrrhw.mongodb.net:27017,aslandb-shard-00-02-vrrhw.mongodb.net:27017/AslanDB>?ssl=true&replicaSet=AslanDB-shard-0&authSource=admin';
 /*Arnaud*///var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@cluster0-shard-00-00-l8lif.mongodb.net:27017,cluster0-shard-00-01-l8lif.mongodb.net:27017,cluster0-shard-00-02-l8lif.mongodb.net:27017/AslanDB>?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
 
 
