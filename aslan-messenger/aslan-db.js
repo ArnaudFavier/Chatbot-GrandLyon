@@ -51,7 +51,6 @@ function getMessage(userId, lastMessageId, callback) {
 *	Fonction qui enregistre un message
 */
 function getAllMessage(userId, callback) {
-	console.log("USERID : " + userId);
 	db.getData("messages", {user_id: userId}, callback);
 }
 
