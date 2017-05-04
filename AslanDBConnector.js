@@ -5,8 +5,8 @@ const fs = require('fs');
 /*var env = require('node-env-file');
 env(__dirname + '/.env');*/
 
-var url = 'mongodb://' + process.env.MONGO_DB_TOKEN + '@aslandb-shard-00-01-yened.mongodb.net:27017/grandlyon?ssl=true&authSource=admin';
-//var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslandb-shard-00-00-fdkfh.mongodb.net:27017,aslandb-shard-00-01-fdkfh.mongodb.net:27017,aslandb-shard-00-02-fdkfh.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=AslanDB-shard-0&authSource=admin';
+//var url = 'mongodb://' + process.env.MONGO_DB_TOKEN + '@aslandb-shard-00-01-yened.mongodb.net:27017/grandlyon?ssl=true&authSource=admin';
+var url = 'mongodb://' + process.env.ASLAN_MESSENGER_DB_TOKEN + '@aslandb-shard-00-00-fdkfh.mongodb.net:27017,aslandb-shard-00-01-fdkfh.mongodb.net:27017,aslandb-shard-00-02-fdkfh.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=AslanDB-shard-0&authSource=admin';
 
 
 const GrandLyonCollection = "grandlyonData";
