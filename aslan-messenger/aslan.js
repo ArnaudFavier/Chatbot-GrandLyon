@@ -64,6 +64,7 @@ function register(req, res) {
     		}
     	});
 	} else {
+		console.log(data);
 		res.status(422).send(JSON.stringify({error: "JSON Invalid"}));
 	}
 }
