@@ -340,42 +340,45 @@ public class ChatActivity extends AppCompatActivity
 
     public void refreshMessagesListView() {
         messages.clear();
+        int size = DataSingleton.getInstance().getMessages().size();
         messages.addAll(DataSingleton.getInstance().getMessages());
-        if (messages.get(messages.size() - 1) instanceof QuickReplyMessage) {
-            buttonsLinearLayout.removeAllViews();
-            QuickReplyMessage message = (QuickReplyMessage) messages.get(messages.size() - 1);
-            for (String quickReply : message.getQuickReplies()) {
+        if(messages.size() != 0) {
+            if (messages.get(messages.size() - 1) instanceof QuickReplyMessage) {
+                buttonsLinearLayout.removeAllViews();
+                QuickReplyMessage message = (QuickReplyMessage) messages.get(messages.size() - 1);
+                for (String quickReply : message.getQuickReplies()) {
+                    final Button button = new Button(this);
+                    button.setText(quickReply);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendMessage(button.getText().toString());
+                        }
+                    });
+                    buttonsLinearLayout.addView(button);
+                }
+                buttonsLinearLayout.setVisibility(View.VISIBLE);
+            } else if (messages.get(messages.size() - 1) instanceof LocationQuickReplyMessage) {
+                buttonsLinearLayout.removeAllViews();
+                LocationQuickReplyMessage message = (LocationQuickReplyMessage) messages.get(messages.size() - 1);
+
                 final Button button = new Button(this);
-                button.setText(quickReply);
+                button.setText(getString(R.string.location));
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        sendMessage(button.getText().toString());
+                        askLocationPermission();
                     }
                 });
                 buttonsLinearLayout.addView(button);
+
+                buttonsLinearLayout.setVisibility(View.VISIBLE);
+            } else {
+                buttonsLinearLayout.removeAllViews();
+                buttonsLinearLayout.setVisibility(View.GONE);
             }
-            buttonsLinearLayout.setVisibility(View.VISIBLE);
-        } else if (messages.get(messages.size()-1) instanceof LocationQuickReplyMessage) {
-            buttonsLinearLayout.removeAllViews();
-            LocationQuickReplyMessage message = (LocationQuickReplyMessage) messages.get(messages.size() - 1);
-
-            final Button button = new Button(this);
-            button.setText(getString(R.string.location));
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    askLocationPermission();
-                }
-            });
-            buttonsLinearLayout.addView(button);
-
-            buttonsLinearLayout.setVisibility(View.VISIBLE);
-        }else {
-            buttonsLinearLayout.removeAllViews();
-            buttonsLinearLayout.setVisibility(View.GONE);
+            messageAdapter.notifyDataSetChanged();
         }
-        messageAdapter.notifyDataSetChanged();
     }
 
     public void moreMessagesLoaded(int numberOfNewMessages) {
@@ -507,7 +510,7 @@ public class ChatActivity extends AppCompatActivity
         //TODO
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},PERMISSION_LOCATION_CODE);
             } else {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
                         && this.checkSelfPermission(
@@ -533,8 +536,7 @@ public class ChatActivity extends AppCompatActivity
                                            String[] permissions, int[] grantResults) {
         if (requestCode == PERMISSION_LOCATION_CODE
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            Intent intent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            this.startActivityForResult(intent,PERMISSION_LOCATION_CODE);
+            sendLocation();
         }
     }
 
@@ -555,6 +557,9 @@ public class ChatActivity extends AppCompatActivity
             } else {
 
             }
+            if(location == null) {
+                location =  locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -574,12 +579,10 @@ public class ChatActivity extends AppCompatActivity
     }
 
     public void sendLocation(Location location) {
-        System.out.println("--->ChatActivity.sendLocation : " + location);
         if(location != null) {
             User user = DataSingleton.getInstance().getUser();
             Message newMessage = new LocationMessage(new Date(),user.getServerId(),getString(R.string.location)
                     + " : " + location.getLatitude() + ", " + location.getLongitude(),location.getLatitude(),location.getLongitude());
-            System.out.println("--->ChatActivity.sendLocation : " + newMessage);
             newMessage.setUserId(user.getServerId());
             DataSingleton.getInstance().addMessage(newMessage);
             DataSingleton.getInstance().sortMessages();

@@ -78,11 +78,9 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (httpResult.getCode() == 403) {
             Toast toast = Toast.makeText(this,getString(R.string.email_already_exists),Toast.LENGTH_LONG);
             toast.show();
-            passwordEditText.setText("");
         } else {
             Toast toast = Toast.makeText(this, getString(R.string.error_impossible_to_register),Toast.LENGTH_LONG);
             toast.show();
-            passwordEditText.setText("");
         }
     }
 
@@ -95,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         final TextView loadingMessageTextView = (TextView) layout.findViewById(R.id.loadingMessageTextView);
-        loadingMessageTextView.setText(R.string.connection_in_progress);
+        loadingMessageTextView.setText(R.string.registration_in_progress);
 
         adb.setCancelable(false);
 

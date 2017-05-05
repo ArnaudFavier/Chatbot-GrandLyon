@@ -50,8 +50,7 @@
                     android:ems="10"
                     android:hint="@string/email_example"
                     android:inputType="textEmailAddress"
-                    android:padding="10dp"
-                    android:text="test@test.com" />
+                    android:padding="10dp" />
 
                 <EditText
                     android:id="@+id/passwordEditText"
@@ -65,8 +64,7 @@
                     android:ems="10"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:padding="10dp"
-                    android:text="test" />
+                    android:padding="10dp" />
 
                 <Button
                     android:id="@+id/signInButton"

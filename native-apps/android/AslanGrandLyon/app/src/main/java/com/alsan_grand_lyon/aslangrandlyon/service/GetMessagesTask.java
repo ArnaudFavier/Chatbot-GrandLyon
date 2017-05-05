@@ -70,6 +70,7 @@ public class GetMessagesTask extends AsyncTask<User, String, HttpResult> {
         DataSingleton.getInstance().addAllMessages(messageDAO.selectAll());
         DataSingleton.getInstance().sortMessages();
 
+
         messageDAO.close();
         return httpResult;
     }

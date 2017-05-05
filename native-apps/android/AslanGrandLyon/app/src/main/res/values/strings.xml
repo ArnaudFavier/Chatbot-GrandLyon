@@ -50,6 +50,7 @@
     <string name="sign_out_in_progress">Déconnexion...</string>
     <string name="send_a_message">Envoyer un message...</string>
     <string name="connection_in_progress">Connexion...</string>
+    <string name="registration_in_progress">Inscription...</string>
     <string name="please_enter_logins">Entrer un login...</string>
     <string name="ckecks_logins">Impossible de se connecter, vérifer le login...</string>
     <string name="impossible_to_connect">Impossible de se connecter...</string>

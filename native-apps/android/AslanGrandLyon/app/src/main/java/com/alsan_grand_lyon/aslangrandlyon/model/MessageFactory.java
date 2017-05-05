@@ -35,9 +35,11 @@ public class MessageFactory {
             } else if (type.equals("quickreplies")) {
                 String text = body.getString("text");
                 List<String> quickReplies = new ArrayList<>();
-                JSONArray quickrepliesJson = body.getJSONArray("quickreplies");
-                for (int i = 0; i < quickrepliesJson.length(); i++) {
-                    quickReplies.add(quickrepliesJson.getString(i));
+                if(!body.isNull("quickreplies")) {
+                    JSONArray quickrepliesJson = body.getJSONArray("quickreplies");
+                    for (int i = 0; i < quickrepliesJson.length(); i++) {
+                        quickReplies.add(quickrepliesJson.getString(i));
+                    }
                 }
                 message = new QuickReplyMessage(serverId,date,jsonBody,isAslan,userId,text,quickReplies);
             } else if (type.equals("location")) {
@@ -90,9 +92,11 @@ public class MessageFactory {
             } else if (type.equals("quickreplies")) {
                 String text = body.getString("text");
                 List<String> quickReplies = new ArrayList<>();
-                JSONArray quickrepliesJson = body.getJSONArray("quickreplies");
-                for (int i = 0; i < quickrepliesJson.length(); i++) {
-                    quickReplies.add(quickrepliesJson.getString(i));
+                if(!body.isNull("quickreplies")) {
+                    JSONArray quickrepliesJson = body.getJSONArray("quickreplies");
+                    for (int i = 0; i < quickrepliesJson.length(); i++) {
+                        quickReplies.add(quickrepliesJson.getString(i));
+                    }
                 }
                 message = new QuickReplyMessage(serverId,date,jsonBody,isAslan,userId,text,quickReplies);
             } else if (type.equals("location")) {
